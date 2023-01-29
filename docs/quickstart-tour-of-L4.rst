@@ -1,16 +1,57 @@
 .. _tour_of_L4:
 
 ===========
-What is L4?
+Why use L4?
 ===========
 
-L4 offers a low-code way for non-lawyers to explore existing contracts and legislation, and to generate new contracts and regulations. 
+**L4 gives non-lawyers a "low-code" way to *explore* and *produce* legal "programs" --
+contracts, legislation, and regulations.**
 
---------------------
-L4 is 'law-specific'
---------------------
+Some people use L4 to **draft legal templates and automatically
+produce legal documents** for signature, using the L4 library.
 
-L4 is a domain-specific language specifically designed for the law domain, which makes it 'law-specific'.
+Enterprise users can integrate L4 into their existing contract
+lifecycle management systems to support sophisticated queries.
+
+Governments developing "Rules as Code" can use L4 as to automate the generation of 
+
+.. _viz:
+
+-------------------------------------------------------------------
+L4 helps you **explore and understand** complicated legal documents
+-------------------------------------------------------------------
+
+To understand complicated **logic** (*and, or, unless*): Rewrite in L4 and view the *decision diagram* to get the big picture. (See: :ref:`eg_mustsing`; Rodent Insurance)
+
+To understand complicated **processes** (*deadlines and obligations*): Rewrite in L4 and view the *state diagram* to see how events change state over time, leading to new obligations for parties.
+
+To understand complicated **rule interactions** (*notwithstanding, subject to*): rewrite in L4 and view the *meta-rule analysis* to see how rules interact.
+
+-----------------------
+L4 helps you explore...
+-----------------------
+
+You can ask *"what if?"*
+
+Configure a **scenario** with a set of **facts** and **history**. L4 will return an analysis.
+
+You can ask *"why?"*
+
+Drill down into every decision.
+
+-----------------------
+L4 gives confidence ...
+-----------------------
+
+Using formal methods, L4 analyzes your program for loopholes and inconsistencies.
+
+L4's unit test framework lets you set up test scenarios and monitor them as your contracts evolve.
+
+----------------
+A "low-code" DSL
+----------------
+
+L4 is a DSL: a **domain-specific language** designed for the legal domain. Some call it "low-code".
 
 --------------------
 L4 outputs a diagram

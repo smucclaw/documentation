@@ -6,9 +6,10 @@ Examples in L4 and the concepts and keywords introduced in each example
 
 Examples illustrate key concepts along the way.
 
-----------------------------------------------
-Rules, Booleans, and Syntax: Must Sing Example
-----------------------------------------------
+.. _eg_mustsing:
+
+Example: Must Sing
+------------------
 
 `Link to 'Must Sing' example <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1505307398>`_
 
