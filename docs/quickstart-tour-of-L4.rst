@@ -4,54 +4,49 @@
 Why use L4?
 ===========
 
-**L4 gives non-lawyers a "low-code" way to *explore* and *produce* legal "programs" --
-contracts, legislation, and regulations.**
+**L4 gives non-lawyers a "low-code" way to explore and produce legal "programs".**
 
-Some people use L4 to **draft legal templates and automatically
-produce legal documents** for signature, using the L4 library.
-
-Enterprise users can integrate L4 into their existing contract
-lifecycle management systems to support sophisticated queries.
-
-Governments developing "Rules as Code" can use L4 as to automate the generation of 
-
-.. _viz:
-
--------------------------------------------------------------------
-L4 helps you **explore and understand** complicated legal documents
--------------------------------------------------------------------
+L4 helps people **understand** complicated legal documents
+----------------------------------------------------------
 
 To understand complicated **logic** (*and, or, unless*): Rewrite in L4 and view the *decision diagram* to get the big picture. (See: :ref:`eg_mustsing`; Rodent Insurance)
 
-To understand complicated **processes** (*deadlines and obligations*): Rewrite in L4 and view the *state diagram* to see how events change state over time, leading to new obligations for parties.
+To understand complicated **processes** (*deadlines and obligations*): Rewrite in L4 and view the *state diagram* to see how events change state over time, leading to new obligations for parties. Identify a goal and see what you need to do to achieve it. (See: ...)
 
-To understand complicated **rule interactions** (*notwithstanding, subject to*): rewrite in L4 and view the *meta-rule analysis* to see how rules interact.
+To understand complicated **rule interactions** (*notwithstanding, subject to*): rewrite in L4 and view the *meta-rule analysis* to see how rules interact. (See: ...)
 
------------------------
-L4 helps you explore...
------------------------
+L4 helps end-users **explore** legal situations
+-----------------------------------------------
 
-You can ask *"what if?"*
+You can ask *"what if?"*: Configure a **scenario** with a set of **facts** and **history**. L4 will return an analysis. ([TODO] -- awaiting partial evaluation engine)
 
-Configure a **scenario** with a set of **facts** and **history**. L4 will return an analysis.
+You can ask *"why?"*: Interactively drill down into every decision. ([TODO] -- awaiting Explainability monad documentation)
 
-You can ask *"why?"*
+L4 helps legal drafters **develop** with confidence
+---------------------------------------------------
 
-Drill down into every decision.
+L4 is a DSL: a **domain-specific language** designed for the legal domain. Some call it "low-code".
 
------------------------
-L4 gives confidence ...
------------------------
-
-Using formal methods, L4 analyzes your program for loopholes and inconsistencies.
+The "formal methods" components of the L4 toolchain automatically analyzes your program for loopholes and inconsistencies. ([TODO] See: PDPC use case, formal verification)
 
 L4's unit test framework lets you set up test scenarios and monitor them as your contracts evolve.
 
-----------------
-A "low-code" DSL
-----------------
+L4's library of components makes it easier to **draft legal templates and automatically produce legal documents** for signature.
 
-L4 is a DSL: a **domain-specific language** designed for the legal domain. Some call it "low-code".
+L4 helps enterprises **manage** their contract library
+------------------------------------------------------
+
+Enterprise users can integrate L4 into their existing contract
+lifecycle management systems to support more sophisticated queries
+than their CLM databases allow.
+
+L4 helps governments **streamline** service delivery
+----------------------------------------------------
+
+Government agencies innovating with "Rules as Code" can use L4 basis
+for automating the generation of citizen-facing web applications and
+chatbots.
+
 
 --------------------
 L4 outputs a diagram
