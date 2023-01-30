@@ -9,11 +9,11 @@ Why use L4?
 L4 helps people **understand** complicated legal documents
 ----------------------------------------------------------
 
-To understand complicated **logic** (*and, or, unless*): Rewrite in L4 and view the *decision diagram* to get the big picture. (See: :ref:`eg_mustsing`; Rodent Insurance)
+To understand complicated **logic** (*and, or, unless*): view the *decision diagram* to get the big picture. (See: :ref:`eg_mustsing`; Rodent Insurance)
 
-To understand complicated **processes** (*deadlines and obligations*): Rewrite in L4 and view the *state diagram* to see how events change state over time, leading to new obligations for parties. Identify a goal and see what you need to do to achieve it. (See: ...)
+To understand complicated **processes** (*deadlines and obligations*): view the *state diagram* to see how events change state over time, leading to new obligations for parties. Identify a goal and see what you need to do to achieve it. (See: ...)
 
-To understand complicated **rule interactions** (*notwithstanding, subject to*): rewrite in L4 and view the *meta-rule analysis* to see how rules interact. (See: ...)
+To understand complicated **rule interactions** (*notwithstanding, subject to*): view the *meta-rule analysis* to see how rules interact. (See: ...)
 
 L4 helps end-users **explore** legal situations
 -----------------------------------------------
@@ -22,8 +22,10 @@ You can ask *"what if?"*: Configure a **scenario** with a set of **facts** and *
 
 You can ask *"why?"*: Interactively drill down into every decision. ([TODO] -- awaiting Explainability monad documentation)
 
-L4 helps legal drafters **develop** with confidence
----------------------------------------------------
+You can ask *"how?"*: if you state a goal you want to achieve, L4 will outline a course of action.
+
+L4 helps legal engineers **draft** with confidence
+--------------------------------------------------
 
 L4 is a DSL: a **domain-specific language** designed for the legal domain. Some call it "low-code".
 
