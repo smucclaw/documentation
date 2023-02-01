@@ -1,4 +1,4 @@
-:orphan:
+:oprhan:
 
 ###########
 First Steps
@@ -14,8 +14,8 @@ First Steps
 
 .. grid:: 1
 
-    .. grid-item-card:: 2. Tour of L4
-        :link: quickstart-tour-of-L4
+    .. grid-item-card:: 2. Why Use L4?
+        :link: quickstart-why-use-L4
         :link-type: doc
 
         Short sentences and paragraphs describing L4.

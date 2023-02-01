@@ -46,7 +46,7 @@ You can navigate this document by:
    :titlesonly:
    :hidden:
 
-
+   docs/links-first-steps.rst
    docs/quickstart-tour-of-L4.rst
    docs/quickstart-installation.rst
 
@@ -56,17 +56,20 @@ You can navigate this document by:
    :titlesonly:
    :hidden:
 
+   Section Directory <docs/links-returning-users.rst>
    docs/returning-L4-and-law.rst
    docs/returning-cheatsheet.rst
    docs/returning-exporting-L4.rst
    docs/returning-exercises.rst
    docs/returning-keywords.rst
 
-   docs/returning-law-logic-programming.rst
-   docs/returning-flowchart.rst
-   docs/returning-common-expressions.rst
-   docs/returning-computational-law.rst
+.. toctree:: 
+   :maxdepth: 1
+   :caption: Examples
+   :titlesonly:
+   :hidden:
 
+   Section Directory <docs/links-examples>
    docs/returning-examples-must-sing.rst
    docs/returning-examples-rodents-vermin.rst
    docs/returning-examples-pdpa-dbno.rst
@@ -75,10 +78,23 @@ You can navigate this document by:
 
 .. toctree::
    :maxdepth: 1
+   :caption: Law and Computer Science
+   :titlesonly:
+   :hidden:
+
+   Section Directory <docs/links-law-and-computer-science.rst>
+   docs/returning-law-logic-programming.rst
+   docs/returning-flowchart.rst
+   docs/returning-common-expressions.rst
+   docs/returning-computational-law.rst
+
+.. toctree::
+   :maxdepth: 1
    :caption: Setting up the L4 Backend
    :titlesonly:
    :hidden:
 
+   Section Directory <docs/links-backend.rst>
    docs/advanced-explanations.rst
    docs/advanced-security.rst
    docs/advanced-installation-webtool.rst

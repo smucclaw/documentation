@@ -164,7 +164,7 @@ This is the sidebar with L4 functions that you should see after running :ref:`st
 
 This sidebar can be scrolled down and contains several sections:
 
-Numbered steps that show how you can use L4's output.
+- Numbered steps that show how you can use L4's output.
 
     - Step 1 links to an external web app that can be used to explore whether a legal rule is fulfilled or breached, depending on what is written in the red box.
 
@@ -174,7 +174,7 @@ Numbered steps that show how you can use L4's output.
 
     - Steps 4 to 24 are options for you to export the L4 diagram and results into different formats. See `Exporting L4` for more information
 
-The area below the numbered steps shows a 'debugging' area where you can check the L4 code that you can use to help fix any error you may be facing when writing L4. We are working on creating information about this 'debugging' area.
+- The area below the numbered steps shows a 'debugging' area where you can check the L4 code that you can use to help fix any error you may be facing when writing L4. We are working on creating information about this 'debugging' area.
 
 -------------------------------------------------------------
 Green box: LegalSS spreadsheet tabs linking to other examples
@@ -192,7 +192,7 @@ This is where you write your L4 code.
 Black box: Liquor exercise example
 ----------------------------------
 
-In this particular tab is the :ref:`Learning L4_exercises`, given in grey cells. The grey box with words contains comments; these comments will not run as L4 code.
+In this particular LegalSS spreadsheet tab is the :ref:`Learning L4_exercises`, given in grey cells. The grey box with words contains comments; these comments will not run as L4 code.
 
 The light blue box found in the first column shows you what cell is being selected and that will be edited if you type something. In this example screenshot, a cell highlighted in yellow is selected.
 
@@ -204,6 +204,6 @@ Next Steps
 
 Once you have finished installation, consider exploring:
 
-- :ref:`The tour of L4 <tour_of_L4>`, which tells you what L4 is at a glance.
+- :ref:`Why Use L4? <tour_of_L4>`
 
 - :ref:`Learn L4 through exercises <Learning L4_Exercises>`.
