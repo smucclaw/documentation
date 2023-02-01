@@ -47,7 +47,7 @@ You can navigate this document by:
    :hidden:
 
    docs/links-first-steps.rst
-   docs/quickstart-tour-of-L4.rst
+   docs/quickstart-why-use-L4.rst
    docs/quickstart-installation.rst
 
 .. toctree::
