@@ -29,7 +29,8 @@ You are given the following rule in the tab "Learning L4: Liquor Exercise". You 
 1. A person **WHO** is 21, **AND** is **NOT** located within the Little India **OR** Geylang liquor control zones, **MAY** buy liquor.
 
 .. image:: ../images/liquor-exercise-start.png
-   
+  :class: with-border
+
 **Edit the above rule in L4 to reflect the following**, keywords are still in **bold** but they are not in all-caps.
    
 2. A person **who** is 21, **and** has cash, **or** a credit card, **and** is **not** located within the Little India **or** Geylang liquor control zones, **may** buy liquor
@@ -37,10 +38,13 @@ You are given the following rule in the tab "Learning L4: Liquor Exercise". You 
 You will have succeeded if you obtain the following diagrams:
 
 .. image:: ../images/Pastedimage20230114164121.png
+  :class: with-border
 
 .. image:: ../images/Pastedimage20230114164043.png
+  :class: with-border
 
 .. image:: ../images/Pastedimage20230114164104.png
+  :class: with-border
 
 **Now, implement the following rule in a new tab in your spreadsheet**. Now keywords are neither in bold nor in all-caps!
 

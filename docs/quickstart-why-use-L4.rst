@@ -58,7 +58,9 @@ L4 outputs a diagram
 L4 generates convenient visualizations of the logic and the moving parts of your "legal program"
 
 Specifying legislation in L4 gives you a diagram that allows you to get from a legal position A to legal position B at a glance.
-.. image:: ../L4manual-images/L4-visualisation-screenshot.png
+
+.. image:: ../images/L4-visualisation-screenshot.png
+    :class: with-border
 
 -------------------------------------
 L4 checks for loopholes and conflicts
@@ -71,7 +73,9 @@ L4 generates a web tool
 -----------------------
 
 L4 automatically generates a web app that helps end users explore the logic of your "legal program".
-.. image:: ../L4manual-images/web-tool-screenshot.png
+
+.. image:: ../images/web-tool-screenshot.png
+    :class: with-border
 
 -------------------------------------------------------
 L4's diagram ouput can be converted to multiple formats

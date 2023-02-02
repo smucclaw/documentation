@@ -57,6 +57,7 @@ Within that codebase, the entry point is Code.gs which runs as a Google Apps Scr
 The following snapshot shows the Google Apps Script interface in which Code.gs and main.html are presented. It is accessible from the Extensions / App Script menu in the L4 Spreadsheet.
 
 .. image:: ../images/l4-legalssv.png
+    :class: with-border
 
 .. rubric:: Footnotes
 

@@ -46,7 +46,7 @@ You can navigate this document by:
    :titlesonly:
    :hidden:
 
-   docs/links-first-steps.rst
+   Section Directory <docs/links-first-steps.rst>
    docs/quickstart-why-use-L4.rst
    docs/quickstart-installation.rst
 
