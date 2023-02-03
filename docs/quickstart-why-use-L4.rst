@@ -75,7 +75,7 @@ L4 generates a web tool
 L4 automatically generates a web app that helps end users explore the logic of your "legal program".
 
 .. image:: ../images/web-tool-screenshot.png
-    :class: with-border
+   :class: with-border
 
 -------------------------------------------------------
 L4's diagram ouput can be converted to multiple formats
