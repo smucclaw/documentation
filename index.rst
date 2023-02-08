@@ -99,8 +99,7 @@ You can navigate this document by:
    :titlesonly:
    :hidden:
 
-   docs/links-backend.rst
-   Backend Setup Instructions <docs/links-backend.rst>
+   Advanced Users: Backend Setup Instructions <docs/links-backend.rst>
    docs/advanced-explanations.rst
    docs/advanced-installation-webtool.rst
    docs/advanced-installation-googlesheets.rst

@@ -239,16 +239,18 @@ Relational Predicate
 Value Term and Set Group
 ------------------------
 
-===========================
+---------------------------
 Syntax Reference by Keyword
-===========================
+---------------------------
 
------
+~~~~~
 WHOSE
------
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+|
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 WHOSE in a regulative rule
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The "WHOSE" keyword can appear at the top level in a regulative rule, where it acts as a qualifier constraint.
 
@@ -279,9 +281,9 @@ and is logically equivalent to (See swipl dicts for syntax):
     rule(…, Party, Attribute, Predicate, ...) :-
     call(Predicate, Party.Attribute), ...
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 WHOSE in top-level constitutive definitions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The "WHOSE" keyword can appear in a top-level constitutive definition, where it acts as a qualifier constraint.
 
@@ -301,9 +303,9 @@ If the Breed attribute is not defined, the test is negative.
 
 See remarks about **vacuous truth**.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 WHOSE in inline constitutive definitions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The "WHOSE" keyword can appear in an inline constitutive definition in a regulative rule, where it acts as a qualifier constraint.
 
@@ -322,9 +324,9 @@ Assuming the MUST does not contain any AND or OR branches, this is effectively s
 
 Because the WHOSE does not appear under an AND/OR/XOR limb, the qualifier attaches to the top-level rule, and voids the entire rule if the constraint is not met.
 
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 WHOSE in a junction list
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 The "WHOSE" keyword can appear under a limb of a junction list, where it acts as a qualifier constraint on the associated limb.
 
@@ -347,13 +349,13 @@ Internally, with the help of some DEFINE rules (shown below) the rule is transfo
 	AND	vehicle	engine		        IS	internal combustion engine
 	AND	vehicle	maximum speed		>	11 miles per hour
 
----
+~~~
 WHO
----
+~~~
 
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 WHO in a regulative rule
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 The "WHO" keyword can appear at the top level in a regulative rule, where it acts as a qualifier constraint.
 
@@ -409,9 +411,9 @@ This enables the more natural phrasing:
 	    with	scissors		
 	    speed	>3 mph
 
-------
+~~~~~~
 DEFINE
-------
+~~~~~~
 
 .. code-block:: bnf
 
@@ -433,9 +435,9 @@ Note that you get a/an-equivalence for free, when it appears at the end of a cel
 
 When a rewrite rule operates twice against the same sentence, on both the left and the right of the central term, the limbs are conjoined with an AND and reindented accordingly.
 
------
+~~~~~
 AS IN
------
+~~~~~
 
 This keyword is shorthand for importing a particular keyword block from another section.
 
