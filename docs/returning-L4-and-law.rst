@@ -1,6 +1,7 @@
-########################
-L4 Approaches to the Law
-########################
+#################
+L4, a DSL for law
+#################
+|
 
 =====================
 How L4 Approaches Law
@@ -55,15 +56,15 @@ Consider the following examples:
 
 - **"Contract Draft version" problems**: Finally, more mundanely, version control and structured data embedded in documents provide basic levels of machine-readability lacking today.
 
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Expanding on technical terms
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section explains the technical terms and domains found in `The relationship between L4 and contracts and legislation`_.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 On Specification Languages
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 L4 is a "domain-specific modelling language", which is a type of "specification language". Specification languages are distinct from programming languages because they are considered "higher-level", and are used primarily for analyzing the properties of systems even before the systems are implemented or run.
 
@@ -71,9 +72,9 @@ Examples of specification languages include `Alloy <https://alloytools.org/>`_ a
 
 Both specification and programming languages are *formal languages*, which we expand upon below.
 
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 On Formalisation
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 Computer scientists are familiar with `state machines <https://en.wikipedia.org/wiki/Finite-state_machine>`_, which represent discrete change over time.
 
@@ -81,9 +82,9 @@ One of the earliest papers in computational law identified `Petri Nets <https://
 
 The notion of contract as state machine can be found at the heart of the `Business Process Modeling Notation (BPMN) standard <https://www.visual-paradigm.com/guide/bpmn/what-is-bpmn/>`_ for business processes.
 
-~~~~~~~~
+^^^^^^^^
 On Logic
-~~~~~~~~
+^^^^^^^^
 
 Computer scientists are also familiar with `propositional <https://en.wikipedia.org/wiki/Propositional_calculus>`_ `predicate <https://en.wikipedia.org/wiki/First-order_logic>`_, and `Boolean logics <https://en.wikipedia.org/wiki/Boolean_algebra>`_.
 
@@ -103,9 +104,9 @@ This reduction problem lies at the heart of many legal conflicts: parties may di
 
 In the real world it is often necessary to take unknown and undefined values into account: hence the need for a ternary logic.
 
-~~~~~~~~~~~
+^^^^^^^^^^^
 On Rewrites
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 The primary specifications which attempt to establish a rule system are themselves subject to rewriting according to further meta-rule systems.
 
@@ -121,9 +122,9 @@ A microprocessor may perform speculative execution and out-of-order instruction 
 
 When multiple rules collide, they can be resolved using a ordering mechanism: firewall rules, for example, include priorities.
 
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 On Evaluation
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 The "evaluation" of a specification depends on its `run-time environment <https://www.techopedia.com/definition/5466/runtime-environment-rte>`_ and often on *human input*.
 
@@ -141,9 +142,9 @@ Some degree of vagueness is inevitable, and, frequently, desirable: when a thing
 
 Did a party apply "reasonable efforts" to a particular action? It depends … on a decision tree which, sooner or later, bottoms out and needs to call an external decider for input.
 
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 On Natural Language
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 Because laws and contracts have, to date, been written in natural languages like English, drafters sometimes introduced ambiguities into their text.
 

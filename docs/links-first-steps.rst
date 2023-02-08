@@ -3,6 +3,8 @@
 ###########
 First Steps
 ###########
+|
+|
 
 .. grid:: 1
 
@@ -10,7 +12,7 @@ First Steps
         :link: quickstart-installation
         :link-type: doc
 
-        Install L4 on your computer.
+        Get started with L4's LegalSS Spreadsheet
 
 .. grid:: 1
 

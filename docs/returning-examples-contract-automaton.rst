@@ -1,12 +1,12 @@
 #############################
-Contract as Automaton Example
+Contract As Automaton Example
 #############################
 
 =================================================
 Events & Consequences, Obligations vs Permissions
 =================================================
 
-`Link to 'Contract as Automaton' example <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=2000125343>`_
+`See the L4 Code for this 'Contract As Automaton' example <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=2000125343>`_
 
 A loan is repaid in two instalments. The borrower has to stay out of trouble.
 

@@ -1,14 +1,14 @@
 .. _eg_rodent:
 
-##########################
-Rodents and Vermin Example
-##########################
+##############################
+Home Insurance Clause Example
+##############################
 
 ==========================
 Booleans and Visualization
 ==========================
 
-`Link to 'Rodents and Vermin' example <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1206725099>`_
+`See the L4 code for this 'Rodents and Vermin' example <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1206725099>`_
 
 This example focus on a single decision rule drawn from a home insurance policy and its transformations to more easily understood forms.
 

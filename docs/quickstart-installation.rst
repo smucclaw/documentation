@@ -1,10 +1,12 @@
 ###############
 Getting Started
 ###############
+|
 
 ****************************************
 Writing in L4 on the LegalSS spreadsheet
 ****************************************
+|
 
 Your main interface when writing with L4 is on a google sheets spreadsheet called the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_. This spreadsheet has a special app function that activates the L4 language.
 
@@ -206,4 +208,4 @@ Once you have finished installation, consider exploring:
 
 - :ref:`Why Use L4? <tour_of_L4>`
 
-- :ref:`Learn L4 through exercises <Learning L4_Exercises>`.
+- :ref:`See L4 in Practice <Learning L4_Exercises>`.

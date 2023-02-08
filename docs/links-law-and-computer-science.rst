@@ -1,8 +1,11 @@
 :oprhan:
 
-########################
-Law and Computer Science
-########################
+#####################################
+Motivations: Law and Computer Science
+#####################################
+|
+|
+
 .. grid:: 3
 
     .. grid-item-card:: L4 and Computational Law
@@ -11,7 +14,7 @@ Law and Computer Science
 
         Understand Computational Law and how L4 fits in.
 
-    .. grid-item-card:: L4 Approaches to the Law
+    .. grid-item-card:: L4, a DSL for law
         :link: returning-L4-and-law
         :link-type: doc
 

@@ -1,12 +1,12 @@
-#######################
-Motor Insurance Example
-#######################
+##############################
+Motor Insurance Clause Example
+##############################
 
 ================================================================
 Entity Relations, Ontology Inference, and Predicate Logic Syntax
 ================================================================
 
-`Link to the case study 'Motor Insurance' example <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=2061671536>`_
+`See the L4 code for this 'Motor Insurance' example <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=2061671536>`_
 
 Entity Relations, Ontology Inference, and Convenient Syntax for Predicate Logic.
 

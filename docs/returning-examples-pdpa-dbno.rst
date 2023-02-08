@@ -1,12 +1,12 @@
-#################
-PDPA DBNO Example
-#################
+#################################
+Data Breach Notification Use Case
+#################################
 
 ============================
 Encoding of Real Legislation
 ============================
 
-`Link to the case study 'PDPA DBNO' example <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1779650637>`_
+`See the L4 code for this 'PDPA DBNO' example <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1779650637>`_
 
 L4 automatically generates a web app from real-world legislation & regulation. It is an encoding of a fragment of real-world legislation.
 

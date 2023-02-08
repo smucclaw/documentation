@@ -12,7 +12,7 @@ We will continue our examination of the PDPA DBNO case with a Boolean-Circuit re
 Revisiting Logic Circuits
 -------------------------
 
-We will then return to the `Rodents and Vermin <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1206725099>`_ example and introduce DMNs.
+We will then return to the `Home Insurance Clause <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1206725099>`_ example and introduce DMNs.
 
 ------------------------------------
 Revisiting Basic Syntax and Concepts

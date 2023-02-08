@@ -1,14 +1,14 @@
 .. _eg_mustsing:
 
-#################
-Must Sing Example
-#################
+######################
+Must Sing Rule Example
+######################
 
 ===========================
 Rules, Booleans, and Syntax
 ===========================
 
-`Link to 'Must Sing' example <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1505307398>`_
+`See the L4 code for this 'Must Sing' example <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1505307398>`_
 
 This example gives an overview of how to write a simple rule in L4 using the simple rule: "Every person who walks and eats or drinks must sing".
 

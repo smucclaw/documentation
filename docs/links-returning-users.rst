@@ -5,10 +5,12 @@
 ###############
 Returning Users
 ###############
+|
+|
 
 .. grid:: 3
 
-    .. grid-item-card:: Exercises
+    .. grid-item-card:: L4 in Practice
         :link: returning-exercises
         :link-type: doc
 
@@ -28,7 +30,7 @@ Returning Users
 
 .. grid:: 4
 
-    .. grid-item-card:: Law and Computer Science
+    .. grid-item-card:: Motivations: Law and Computer Science
         :link: links-law-and-computer-science
         :link-type: doc
 

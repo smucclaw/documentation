@@ -2,6 +2,31 @@
 Cheatsheet
 ==========
 
+* `Top Level`_
+* `Rules`_
+
+  * `Full Scenario Rule`_
+  * `Simple Scenario Rule`_
+  * `Regulative Rule`_
+  * `Constitutive Rule and Hornlike Rule`_
+  * `Compact Constitutives`_
+
+* `Labels and Names`_
+* `Constraints and 'Upon Trigger'`_
+* `Deontics`_
+* `Dictionaries and Key/Value expressions`_
+* `Single Term and MultiTerm`_
+* `Type Declaration and Variable Definition`_
+* `Booleans and BoolStructs`_
+* `Relational Predicate`_
+* `Value Term and Set Group`_
+* `Syntax Reference by Keyword`_
+
+  * `WHOSE`_
+  * `WHO`_
+  * `DEFINE`_
+  * `AS IN`_
+
 --------------------------
 Types of Expressions in L4
 --------------------------
@@ -14,12 +39,13 @@ Top Level
 
 .. code-block:: bnf
 
-    Toplevel::=	Regulative Rule			
-            |	Constitutive Rule			
+    Toplevel::=	Full Scenario Rule			
+            |	Simple Scenario Rule
+            |   Regulative Rule		
+            |	Constitutive Rule and Hornlike Rule			
             |	Type Declaration			
             |	Variable Definition			
-            |	Full Scenario Rule			
-            |	Simple Scenario Rule			
+		
 
 -----
 Rules

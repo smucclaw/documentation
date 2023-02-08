@@ -14,7 +14,7 @@ L4 Documentation
          :link: docs/links-first-steps
          :link-type: doc
 
-         Installing and Understanding L4
+         Start interacting with L4
 
       .. grid-item-card:: Returning Users
          :link: docs/links-returning-users
@@ -46,9 +46,10 @@ You can navigate this document by:
    :titlesonly:
    :hidden:
 
-   Section Directory <docs/links-first-steps.rst>
-   docs/quickstart-why-use-L4.rst
+   docs/links-first-steps.rst
    docs/quickstart-installation.rst
+   docs/quickstart-why-use-L4.rst
+   docs/returning-exercises.rst
 
 .. toctree::
    :maxdepth: 2
@@ -56,22 +57,26 @@ You can navigate this document by:
    :titlesonly:
    :hidden:
 
-   Section Directory <docs/links-returning-users.rst>
-   docs/returning-L4-and-law.rst
-   docs/returning-cheatsheet.rst
-   docs/returning-exporting-L4.rst
+   docs/links-returning-users.rst
    docs/returning-exercises.rst
+   docs/returning-cheatsheet.rst
    docs/returning-keywords.rst
+   docs/returning-L4-and-law.rst
+   docs/links-examples
+   Publications <https://cclaw.smu.edu.sg/projects-papers>
+   docs/returning-exporting-L4.rst
+
+
 
 .. toctree:: 
    :maxdepth: 1
-   :caption: Examples
+   :caption: L4 in Practice
    :titlesonly:
    :hidden:
 
-   Section Directory <docs/links-examples>
+   docs/links-examples
    docs/returning-examples-must-sing.rst
-   docs/returning-examples-rodents-vermin.rst
+   docs/returning-examples-home-insurance-clause.rst
    docs/returning-examples-pdpa-dbno.rst
    docs/returning-examples-motor-insurance.rst
    docs/returning-examples-contract-automaton.rst
@@ -82,7 +87,7 @@ You can navigate this document by:
    :titlesonly:
    :hidden:
 
-   Section Directory <docs/links-law-and-computer-science.rst>
+   docs/links-law-and-computer-science.rst
    docs/returning-law-logic-programming.rst
    docs/returning-flowchart.rst
    docs/returning-common-expressions.rst
@@ -90,16 +95,17 @@ You can navigate this document by:
 
 .. toctree::
    :maxdepth: 1
-   :caption: Setting up the L4 Backend
+   :caption: Advanced Users
    :titlesonly:
    :hidden:
 
-   Section Directory <docs/links-backend.rst>
+   docs/links-backend.rst
+   Backend Setup Instructions <docs/links-backend.rst>
    docs/advanced-explanations.rst
-   docs/advanced-security.rst
    docs/advanced-installation-webtool.rst
    docs/advanced-installation-googlesheets.rst
    docs/advanced-installation-L4spreadsheet.rst
+   docs/advanced-security.rst
 
 .. toctree:: 
    :maxdepth: 1
@@ -107,5 +113,6 @@ You can navigate this document by:
    :titlesonly:
    :hidden:
 
+   docs/about-and-contact.rst
    docs/early-beta.rst
    docs/acknowledgements.rst
