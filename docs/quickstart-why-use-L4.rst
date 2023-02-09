@@ -4,44 +4,53 @@
 Why use L4?
 ###########
 
-**L4 gives non-lawyers a "low-code" way to explore and produce legal "programs".**
+**The L4 DSL stack improves access to justice and reduces the cost of
+developing legal software by giving non-lawyers a "low-code" way to
+explore and produce legal "programs".**
 
 ----------------------------------------------------------
 L4 helps people **understand** complicated legal documents
 ----------------------------------------------------------
 
-To understand complicated **logic**  like *and, or, unless*: view the *decision diagram* to get the big picture. (See: :ref:`the 'must sing' example <eg_mustsing>`; or :ref:`the Rodent Insurance example <eg_rodent>`)
+L4’s **visualizers** graphically depict the rules and logic of legal code to aid comprehension. (See: :ref:`the 'must sing' example <eg_mustsing>` for ; or :ref:`the Rodent Insurance example <eg_rodent>`)
 
-To understand complicated **processes** like *deadlines and obligations*: view the *state diagram* to see how events change state over time, leading to new obligations for parties. Identify a goal and see what you need to do to achieve it.
+L4’s **scenario explorer** helps engineers and end-users explore a contract by asking “what if?” and “can I?”.
 
-To understand complicated **rule interactions** like *notwithstanding, subject to*: view the *meta-rule analysis* to see how rules interact.
+L4’s **explanation engine** offers justifications for verdicts calculated by L4, for transparency.
 
------------------------------------------------
-L4 helps end-users **explore** legal situations
------------------------------------------------
-
-You can ask *"why?"*: Interactively drill down into every decision. 
-
-You can ask *"how?"*: if you state a goal you want to achieve, L4 will outline a course of action.
+L4’s **planning engine** helps end-users achieve goals by asking “how to?”.
 
 --------------------------------------------------
 L4 helps legal engineers **draft** with confidence
 --------------------------------------------------
 
-L4 is a DSL: a **domain-specific language** designed for the legal domain. Some call it "low-code".
+L4 is a DSL: a "low-code" **domain-specific language** designed for the legal domain.
 
-The "formal methods" components of the L4 toolchain automatically analyzes your program for loopholes and inconsistencies.
+The L4 **ecosystem of tools, libraries, and sample code** helps legal
+engineers get productive quickly without reinventing the wheel.
 
-L4's unit test framework lets you set up test scenarios and monitor them as your contracts evolve.
+L4’s **drafting IDE** helps legal engineers draft and amend legal code
+with confidence, in a low-code programming environment, using
+techniques borrowed from programming language theory, compiler design,
+and formal methods.
 
-L4's library of components makes it easier to **draft legal templates and automatically produce legal documents** for signature.
+L4’s **ergonomic syntax** is designed to express patterns frequently
+found in legal writing using familiar keywords and a natural-language
+syntax.
 
-------------------------------------------------------
-L4 helps enterprises **manage** their contract library
-------------------------------------------------------
-Enterprise users can integrate L4 into their existing contract
-lifecycle management systems to support more sophisticated queries
-than their CLM databases allow.
+L4’s **app builder** automates the extraction of LegalTech apps
+without having to hire a team of developers for efficiency.
+
+L4’s **transpiler** exports to a variety of third-party tools and
+languages for interoperability.
+
+-----------------------------------------------------
+L4 helps large enterprises **manage** their contracts
+-----------------------------------------------------
+
+Enterprise users can integrate L4 into their existing **contract
+lifecycle management** systems to support more sophisticated "what
+if?" queries than their CLM databases allow.
 
 ----------------------------------------------------
 L4 helps governments **streamline** service delivery
@@ -52,21 +61,48 @@ for automating the generation of citizen-facing web applications and
 chatbots.
 
 --------------------
-L4 outputs a diagram
+Understanding Legal
 --------------------
 
-L4 generates convenient visualizations of the logic and the moving parts of your "legal program"
+L4 generates convenient visualizations of the logic and the moving parts of your "legal program".
 
-Specifying legislation in L4 gives you a diagram that allows you to get from a legal position A to legal position B at a glance.
+To understand complicated **logic** involving words like "and", "or", "unless": view the *circuit diagram* to see how yes/no verdicts depend on input facts.
+
+(todo: insert image showing the MUSTSING "qualifies" logic and the boolean circuit diagram)
+
+To understand complicated **processes** involving *deadlines and obligations*: view the *state diagram* to see how events change state over time, leading to new obligations for parties. Identify a goal and see what you need to do to achieve it.
 
 .. image:: ../images/L4-visualisation-screenshot.png
     :class: with-border
 
--------------------------------------
-L4 checks for loopholes and conflicts
--------------------------------------
+To understand complicated **rule interactions** like *notwithstanding, subject to*: view the *meta-rule analysis* to see how rules interact. (in development)
+
+----------------
+Explaining Legal
+----------------
+
+L4's answers are *explainable* and *transparent*.
+
+You can ask *"why?"*: Interactively drill down into every decision. 
+
+(TODO: show output of the Explainable monad)
+
+You can ask *"how?"*: if you state a goal you want to achieve, L4 will outline a course of action.
+
+(TODO: show output of planning engine showing how to traverse the state transition graph to achieve a particular goal.)
+
+--------------------
+A Compiler for Legal
+--------------------
 
 L4 sanity-checks your programs to detect internal conflicts and loopholes.
+
+The "formal methods" components of the L4 toolchain automatically analyzes your program for loopholes and inconsistencies.
+
+L4's unit test framework lets you set up test scenarios and monitor them as your contracts evolve.
+
+L4's library of components makes it easier to **draft legal templates and automatically produce legal documents** for signature.
+
 
 -----------------------
 L4 generates a web tool
