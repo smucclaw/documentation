@@ -60,6 +60,7 @@ Government agencies innovating with "Rules as Code" can use L4 basis
 for automating the generation of citizen-facing web applications and
 chatbots.
 
+=======================
 L4's Features in Detail
 =======================
 
@@ -73,7 +74,13 @@ L4 generates convenient visualizations of the logic and the moving parts of your
 
 To understand complicated **logic** involving words like "and", "or", "unless": view the *circuit diagram* to see how yes/no verdicts depend on input facts.
 
-(todo: insert image showing the MUSTSING "qualifies" logic and the boolean circuit diagram)
+.. image:: ../images/qualifies-logic.png
+    :class: with-border
+    :width: 325px
+
+.. image:: ../images/qualifies-boolean-circuit.png
+    :class: with border
+    :width: 325px
 
 To understand complicated **processes** involving *deadlines and obligations*: view the *state diagram* to see how events change state over time, leading to new obligations for parties. Identify a goal and see what you need to do to achieve it.
 
@@ -151,6 +158,7 @@ The L4 package library (currently in development) contains useful components suc
 - Insurance Policies (knows about risks, coverage, and supplementary add-ons)
 - Legislation and Regulation (knows about permitting and compliance)
 
+-----------------------------
 L4 supports Document Assembly
 -----------------------------
 
@@ -166,85 +174,127 @@ compatibility with contract lifecycle management tools.
 
 The L4 package library will soon contain loan agreements, leasing agreements, and investment agreements.
 
+===================
 The Semantics of L4
 ===================
 
 This section outlines the semantic domains that support L4's expressivity and generality.
 
+-------------
 Boolean Logic
 -------------
-:keywords:`AND OR NOT UNLESS IF THEN ELSE`
 
+:keyword:`AND OR NOT UNLESS IF THEN ELSE`
+
+-----------------
 First-Order Logic
 -----------------
-:keywords:`IS`
 
+:keyword:`IS`
+
+----------
 Arithmetic
 ----------
-:keywords:`plus minus times divide abs min max <= < > >=`
 
+:keyword:`plus minus times divide abs min max <= < > >=`
+
+-------------------------------------
 Object-Oriented Classes and Instances
 -------------------------------------
-:keywords:`ontology`
 
+:keyword:`ontology`
+
+---------------------------
 Type Checking and Inference
 ---------------------------
-:keywords:`type annotations are optional`
 
+:keyword:`type annotations are optional`
+
+----------------
 Regulative Rules
 ----------------
-:keywords:`PARTY X … MUST DO … Y`
-obligations and communications between parties are represented as state transition systems
 
+:keyword:`PARTY X … MUST DO … Y`
+
+Obligations and communications between parties are represented as state transition systems
+
+------------------
 Constitutive Rules
 ------------------
-:keywords:`DECIDE X … WHEN Y`
 
+:keyword:`DECIDE X … WHEN Y`
+
+----------------
 Qualifying Rules
 ----------------
-:keywords:`EVERY X … MUST BE … Y`
 
+:keyword:`EVERY X … MUST BE … Y`
+
+--------------
 Deontic Modals
 --------------
-:keywords:`MUST MAY SHANT DO`
-the language of permission and obligation
 
+:keyword:`MUST MAY SHANT DO`
+
+The language of permission and obligation
+
+---------------
 Temporal Modals
 ---------------
-:keywords:`BEFORE AFTER BY WITHIN UNTIL`
-time is of the essence
 
+:keyword:`BEFORE AFTER BY WITHIN UNTIL`
+
+"Time is of the essence"
+
+---------------------
 Relational Predicates
 ---------------------
-:keywords:`IS NOT`
-one thing stands in a certain relation to another
 
+:keyword:`IS NOT`
+
+One thing stands in a certain relation to another
+
+-------------
 Default Logic
 -------------
-:keywords:`WHEN OTHERWISE`
-exceptions and defaults
 
+:keyword:`WHEN OTHERWISE`
+
+Exceptions and defaults
+
+----------------
 Defeasible Logic
 ----------------
-:keywords:`NOTWITHSTANDING, SUBJECT TO`
-meta-rule relations
 
+:keyword:`NOTWITHSTANDING, SUBJECT TO`
+
+Meta-rule relations
+
+---------------
 Lambda Calculus
 ---------------
-:keywords:`GIVEN LET DEFINE`
 
+:keyword:`GIVEN LET DEFINE`
+
+------------
 Unit Testing
 ------------
-:keywords:`SCENARIO GIVEN EXPECT`
+
+:keyword:`SCENARIO GIVEN EXPECT`
+
 Partial Evaluation reduces a ruleset to a residual.
+
 
 Formal Methods
 --------------
-:keywords:`ASSERT TRACE`
+:keyword:`ASSERT TRACE`
+
 Find loopholes and mistakes in the code
 
+---------------------------
 Natural Language Generation
 ---------------------------
-supports the translation of code into multiple natural languages to support interfaces
+
+Supports the translation of code into multiple natural languages to support interfaces
 
 
