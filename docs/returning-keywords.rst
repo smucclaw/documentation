@@ -1,32 +1,31 @@
 .. _keywords:
 
-######################
-Language Specification
-######################
+###################
+Language Quickstart
+###################
 
 
-How to think about legal wtih L4
+How to think about legal with L4
 ================================
 
-L4 offers a method for formalizing legal concepts into logic borrowed from computer science.
+L4 helps people express the underlying logic of legal rules.
 
-The essence of the method is to simplify the complicated, without losing accuracy.
+The big idea is to simplify the complicated, without losing accuracy.
 
-Simplification means breaking things down to their elements, and then building them back up in a structured way.
+L4 organizes around elementary patterns:
 
-L4 breaks legal writing down to the following elementary patterns:
+* Decisions
+* Deontics and Deadlines
+* Definitions
 
-Decisions.
+These are the essentials. We compose them to form clauses and
+contracts, rules and regulations. When reading a legal text, it is
+important to learn to recognize these bones under the skin.
 
-Deontics.
+There are a few other supporting elements. We will come to those later.
 
-Definitions.
-
-These are the essentials. We compose them to form rules; clauses; entire contracts; regulations; legislation.
-
-There are a few other elements, which arise less frequently. We will come to those later.
-
-Let's start with decisions.
+Decisions
+---------
 
 All rules involve decisions in some way.
 
@@ -34,28 +33,43 @@ One rule decides that a person is allowed to buy alcohol if they are
 of age.
 
 Another rule decides that an insurance policy should pay out if a
-covered risk is claimed.
+claimed risk is covered.
 
-Another decides that a plan to build a house with a six-meter roof is
+Another decides that a plan to build a house with six storeys is
 not permissible.
 
-Decisions are central to **constitutive rules**. A rule is a
-*constitutive* rule if it determines that a thing counts as a special
-thing. Constitutive rules create *institutional facts*.
+.. code-block:: l4
 
-A student is a prefect if she has been appointed as one by the
-principal. A person counts as married if they have signed their name
-to a particular document before a particular person. A car is eligible
-for an electric-vehicle rebate if it is of a certain make and model. A
-person is eligible to buy alcohol if they have been born before a
-certain date. A snack is Kosher for Passover if it was made without
-certain ingredients.
+   EVERY Person WHOSE age >= 21 MAY Buy Alcohol
+   GIVEN Risk PARTY Insurer MUST Pay WHEN Risk IS Covered
+   GIVEN HousePlan DECIDE NOT Permitted WHEN Storeys >= 3
+
+Decisions are central to **constitutive rules**. According to John
+Searle, a rule is a *constitutive* rule if, in some context `C`, it
+decides that some thing `X` counts as a special thing `Y`. (See what I
+did there?) Constitutive rules create *institutional facts*.
+
+A decision can be as simple as first establishing whether a rule
+applies at all, and who it applies to.
+
+A student is a prefect if she has been so appointed by the principal.
+A car is eligible for an electric-vehicle rebate if it is of a certain
+make and model. A person counts as married if they have signed their
+name to a particular document before a particular person (well, two
+particular persons).
+
+Context matters. In one jurisdiction, a 20-year-old might be allowed
+to buy alcohol, but not in another. A student changing schools might
+have been a prefect in their old school, but they aren't automatically
+a prefect in their new school.
 
 A qualification rule is a special case of a constitutive rule. It
-requires that every thing within a certain scope must be a certain
-way: for example, a building regulation may require that every
-emergency exit door must open outwards. Every swimming pool must be
-fenced and gated. Every car must be equipped with seatbelts.
+requires that *every* thing that meets certain criteria must also meet
+other additional criteria: for example, a building regulation may
+require that every door that is an emergency exit must be openable
+outwards. Every swimming pool that is outdoors and in the ground must
+be fenced and gated. Every car that is sold after a certain year must
+meet a certain fuel economy standard.
 
 Decisions often involve *defaults*. Legal writing tends to go from
 general to specific: the default cases is stated first, followed by
@@ -63,7 +77,98 @@ exceptions. Software programs tend to go the other way: exceptional
 cases are written first, followed by the default case. The pattern is
 essentially the same, just mirrored.
 
-*Deontics* refer to rules that impose obligations (or grant permissions) on certain parties.
+Deontics
+--------
+
+Deontics come in three flavours: obligation, permission, and prohibition.
+
+Alice *must* do something, perform some action: obligation.
+
+Bob *may* do something: permission.
+
+Carol *mustn't* do something: prohibition.
+
+.. code-block:: l4
+
+   PARTY Alice MUST  DO some action
+   PARTY Bob   MAY   DO some action HENCE PARTY Barb MUST respond
+   PARTY Carol SHANT DO some action   
+
+Permission and prohibition can be defined in terms of obligation.
+
+How do we redefine prohibition in terms of obligation? By saying that
+one is obligated to *not* do the prohibited thing.
+
+Permission can also be re-phrased in terms of obligation. A legal text
+could state that Party A `MAY` perform some action; and if they do,
+Party B `MUST` respond in some way. Often this implies that if the
+text did not make that statement, then, by default, Party A `SHANT`
+perform that action -- or, by default, Party B `MAY` choose not to
+respond.
+
+*Deontics* are central to regulative rules, also called prescriptive
+rules.
+
+Regulative rules only apply to legal actors -- parties to a contract,
+or persons under the law -- individuals and corporations.
+
+Constitutive vs Prescriptive Rules
+----------------------------------
+
+A regulative rule says that a *person* **must do**.
+
+A constitutive rule says that a *thing* **must be**.
+
+This is clear when we talk about inanimate objects or actions.
+
+* To be a sandwich, a food item must be a filling surrounded on both sides by bread.
+* To be champagne, a wine must be from one of five special viticultural districts in France; otherwise, it's just sparkling wine.
+* To be accepted by the court, a document must be formatted in a certain way.
+
+Confusion sometimes arises when the subject of a constitutive rule is a person.
+
+To buy alcohol, a person must be 21 years of age.
+
+To practise law, a person must be called to the bar.
+
+To log in, a person must be in possession of a 2FA authenticator device.
+
+The confusion arises because achieving validity usually requires the
+person to take some action first. To be called to the bar, a person
+has to do quite a few things first. But to arrive at 21 years of age,
+a person just has to hang in there.
+
+Sometimes a "must be" statement is really an indirect version of a
+"must do" statement, because there's a "by" involved.
+*Taxes must be filed by employed individuals* is really
+*Employed individuals must do their taxes.*
+
+We might call those statements "deontics in disguise" -- if you have
+ever been exhorted against the use of the passive voice, this is
+partly what they were getting at.
+
+Other statements really do lie at the border of constitutive and
+regulative rules, and need to be unpacked.
+
+"Road tax must be paid by the owner of a vehicle" sounds like a
+regulative rule, but it actually unpacks to a constitutive and a
+regulative.
+
+Why? Because in an uncommon case, a vehicle owner could counter: "oh,
+I don't drive that car, I'm keeping it in storage until I can sell it
+to a museum. So I don't have to pay road tax."
+
+So the rule is really two rules:
+
+* For a vehicle to be legally operable on a public road, a valid
+  registration must be in force for that vehicle. (Constitutive)
+* To obtain a valid registration, the owner of the vehicle must pay
+  the appropriate fees. (Regulative)
+
+This gets into *scope goals*. We'll return to that later.
+
+Definitions
+-----------
 
 *Definitions* bind names to things. In laws and contracts we are used
 to seeing defined terms; these are analogous to *variables* in
