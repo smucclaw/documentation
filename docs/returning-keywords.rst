@@ -24,6 +24,16 @@ important to learn to recognize these bones under the skin.
 
 There are a few other supporting elements. We will come to those later.
 
+Disclaimer
+----------
+
+**If you are a law student, or a lawyer, or some other member of the legal profession**:
+Nothing in this document is more authoritative than what you learned in school and in practice.
+School and practice prepare you to work with law *as it currently exists today*.
+L4 paints a picture of law as it *could* exist in the future.
+As for whether the law *should* take this form, that is something we can discuss at the end of the tutorial.
+
+
 Decisions
 ---------
 

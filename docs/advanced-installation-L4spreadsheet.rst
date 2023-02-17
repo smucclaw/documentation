@@ -74,7 +74,7 @@ The vue system is given those paths in ``$V8K_WORKDIR/vue-xx/vue.config.js``:
 .. code-block:: 
 
     ┌─[20221102-23:34:05]   [mengwong@cclaw:~/wow/much/vue-04]
-    └─[0] <git:(main 89d183a✱✈) > grep -1 letsencrypt vue.config.js
+    └─[0] <git:(main 89d183a) > grep -1 letsencrypt vue.config.js
         https: {
         key:  fs.readFileSync('/etc/letsencrypt/live/cclaw.legalese.com/privkey.pem'),
         cert: fs.readFileSync('/etc/letsencrypt/live/cclaw.legalese.com/cert.pem')
