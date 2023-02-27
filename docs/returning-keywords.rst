@@ -124,7 +124,7 @@ Simply: permission to do something means there is no obligation to not do it.
 More complexly: A legal text could state that Party A `MAY` perform
 some action; and if they do, Party B `MUST` respond in some way. Often
 this implies that if the text did not explicitly give Party A the
-`MAY`, then the obligation would by default have existed on Party B.
+`MAY`, then the obligation would not have existed on Party B.
 
 *Deontics* are central to regulative rules, also called prescriptive
 rules.
