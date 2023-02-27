@@ -104,17 +104,27 @@ Carol *mustn't* do something: prohibition.
    PARTY Bob   MAY   DO some action HENCE PARTY Barb MUST respond
    PARTY Carol SHANT DO some action   
 
-Permission and prohibition can be defined in terms of obligation.
+Permission and prohibition can, `traditionally <https://plato.stanford.edu/entries/logic-deontic/#TradScheModaAnal>`_, be defined in terms of obligation.
 
 How do we redefine prohibition in terms of obligation? By saying that
 one is obligated to *not* do the prohibited thing.
 
-Permission can also be re-phrased in terms of obligation. A legal text
-could state that Party A `MAY` perform some action; and if they do,
-Party B `MUST` respond in some way. Often this implies that if the
-text did not make that statement, then, by default, Party A `SHANT`
-perform that action -- or, by default, Party B `MAY` choose not to
-respond.
+.. math::
+
+    Shant(act) \Rightarrow Must (\lnot act)
+
+Permission can also be re-phrased in terms of obligation.
+
+Simply: permission to do something means there is no obligation to not do it.
+
+.. math::
+
+    May(act) \Rightarrow \lnot Must (\lnot act)
+
+More complexly: A legal text could state that Party A `MAY` perform
+some action; and if they do, Party B `MUST` respond in some way. Often
+this implies that if the text did not explicitly give Party A the
+`MAY`, then the obligation would by default have existed on Party B.
 
 *Deontics* are central to regulative rules, also called prescriptive
 rules.
@@ -244,6 +254,208 @@ For example:
 						[ ... ]														
 
 Variable definitions with the DEFINE keyword follow the same format as DECLARE.
+
+In Detail
+^^^^^^^^^
+
+The syntax for DEFINEs and DECLAREs contains a counterintuitive detail.
+
+A DECLARE rule begins with the name of the type, then the optional supertype.
+It goes on to give the names of the attribute fields, then their types.
+So far, this ordering is consistent with most other OOPy languages.
+
+For instance, here's how we say it in Typescript:
+
+.. code-block:: typescript
+
+    class Money {
+      amount   : Integer;
+      currency : Currency;
+    }
+
+You might object: "why /class/ and not /interface/?" Fair enough; you can think of it as an interface too.
+
+We would say it in much the same way in L4:
+
+.. code-block:: l4
+
+    DECLARE Money
+    HAS amount    IS AN Integer
+        currency  IS A  Currency
+
+No surprises so far.
+
+In Typescript, we would instantiate a variable into the class:
+
+.. code-block:: typescript
+
+    let price : Money = {
+      amount   : 100,
+      currency : usd
+    }
+
+In Typescript, as in Javascript, JSON, Python, etc, the name of the attribute is followed by the value. Every language with records does it this way.
+
+In L4, attribute values come first, and are followed by the names!
+
+A DEFINE rule gives the name of the variable, then the type.
+The attributes then give the value of the variable, then the name.
+
+.. code-block:: l4
+
+    DEFINE price IS A Money
+    HAS 100      IS THE amount
+        USD      IS THE currency
+
+This probably feels backward to what you are used to.
+
+There is a good reason for this: conceptually, the specialization/subtyping "hierarchy" goes something like
+superclass -> subclass -> instance record -> attribute name -> attribute value.
+
+Arguably, if the type of ~amount~ is ~Integer~, then the "type" of 100 is ~amount~.
+
+Internal dev note: In practice, this means the Interpreter,
+PrettyPrinter, and transpilers need be careful about destructuring
+TypeSigs, because your instincts may not serve you in L4.
+
+Second issue: records can continue to nest.
+
+.. code-block:: l4
+
+    DECLARE Money
+    HAS amount    IS AN Integer
+        currency  IS A  Currency
+        HAS       unitName     IS A String
+                  subUnitName  IS A String
+                  subUnitScale IS AN Integer
+                  region       IS A String
+
+This desugars to:
+
+.. code-block:: l4
+
+    DECLARE Money
+    HAS amount    IS AN Integer
+        currency  IS A  Currency
+
+    DECLARE Currency
+    HAS unitName     IS A String
+        subUnitName  IS A String
+        subUnitScale IS AN Integer
+        region       IS A String
+
+In technical terms, we might say we have hoisted `Currency` to the top level.
+
+Following the pattern of the original nesting, one might `DEFINE` like so:
+
+.. code-block:: l4
+
+    DEFINE price IS A Money
+    HAS 100      IS THE amount
+        tnd      IS A   currency
+        HAS dinar   IS THE unitName
+            millime IS THE subUnitName
+            1000    IS THE subUnitScale
+            Tunisia IS THE region
+
+This is the philosophy of "inline-ism" at work: we are encountering
+the Tunisian dinar for the first time in this rule, and so we define
+it as we go. This is a natural reading.
+
+And, as with the `DECLARE`, we hoist it to the top:
+
+Nesting, by the way, goes to the right, immediately below.
+
+A more formalist style might insist on writing these things separately:
+
+.. code-block:: l4
+
+    DEFINE price IS A Money
+    HAS 100      IS THE amount
+        tnd      IS THE Currency
+
+    DEFINE tnd  IS A Currency
+    HAS dinar   IS THE unitName
+        millime IS THE subUnitName
+        1000    IS THE subUnitScale
+        Tunisia IS THE region
+
+Hoisting the `tnd` to the top-level makes sense. As globals go,
+currencies are long-lived enough to stay stable over the course of a
+particular L4 specification.
+
+Indeed, the L4 compiler does desugar nested definitions that are
+phrased in the above form.
+
+Now we know a top-level global value: `tnd`, which we can reuse later.
+
+But what about nesting sub-records that are not to be hoisted?
+
+Suppose we have a line type:
+
+.. code-block:: l4
+
+    DECLARE line
+    HAS start IS A Point
+        HAS x IS A Number
+            y IS A Number
+	end   IS A Point
+        color IS A String
+
+From this `DECLARE`, we hoist `Point` to top-level:
+	
+.. code-block:: l4
+
+    DECLARE line
+    HAS start IS A Point
+	end   IS A Point
+        color IS A String
+
+    DECLARE Point
+    HAS x IS A Number
+        y IS A Number
+
+But in the `DEFINE`,
+
+.. code-block:: l4
+
+    DEFINE myFirstLine
+    HAS p1    IS THE start
+        HAS 1 IS THE x
+	    2 IS THE y
+        p2    IS THE end
+	HAS 5 IS THE x
+	    6 IS THE y
+	green IS THE color
+
+We don't want to hoist `p1` and `p2`, the `start` and the `end`, to top-level; that would make no sense.
+
+(Green doesn't get hoisted because `green` it has no sub-attributes.)
+
+Solution: leave the `start` and `end` fields unnamed. We remove the `p1` and `p2` bindings:
+
+.. code-block:: l4
+
+    DEFINE myFirstLine
+    HAS start
+        HAS 1 IS THE x
+	    2 IS THE y
+        end
+	HAS 5 IS THE x
+	    6 IS THE y
+        green IS THE color
+
+So the rules are these:
+
+* DECLARE rules can use as many nested `HAS` as desired. In desugaring, declared attribute fields that have nested sub-attributes are hoisted to top-level. The standard syntax is `HAS fieldname IS A Type`.
+
+* DEFINE rules follow the same nested `HAS` structure as their original `DECLARE`s.
+
+* If a HAS attribute does not have further HAS children beneath it, is always formatted as `HAS label IS THE fieldname`.
+
+* If a HAS attribute does have further HAS children nested within it, and it is given simply as `HAS fieldname`, it is not hoisted; this is usually what you want.
+
+* If a HAS attribute does have further HAS children nested within it, and it is given as `HAS label IS A fieldname`, then `label` is hoisted to top level.
 
 ---------------------------------------------------------
 BY and WITHIN for Temporal Constraints such as Deadlines
