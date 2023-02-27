@@ -34,9 +34,8 @@ with confidence, in a low-code programming environment, using
 techniques borrowed from programming language theory, compiler design,
 and formal methods.
 
-L4’s **ergonomic syntax** is designed to express patterns frequently
-found in legal writing using familiar keywords and a natural-language
-syntax.
+L4’s **ergonomic syntax**
+is expressive enough to encode any contract and legislation using familiar keywords and a natural-language syntax
 
 L4’s **app builder** automates the extraction of LegalTech apps
 without having to hire a team of developers for efficiency.
