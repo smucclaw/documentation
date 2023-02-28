@@ -16,13 +16,14 @@ L4 organizes around elementary patterns:
 
 * Decisions
 * Deontics and Deadlines
-* Definitions
+* Definitions and Declarations
 
 These are the essentials. We compose them to form clauses and
 contracts, rules and regulations. When reading a legal text, it is
 important to learn to recognize these bones under the skin.
 
-There are a few other supporting elements. We will come to those later.
+There are a few other supporting elements. We will come to those
+later. But first, another "D":
 
 Disclaimer
 ----------
@@ -132,8 +133,26 @@ rules.
 Regulative rules only apply to legal actors -- parties to a contract,
 or persons under the law -- individuals and corporations.
 
-Constitutive vs Prescriptive Rules
-----------------------------------
+Deadlines
+---------
+
+An obligation is nothing without a deadline: things have to happen by a certain time, else do they really have to happen at all?
+
+L4's temporal keywords help define deadlines for regulative rules:
+
+.. code-block:: bnf
+
+    Temporal Constraint ::= (BEFORE | AFTER | BY | WITHIN | UNTIL) Temporal Spec				
+
+A regulative rule without a temporal constraint is incomplete. L4 substitutes "EVENTUALLY" but will issue a warning so you are conscious that a deadline is missing.
+
+
+Review: Constitutive vs Prescriptive Rules
+------------------------------------------
+
+Before we get into definitions and declarations, a quick recap of what
+we've discussed so far, from a slightly different angle. Let's go over
+the two basic types of rules.
 
 A regulative rule says that a *person* **must do**.
 
@@ -170,20 +189,46 @@ partly what they were getting at.
 Other statements really do lie at the border of constitutive and
 regulative rules, and need to be unpacked.
 
+Qualifying Rules
+^^^^^^^^^^^^^^^^
+
 "Road tax must be paid by the owner of a vehicle" sounds like a
-regulative rule, but it actually unpacks to a constitutive and a
-regulative.
+regulative rule, but it actually unpacks to three rules: a constitutive, a
+regulative, and a *qualifying* rule.
 
 Why? Because in an uncommon case, a vehicle owner could counter: "oh,
 I don't drive that car, I'm keeping it in storage until I can sell it
 to a museum. So I don't have to pay road tax."
 
-So the rule is really two rules:
+So the rule is really three rules:
 
-* For a vehicle to be legally operable on a public road, a valid
-  registration must be in force for that vehicle. (Constitutive)
+* Every vehicle that legally operates on a public road must be
+  validly registered. (Qualifying Rule)
+
+* To be valid, a registration must be paid up for the current year.
+  (Constitutive)
+
 * To obtain a valid registration, the owner of the vehicle must pay
   the appropriate fees. (Regulative)
+
+Qualifying rules and constitutive rules are similar.
+
+Constitutive rules state that an X counts as a Y when it meets certain
+criteria. Very often, the Y is simply that it is a *valid* X in some
+way.
+
+Qualifying rules state that *every* X must be a Y.
+
+Or else what?
+^^^^^^^^^^^^^
+
+Regulative rules often carry an implicit "or what?"
+
+If we say: "you must move your car by 8am" the "or what" is: "or it
+may get towed, and you will have to pay a fine."
+
+You could ask "or what" again: "and if you don't pay the fine, you may
+never get your car back."
 
 This gets into *scope goals*. We'll return to that later.
 
@@ -269,7 +314,7 @@ For instance, here's how we say it in Typescript:
 .. code-block:: typescript
 
     class Money {
-      amount   : Integer;
+      amount   : number;
       currency : Currency;
     }
 
@@ -280,8 +325,8 @@ We would say it in much the same way in L4:
 .. code-block:: l4
 
     DECLARE Money
-    HAS amount    IS AN Integer
-        currency  IS A  Currency
+    HAS amount    IS A Number
+        currency  IS A Currency
 
 No surprises so far.
 
@@ -294,7 +339,7 @@ In Typescript, we would instantiate a variable into the class:
       currency : usd
     }
 
-In Typescript, as in Javascript, JSON, Python, etc, the name of the attribute is followed by the value. Every language with records does it this way.
+In Typescript, as in Javascript, JSON, Python, etc, the name of the attribute is followed by the value. Every language with records or dictionaries does it this way.
 
 In L4, attribute values come first, and are followed by the names!
 
@@ -323,8 +368,8 @@ Second issue: records can continue to nest.
 .. code-block:: l4
 
     DECLARE Money
-    HAS amount    IS AN Integer
-        currency  IS A  Currency
+    HAS amount    IS A Number
+        currency  IS A Currency
         HAS       unitName     IS A String
                   subUnitName  IS A String
                   subUnitScale IS AN Integer
@@ -335,8 +380,8 @@ This desugars to:
 .. code-block:: l4
 
     DECLARE Money
-    HAS amount    IS AN Integer
-        currency  IS A  Currency
+    HAS amount    IS A Number
+        currency  IS A Currency
 
     DECLARE Currency
     HAS unitName     IS A String
@@ -457,17 +502,30 @@ So the rules are these:
 
 * If a HAS attribute does have further HAS children nested within it, and it is given as `HAS label IS A fieldname`, then `label` is hoisted to top level.
 
----------------------------------------------------------
-BY and WITHIN for Temporal Constraints such as Deadlines
----------------------------------------------------------
 
-The BY and WITHIN keywords set deadlines
+Further Syntactic Sugar
+^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: bnf
+In a future version of the language we will support this as well.
 
-    Temporal Constraint ::= (BEFORE | AFTER | BY | WITHIN | UNTIL) Temporal Spec				
+.. code-block:: l4
 
-A regulative rule without a temporal constraint is incomplete. L4 substitutes "EVENTUALLY" but will issue a warning so you are conscious that a deadline is missing.
+    DEFINE myFirstLine
+    HAS start x 1 y 2
+        end   x 5 y 6
+        color green
+
+We might entertain a RelationalPredicate form where instead of saying `IS A`
+we say `IS`: 
+	
+.. code-block:: l4
+
+    DEFINE myFirstLine
+    HAS start x IS 1
+	      y IS 2
+        end   x IS 5
+              y IS 6
+        color   IS green
 
 ----------------------------------------------------
 MUST, SHANT, and MAY for obligations and permissions
