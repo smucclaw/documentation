@@ -29,17 +29,13 @@ This section is aimed at a **full-stack developer, web application architect, or
 - Unix and Linux
 - HTML, CSS, and Javascript
 - Python for server-side programming
-- RESTful APIs [#f1]_ for web applications
+- RESTful APIs for web applications
 - Git and Github for source-code distribution and version control
 - Amazon Web Services EC2 (Elastic Compute Cloud)
 - HTTP, HTTPS, and SSL certificates
 
 A developer experienced with single-page apps should recognize the general architecture of the Web Tool. The Web Tool and the L4 backend which supports it are built using the following technologies:
 
-- the Vue 3 framework for Javascript (a framework similar to React)
+- the Vue 3 framework for Javascript
 - the Purescript language (used for web development)
 - the Haskell language (used for the interpreter)
-
-.. rubric:: Footnotes
-
-.. [#f1] https://www.redhat.com/en/topics/api/what-is-a-rest-api
