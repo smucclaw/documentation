@@ -11,8 +11,9 @@ The updates are provided by the L4 backend. A copy of the L4 backend was run on 
 The first link in the sidebar goes to the Web Tool. It is possible for the legal engineer, taking on the role of the end-user, to experiment with clicking on various inputs to the decision logic, to see what the result becomes. The primary question answered by the tool is “must I notify the PDPC and affected users?”
 
 The gsheet/pyrest/hello.py script, called in this document hello.py, serves the Python REST API. It:
+
 - passes the input CSV to the L4 interpreter natural4-exe (step 11)
-which generates static output files;
+  which generates static output files;
 - triggers the v8k helper script to reconfigure or relaunch the Web Tool (step 53);
 - returns URLs for the static output files to the REST client Code.gs (step 61); and
 - serves static output files to populate the Google Sheets sidebar (step 11 return)
