@@ -19,13 +19,20 @@ sys.path.insert(0, os.path.abspath(".."))
 
 extensions = [
     'sphinx_design' ,
-    'sphinxawesome_theme'
+    'sphinxawesome_theme',
+    'sphinxcontrib.inkscapeconverter'
 ]
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.venv', 'sphinxawesome_theme']
 
-latex_elements = {'preamble': r'\usepackage{pmboxdraw}'}
+latex_elements = {
+        'extrapackages': r'\usepackage{pmboxdraw}',
+        # Enable these for ipad pdf
+        #'sphinxsetup': 'hmargin=0.1in,vmargin=0.1in',
+        #'papersize': 'a5paper',
+        }
+latex_engine = "xelatex"
 
 
 # -- Options for HTML output -------------------------------------------------
