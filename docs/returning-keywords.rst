@@ -357,7 +357,7 @@ This probably feels backward to what you are used to.
 There is a good reason for this: conceptually, the specialization/subtyping "hierarchy" goes something like
 superclass -> subclass -> instance record -> attribute name -> attribute value.
 
-Arguably, if the type of ~amount~ is ~Integer~, then the "type" of 100 is ~amount~.
+Arguably, if the type of ``amount`` is ``Integer``, then the "type" of ``100`` is ``amount``.
 
 Internal dev note: In practice, this means the Interpreter,
 PrettyPrinter, and transpilers need be careful about destructuring
