@@ -3,3 +3,5 @@ theme-src/
 
 .vscode
 .venv
+
+sphinxawesome_theme/__pycache__

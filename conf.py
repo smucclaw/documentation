@@ -31,7 +31,8 @@ latex_elements = {
         # Enable these for ipad pdf
         #'sphinxsetup': 'hmargin=0.1in,vmargin=0.1in',
         #'papersize': 'a5paper',
-        }
+        #'pointsize': '12pt',
+}
 latex_engine = "xelatex"
 
 
