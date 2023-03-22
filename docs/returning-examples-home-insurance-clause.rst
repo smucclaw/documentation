@@ -22,12 +22,12 @@ Concepts introduced:
 
 Keywords introduced:
 
-   - DECIDE
-   - WHEN
-   - UNLESS
-   - AND
-   - OR
-   - NOT
+- ``DECIDE``
+- ``WHEN``
+- ``UNLESS``
+- ``AND``
+- ``OR``
+- ``NOT``
 
 ~~~~~~~~~
 Decisions
@@ -45,21 +45,21 @@ If you happen to know Prolog, you will be familiar with the notion of a Horn cla
 
 ``head(param1, param2, …) :- body1(param3, param4), body2(param5, param6).``
 
-The head, to the left of the :- symbol, is the conclusion of the rule.
+The head, to the left of the ``:-`` symbol, is the conclusion of the rule.
 
-The body, to the right of the :- symbol, contains the list of predicates that, when satisfied, conclude that the head of the rule is true.
+The body, to the right of the ``:-`` symbol, contains the list of predicates that, when satisfied, conclude that the head of the rule is true.
 
-In L4, the relational predicate on the DECIDE line gives the conclusion of the rule.
+In L4, the relational predicate on the ``DECIDE`` line gives the conclusion of the rule.
 
-The Boolean Structure introduced by the WHEN keyword gives the conditions of the rule.
+The Boolean Structure introduced by the ``WHEN`` keyword gives the conditions of the rule.
 
-The keywords WHEN and IF are synonymous in a DECIDE context.
+The keywords ``WHEN`` and ``IF`` are synonymous in a ``DECIDE`` context.
 
-The GIVEN keyword provides other arguments to the decision rule, and is conjoined with the WHEN | IF material.
+The ``GIVEN`` keyword provides other arguments to the decision rule, and is conjoined with the ``WHEN | IF`` material.
 
-The expression context of the GIVEN and WHEN | IF includes the history available to the calling context. For example, if the decision is being evaluated for the purposes of executing a certain regulative rule, the trace prior to that state transition is available to the DECIDE rule.
+The expression context of the ``GIVEN`` and ``WHEN | IF`` includes the history available to the calling context. For example, if the decision is being evaluated for the purposes of executing a certain regulative rule, the trace prior to that state transition is available to the DECIDE rule.
 
-Constitutive rules using WHEN are a subset of Hornlike rules that use DECIDE.
+Constitutive rules using ``WHEN`` are a subset of Hornlike rules that use ``DECIDE``.
 
 ~~~~~~~~~~~~~~~~~
 Decision Diagrams
