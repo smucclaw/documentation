@@ -8,22 +8,91 @@ Language Quickstart
 How to think about legal with L4
 ================================
 
-L4 helps people express the underlying logic of legal rules.
+In the world of L4, almost all legal writing can be reduced to
+**decisions**, **duties**, and **definitions**.
+  
+L4 helps non-lawyers and computers understand contracts and laws by
+breaking complicated legal writing down into the above elementary
+*patterns*, written in a standard *rule* format. Well-formed rules are
+processed by computer and form the basis for further useful activity.
 
-The big idea is to simplify the complicated, without losing accuracy.
+The L4 method is suitable for laws and regulations running for
+hundreds of pages -- and for simple contracts that can be summed up in
+a single paragraph.
 
-L4 organizes around elementary patterns:
+Let's start with a simple example, in which Bob buys a beer from
+Alice. There is a legal minumum age for alcohol purchases. Alice
+expects to be paid within 30 days.
 
-* Decisions
-* Deontics and Deadlines
-* Definitions and Declarations
+How might we analyze such a transaction and express it in L4? We can
+break it down by decision, duty, and definition elements.
 
-These are the essentials. We compose them to form clauses and
+.. list-table::
+   :header-rows: 0
+
+   * - :ref:`Decision<Decisions lie at the heart of Constitutive Rules>`
+     - Give a yes-or-no answer to a question involving one or more factors.
+
+       | ``DECIDE alcohol purchase IS valid WHEN Buyer age >= 21``
+       | ``DECIDE alcohol purchase INCLUDES beer purchase``
+   * - :ref:`Duty<Deontic Duties lie at the heart of Regulative Rules>`
+     - Draw up the rights and obligations of parties, with deadlines.
+
+       | ``PARTY Buyer MUST pay Seller BEFORE 30 days``
+   * - :ref:`Definition<Definitions are concrete>`
+     - Set out the specifics of a particular case.
+
+       | ``DEFINE Buyer      IS A Natural Person``
+       | ``HAS    Bob        IS THE Name``
+       | ``"     1970-01-01  IS THE Birthdate``
+       | ``DEFINE Seller IS A Natural Person``
+       | ``HAS    Alice  IS THE Name``
+
+(Too bad the name `"D" was already taken <https://en.wikipedia.org/wiki/D_(programming_language)>`_. :-)
+
+These are the essentials of L4. We compose them to form clauses and
 contracts, rules and regulations. When reading a legal text, it is
 important to learn to recognize these bones under the skin.
 
-There are a few other supporting elements. We will come to those
-later. But first, another "D":
+If you are tasked with translating an existing piece of legal writing
+into L4, you can begin by asking yourself, as you read the text: "what
+kind of rule does this paragraph express?" Almost all of the time, the
+answer will be one of the above types of rules.
+
+A few other types of rules play supporting roles. These rules may not
+be explicit in the original text, but help add rigour. Some of these
+supporting rules are packaged in library modules that can be imported.
+
+.. list-table::
+   :header-rows: 0
+
+   * - :ref:`Declarations<Declarations are abstract>`
+     - give general structure to particular definitions.
+
+       | ``DECLARE Natural Person``
+       | ``HAS     Name      IS A String``
+       | ``"       Birthdate IS A Date``
+   * - :ref:`Demonstrations<Demonstrating the rules with Scenarios>`
+     - help check if a ruleset is behaving correctly.
+
+       | ``GIVEN Bob age IS 19 EXPECT alcohol purchase IS NOT valid``
+   * - :ref:`Display Rules<Display rules are useful for boilerplate>`
+     - Sometimes, legal text includes passages that, technically, go
+       without saying, but still have to be said.
+
+       | ``DISPLAY For the avoidance of doubt, this rule does not apply to the purchase of non-alcoholic drinks.``
+
+   * - :ref:`Details<Details are a form of decision rule>`
+     - flesh out existing definitions by applying decisions to particular cases.
+
+       | ``GIVEN  p IS A Person``
+       | ``"      d IS A Date``
+       | ``DECIDE p Age IS d - p Birthdate``
+
+
+The remainder of this document explores the above rule types.
+
+But first, another "D":
 
 Disclaimer
 ----------
@@ -35,8 +104,9 @@ L4 paints a picture of law as it *could* exist in the future.
 As for whether the law *should* take this form, that is something we can discuss at the end of the tutorial.
 
 
-Decisions
----------
+
+Decisions lie at the heart of Constitutive Rules
+------------------------------------------------
 
 All rules involve decisions in some way.
 
@@ -51,14 +121,15 @@ not permissible.
 
 .. code-block:: l4
 
-   EVERY Person WHOSE age >= 21 MAY Buy Alcohol
-   GIVEN Risk PARTY Insurer MUST Pay WHEN Risk IS Covered
-   GIVEN HousePlan DECIDE NOT Permitted WHEN Storeys >= 3
+   EVERY Person   WHOSE age >= 21   MAY Buy Alcohol
+   GIVEN Risk PARTY Insurer MUST Pay   WHEN Risk IS Covered
+   GIVEN HousePlan DECIDE NOT Permitted   WHEN Storeys >= 3
 
 Decisions are central to **constitutive rules**. According to John
 Searle, a rule is a *constitutive* rule if, in some context `C`, it
-decides that some thing `X` counts as a special thing `Y`. (See what I
-did there?) Constitutive rules create *institutional facts*.
+decides that some thing `X` counts as a special thing `Y` if certain
+requirements `Z` are met. (See what I did there?) Constitutive rules
+create *institutional facts*.
 
 A decision can be as simple as first establishing whether a rule
 applies at all, and who it applies to.
@@ -74,6 +145,12 @@ to buy alcohol, but not in another. A student changing schools might
 have been a prefect in their old school, but they aren't automatically
 a prefect in their new school.
 
+Some scholars like to say that constitutive rules "cannot be broken".
+The closest thing to breaking a constitutive or definitional rule
+arises when the rule establishes validity: an alcohol purchase is
+invalid when the buyer is under 21; but the actual rule-breaking
+occurs when the invalid purchase proceeds.
+
 A qualification rule is a special case of a constitutive rule. It
 requires that *every* thing that meets certain criteria must also meet
 other additional criteria: for example, a building regulation may
@@ -88,8 +165,8 @@ exceptions. Software programs tend to go the other way: exceptional
 cases are written first, followed by the default case. The pattern is
 essentially the same, just mirrored.
 
-Deontics
---------
+Deontic Duties lie at the heart of Regulative Rules
+---------------------------------------------------
 
 Deontics come in three flavours: obligation, permission, and prohibition.
 
@@ -133,8 +210,8 @@ rules.
 Regulative rules only apply to legal actors -- parties to a contract,
 or persons under the law -- individuals and corporations.
 
-Deadlines
----------
+Deadlines go hand-in-hand with Deontics
+---------------------------------------
 
 An obligation is nothing without a deadline: things have to happen by a certain time, else do they really have to happen at all?
 
@@ -192,32 +269,38 @@ regulative rules, and need to be unpacked.
 Qualifying Rules
 ^^^^^^^^^^^^^^^^
 
-"Road tax must be paid by the owner of a vehicle" sounds like a
-regulative rule, but it actually unpacks to three rules: a constitutive, a
-regulative, and a *qualifying* rule.
+"No vehicle may be operated whose road tax is not properly paid up"
+sounds like a regulative rule, but it actually unpacks to three rules:
+a constitutive, a regulative, and a *qualifying* rule.
 
 Why? Because in an uncommon case, a vehicle owner could counter: "oh,
-I don't drive that car, I'm keeping it in storage until I can sell it
-to a museum. So I don't have to pay road tax."
+that car doesn't get driven, the engine's been taken out and I'm
+keeping it in storage until I can sell the chassis to a museum. So I
+don't have to pay road tax."
 
-So the rule is really three rules:
+The rule is really three rules:
 
 * Every vehicle that legally operates on a public road must be
-  validly registered. (Qualifying Rule)
+  in valid tax-paid status. (Qualifying Rule)
 
-* To be valid, a registration must be paid up for the current year.
+* To be valid, road tax must be paid up for the current year.
   (Constitutive)
 
-* To obtain a valid registration, the owner of the vehicle must pay
-  the appropriate fees. (Regulative)
+* Every driver shall not operate any vehicle whose road tax is not paid.
+  (Regulative)
 
-Qualifying rules and constitutive rules are similar.
+Qualifying rules and constitutive rules are similar!
 
 Constitutive rules state that an X counts as a Y when it meets certain
 criteria. Very often, the Y is simply that it is a *valid* X in some
 way.
 
-Qualifying rules state that *every* X must be a Y.
+Qualifying rules state that *every* X (within a certain scope) must be a Y.
+
+We're still working on the syntax of qualifying rules, but they are
+likely to follow the syntax of regulative rules, but with the
+mandatory keywords `BE` or `HAVE` instead of `DO`.
+
 
 Or else what?
 ^^^^^^^^^^^^^
@@ -232,21 +315,47 @@ never get your car back."
 
 This gets into *scope goals*. We'll return to that later.
 
-Definitions
------------
+Definitions are concrete
+------------------------
 
 *Definitions* bind names to things. In laws and contracts we are used
 to seeing defined terms; these are analogous to *variables* in
 programs, which give us ways to refer to concepts and values by name.
 
-NOTE: If you are a law student or a lawyer: this tutorial is not
-intended to replace anything taught in law school! L4 simply offers a
-structured way to organize legal rules, in a way that can be processed
-by a computer. Most people might agree to accept the calculations
-performed by the computer. Some might not. If those who do not are in
-a position of power, it would be better to rely on your legal training
-to tell you what to do.
+Defined terms sometimes "ground out" to a string of words which has
+meaning to a human, but not to a computer. Sometimes they represent a
+punt: "Doctor means a registered medical professional" is good enough
+for the contract to make sense, but anyone relying on that definition
+in respect of some particular individual claiming to be a doctor may
+want to consult the relevant offically approved register just to be
+sure. Operationally, such a lookup *may* be facilitated by software,
+but it doesn't have to be for the contract itself to work.
 
+Defined terms can also capture other rules, of the form discussed
+above. You could give a name to a particular decision, and refer to it
+elsewhere.
+
+Finally, definitions can give concrete particulars to an abstract
+template: for instance, a contract might talk about a Buyer and a
+Seller in the abstract, and define those parties in an Annex with
+name, address, and identifying numbers.
+
+Declarations are abstract
+-------------------------
+
+Where definitions talk about concrete "variables", declarations talk about abstract "types".
+
+If you're an object-oriented programmer, you can think of a
+declaration as a class, and a definition as an instance variable.
+
+If you're a functional programmer, you can think of declarations as
+types, and definitions as values in those types.
+
+If you spend a lot of time with JSON, you can think of declarations as
+a schema, and a definition as a JSON object satisfying that schema.
+
+If you have a database background, you can think of a declaration as a
+table, and a definition as a row in the table.
 
 ======================================
 Keywords: Declarations and Definitions
@@ -357,7 +466,7 @@ This probably feels backward to what you are used to.
 There is a good reason for this: conceptually, the specialization/subtyping "hierarchy" goes something like
 superclass -> subclass -> instance record -> attribute name -> attribute value.
 
-Arguably, if the type of ``amount`` is ``Integer``, then the "type" of ``100`` is ``amount``.
+Arguably, if the type of ~amount~ is ~Integer~, then the "type" of 100 is ~amount~.
 
 Internal dev note: In practice, this means the Interpreter,
 PrettyPrinter, and transpilers need be careful about destructuring

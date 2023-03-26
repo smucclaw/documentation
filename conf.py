@@ -21,6 +21,7 @@ extensions = [
     'sphinx_design' ,
     'sphinxawesome_theme',
     'sphinxcontrib.inkscapeconverter'
+    'sphinx.ext.autosectionlabel'
 ]
 
 templates_path = ['_templates']
