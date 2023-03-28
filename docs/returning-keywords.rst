@@ -9,9 +9,10 @@ How to think about legal with L4
 ================================
 
 Legal writing may appear complex, but it is almost entirely composed
-from simple elements: **decisions**, which deal with yes/no (and
-sometimes numerical) questions, and **deontics**, which deal with the
-changing obligations of parties over time.
+from simple elements:
+
+- **decisions**, which deal with yes/no (and sometimes numerical) questions, and
+- **deontics**, which deal with the changing obligations of parties over time.
   
 L4 gives non-lawyers and computers an easier way to understand
 contracts and laws by breaking down complicated legal writing to the
