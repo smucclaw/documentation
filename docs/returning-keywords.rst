@@ -8,27 +8,27 @@ Language Quickstart
 How to think about legal with L4
 ================================
 
-The majority of legal writing can be reduced to simple elements:
-**decisions**, which deal with yes/no (and sometimes numerical)
-questions, and **deontics**, which deal with the changing obligations
-of parties over time.
+Legal writing may appear complex, but it is almost entirely composed
+from simple elements: **decisions**, which deal with yes/no (and
+sometimes numerical) questions, and **deontics**, which deal with the
+changing obligations of parties over time.
   
-L4 helps non-lawyers and computers understand contracts and laws by
-breaking complicated legal writing down into the above elements,
-written in a standard *rule* format. Well-formed rules can be
-processed by computer and form the basis for further useful activity.
+L4 gives non-lawyers and computers an easier way to understand
+contracts and laws by breaking down complicated legal writing to the
+above elements, written in a standard *rule* format. Well-formed rules
+can be processed by computer and form the basis for further useful
+activity.
 
-The L4 method is suitable for laws and regulations running for
-hundreds of pages -- and for simple contracts that can be summed up in
-a single paragraph.
+The L4 method of analysis and formalization is suitable for laws and
+regulations running for hundreds of pages -- and for simple contracts
+that can be summed up in a single paragraph.
 
-Let's start with a simple example, in which Bob buys a beer from
-Alice. There is a legal minumum age for alcohol purchases. Alice
-expects to be paid within 30 days.
+In a simple example, Bob buys a beer from Alice. There is a legal
+minumum age for alcohol purchases. Alice expects to be paid within 30
+days.
 
-How might we analyze such a transaction and express it in L4? We can
-break it down into *decision* and *deontic* elements -- and supply the
-*data* to operate on.
+How might we analyze this using L4? We break it down into *decision*
+and *deontic* elements -- and supply the *data* to operate on.
 
 .. list-table::
    :header-rows: 0
@@ -54,8 +54,6 @@ break it down into *decision* and *deontic* elements -- and supply the
 
 (Too bad the name `"D" was already taken <https://en.wikipedia.org/wiki/D_(programming_language)>`_. :-)
 
-There are other elements.
-
 These are the essentials of L4. We compose them to form clauses and
 contracts, rules and regulations. When reading a legal text, it is
 important to learn to recognize these bones under the skin.
@@ -69,8 +67,12 @@ A few other types of rules play supporting roles. These rules may not
 be explicit in the original text, but help add rigour. Some of these
 supporting rules are packaged in library modules that can be imported.
 
-Legal writing often involves facts -- **data** -- which can be
-expliclty structured with **declarations**.
+For example, getting from a birthdate to an age requires an
+**inference** rule, which we will give later.
+
+To add rigour, the facts -- **data** -- which appear in legal writing
+can be expliclty structured with **declarations**. These are the other
+types of rules:
 
 .. list-table::
    :header-rows: 0
