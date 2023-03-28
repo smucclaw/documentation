@@ -8,12 +8,14 @@ Language Quickstart
 How to think about legal with L4
 ================================
 
-In the world of L4, almost all legal writing can be reduced to
-**decisions**, **duties**, and **definitions**.
+The majority of legal writing can be reduced to simple elements:
+**decisions**, which deal with yes/no (and sometimes numerical)
+questions, and **deontics**, which deal with the changing obligations
+of parties over time.
   
 L4 helps non-lawyers and computers understand contracts and laws by
-breaking complicated legal writing down into the above elementary
-*patterns*, written in a standard *rule* format. Well-formed rules are
+breaking complicated legal writing down into the above elements,
+written in a standard *rule* format. Well-formed rules can be
 processed by computer and form the basis for further useful activity.
 
 The L4 method is suitable for laws and regulations running for
@@ -25,7 +27,8 @@ Alice. There is a legal minumum age for alcohol purchases. Alice
 expects to be paid within 30 days.
 
 How might we analyze such a transaction and express it in L4? We can
-break it down by decision, duty, and definition elements.
+break it down into *decision* and *deontic* elements -- and supply the
+*data* to operate on.
 
 .. list-table::
    :header-rows: 0
@@ -34,21 +37,24 @@ break it down by decision, duty, and definition elements.
      - Give a yes-or-no answer to a question involving one or more factors.
 
        | ``DECIDE alcohol purchase IS valid WHEN Buyer age >= 21``
-       | ``DECIDE alcohol purchase INCLUDES beer purchase``
-   * - :ref:`Duty<Deontic Duties lie at the heart of Regulative Rules>`
+
+   * - :ref:`Deontics<Deontics and Deadlines lie at the heart of Regulative Rules>`
      - Draw up the rights and obligations of parties, with deadlines.
 
        | ``PARTY Buyer MUST pay Seller BEFORE 30 days``
-   * - :ref:`Definition<Definitions are concrete>`
+
+   * - :ref:`Data<Data values are concrete>`
      - Set out the specifics of a particular case.
 
-       | ``DEFINE Buyer      IS A Natural Person``
-       | ``HAS    Bob        IS THE Name``
+       | ``DATA  Buyer       IS A Natural Person``
+       | ``HAS   Bob         IS THE Name``
        | ``"     1970-01-01  IS THE Birthdate``
-       | ``DEFINE Seller IS A Natural Person``
-       | ``HAS    Alice  IS THE Name``
+       | ``DATA  Seller IS A Natural Person``
+       | ``HAS   Alice  IS THE Name``
 
 (Too bad the name `"D" was already taken <https://en.wikipedia.org/wiki/D_(programming_language)>`_. :-)
+
+There are other elements.
 
 These are the essentials of L4. We compose them to form clauses and
 contracts, rules and regulations. When reading a legal text, it is
@@ -63,32 +69,35 @@ A few other types of rules play supporting roles. These rules may not
 be explicit in the original text, but help add rigour. Some of these
 supporting rules are packaged in library modules that can be imported.
 
+Legal writing often involves facts -- **data** -- which can be
+expliclty structured with **declarations**.
+
 .. list-table::
    :header-rows: 0
 
    * - :ref:`Declarations<Declarations are abstract>`
-     - give general structure to particular definitions.
+     - give general structure to particular data values.
 
        | ``DECLARE Natural Person``
        | ``HAS     Name      IS A String``
        | ``"       Birthdate IS A Date``
+
    * - :ref:`Demonstrations<Demonstrating the rules with Scenarios>`
      - help check if a ruleset is behaving correctly.
 
        | ``GIVEN Bob age IS 19 EXPECT alcohol purchase IS NOT valid``
+
    * - :ref:`Display Rules<Display rules are useful for boilerplate>`
      - Sometimes, legal text includes passages that, technically, go
        without saying, but still have to be said.
 
        | ``DISPLAY For the avoidance of doubt, this rule does not apply to the purchase of non-alcoholic drinks.``
 
-   * - :ref:`Details<Details are a form of decision rule>`
-     - flesh out existing definitions by applying decisions to particular cases.
+   * - :ref:`Define<Defined terms are aliases>`
+     - Legal texts use defined terms to serve as aliases to longer concepts, and to stand certain concepts in relationship to one another.
 
-       | ``GIVEN  p IS A Person``
-       | ``"      d IS A Date``
-       | ``DECIDE p Age IS d - p Birthdate``
-
+       | ``DEFINE Doctor MEANS a registered medical professional``
+       | ``DEFINE alcohol purchase INCLUDES beer purchase``
 
 The remainder of this document explores the above rule types.
 
@@ -224,8 +233,8 @@ L4's temporal keywords help define deadlines for regulative rules:
 A regulative rule without a temporal constraint is incomplete. L4 substitutes "EVENTUALLY" but will issue a warning so you are conscious that a deadline is missing.
 
 
-Review: Constitutive vs Prescriptive Rules
-------------------------------------------
+Review: Constitutive vs Prescriptive/Regulative Rules
+-----------------------------------------------------
 
 Before we get into definitions and declarations, a quick recap of what
 we've discussed so far, from a slightly different angle. Let's go over
@@ -315,61 +324,72 @@ never get your car back."
 
 This gets into *scope goals*. We'll return to that later.
 
-Definitions are concrete
+Data values are concrete
 ------------------------
 
-*Definitions* bind names to things. In laws and contracts we are used
-to seeing defined terms; these are analogous to *variables* in
-programs, which give us ways to refer to concepts and values by name.
+Specific cases involve individuals: the buyer and seller are Bob and
+Alice, the price is $100, the car is painted pink. These facts are
+recorded in `DATA` rules.
+
+`DATA` rules are used when you concretize a particular concrete
+template to an instance that is expected to actually be signed.
+
+They give concrete particulars to an abstract template: for instance,
+a contract might talk about a Buyer and a Seller in the abstract, and
+later particularize those parties in an Annex with name, address, and
+identifying numbers. The material in that Annex would be recorded as
+`DATA` rules.
+
+
+Declarations are abstract
+-------------------------
+
+Where data values talk about concrete "variables", declarations talk
+about abstract "types".
+
+If you're an object-oriented programmer, you can think of a
+declaration as a class, and a data value as an instance variable.
+
+If you're a functional programmer, you can think of declarations as
+types, and data as values in those types.
+
+If you spend a lot of time with JSON, you can think of declarations as
+a schema, and a data value as a JSON object satisfying that schema.
+
+If you have a database background, you can think of a declaration as a
+database or table schema, and a data value as a row inserted into
+the table.
+
+What are definitions?
+---------------------
+
+*Definitions* bind names to things.
+
+In laws and contracts we are used to seeing defined terms; these are
+analogous to *aliases* in programs, which give us ways to refer to
+concepts and values by name.
 
 Defined terms sometimes "ground out" to a string of words which has
 meaning to a human, but not to a computer. Sometimes they represent a
 punt: "Doctor means a registered medical professional" is good enough
 for the contract to make sense, but anyone relying on that definition
-in respect of some particular individual claiming to be a doctor may
-want to consult the relevant offically approved register just to be
-sure. Operationally, such a lookup *may* be facilitated by software,
-but it doesn't have to be for the contract itself to work.
+to scrutinize a particular individual claiming to be a doctor may want
+to consult the relevant offically approved register just to be sure.
+Operationally, such a lookup *may* be facilitated by software, but it
+doesn't have to be for the contract itself to work.
 
-Defined terms can also capture other rules, of the form discussed
-above. You could give a name to a particular decision, and refer to it
-elsewhere.
 
-Finally, definitions can give concrete particulars to an abstract
-template: for instance, a contract might talk about a Buyer and a
-Seller in the abstract, and define those parties in an Annex with
-name, address, and identifying numbers.
-
-Declarations are abstract
--------------------------
-
-Where definitions talk about concrete "variables", declarations talk about abstract "types".
-
-If you're an object-oriented programmer, you can think of a
-declaration as a class, and a definition as an instance variable.
-
-If you're a functional programmer, you can think of declarations as
-types, and definitions as values in those types.
-
-If you spend a lot of time with JSON, you can think of declarations as
-a schema, and a definition as a JSON object satisfying that schema.
-
-If you have a database background, you can think of a declaration as a
-table, and a definition as a row in the table.
-
-======================================
-Keywords: Declarations and Definitions
-======================================
+Keywords: Declarations and Data
+===============================
 
 This chapter introduces a handful of L4 keywords. 
 
------------------------------------------------------------------
-DECLARE and DEFINE, for data types and values, and HAS-Attributes
------------------------------------------------------------------
+DECLARE and DATA, for data types and values, and HAS-Attributes
+---------------------------------------------------------------
 
-DECLARE and DEFINE have to do with data types and values.
+DECLARE and DATA have to do with data types and values.
 
-If you are familiar with Object-Oriented Programming, you will find the DECLARE and DEFINE concepts familiar.
+If you are familiar with Object-Oriented Programming, you will find the DECLARE and DATA concepts familiar.
 
 We use DECLARE to set up our:
 
@@ -380,9 +400,9 @@ We use DECLARE to set up our:
     - ontology
     - templates
 
-We use DEFINE to instantiate those templates with concrete values: the specific variables of a particular agreement.
+We use DATA to instantiate those templates with concrete values: the specific variables of a particular agreement.
 
-These declarations and definitions are automatically exported to the programming language of your choice, lessening the burden of programming downstream.
+These declarations and data values are automatically exported to the programming language of your choice, lessening the burden of programming downstream.
 
 Consider the following code
 
@@ -403,16 +423,16 @@ For example:
 
 .. code-block:: bnf
 
-    Variable Definition	::=	DEFINE		Value Term		[Type Signature	]	//class-object instantiation				
+    Variable       	::=	DATA		Value Term		[Type Signature	]	//class-object instantiation				
 				HAS		MultiTerm		[Type Signature	]							
 						[ ... ]														
 
-Variable definitions with the DEFINE keyword follow the same format as DECLARE.
+Variable instantiations with the DATA keyword follow the same format as DECLARE.
 
 In Detail
 ^^^^^^^^^
 
-The syntax for DEFINEs and DECLAREs contains a counterintuitive detail.
+The syntax for DECLAREs and DATA contains a counterintuitive detail.
 
 A DECLARE rule begins with the name of the type, then the optional supertype.
 It goes on to give the names of the attribute fields, then their types.
@@ -452,12 +472,12 @@ In Typescript, as in Javascript, JSON, Python, etc, the name of the attribute is
 
 In L4, attribute values come first, and are followed by the names!
 
-A DEFINE rule gives the name of the variable, then the type.
+A DATA rule gives the name of the variable, then the type.
 The attributes then give the value of the variable, then the name.
 
 .. code-block:: l4
 
-    DEFINE price IS A Money
+    DATA price IS A Money
     HAS 100      IS THE amount
         USD      IS THE currency
 
@@ -500,23 +520,24 @@ This desugars to:
 
 In technical terms, we might say we have hoisted `Currency` to the top level.
 
-Following the pattern of the original nesting, one might `DEFINE` like so:
+Following the pattern of the original nesting, one might `DATA` like so:
 
 .. code-block:: l4
 
-    DEFINE price IS A Money
-    HAS 100      IS THE amount
-        tnd      IS A   currency
-        HAS dinar   IS THE unitName
-            millime IS THE subUnitName
-            1000    IS THE subUnitScale
-            Tunisia IS THE region
+    DATA price   IS A Money
+    HAS  100      IS THE amount
+         tnd      IS A   currency
+         HAS dinar   IS THE unitName
+             millime IS THE subUnitName
+             1000    IS THE subUnitScale
+             Tunisia IS THE region
 
 This is the philosophy of "inline-ism" at work: we are encountering
 the Tunisian dinar for the first time in this rule, and so we define
 it as we go. This is a natural reading.
 
-And, as with the `DECLARE`, we hoist it to the top:
+And, as with the `DECLARE`, we hoist it to the top. A `DATA` rule is
+scoped to the entire L4 module in which it is defined.
 
 Nesting, by the way, goes to the right, immediately below.
 
@@ -524,15 +545,15 @@ A more formalist style might insist on writing these things separately:
 
 .. code-block:: l4
 
-    DEFINE price IS A Money
-    HAS 100      IS THE amount
-        tnd      IS THE Currency
+    DATA price    IS A   Money
+    HAS  100      IS THE amount
+         tnd      IS THE Currency
 
-    DEFINE tnd  IS A Currency
-    HAS dinar   IS THE unitName
-        millime IS THE subUnitName
-        1000    IS THE subUnitScale
-        Tunisia IS THE region
+    DATA tnd     IS A   Currency
+    HAS  dinar   IS THE unitName
+         millime IS THE subUnitName
+         1000    IS THE subUnitScale
+         Tunisia IS THE region
 
 Hoisting the `tnd` to the top-level makes sense. As globals go,
 currencies are long-lived enough to stay stable over the course of a
@@ -569,11 +590,11 @@ From this `DECLARE`, we hoist `Point` to top-level:
     HAS x IS A Number
         y IS A Number
 
-But in the `DEFINE`,
+But in the `DATA`,
 
 .. code-block:: l4
 
-    DEFINE myFirstLine
+    DATA myFirstLine
     HAS p1    IS THE start
         HAS 1 IS THE x
 	    2 IS THE y
@@ -590,7 +611,7 @@ Solution: leave the `start` and `end` fields unnamed. We remove the `p1` and `p2
 
 .. code-block:: l4
 
-    DEFINE myFirstLine
+    DATA myFirstLine
     HAS start
         HAS 1 IS THE x
 	    2 IS THE y
@@ -603,7 +624,7 @@ So the rules are these:
 
 * DECLARE rules can use as many nested `HAS` as desired. In desugaring, declared attribute fields that have nested sub-attributes are hoisted to top-level. The standard syntax is `HAS fieldname IS A Type`.
 
-* DEFINE rules follow the same nested `HAS` structure as their original `DECLARE`s.
+* DATA rules follow the same nested `HAS` structure as their original `DECLARE`s.
 
 * If a HAS attribute does not have further HAS children beneath it, is always formatted as `HAS label IS THE fieldname`.
 
@@ -619,22 +640,22 @@ In a future version of the language we will support this as well.
 
 .. code-block:: l4
 
-    DEFINE myFirstLine
-    HAS start x 1 y 2
-        end   x 5 y 6
-        color green
+    DATA myFirstLine
+    HAS  start x 1 y 2
+         end   x 5 y 6
+         color green
 
 We might entertain a RelationalPredicate form where instead of saying `IS A`
 we say `IS`: 
 	
 .. code-block:: l4
 
-    DEFINE myFirstLine
-    HAS start x IS 1
-	      y IS 2
-        end   x IS 5
-              y IS 6
-        color   IS green
+    DATA myFirstLine
+    HAS  start x IS 1
+	       y IS 2
+         end   x IS 5
+               y IS 6
+         color   IS green
 
 ----------------------------------------------------
 MUST, SHANT, and MAY for obligations and permissions
@@ -673,28 +694,17 @@ HENCE and LEST for regulative rules and connecting blocks of code
 
 Ordinary programming languages use the IF … THEN … ELSE construct to connect blocks of code, based on whether the conditions in the IF were met.
 
-L4 uses HENCE instead of THEN, and LEST instead of ELSE, to connect regulative rules, based on whether the preceding rule was satisfied.
+L4 uses THUS instead of THEN, and LEST instead of ELSE, to connect regulative rules, based on whether the preceding rule was satisfied.
 
 .. code-block:: bnf
 
-    Regulative Connector ::=	(HENCE | LEST)		
-                            Rule Label | Regulative Rule				
+    Regulative Connector ::=	(THUS | LEST)		
+                                 Rule Label | Regulative Rule				
 
 Individual regulative rules connect with one another to form a graph, or a flowchart, describing a workflow.
 
-----------------------
-The Semantics of rules
-----------------------
+Putting it all together
+=======================
 
-The semantics of a rule are as follows:
-
-.. code-block:: bnf
-
-    [Attribute Constraint   ]							
-    [Conditional Constraint ]							
-    [Upon Trigger	    ]							
-    [HENCE				Rule Label | Regulative Rule ]	
-    [LEST				Rule Label | Regulative Rule ]	
-    [WHERE				Constitutive Rule							
-                                        [   ...     ]                ]	
+Enough theory. Let's explore encoding your first contract!
 
