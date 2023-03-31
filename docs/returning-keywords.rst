@@ -44,15 +44,6 @@ and *deontic* elements -- and supply the *data* to operate on.
 
        | ``PARTY Buyer MUST pay Seller BEFORE 30 days``
 
-   * - :ref:`Data<Data values are concrete>`
-     - Set out the specifics of a particular case.
-
-       | ``DATA  Buyer       IS A Natural Person``
-       | ``HAS   Bob         IS THE Name``
-       | ``"     1970-01-01  IS THE Birthdate``
-       | ``DATA  Seller IS A Natural Person``
-       | ``HAS   Alice  IS THE Name``
-
 (Too bad the name `"D" was already taken <https://en.wikipedia.org/wiki/D_(programming_language)>`_. :-)
 
 These are the essentials of L4. We compose them to form clauses and
@@ -64,16 +55,23 @@ into L4, you can begin by asking yourself, as you read the text: "what
 kind of rule does this paragraph express?" Almost all of the time, the
 answer will be one of the above types of rules.
 
-A few other types of rules play supporting roles. These rules may not
-be explicit in the original text, but help add rigour. Some of these
-supporting rules are packaged in library modules that can be imported.
+A few other types of rules play supporting roles. The specifics of a
+case are represented as `DATA`:
 
-For example, getting from a birthdate to an age requires an
-**inference** rule, which we will give later.
+.. list-table::
+   :header-rows: 0
 
-To add rigour, the facts -- **data** -- which appear in legal writing
-can be expliclty structured with **declarations**. These are the other
-types of rules:
+   * - :ref:`Data<Data values are concrete>`
+     - Set out the specifics of a particular case.
+
+       | ``DATA  Buyer       IS A Natural Person``
+       | ``HAS   Bob         IS THE Name``
+       | ``"     1970-01-01  IS THE Birthdate``
+       | ``DATA  Seller IS A Natural Person``
+       | ``HAS   Alice  IS THE Name``
+
+To add rigour, data can be be explicitly structured with
+**declarations**:
 
 .. list-table::
    :header-rows: 0
@@ -85,16 +83,41 @@ types of rules:
        | ``HAS     Name      IS A String``
        | ``"       Birthdate IS A Date``
 
+For example, getting from a birthdate to an age requires a decision
+rule, which we will give later. Rules like this apply generally, so
+for reusability L4 packages them in library modules that can be
+imported.
+
+Scenario rules allow drafters to check their logic against concrete
+examples:
+
+.. list-table::
+   :header-rows: 0
+
    * - :ref:`Demonstrations<Demonstrating the rules with Scenarios>`
      - help check if a ruleset is behaving correctly.
 
        | ``GIVEN Bob age IS 19 EXPECT alcohol purchase IS NOT valid``
 
+
+Sometimes, legal text includes passages that, technically, go
+without saying, but still have to be said for non-technical
+reasons. We `DISPLAY` those passages:
+
+.. list-table::
+   :header-rows: 0
+
    * - :ref:`Display Rules<Display rules are useful for boilerplate>`
-     - Sometimes, legal text includes passages that, technically, go
-       without saying, but still have to be said.
+     - Display text is usually passed through verbatim.
 
        | ``DISPLAY For the avoidance of doubt, this rule does not apply to the purchase of non-alcoholic drinks.``
+
+Definitions allow us to give short names to things. Those things can
+themselves be other rules or simply strings of text for subsequent
+human interpretation.
+       
+.. list-table::
+   :header-rows: 0
 
    * - :ref:`Define<Defined terms are aliases>`
      - Legal texts use defined terms to serve as aliases to longer concepts, and to stand certain concepts in relationship to one another.
@@ -278,12 +301,12 @@ partly what they were getting at.
 Other statements really do lie at the border of constitutive and
 regulative rules, and need to be unpacked.
 
-Qualifying Rules
+Compliance Rules
 ^^^^^^^^^^^^^^^^
 
 "No vehicle may be operated whose road tax is not properly paid up"
 sounds like a regulative rule, but it actually unpacks to three rules:
-a constitutive, a regulative, and a *qualifying* rule.
+a constitutive, a regulative, and a *compliance* rule.
 
 Why? Because in an uncommon case, a vehicle owner could counter: "oh,
 that car doesn't get driven, the engine's been taken out and I'm
@@ -293,7 +316,7 @@ don't have to pay road tax."
 The rule is really three rules:
 
 * Every vehicle that legally operates on a public road must be
-  in valid tax-paid status. (Qualifying Rule)
+  in valid tax-paid status. (Compliance Rule)
 
 * To be valid, road tax must be paid up for the current year.
   (Constitutive)
@@ -301,17 +324,39 @@ The rule is really three rules:
 * Every driver shall not operate any vehicle whose road tax is not paid.
   (Regulative)
 
-Qualifying rules and constitutive rules are similar!
+Compliance rules and constitutive rules are similar!
 
 Constitutive rules state that an X counts as a Y when it meets certain
-criteria. Very often, the Y is simply that it is a *valid* X in some
-way.
+criteria. Very often, the Y is simply that it is a *valid*, or
+*qualifying*, X in some way.
 
-Qualifying rules state that *every* X (within a certain scope) must be a Y.
+- A thing is a piece of paper if it is rectangular and thin and is
+  made from wood pulp and has a light background.
+
+- A piece of paper is a train ticket if text, formatted in a certain
+  way, was printed on that paper by some authorized agent or machine.
+
+- A train ticket is a *valid train ticket* if it matches the train the
+  passenger is actually on, and if it matches the passenger -- for
+  instance, a youth ticket would be invalid for an adult passenger.
+
+Compliance rules state that *every* X (within a certain scope) must be a Y.
 
 We're still working on the syntax of qualifying rules, but they are
 likely to follow the syntax of regulative rules, but with the
 mandatory keywords `BE` or `HAVE` instead of `DO`.
+
+Regulative: `PARTY P1 MUST DO pay P2`
+
+Constitutive: `DECIDE ticket IS valid WHEN passenger name IS ticket name`
+
+Compliance: `EVERY passenger on a train MUST BE in possession of a valid ticket OR BE a railway employee in valid uniform`
+
+So when the train conductor walks through the train, they are testing
+for compliance. There are two ways to comply: wear a valid uniform or
+hold a valid ticket. In legal writing, the notion of "validity" is
+often so obvious that it is implicit and goes unsaid; but in L4, we
+prefer to be explicit and say it.
 
 
 Or else what?
