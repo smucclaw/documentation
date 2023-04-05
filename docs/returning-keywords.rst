@@ -160,11 +160,10 @@ not permissible.
    GIVEN Risk PARTY Insurer MUST Pay   WHEN Risk IS Covered
    GIVEN HousePlan DECIDE NOT Permitted   WHEN Storeys >= 3
 
-Decisions are central to **constitutive rules**. According to John
+Decisions are central to **constitutive rules**. [#f1]_ According to John
 Searle, a rule is a *constitutive* rule if, in some context `C`, it
 decides that some thing `X` counts as a special thing `Y` if certain
-requirements `Z` are met. (See what I did there?) Constitutive rules
-create *institutional facts*.
+requirements `Z` are met. (See what I did there?) 
 
 A decision can be as simple as first establishing whether a rule
 applies at all, and who it applies to.
@@ -226,6 +225,8 @@ one is obligated to *not* do the prohibited thing.
 
     Shant(act) \Rightarrow Must (\lnot act)
 
+This reads "If one shall not perform an act, then one must not act".
+
 Permission can also be re-phrased in terms of obligation.
 
 Simply: permission to do something means there is no obligation to not do it.
@@ -233,6 +234,8 @@ Simply: permission to do something means there is no obligation to not do it.
 .. math::
 
     May(act) \Rightarrow \lnot Must (\lnot act)
+
+This reads "If one may perform an act, then it is not true that one must not act".
 
 More complexly: A legal text could state that Party A `MAY` perform
 some action; and if they do, Party B `MUST` respond in some way. Often
@@ -756,3 +759,6 @@ Putting it all together
 
 Enough theory. Let's explore encoding your first contract!
 
+.. rubric::Footnotes
+
+.. [#f1] Constitutive rules create *institutional facts*.
