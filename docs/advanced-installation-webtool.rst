@@ -127,6 +127,13 @@ You only have to do this once:
 
 Note that for the 3rd command, ``rsync -va ~/src/smucclaw/vue-pure-pdpa/ vue-big/``, you should replace ``~/src/smucclaw/vue-pure-pdpa/`` with the folder where you cloned the vue-pure-pdpa github page.
 
+Why do we have separate instances of vue-pure-pdpa, vue-big, and vue-small?
+Because the EC2 instance all of this was developed on (t3.medium) is configured with slow disk
+in this particular filesystem.
+When the user clicks on the link in the sidebar that takes the end-user to the Vue UI
+response time matters. If we rsync the entire vue-pure-pdpa directory structure, it will take upwards of 10 minutes.
+So we do the exclusions and the symlinks instead, which takes less than a minute.
+
 ^^^^^^^^^^^^^^^^^^^^^
 Spawning a new server
 ^^^^^^^^^^^^^^^^^^^^^
