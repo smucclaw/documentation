@@ -2,6 +2,10 @@
 Cheatsheet
 ==========
 
+.. image:: ../images/L4-cheatsheet.png
+    :class: with-border
+
+
 * `Top Level`_
 * `Rules`_
 

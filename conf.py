@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.abspath(".."))
 extensions = [
     'sphinx_design' ,
     'sphinxawesome_theme',
-    'sphinxcontrib.inkscapeconverter'
+    'sphinxcontrib.inkscapeconverter',
     'sphinx.ext.autosectionlabel'
 ]
 
