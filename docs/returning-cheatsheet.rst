@@ -2,7 +2,9 @@
 Cheatsheet
 ==========
 
-.. image:: ../images/L4-cheatsheet.png
+Below is an overview of the L4 cheatsheet.
+
+.. image:: ../images/l4-cheatsheet.png
     :class: with-border
 
 * `Top Level`_
