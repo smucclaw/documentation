@@ -10,7 +10,8 @@ Cheatsheet
 
   * `Full Scenario Rule`_
   * `Simple Scenario Rule`_
-  * `Regulative Rule`_
+  * `Regulative Rule: EVERY, WHERE`_
+  * `Regulative Rules: MUST, MAY, and SHANT`_
   * `Constitutive Rule and Hornlike Rule`_
   * `Compact Constitutives`_
 
