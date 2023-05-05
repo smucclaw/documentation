@@ -8,7 +8,7 @@ Returning Users
 |
 |
 
-.. grid:: 3
+.. grid:: 4
 
     .. grid-item-card:: L4 in Practice
         :link: returning-exercises
@@ -27,6 +27,12 @@ Returning Users
         :link-type: doc
 
         Explore some of L4's important keywords.
+
+    .. grid-item-card:: Export L4 Output
+        :link: returning-keywords
+        :link-type: doc
+
+        Export L4 output into other languages.
 
 .. grid:: 4
 

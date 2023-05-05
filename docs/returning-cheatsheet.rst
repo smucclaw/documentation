@@ -2,8 +2,6 @@
 Cheatsheet
 ==========
 
-Below is an overview of the L4 cheatsheet.
-
 .. image:: ../images/l4-cheatsheet.png
     :class: with-border
 
@@ -77,9 +75,9 @@ Simple Scenario Rule
 				EXPECT  RelationalPredicate													
 					[       ...       ]			
 
-~~~~~~~~~~~~~~~
-Regulative Rule
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Regulative Rule: EVERY, WHERE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bnf
 
@@ -89,10 +87,33 @@ Regulative Rule
 					[Conditional Constraint]						
 					[Upon Trigger]						
 					    Deontic Action Temporal | Deontic Temporal Action					
-					[HENCE	         Rule Label | Regulative Rule]
-					[LEST	         Rule Label | Regulative Rule]
 					[WHERE	         Constitutive Rule						
 							        [...]				]
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Regulative Rules: MUST, MAY, and SHANT
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bnf
+
+    Obligation Case ::= PARTY     MUST               ...
+                        WITHIN    deadline
+                        IF FULFILLED                 ...
+                        IF VIOLATED                  ...
+    
+    Permission Case ::= PARTY     MAY                ...
+                        WITHIN    deadline
+                        IF EXERCISED                 ...
+                        IF NOT EXERCISED             ...
+
+    Prohibition Case ::= PARTY    SHANT              ...
+                         WITHIN   deadline
+                         IF PROHIBITION VIOLATED     ...
+                         IF PROHIBITION NOT VIOLATED ...
+
+.. Old Syntax: HENCE/LEST, replaced by MUST, MAY, and SHANT
+                    [HENCE	         Rule Label | Regulative Rule]
+					[LEST	         Rule Label | Regulative Rule]
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Constitutive Rule and Hornlike Rule

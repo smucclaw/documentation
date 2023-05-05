@@ -61,6 +61,7 @@ You can navigate this document by:
    docs/returning-exercises.rst
    docs/returning-cheatsheet.rst
    docs/returning-keywords.rst
+   docs/returning-transpilers.rst
    docs/returning-L4-and-law.rst
    docs/links-examples
    Publications <https://cclaw.smu.edu.sg/projects-papers>
@@ -80,18 +81,6 @@ You can navigate this document by:
    docs/returning-examples-pdpa-dbno.rst
    docs/returning-examples-motor-insurance.rst
    docs/returning-examples-contract-automaton.rst
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Law and Computer Science
-   :titlesonly:
-   :hidden:
-
-   docs/links-law-and-computer-science.rst
-   docs/returning-law-logic-programming.rst
-   docs/returning-flowchart.rst
-   docs/returning-common-expressions.rst
-   docs/returning-computational-law.rst
 
 .. toctree::
    :maxdepth: 1
@@ -115,3 +104,18 @@ You can navigate this document by:
    docs/about-and-contact.rst
    docs/early-beta.rst
    docs/acknowledgements.rst
+
+.. 
+   .. toctree::
+   :maxdepth: 1
+   :caption: Law and Computer Science
+   :titlesonly:
+   :hidden:
+
+   docs/links-law-and-computer-science.rst
+   docs/returning-law-logic-programming.rst
+   docs/returning-flowchart.rst
+   docs/returning-common-expressions.rst
+   docs/returning-computational-law.rst
+
+   (Nemo: I am removing this entire section because it does not contribute to the user's end goal of formalising a contract with L4.)
