@@ -1,6 +1,15 @@
-=========================================
-Flowcharts and Software Engineering
-=========================================
+==================================================
+Why a Functionally Enahnced Flowchart is Desirable
+==================================================
+
+This page explains:
+
+- Why people use flowcharts
+- How flowcharts fit in a workflow
+- Why adding functionalities to flowcharts is desirable
+- How software engineers can add functionalities to flowcharts
+
+This page is meant for computer scientists.
 
 ----------------------------------------------
 Flowcharts represent both statics and dynamics
@@ -14,17 +23,27 @@ People use flowcharts to represent the dynamics: these are really state diagrams
 
 Most flowcharts couple the two representations together.
 
-The flowcharts tend to be drawn in a simple drawing app, at the level of syntax, not semantics. Boxes with text, arrows with nearby text.
+----------------------------------------------------------------
+A flowchart's output feeds into a document intended for printing
+----------------------------------------------------------------
 
-People often produce a web interview from such a flowchart in a direct and imperative form.
+Flowcharts tend to be drawn in a simple drawing app, at the level of syntax, not semantics. Flowcharts are drawn with boxes with text and arrows with nearby text.
 
-The output of the interview feeds into a document assembly system.
+People often produce a web interview from such a flowchart in a direct and imperative form. Then the output of the interview feeds into a document assembly system. Often, such documents are intended to be finally embodied on paper.
 
-Often, such documents are intended to be finally embodied on paper.
+----------------------------------------------------
+Why a functionality enhanced flowchart is preferable
+----------------------------------------------------
 
-------------------------------------
-Adding functionalities to flowcharts
-------------------------------------
+Flowcharts are not the best way to represent decision logic because the availability of user-provided information does not always match the pre-determined order of questions.
+
+This approach is more amenable to automated verification. It can check which edge cases are lacking, and make interfaces interactive by letting users hide irrelevant subtrees.
+
+The end-user can trace their way through the flowchart and examine alternative routes.
+
+------------------------------------------------------------
+How software engineers can add functionalities to flowcharts
+------------------------------------------------------------
 
 A less imperative and more declarative approach preserves all the features of flowcharts, while adding functionality.
 
@@ -39,17 +58,3 @@ From these elements we can extract an interview.
 The results of the interview can be submitted digitally.
 
 Isomorphism can be preserved when the authoritative version of the rules are written in a higher-level language.
-
-----------------------------------------------------
-Why a functionality enhanced flowchart is preferable
-----------------------------------------------------
-
-Flowcharts are not the best way to represent decision logic.
-
-This approach is more amenable to automated verification. What edge cases are lacking?
-
-With this approach, interfaces can be made interactive. Irrelevant subtrees trees can be folded away hidden from view.
-
-The end-user can trace their way through the flowchart and examine alternative routes.
-
-The availability of user-provided information does not always match the pre-determined order of questions.

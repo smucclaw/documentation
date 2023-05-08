@@ -1,12 +1,12 @@
 :oprhan:
 
-#####################################
-Motivations: Law and Computer Science
-#####################################
+#############################
+Philosophy behind L4's Design
+#############################
 |
 |
 
-.. grid:: 2
+.. grid:: 3
 
     .. grid-item-card:: L4 and Computational Law
         :link: returning-computational-law
@@ -20,27 +20,30 @@ Motivations: Law and Computer Science
 
         Learn how L4 approaches problems in the Law.
 
-.. grid:: 2
-
     .. grid-item-card:: Flowcharts and Software Engineering
         :link: returning-flowchart
         :link-type: doc
 
         Understand why the Law would benefit from enhanced flowcharts. 
 
+..
+    .. grid:: 2
+
+..
+    .. grid-item-card:: Law and Logic programming
+        :link: returning-law-logic-programming
+        :link-type: doc
+
+        Explore the relationship between Law and Logic Programming.
+
+..
     .. grid-item-card:: Computer Science terms in L4
         :link: returning-common-expressions
         :link-type: doc
 
         Find out how common technical terms are used in L4.
 
-..
-    .. grid-item-card:: Law and Logic programming
-    :link: returning-law-logic-programming
-    :link-type: doc
-
-    Explore the relationship between Law and Logic Programming.
-    (Removed because the page has too much information and is not helpful)
+        (Nemo: These 2 pages are not helpful in helping the user understand L4)
 
 ===========================================
 Law and Computer Science: Intended Audience

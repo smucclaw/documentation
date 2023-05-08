@@ -4,25 +4,42 @@
 Language Quickstart
 ###################
 
+==========
+Disclaimer
+==========
 
-How to think about legal with L4
-================================
+**If you are a law student, or a lawyer, or some other member of the legal profession**:
+Nothing in this document is more authoritative than what you learned in school and in practice.
+School and practice prepare you to work with law *as it currently exists today*.
+L4 paints a picture of law as it *could* exist in the future.
+As for whether the law *should* take this form, that is something we can discuss at the end of the tutorial.
 
-In the world of L4, almost all legal writing can be reduced to
-**decisions**, **duties**, and **definitions**.
-  
+============================================
+How to think about contracts and law with L4
+============================================
+
+-----------------------------------------------------------
+The Elementary Patterns: Decisions, Duties, and Definitions
+-----------------------------------------------------------
+
 L4 helps non-lawyers and computers understand contracts and laws by
-breaking complicated legal writing down into the above elementary
+breaking complicated legal writing down into elementary
 *patterns*, written in a standard *rule* format. Well-formed rules are
 processed by computer and form the basis for further useful activity.
 
-The L4 method is suitable for laws and regulations running for
-hundreds of pages -- and for simple contracts that can be summed up in
+In the world of L4, almost all legal writing can be reduced to
+
+- **Decisions**
+- **Duties**
+- **Definitions**
+
+The L4 method is suitable for both laws and regulations running for
+hundreds of pages and for simple contracts that can be summed up in
 a single paragraph.
 
-Let's start with a simple example, in which Bob buys a beer from
-Alice. There is a legal minumum age for alcohol purchases. Alice
-expects to be paid within 30 days.
+Let's start with a simple example:
+
+"Bob buys a beer from Alice. There is a legal minumum age for alcohol purchases. Alice expects to be paid within 30 days.""
 
 How might we analyze such a transaction and express it in L4? We can
 break it down by decision, duty, and definition elements.
@@ -48,65 +65,17 @@ break it down by decision, duty, and definition elements.
        | ``DEFINE Seller IS A Natural Person``
        | ``HAS    Alice  IS THE Name``
 
-(Too bad the name `"D" was already taken <https://en.wikipedia.org/wiki/D_(programming_language)>`_. :-)
-
 These are the essentials of L4. We compose them to form clauses and
-contracts, rules and regulations. When reading a legal text, it is
-important to learn to recognize these bones under the skin.
+contracts, rules and regulations. It is important to recognise these elementary patterns when reading a legal text.
 
 If you are tasked with translating an existing piece of legal writing
 into L4, you can begin by asking yourself, as you read the text: "what
 kind of rule does this paragraph express?" Almost all of the time, the
 answer will be one of the above types of rules.
 
-A few other types of rules play supporting roles. These rules may not
-be explicit in the original text, but help add rigour. Some of these
-supporting rules are packaged in library modules that can be imported.
-
-.. list-table::
-   :header-rows: 0
-
-   * - :ref:`Declarations<Declarations are abstract>`
-     - give general structure to particular definitions.
-
-       | ``DECLARE Natural Person``
-       | ``HAS     Name      IS A String``
-       | ``"       Birthdate IS A Date``
-   * - :ref:`Demonstrations<Demonstrating the rules with Scenarios>`
-     - help check if a ruleset is behaving correctly.
-
-       | ``GIVEN Bob age IS 19 EXPECT alcohol purchase IS NOT valid``
-   * - :ref:`Display Rules<Display rules are useful for boilerplate>`
-     - Sometimes, legal text includes passages that, technically, go
-       without saying, but still have to be said.
-
-       | ``DISPLAY For the avoidance of doubt, this rule does not apply to the purchase of non-alcoholic drinks.``
-
-   * - :ref:`Details<Details are a form of decision rule>`
-     - flesh out existing definitions by applying decisions to particular cases.
-
-       | ``GIVEN  p IS A Person``
-       | ``"      d IS A Date``
-       | ``DECIDE p Age IS d - p Birthdate``
-
-
-The remainder of this document explores the above rule types.
-
-But first, another "D":
-
-Disclaimer
-----------
-
-**If you are a law student, or a lawyer, or some other member of the legal profession**:
-Nothing in this document is more authoritative than what you learned in school and in practice.
-School and practice prepare you to work with law *as it currently exists today*.
-L4 paints a picture of law as it *could* exist in the future.
-As for whether the law *should* take this form, that is something we can discuss at the end of the tutorial.
-
-
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Decisions lie at the heart of Constitutive Rules
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 All rules involve decisions in some way.
 
@@ -165,8 +134,9 @@ exceptions. Software programs tend to go the other way: exceptional
 cases are written first, followed by the default case. The pattern is
 essentially the same, just mirrored.
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Deontic Duties lie at the heart of Regulative Rules
----------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Deontics come in three flavours: obligation, permission, and prohibition.
 
@@ -210,8 +180,9 @@ rules.
 Regulative rules only apply to legal actors -- parties to a contract,
 or persons under the law -- individuals and corporations.
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Deadlines go hand-in-hand with Deontics
----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 An obligation is nothing without a deadline: things have to happen by a certain time, else do they really have to happen at all?
 
@@ -223,7 +194,7 @@ L4's temporal keywords help define deadlines for regulative rules:
 
 A regulative rule without a temporal constraint is incomplete. L4 substitutes "EVENTUALLY" but will issue a warning so you are conscious that a deadline is missing.
 
-
+------------------------------------------
 Review: Constitutive vs Prescriptive Rules
 ------------------------------------------
 
@@ -266,8 +237,9 @@ partly what they were getting at.
 Other statements really do lie at the border of constitutive and
 regulative rules, and need to be unpacked.
 
+~~~~~~~~~~~~~~~~
 Qualifying Rules
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 "No vehicle may be operated whose road tax is not properly paid up"
 sounds like a regulative rule, but it actually unpacks to three rules:
@@ -301,9 +273,9 @@ We're still working on the syntax of qualifying rules, but they are
 likely to follow the syntax of regulative rules, but with the
 mandatory keywords `BE` or `HAVE` instead of `DO`.
 
-
+~~~~~~~~~~~~~
 Or else what?
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 Regulative rules often carry an implicit "or what?"
 
@@ -314,6 +286,46 @@ You could ask "or what" again: "and if you don't pay the fine, you may
 never get your car back."
 
 This gets into *scope goals*. We'll return to that later.
+
+-----------------------------------------------------------------------------------------
+The Supporting Patterns: Declarations, Demonstrations, Display Rules, and Details
+-----------------------------------------------------------------------------------------
+
+A few other types of rules play supporting roles. These rules may not
+be explicit in the original text, but help add rigour. Some of these
+supporting rules are packaged in library modules that can be imported.
+
+.. list-table::
+   :header-rows: 0
+
+   * - :ref:`Declarations<Declarations are abstract>`
+     - give general structure to particular definitions.
+
+       | ``DECLARE Natural Person``
+       | ``HAS     Name      IS A String``
+       | ``"       Birthdate IS A Date``
+   * - :ref:`Demonstrations<Demonstrating the rules with Scenarios>`
+     - help check if a ruleset is behaving correctly.
+
+       | ``GIVEN Bob age IS 19 EXPECT alcohol purchase IS NOT valid``
+   * - :ref:`Display Rules<Display rules are useful for boilerplate>`
+     - Sometimes, legal text includes passages that, technically, go
+       without saying, but still have to be said.
+
+       | ``DISPLAY For the avoidance of doubt, this rule does not apply to the purchase of non-alcoholic drinks.``
+
+   * - :ref:`Details<Details are a form of decision rule>`
+     - flesh out existing definitions by applying decisions to particular cases.
+
+       | ``GIVEN  p IS A Person``
+       | ``"      d IS A Date``
+       | ``DECIDE p Age IS d - p Birthdate``
+
+
+The remainder of this document explores the above rule types.
+
+
+
 
 Definitions are concrete
 ------------------------

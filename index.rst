@@ -60,18 +60,19 @@ You can navigate this document by:
    docs/links-returning-users.rst
    docs/returning-exercises.rst
    docs/returning-cheatsheet.rst
-   docs/returning-keywords.rst
    docs/returning-transpilers.rst
    docs/returning-L4-and-law.rst
    docs/links-examples
    Publications <https://cclaw.smu.edu.sg/projects-papers>
    docs/returning-exporting-L4.rst
+..   docs/returning-keywords.rst
+     (Nemo: This language quickstart is way too bulky. It needs some work)
 
 
 
 .. toctree:: 
    :maxdepth: 1
-   :caption: L4 in Practice
+   :caption: L4 In Practice
    :titlesonly:
    :hidden:
 
@@ -81,6 +82,21 @@ You can navigate this document by:
    docs/returning-examples-pdpa-dbno.rst
    docs/returning-examples-motor-insurance.rst
    docs/returning-examples-contract-automaton.rst
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Philosophy Behind L4's Design
+   :titlesonly:
+   :hidden:
+
+   docs/links-law-and-computer-science.rst
+   docs/returning-computational-law.rst
+   docs/returning-flowchart.rst
+   docs/returning-L4-and-law.rst
+
+..   docs/returning-common-expressions.rst
+     docs/returning-law-logic-programming.rst
+     (Nemo: Still wondering where to put these 2)
 
 .. toctree::
    :maxdepth: 1
@@ -97,7 +113,7 @@ You can navigate this document by:
 
 .. toctree:: 
    :maxdepth: 1
-   :caption: Early Beta and Acknowledgements
+   :caption: Early Beta And Acknowledgements
    :titlesonly:
    :hidden:
 
@@ -105,17 +121,3 @@ You can navigate this document by:
    docs/early-beta.rst
    docs/acknowledgements.rst
 
-.. 
-   .. toctree::
-   :maxdepth: 1
-   :caption: Law and Computer Science
-   :titlesonly:
-   :hidden:
-
-   docs/links-law-and-computer-science.rst
-   docs/returning-law-logic-programming.rst
-   docs/returning-flowchart.rst
-   docs/returning-common-expressions.rst
-   docs/returning-computational-law.rst
-
-   (Nemo: I am removing this entire section because it does not contribute to the user's end goal of formalising a contract with L4.)

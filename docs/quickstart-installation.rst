@@ -20,9 +20,14 @@ Getting the LegalSS spreadsheet working on your computer
 0. Prerequisites before you can set up the LegalSS spreadsheet
 --------------------------------------------------------------
 
-- You will need a google account, which doubles as a gmail account. You can follow the instructions in `www.google.com <https://www.google.com>`_, under "sign up for free"
+- You will need a google account, which doubles as a gmail account. You can follow the instructions in `www.google.com <https://www.google.com>`_, under "sign up for free".
 
-- You will need access to the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ linked in this section. Clicking on the link will open the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ in a new window.
+- You will need access to the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ linked in this section. Clicking on the link will open the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ in a new window. The `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ works with the 2 most recent versions of:
+
+    1. `Chrome <https://www.google.com/chrome/>`_
+    2. `Firefox <https://www.mozilla.org/en-US/firefox/new/>`_
+    3. `Microsoft Edge <https://www.microsoft.com/en-us/edge>`_
+    4. `Safari <https://www.apple.com/safari/>`_
 
 ---------------------------------
 1. Make a copy of the spreadsheet
