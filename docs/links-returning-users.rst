@@ -2,13 +2,13 @@
 
 .. _links_returning:
 
-###############
-Returning Users
-###############
+#####################################
+Returning Users: Exploring L4 Further
+#####################################
 |
 |
 
-.. grid:: 4
+.. grid:: 3
 
     .. grid-item-card:: L4 in Practice
         :link: returning-exercises
@@ -22,25 +22,27 @@ Returning Users
 
         A dictionary cheatsheet of L4 Syntax.
 
-    .. grid-item-card:: Important L4 Keywords
-        :link: returning-keywords
-        :link-type: doc
-
-        Explore some of L4's important keywords.
-
     .. grid-item-card:: Export L4 Output
-        :link: returning-keywords
+        :link: returning-transpilers
         :link-type: doc
 
         Export L4 output into other languages.
+..
+    .. grid-item-card:: L4 Language Quickstart
+        :link: returning-keywords
+        :link-type: doc
 
-.. grid:: 4
+        Get an overview of how L4 works.
+        (Nemo: This page is too confusing and is not a good quickstart)
 
-    .. grid-item-card:: Motivations: Law and Computer Science
+
+.. grid:: 3
+
+    .. grid-item-card:: Philosophy Behind L4's Design
         :link: links-law-and-computer-science
         :link-type: doc
 
-        Get a deeper understanding of the motivation for L4's creation.
+        Get a deeper understanding of the philosophy behind L4's design.
 
     .. grid-item-card:: Examples
         :link: links-examples
@@ -54,11 +56,13 @@ Returning Users
 
         Read academic publications about L4.
 
+..
     .. grid-item-card:: Exporting L4
         :link: returning-exporting-L4
         :link-type: doc
 
         Learn how to export your L4 output into other formats.
+        (Nemo: This page is not complete)
 
 ======================================
 Exploring L4 Futher: Intended Audience

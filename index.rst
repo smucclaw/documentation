@@ -61,14 +61,14 @@ You can navigate this document by:
    docs/returning-exercises.rst
    docs/returning-cheatsheet.rst
    docs/returning-transpilers.rst
-   docs/returning-L4-and-law.rst
    docs/links-examples
    Publications <https://cclaw.smu.edu.sg/projects-papers>
    docs/returning-exporting-L4.rst
 ..   docs/returning-keywords.rst
      (Nemo: This language quickstart is way too bulky. It needs some work)
 
-
+     docs/returning-L4-and-law.rst
+     (Nemo: Removing this from Returning Users to see if it makes a difference)
 
 .. toctree:: 
    :maxdepth: 1

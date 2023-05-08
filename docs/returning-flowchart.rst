@@ -1,6 +1,6 @@
-==================================================
-Why a Functionally Enahnced Flowchart is Desirable
-==================================================
+=================================
+Functionally Enahanced Flowcharts
+=================================
 
 This page explains:
 

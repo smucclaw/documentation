@@ -45,9 +45,9 @@ Philosophy behind L4's Design
 
         (Nemo: These 2 pages are not helpful in helping the user understand L4)
 
-===========================================
-Law and Computer Science: Intended Audience
-===========================================
+================================================
+Philosophy behind L4's Design: Intended Audience
+================================================
 
 This section is tailored towards lawyers and computer scientists, both students and practitioners.
 
