@@ -71,7 +71,7 @@ Consider the following examples:
 - **"Contract Draft version" problems**: Finally, more mundanely, version control and structured data embedded in documents provide basic levels of machine-readability lacking today.
 
 ----------------------------------------
-Appendix A: Expanding on Technical Terms
+Appendix: Expanding on Technical Terms
 ----------------------------------------
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

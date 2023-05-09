@@ -1,5 +1,5 @@
 =================================
-Functionally Enahanced Flowcharts
+Functionally Enhanced Flowcharts
 =================================
 
 This page explains:

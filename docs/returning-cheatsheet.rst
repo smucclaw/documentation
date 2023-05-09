@@ -1,6 +1,12 @@
+.. _cs_cheatsheet:
+
 ==========
 Cheatsheet
 ==========
+
+This cheatsheet is for computer scientists.
+
+There is a separate cheatsheet for lawyers here: :ref:`law_cheatsheet`.
 
 .. image:: ../images/l4-cheatsheet.png
     :class: with-border

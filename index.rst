@@ -59,6 +59,7 @@ You can navigate this document by:
 
    docs/links-returning-users.rst
    docs/returning-exercises.rst
+   docs/returning-law-cheatsheet.rst
    docs/returning-cheatsheet.rst
    docs/returning-transpilers.rst
    docs/links-examples
