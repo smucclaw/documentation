@@ -14,13 +14,13 @@ We will constantly refer to the example in "A Manual of Style for Contract Draft
 
 This language reference is separated into two parts, with the first part, part A, being an explanation of how to navigate programming. The second part, part B, is an explanation of keywords.
 
-==============================
+------------------------------
 Part A: Navigating Programming
-==============================
+------------------------------
 
---------
+~~~~~~~~
 keywords
---------
+~~~~~~~~
 
 **In Law**
 
@@ -42,9 +42,9 @@ For example:
 - Government Body is not a keyword.
 - Acme is not a keyword.
 
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Conditional Clauses: IF...THEN
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **In Law**
 
@@ -63,9 +63,9 @@ Unlike in law, when there is an IF, there must always be a THEN.
 IF a Government Body... article 8
 THEN for as long as... license will control
 
-------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Clauses and Subclauses: Indentations
-------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **In Law**
 
@@ -86,9 +86,9 @@ If a Government Body... article 8
 
 In this case, the THEN subexpression is indented with 4 spaces.
 
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 Types: Categorising Things
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **In Law**
 
@@ -120,9 +120,9 @@ DECLARE Acme IS A Limited Company.
 
 This will allow you to compare whether your categorisations of legal objects in your head is the same as your colleague's categorisation of legal objects.
 
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 Annotations in Programming
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **In Law**
 
@@ -146,12 +146,12 @@ In L4, we leave comments with two backward slashes.
 
 Notice that you can have multiple lines of comments with two backward slashes. This will help with readability.
 
-================
+----------------
 Part B: Keywords
-================
-----------------------------------------------
+----------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ambiguity in AND and OR in Law and Programming
-----------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **In Law**
 
