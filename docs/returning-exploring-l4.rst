@@ -1,8 +1,8 @@
-============
-Exporting L4
-============
+======================
+Exploring How L4 Works
+======================
 
-This is a collection of deeper explanations on how the L4 language works. As of Jan 2023, this is mostly early beta.
+This is a collection of deeper explanations on how the L4 language works. As of May 2023, this is mostly early beta.
 
 ---------------------------
 Natural Language Generation

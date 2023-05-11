@@ -1,6 +1,6 @@
-================================
-Using L4 Output In Other Formats
-================================
+====================================
+Exporting L4 Output to Other Formats
+====================================
 
 L4 output can be transpiled ('translated') into other languages, both programming and non-programming languages.
 

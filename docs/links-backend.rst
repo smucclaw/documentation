@@ -9,13 +9,13 @@ Advanced Users: Backend Setup Instructions
 .. grid:: 2
 
     .. grid-item-card:: Backend Setup Instructions
-        :link: links-advanced-setup-instructions
+        :link: links-developers-setup-instructions
         :link-type: doc
 
         Instructions for the setup of the necessary tools.
 
     .. grid-item-card:: Conceptual Explanation of the Backend
-        :link: advanced-explanations
+        :link: developers-explanations
         :link-type: doc
 
         In-depth conceptual explanation of how the L4 backend works.

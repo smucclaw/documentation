@@ -1,12 +1,12 @@
-.. _cs_cheatsheet:
+.. _cs_specification:
 
-==========
-Cheatsheet
-==========
+=========================
+L4 Language Specification
+=========================
 
-This cheatsheet is for computer scientists.
+This L4 language specification is for L4 developers.
 
-There is a separate cheatsheet for lawyers here: :ref:`law_cheatsheet`.
+There is a page on understanding L4 through the law here: :ref:`law_understand_l4`.
 
 .. image:: ../images/l4-cheatsheet.png
     :class: with-border
@@ -16,7 +16,7 @@ There is a separate cheatsheet for lawyers here: :ref:`law_cheatsheet`.
 
   * `Full Scenario Rule`_
   * `Simple Scenario Rule`_
-  * `Regulative Rule: EVERY, WHERE`_
+  * `Regulative Rules: EVERY, WHERE`_
   * `Regulative Rules: MUST, MAY, and SHANT`_
   * `Constitutive Rule and Hornlike Rule`_
   * `Compact Constitutives`_
@@ -41,7 +41,7 @@ There is a separate cheatsheet for lawyers here: :ref:`law_cheatsheet`.
 Types of Expressions in L4
 --------------------------
 
-This `Backus-Naur Form (BNF) <https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form>`_ cheatsheet describes the syntax of the L4 language.
+This `Backus-Naur Form (BNF) <https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form>`_ specification describes the syntax of the L4 language.
 
 ---------
 Top Level
@@ -83,7 +83,7 @@ Simple Scenario Rule
 					[       ...       ]			
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Regulative Rule: EVERY, WHERE
+Regulative Rules: EVERY, WHERE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bnf

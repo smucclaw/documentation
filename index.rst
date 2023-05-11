@@ -38,7 +38,7 @@ You can navigate this document by:
 
    - Clicking on one of the cards above,
    - Clicking a link on the sidebar to the left,
-   - Searching for what you need at the top right hand corner.
+   - Searching for what you need at the top right hand corner of the page, in the "Search the docs" box.
 
 .. toctree::
    :maxdepth: 1
@@ -50,26 +50,6 @@ You can navigate this document by:
    docs/quickstart-installation.rst
    docs/quickstart-why-use-L4.rst
    docs/returning-exercises.rst
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Returning Users
-   :titlesonly:
-   :hidden:
-
-   docs/links-returning-users.rst
-   docs/returning-exercises.rst
-   docs/returning-law-cheatsheet.rst
-   docs/returning-cheatsheet.rst
-   docs/returning-transpilers.rst
-   docs/links-examples
-   Publications <https://cclaw.smu.edu.sg/projects-papers>
-   docs/returning-exporting-L4.rst
-..   docs/returning-keywords.rst
-     (Nemo: This language quickstart is way too bulky. It needs some work)
-
-     docs/returning-L4-and-law.rst
-     (Nemo: Removing this from Returning Users to see if it makes a difference)
 
 .. toctree:: 
    :maxdepth: 1
@@ -85,6 +65,29 @@ You can navigate this document by:
    docs/returning-examples-contract-automaton.rst
 
 .. toctree::
+   :maxdepth: 2
+   :caption: Returning Users
+   :titlesonly:
+   :hidden:
+
+   docs/links-returning-users.rst
+   docs/returning-exercises.rst
+   docs/returning-understand-L4.rst
+   docs/returning-specification.rst
+   Exporting L4 <docs/returning-transpilers.rst>
+   docs/links-examples
+   Publications <https://cclaw.smu.edu.sg/projects-papers>
+
+..   docs/returning-keywords.rst
+     (Nemo: This language quickstart is way too bulky. It needs some work)
+
+     docs/returning-L4-and-law.rst
+     (Nemo: Removing this from Returning Users to see if it makes a difference)
+
+..   docs/returning-exploring-L4.rst
+     (Nemo: This page is incomplete as of 11 May 2023)
+
+.. toctree::
    :maxdepth: 1
    :caption: Philosophy Behind L4's Design
    :titlesonly:
@@ -92,7 +95,7 @@ You can navigate this document by:
 
    docs/links-law-and-computer-science.rst
    docs/returning-computational-law.rst
-   docs/returning-flowchart.rst
+   Functionally Enhanced Flowcharts and Law <docs/returning-flowchart.rst>
    docs/returning-L4-and-law.rst
 
 ..   docs/returning-common-expressions.rst
@@ -101,16 +104,16 @@ You can navigate this document by:
 
 .. toctree::
    :maxdepth: 1
-   :caption: Advanced Users
+   :caption: L4 Developers
    :titlesonly:
    :hidden:
 
-   Advanced Users: Backend Setup Instructions <docs/links-backend.rst>
-   docs/advanced-explanations.rst
-   docs/advanced-installation-webtool.rst
-   docs/advanced-installation-googlesheets.rst
-   docs/advanced-installation-L4spreadsheet.rst
-   docs/advanced-security.rst
+   L4 Developers: Backend Setup Instructions <docs/links-backend.rst>
+   docs/developers-explanations.rst
+   docs/developers-installation-webtool.rst
+   docs/developers-installation-googlesheets.rst
+   docs/developers-installation-L4spreadsheet.rst
+   docs/developers-security.rst
 
 .. toctree:: 
    :maxdepth: 1

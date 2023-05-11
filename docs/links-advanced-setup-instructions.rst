@@ -9,21 +9,21 @@ Backend Setup Instructions
 .. grid:: 2
 
     .. grid-item-card:: Webtool Setup Instructions
-        :link: advanced-installation-webtool
+        :link: developers-installation-webtool
         :link-type: doc
 
     .. grid-item-card:: Google Sheets Setup Intructions
-        :link: advanced-installation-googlesheets
+        :link: developers-installation-googlesheets
         :link-type: doc
 
 .. grid:: 2
 
     .. grid-item-card:: Compiling an Edited L4 Spreadsheet
-        :link: advanced-installation-L4spreadsheet
+        :link: developers-installation-L4spreadsheet
         :link-type: doc
 
     .. grid-item-card:: Security Considerations
-        :link: advanced-security
+        :link: developers-security
         :link-type: doc
 
 =====================================

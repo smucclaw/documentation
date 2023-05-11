@@ -1,5 +1,3 @@
-:oprhan:
-
 #############################
 Philosophy behind L4's Design
 #############################
@@ -14,17 +12,17 @@ Philosophy behind L4's Design
 
         Understand Computational Law and how L4 fits in.
 
+    .. grid-item-card:: Functionally Enhanced Flowcharts and Law
+        :link: returning-flowchart
+        :link-type: doc
+
+        Understand why the Law would benefit from enhanced flowcharts. 
+
     .. grid-item-card:: L4, a DSL for law
         :link: returning-L4-and-law
         :link-type: doc
 
         Learn how L4 approaches problems in the Law.
-
-    .. grid-item-card:: Flowcharts and Software Engineering
-        :link: returning-flowchart
-        :link-type: doc
-
-        Understand why the Law would benefit from enhanced flowcharts. 
 
 ..
     .. grid:: 2

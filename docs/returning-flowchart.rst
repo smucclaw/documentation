@@ -1,6 +1,6 @@
-=================================
-Functionally Enhanced Flowcharts
-=================================
+========================================
+Functionally Enhanced Flowcharts and Law
+========================================
 
 This page explains:
 

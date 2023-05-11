@@ -8,7 +8,7 @@ Returning Users: Exploring L4 Further
 |
 |
 
-.. grid:: 3
+.. grid:: 4
 
     .. grid-item-card:: L4 in Practice
         :link: returning-exercises
@@ -16,17 +16,23 @@ Returning Users: Exploring L4 Further
 
         Exercises to quickly learn L4 syntax.
 
-    .. grid-item-card:: Cheatsheet
-        :link: returning-cheatsheet
+    .. grid-item-card:: L4 Language Specification
+        :link: returning-specification
         :link-type: doc
 
-        A dictionary cheatsheet of L4 Syntax.
+        A dictionary specification of L4 Syntax.
 
     .. grid-item-card:: Export L4 Output
         :link: returning-transpilers
         :link-type: doc
 
         Export L4 output into other languages.
+
+    .. grid-item-card:: Understand L4 through Law
+        :link: returning-understand-L4
+        :link-type: doc
+
+        Use your training in Law to learn how L4 works.
 ..
     .. grid-item-card:: L4 Language Quickstart
         :link: returning-keywords
@@ -58,7 +64,7 @@ Returning Users: Exploring L4 Further
 
 ..
     .. grid-item-card:: Exporting L4
-        :link: returning-exporting-L4
+        :link: returning-exploring-L4
         :link-type: doc
 
         Learn how to export your L4 output into other formats.

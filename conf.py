@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'L4'
-copyright = '2023, Meng Weng Wong'
-author = 'Meng Weng Wong, edited and organised by Nemo'
+copyright = '2023, Meng Weng Wong and Nemo,'
+author = 'Meng Weng Wong and Nemo'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
