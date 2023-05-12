@@ -1,6 +1,6 @@
-#################################
-Data Breach Notification Use Case
-#################################
+################################
+Data Breach Notification Example
+################################
 
 ============================
 Encoding of Real Legislation
@@ -10,38 +10,40 @@ Encoding of Real Legislation
 
 L4 automatically generates a web app from real-world legislation & regulation. It is an encoding of a fragment of real-world legislation.
 
-Concepts introduced:
+..
+    (Nemo: Everything below is the old stuff. I removed it from this example page on 12 May 2023. I'm keeping it here in case we want to use it again.)
+    Concepts introduced:
 
-1. Reference and Expansion
+    1. Reference and Expansion
 
-2. Temporal Keywords
+    2. Temporal Keywords
 
-3. State transitions
+    3. State transitions
 
-Keywords introduced:
+    Keywords introduced:
 
-    - DECIDE
-    - UNLESS
-    - WHO
-    - WHICH
-    - WHEN
-    - IF
-    - TYPICALLY
+        - DECIDE
+        - UNLESS
+        - WHO
+        - WHICH
+        - WHEN
+        - IF
+        - TYPICALLY
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Petri Net representation of PDPA DBNO
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Petri Net representation of PDPA DBNO
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We will continue our examination of the PDPA DBNO case with a deep dive into Petri Nets; it is intended to be a Petri Net representation of the PDPA DBNO example.
+    We will continue our examination of the PDPA DBNO case with a deep dive into Petri Nets; it is intended to be a Petri Net representation of the PDPA DBNO example.
 
-Concepts introduced:
+    Concepts introduced:
 
-1. Workflow diagrams in detail
+    1. Workflow diagrams in detail
 
-2. BPMN used in industry
+    2. BPMN used in industry
 
-3. Process algebras
+    3. Process algebras
 
-Keywords introduced:
+    Keywords introduced:
 
-    - HENCE
+        - HENCE

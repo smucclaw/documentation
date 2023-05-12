@@ -163,11 +163,11 @@ Ambiguity in AND and OR in Law and Programming
 
 - 'And/Or' means A or B or both A and B. For example, 'John And/Or Mary shall notify Acme' means "John or Mary or both John and Mary shall notify Acme"
 
-John or Mary or both John and Mary.
-
 **In Programming**
 
-AND and OR are important keywords in programming. There is no AND/OR phrase in programming
+AND and OR are important keywords in programming. 
+
+- There is no AND/OR phrase in programming.
 
 - AND means both clauses on the left and right of AND must be included for the entire clause to be true.
 

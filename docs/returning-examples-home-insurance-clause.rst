@@ -21,9 +21,9 @@ Following the method we learned in the "Must Sing" example, we need to:
 
 Remembering that we use indentation to disambiguate the sentence. An indentation is when the cells next to and below a keyword are blank.
 
---------------------------------------------------------
-Step 1: Breaking the home insurance rule into subclauses
---------------------------------------------------------
+------------------------------------------------
+Breaking the home insurance rule into subclauses
+------------------------------------------------
 
 "We do not cover any loss or damage caused by rodents, insects, vermin or birds. 
     However, this exclusion does not apply to:
@@ -31,27 +31,95 @@ Step 1: Breaking the home insurance rule into subclauses
         ensuing covered loss
             unless any other exclusion applies
                 or where an animal causes water to escape from a household appliance, swimming pool or plumbing, heating or air conditioning system."
-                
+
+----------------------------------------------
+The two ways to encode the home insurance rule
+----------------------------------------------
+
 We can write this rule in two ways, a 'positive' way and a 'negative' way. 
 
-The positive way is where we formalise the rule in a way that tells you that you are covered if the subclauses apply.
+The positive way is where we formalise the rule in a way that tells you that you are covered if the subclauses apply. Another way of saying this is "the damage is covered if..."
 
-The negative way is where we formalise the rule in a way that tells you that you are not covered if the subclauses apply.
+The negative way is where we formalise the rule in a way that tells you that you are not covered if the subclauses apply. Another way of saying this is "the damage is not covered if..."
 
-.. csv-table:: Covered If
+Below is the table for the positive case, "the damage is covered if..." The rows and columns are numbered for convenience and reference.
+
+-----------------------------------------------------------
+Encoding of the positive version of the home insurance rule
+-----------------------------------------------------------
+
+.. csv-table:: The damage is covered if...
     
+    , "1", "2", "3", "4", "5", "6", "7", "8", "9"
+    "1", "DECIDE", "Loss or Damage 1", "IS", "Covered"
+    "2", "IF", "NOT",                    , "Loss or Damage", "caused by", "rodents"
+    "3",      ,                    ,                 ,       ,  "OR", "insects"
+    "4",      ,                    ,                 ,       ,  "OR", "vermin"
+    "5",      ,                    ,                 ,       ,  "OR", "birds"
+    "8",     ,             "UNLESS",            ,       , "Loss or Damage", "IS", "ensuing covered loss"
+    "6",      ,            ,           "OR",        , "Loss or Damage", "IS", "to Contents"
+    "7",      ,                    ,                , "AND", "Loss or Damage", "IS", "caused by birds"
+
+    "9",    ,                    ,                 , "UNLESS",         , "any other exclusion applies"
+    "10",   ,                     ,                 ,        ,      "OR", "any animal caused water to escape from",       , "a household appliance"
+    "11",   ,                     ,                 ,        ,      ,   ,     "OR", "a swimming pool"
+    "12",   ,                     ,                 ,        ,      ,   ,     "OR", "a plumbing, heating, or air conditioning system"
+
+-----------------------------
+Understanding the L4 encoding
+-----------------------------
+
+This table looks very daunting, but we can split it into a few major subsections.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 1: Declare what version of the rule you're encoding
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The first step is to decide what version of the contract you're encoding with the DECIDE keyword. In this case, we decided that we are encoding the positive vesion of the contract, "the damge is covered if..."
+
+We see this decision in the first row, where we see "DECIDE Loss or damage 1 IS Covered".
+
+.. csv-table:: Step 1
+
     "DECIDE", "Loss or Damage 1", "IS", "Covered"
-    "IF", "NOT",                    , "Loss or Damage", "caused by", , "rodents"
-        ,      ,                    ,                 ,       ,  "OR", "insects"
-        ,      ,                    ,                 ,       ,  "OR", "vermin"
-        ,      ,                    ,                 ,       ,  "OR", "birds"
-        ,      ,            "UNLESS",                ,        ,      , "Loss or Damage", "IS", "to Contents"
-        ,      ,                    ,                , "AND", "Loss or Damage", "IS", "caused by birds"
-        ,     ,                     ,            "OR",       , "Loss or Damage", "IS", "ensuing covered loss"
-        ,    ,                    ,                 , "UNLESS",         , "any other exclusion applies"
-        ,   ,                     ,                 ,        ,      "OR", "any animal caused water to escape from",       , "a household appliance"
-        ,   ,                     ,                 ,        ,      ,   ,     "OR", "a swimming pool"
-        ,   ,                     ,                 ,        ,      ,   ,     "OR", "a plumbing, heating, or air conditioning system"
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 2: Create the encoding one subclause at a time
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+^^^^^^^^^^^^^^^
+First subclause
+^^^^^^^^^^^^^^^
+
+The original home insurance rule states that the rule is an exclusion that does not apply in certain cases, like damage caused by rodents, insects, vermin, or birds.
+
+Since we're encoding a positive version of this rule, we say "The damage is covered IF the damage is NOT caused by rodents, insects, vermin, or birds."
+
+We see this encoding from rows 2 to 5 of the encoding.
+
+.. csv-table:: First subclause
+
+    "IF", "NOT", "Loss or Damage", "caused by","rodents"
+                        ,                 ,       ,  "OR", "insects"
+                        ,                 ,       ,  "OR", "vermin"
+                        ,                 ,       ,  "OR", "birds"
+
+^^^^^^^^^^^^^^^^
+Second subclause
+^^^^^^^^^^^^^^^^
+
+The second subclause can be split into several subsubclauses.
+
+..
+    Nemo note, 12 May 2023: I am pausing writing more stuff here because of a post in #documentation-and-guides where I suggest that indentation should flow from left to right, never backwards. If this is the case, then I can write about it above.
+
+    The rule can be that subclauses with "or" as in "loss or damage", which suggests that the clause can be broken down further, should be moved to later, so we can read the rule as:
+    
+    ensuing covered loss; or
+        loss or damage caused by birds
+    
+
+
 ..
     (Nemo: Everything below is the old stuff. I removed it from this example page on 11 May 2023. I'm keeping it here in case we want to use it again.)
     Decisions express first-order logic, functions, predicates, judgements, and calculation in general.
