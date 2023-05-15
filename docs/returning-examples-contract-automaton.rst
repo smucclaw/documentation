@@ -8,7 +8,7 @@ Events & Consequences, Obligations vs Permissions
 
 `See the L4 Code for this 'Contract As Automaton' example <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=2000125343>`_
 
-In the :ref:`eg_rodent` example, we learned that we can use L4 to formalise a rule. 
+In the :ref:`eg_rodent`, we learned that we can use L4 to formalise a rule. 
 
 The rule was just about short enough to formalise without causing too much mental strain. But what happens when you need to formalise even longer rules, or rules with multiple sections that repeatedly use the same terms and rules? 
 
@@ -100,7 +100,38 @@ Repeated use of defined terms and rules
 
 This example shows how defined terms and rules can be defined separately and used in other rules.
 
-In this case, *Repayment* is defined in a separate section and used in the main definitions.
+In this case, *Repayment* is defined in a separate section and used in the main definition of the condition that needs to be fulfilled.
+
+This example uses a slightly simplified example from the LegalSS spreadsheet and does not consider "§ Contract Commencement" on lines 41-48.
+
+.. csv-table:: Condition to trigger Repayment
+
+    "§", "*Condition*"
+    "PARTY", "Lender"
+    "MUST", "remit principal"
+    "", "in the amount of $1000"
+    "", "to Borrower"
+    "WITHIN", "1 day"
+    "HENCE", "*Repayment*"
+
+The condition above says that the lender must remit a principal of $1000 to the Borrower within one day, or else (hence) *Repayment* will be triggered.
+
+The "§" symbol is a section symbol which gives a name to the L4 section below the "§" symbol.
+
+In this example, *Repayment* is defined as follows:
+
+.. csv-table:: Definition of Repayment
+
+    "§§", "*Repayment*"
+    , "Repayment"
+    "MEANS", "Main - Repay in two halves"
+    "AND", "Side - Keep taxes paid"
+
+The definition of *Repayment* above says that the borrower has to repay the principal in two halves while also keeping their taxes paid.
+
+Notice the use of the "§" symbol again, but this time with two of them together, "§§". This means that this is a subsection, like a clause and subclause in law. If we follow the analogy, then "§" is, say, section 1, and "§§" is section 1.1.
+
+In this case, "§§" means that the L4 section beneath "§§" can be inserted into any L4 section that has a "§" label.
 
 ---------------------------------------------------
 The differences between DECIDE, DECLARE, and DEFINE

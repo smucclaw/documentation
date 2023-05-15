@@ -60,9 +60,10 @@ You can navigate this document by:
    docs/links-examples
    docs/returning-examples-must-sing.rst
    docs/returning-examples-home-insurance-clause.rst
-   docs/returning-examples-pdpa-dbno.rst
-   docs/returning-examples-motor-insurance.rst
    docs/returning-examples-contract-automaton.rst
+   docs/returning-examples-motor-insurance.rst
+   docs/returning-examples-pdpa-dbno.rst
+
 
 .. toctree::
    :maxdepth: 2
