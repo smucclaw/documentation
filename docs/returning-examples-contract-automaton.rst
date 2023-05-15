@@ -94,7 +94,7 @@ Second, we explicitly state that "F_and_G" has the following items:
 
 This "F_and_G" object satisfies the requirements to be a 'loan', and is therefore a 'loan'.
 
---------------------------------------- 
+---------------------------------------
 Repeated use of defined terms and rules
 ---------------------------------------
 

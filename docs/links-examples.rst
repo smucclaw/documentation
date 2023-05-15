@@ -20,13 +20,13 @@ L4 in Practice
         :link: returning-examples-home-insurance-clause
         :link-type: doc
 
-        Understand decision rules using a home insurance policy.
+        Formalise a longer legal rule using a home insurance policy.
 
-    .. grid-item-card:: Data Breach Notification Use Case
-        :link: returning-examples-pdpa-dbno
+    .. grid-item-card:: Contract As Automaton Example
+        :link: returning-examples-contract-automaton
         :link-type: doc
 
-        Explore L4 applied to real world legilation.
+        Explore ways to formalise rules with multiple sections.
 
 .. grid:: 2
 
@@ -34,15 +34,27 @@ L4 in Practice
         :link: returning-examples-motor-insurance
         :link-type: doc
 
-        Understand predicate logic in L4.
+        Learn to read an L4 encoding.
 
-    .. grid-item-card:: Contract As Automaton Example
-        :link: returning-examples-contract-automaton
+    .. grid-item-card:: Data Breach Notification Use Case
+        :link: returning-examples-pdpa-dbno
         :link-type: doc
 
-        Study events & consequences and obligations & permissions.
+        Study an L4 encoding of actual legislation.
 
+==========================
+Read the examples in order
+==========================
 
+The examples here are meant to be read in this order:
+
+1. Must Sing Rule Example,
+2. Home Insurance Clause Example,
+3. Contract As Automaton Example,
+4. Motor Insurance Clause Example,
+5. Data Breach Notification Example.
+
+On this page, they have been arranged starting from the top left and ending at the bottom right.
 
 
 
