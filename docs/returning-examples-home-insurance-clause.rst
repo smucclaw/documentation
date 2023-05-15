@@ -56,10 +56,9 @@ Encoding of the positive version of the home insurance rule
     "3",      ,                    ,                 ,       ,  "OR", "insects"
     "4",      ,                    ,                 ,       ,  "OR", "vermin"
     "5",      ,                    ,                 ,       ,  "OR", "birds"
-    "8",     ,             "UNLESS",            ,       , "Loss or Damage", "IS", "ensuing covered loss"
-    "6",      ,            ,           "OR",        , "Loss or Damage", "IS", "to Contents"
-    "7",      ,                    ,                , "AND", "Loss or Damage", "IS", "caused by birds"
-
+    "6",     ,             "UNLESS",            ,       , "Loss or Damage", "IS", "ensuing covered loss"
+    "7",      ,            ,           "OR",        , "Loss or Damage", "IS", "to Contents"
+    "8",      ,                    ,                , "AND", "Loss or Damage", "IS", "caused by birds"
     "9",    ,                    ,                 , "UNLESS",         , "any other exclusion applies"
     "10",   ,                     ,                 ,        ,      "OR", "any animal caused water to escape from",       , "a household appliance"
     "11",   ,                     ,                 ,        ,      ,   ,     "OR", "a swimming pool"
@@ -81,7 +80,7 @@ We see this decision in the first row, where we see "DECIDE Loss or damage 1 IS 
 
 .. csv-table:: Step 1
 
-    "DECIDE", "Loss or Damage 1", "IS", "Covered"
+    "1", "DECIDE", "Loss or Damage 1", "IS", "Covered"
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Step 2: Create the encoding one subclause at a time
@@ -99,16 +98,29 @@ We see this encoding from rows 2 to 5 of the encoding.
 
 .. csv-table:: First subclause
 
-    "IF", "NOT", "Loss or Damage", "caused by","rodents"
-                        ,                 ,       ,  "OR", "insects"
-                        ,                 ,       ,  "OR", "vermin"
-                        ,                 ,       ,  "OR", "birds"
+    "2", "IF", "NOT", "Loss or Damage", "caused by","rodents"
+                     "3",                 ,       ,  "OR", "insects"
+                     "4",                 ,       ,  "OR", "vermin"
+                     "5",                 ,       ,  "OR", "birds"
 
 ^^^^^^^^^^^^^^^^
 Second subclause
 ^^^^^^^^^^^^^^^^
 
-The second subclause can be split into several subsubclauses.
+The second subclause can be split into two subsubclauses.
+
+.. csv-table:: Second subclause, subsubclause 1
+
+    "6",     ,             "UNLESS",            ,       , "Loss or Damage", "IS", "ensuing covered loss"
+    "7",      ,            ,           "OR",        , "Loss or Damage", "IS", "to Contents"
+    "8",      ,                    ,                , "AND", "Loss or Damage", "IS", "caused by birds"
+
+.. csv-table:: Second subclause, subsubclause 2
+
+    "9",    ,                    ,                 , "UNLESS",         , "any other exclusion applies"
+    "10",   ,                     ,                 ,        ,      "OR", "any animal caused water to escape from",       , "a household appliance"
+    "11",   ,                     ,                 ,        ,      ,   ,     "OR", "a swimming pool"
+    "12",   ,                     ,                 ,        ,      ,   ,     "OR", "a plumbing, heating, or air conditioning system"
 
 ..
     Nemo note, 12 May 2023: I am pausing writing more stuff here because of a post in #documentation-and-guides where I suggest that indentation should flow from left to right, never backwards. If this is the case, then I can write about it above.
