@@ -42,6 +42,11 @@ System diagram
 
 A system diagram depicting the function call graph for the system comprising the gsheet front end, the pyrest middle-tier, and the natural4, v8k, and vue-pure-pdpa backends can be found at https://github.com/smucclaw/gsheet/blob/main/pyrest/architecture.svg 
 
+See also
+
+https://docs.google.com/drawings/d/1JgSDBGgBLciITeeJgzRlg7FGfjYFtfbsaloKOQoxuho/edit?usp=sharing
+
+
 For convenience a snapshot of that diagram is presented here. The sequence of operations is indicated in the diagram by numbered steps.
 
 .. image:: ../images/system-diagram.svg
