@@ -291,6 +291,10 @@ We configure the V8K_WORKDIR environment variable for use by v8k:
     ┌─[20221102-23:03:25]   [mengwong@cclaw:~]
     └─[0] <> export V8K_WORKDIR="/home/mengwong/wow/much"
 
+It gets used when we run gunicorn:
+    
+.. code-block:: 
+
     On the backend server, in one screen, we launch gunicorn to run hello.py:
     ┌─[20221102-23:00:59]   [mengwong@cclaw:~/pyrest]
     └─[0] <> gunicorn --certfile /etc/letsencrypt/live/cclaw.legalese.com/cert.pem \
@@ -300,7 +304,7 @@ We configure the V8K_WORKDIR environment variable for use by v8k:
                     --pythonpath /home/mengwong/pyrest/lib/python3.8/site-packages/ \
                     wsgi:app
 
-On another screen, we launch it with a different bind command:
+On another screen, we might launch it with a different bind command:
 
 ``--bind 0.0.0.0:8081``
 
@@ -308,7 +312,7 @@ Now there are ten hello.py servers running: five on 8080 and five on 8081.
 
 This is useful because if you are actively developing the backend, you can run a “production” version on port 8080 and one or more “development” versions on 8081, 8082, and so on. If needed, you can further refine the distinction between production and development by configuring different hello.py to run different natural4-exe and v8k executables.
 
-As an alternative to the command-line configuration shown above, a gunicorn.conf.py file is available in the gsheet repository. The command line invocation using this approach is:
+The command-line configuration shown above is for pedagogical purposes. In practice you would use a gunicorn.conf.py file. A sample gunicorn.conf.py file is available in the gsheet repository. The command line invocation using this approach is:
 
 ``gunicorn -c gunicorn.conf.py wsgi:app``
 
