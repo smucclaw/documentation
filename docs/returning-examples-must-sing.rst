@@ -1,8 +1,8 @@
 .. _eg_mustsing:
 
-######################
-Must Sing Rule Example
-######################
+#########################
+1. Must Sing Rule Example
+#########################
 
 `See the L4 code for this 'Must Sing' example <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1505307398>`_
 

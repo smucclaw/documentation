@@ -1,6 +1,6 @@
-#############################
-Contract As Automaton Example
-#############################
+################################
+3. Contract As Automaton Example
+################################
 
 =================================================
 Events & Consequences, Obligations vs Permissions

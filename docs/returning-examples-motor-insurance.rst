@@ -1,8 +1,8 @@
 .. _eg_motor_insurance:
 
-##############################
-Motor Insurance Clause Example
-##############################
+#################################
+4. Motor Insurance Clause Example
+#################################
 
 ================================================================
 Entity Relations, Ontology Inference, and Predicate Logic Syntax

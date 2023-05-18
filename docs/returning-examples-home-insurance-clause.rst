@@ -1,8 +1,8 @@
 .. _eg_rodent:
 
-##############################
-Home Insurance Clause Example
-##############################
+################################
+2. Home Insurance Clause Example
+################################
 
 `See the L4 code for this 'Rodents and Vermin' example <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1206725099>`_
 
