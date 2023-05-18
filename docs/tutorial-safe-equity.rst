@@ -154,9 +154,9 @@ We encode "Safe Price".
 Step 4: Encode the Equity Financing event into L4
 -------------------------------------------------
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Encoding the condition and the consequence
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``(a) Equity Financing. If there is an *Equity Financing* before the termination of this *Safe*, on the initial closing of such *Equity Financing*, this *Safe* will automatically convert into the greater of:``
 
@@ -179,3 +179,58 @@ We now encode the consequence itself.
 
     ``(1) the number of shares of Standard Preferred Stock equal to the Purchase Amount divided by the lowest price per share of the Standard Preferred Stock; or (2) the number of shares of Safe Preferred Stock equal to the Purchase Amount divided by the Safe Price.``
 
+.. csv-table:: Encoding the consequences
+
+    "HENCE","this Safe will automatically convert into the greater of",, "the number of shares of Standard Preferred Stock equal to the Purchase Amount divided by the lowest price per share of the Standard Preferred Stock"
+    ,, "OR", "the number of shares of Safe Preferred Stock equal to the Purchase Amount divided by the Safe Price" 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Encoding the rest of the clause
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    ``In connection with the automatic conversion of this Safe into shares of Standard Preferred Stock or Safe Preferred Stock, the Investor will execute and deliver to the Company all of the transaction documents related to the Equity Financing; provided, that such documents (i) are the same documents to be entered into with the purchasers of Standard Preferred Stock, with appropriate variations for the Safe Preferred Stock if applicable, and (ii) have customary exceptions to any drag-along applicable to the Investor, including (without limitation) limited representations, warranties, liability and indemnification obligations for the Investor.``
+
+We can split this clause into several subclauses.
+
+"UPON the automatic conversion of this Safe into shares of Standard preferred Stock or Safe Preferred Stock, 
+
+PARTY Investor WILL execute AND deliver to the Company all of the transaction documents related to the Equity Financing, 
+
+WHEN such documents are the same documents to be entered into 
+
+WITH the purchasers of Standard Preferred Stock, 
+
+WITH appropriate variations for te Safe Preferred Stock if applicable, 
+
+AND have customary exceptions to any drag-along applicable to the Investor, including (without limitation) limited representations, warranties, liability and indemnification obligations for the Investor."
+
+.. csv-table:: Encoding the clause
+
+    "UPON", "the automatic conversion of this Safe into shares of Standard preferred Stock or Safe Preferred Stock"
+    "PARTY", "Investor"
+    "WILL",, "execute"
+    ,"AND", "deliver to the Company all of the transaction documents related to the Equity Financing"
+    "WHEN", "such documents are the same documents to be entered into"
+    "WITH", "the purchasers of Standard Preferred Stock"
+    "WITH", , "appropriate variations for te Safe Preferred Stock if applicable"
+    ,"AND", "have customary exceptions to any drag-along applicable to the Investor, including (without limitation) limited representations, warranties, liability and indemnification obligations for the Investor"
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Putting the encoding together
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. csv-table:: Full encoding of "Equity Financing"
+
+    "UPON", "an Equity Financing"
+    "BEFORE", "the termination of this SAFE"
+    "AND", "on the initial closing of such Equity Financing"
+    "HENCE","this Safe will automatically convert into the greater of",, "the number of shares of Standard Preferred Stock equal to the Purchase Amount divided by the lowest price per share of the Standard Preferred Stock"
+    ,, "OR", "the number of shares of Safe Preferred Stock equal to the Purchase Amount divided by the Safe Price" 
+    "UPON", "the automatic conversion of this Safe into shares of Standard preferred Stock or Safe Preferred Stock"
+    "PARTY", "Investor"
+    "WILL",, "execute"
+    ,"AND", "deliver to the Company all of the transaction documents related to the Equity Financing"
+    "WHEN", "such documents are the same documents to be entered into"
+    "WITH", "the purchasers of Standard Preferred Stock"
+    "WITH", , "appropriate variations for te Safe Preferred Stock if applicable"
+    ,"AND", "have customary exceptions to any drag-along applicable to the Investor, including (without limitation) limited representations, warranties, liability and indemnification obligations for the Investor"
