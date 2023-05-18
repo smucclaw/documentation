@@ -120,6 +120,40 @@ DECLARE Acme IS A Limited Company.
 
 This will allow you to compare whether your categorisations of legal objects in your head is the same as your colleague's categorisation of legal objects.
 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Variables: Giving Options
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Let's look at a contract template taken from the `safe financing documents from ycombinator <https://www.ycombinator.com/documents>`_.
+
+"THIS CERTIFIES THAT in exchange for the payment by [Investor Name] (the “Investor”) of $[_____________] (the “Purchase Amount”) on or about [Date of Safe], [Company Name], a [State of Incorporation] corporation (the “Company”), issues to the Investor the right to certain shares of the Company’s Capital Stock, subject to the terms described below
+
+This Safe is one of the forms available at `http://ycombinator.com/documents <http://ycombinator.com/documents>`_ and the Company and the Investor agree that neither one has modified the form, except to fill in blanks and bracketed terms. "
+
+Notice the words in square brackets:
+
+- [Investor Name]
+- [_____________]
+- [Date of Safe]
+- [Company Name]
+- [State of Incorporation]
+
+You can, and are supposed to, replace the words inside the square brackets with the name, amount of money, date, company name, and state of incorporation for your specific situation.
+
+The square brackets work the same way as variables in programming. Where this contract template uses square brackets, variables in programming use single letters, words, or single phrases. Some examples are:
+
+- "x", "y", "z"
+- "Investor", "Amount", "Date", "Company", "State"
+- "InvestorName", "AmountMoney", "DateSafe", "CompanyName", "StateIncorporation"
+
+Notice that the variables names in programming get longer the further down the list you go, but they also become more descriptive.
+
+We can combine the idea of variables with the idea of types that we learned in the previous section.
+
+Let's say we have a variable "InvestorName". We intuitively expect that "InvestorName" should be replaced by a name, which is some number of words. If we replaced "InvestorName" with the number 5, like this: "...for the payment by 5 (the "Investor")", we just know that we've replaced "InvestorName" with the wrong type of thing. 
+
+In this case, we've wrongly replaced "InvestorName" with a number rather than some number of words.
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Annotations in Programming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -172,6 +206,3 @@ AND and OR are important keywords in programming.
 - AND means both clauses on the left and right of AND must be included for the entire clause to be true.
 
 - OR is always inclusive OR except when specifically defined otherwise.
-
-
-

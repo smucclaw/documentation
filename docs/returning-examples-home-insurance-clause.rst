@@ -25,12 +25,16 @@ Remembering that we use indentation to disambiguate the sentence. An indentation
 Breaking the home insurance rule into subclauses
 ------------------------------------------------
 
-"We do not cover any loss or damage caused by rodents, insects, vermin or birds. 
-    However, this exclusion does not apply to:
-        loss or damage caused by birds; or
-        ensuing covered loss
-            unless any other exclusion applies
-                or where an animal causes water to escape from a household appliance, swimming pool or plumbing, heating or air conditioning system."
+    ``"We do not cover any loss or damage caused by rodents, insects, vermin or birds. 
+    However, this exclusion does not apply to:``
+    
+        ``loss or damage caused by birds; or``
+    
+            ``ensuing covered loss``
+    
+            ``unless any other exclusion applies``
+
+                ``or where an animal causes water to escape from a household appliance, swimming pool or plumbing, heating or air conditioning system."``
 
 ----------------------------------------------
 The two ways to encode the home insurance rule
