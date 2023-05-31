@@ -18,9 +18,9 @@ This language reference is separated into two parts, with the first part, part A
 Part A: Navigating Programming
 ------------------------------
 
-~~~~~~~~
-keywords
-~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+keywords in Programming
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **In Law**
 
@@ -124,6 +124,8 @@ This will allow you to compare whether your categorisations of legal objects in 
 Variables: Giving Options
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+**In Law**
+
 Let's look at a contract template taken from the `safe financing documents from ycombinator <https://www.ycombinator.com/documents>`_.
 
 "THIS CERTIFIES THAT in exchange for the payment by [Investor Name] (the “Investor”) of $[_____________] (the “Purchase Amount”) on or about [Date of Safe], [Company Name], a [State of Incorporation] corporation (the “Company”), issues to the Investor the right to certain shares of the Company’s Capital Stock, subject to the terms described below
@@ -139,6 +141,8 @@ Notice the words in square brackets:
 - [State of Incorporation]
 
 You can, and are supposed to, replace the words inside the square brackets with the name, amount of money, date, company name, and state of incorporation for your specific situation.
+
+**In Programming**
 
 The square brackets work the same way as variables in programming. Where this contract template uses square brackets, variables in programming use single letters, words, or single phrases. Some examples are:
 
