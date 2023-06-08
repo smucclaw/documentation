@@ -10,7 +10,7 @@ L4 Documentation
 
 .. grid:: 3
 
-      .. grid-item-card:: First Steps
+      .. grid-item-card:: Quickstart
          :link: docs/links-first-steps
          :link-type: doc
 

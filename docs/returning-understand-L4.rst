@@ -4,15 +4,13 @@
 Using Law to Understand L4
 ==========================
 
-This explanation page is for lawyers.
+This explanation page is meant to provide an introduction to L4 assuming you are coming from law and with little to no prior knowledge in programming. There is a more formal language specification found here :ref:`cs_specification`.
 
-There is a separate L4 language specification for developers here :ref:`cs_specification`.
+This language reference is separated into two parts, with the first part, part A, being an explanation of how to navigate programming. The second part, part B, is an explanation of keywords.
 
 We will constantly refer to the example in "A Manual of Style for Contract Drafting" by kenneth Adams, clause 3.320
 
 "If a Government Body grants to Acme a compulsory license to sell a Product in a country on terms more favorable than those in this article 8, then for as long as that compulsory license is in effect the terms of that compulsory license will control."
-
-This language reference is separated into two parts, with the first part, part A, being an explanation of how to navigate programming. The second part, part B, is an explanation of keywords.
 
 ------------------------------
 Part A: Navigating Programming
@@ -22,13 +20,7 @@ Part A: Navigating Programming
 keywords in Programming
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-**In Law**
-
-Keywords, like "condition" or "warrant", are not explicitly made clear in a contract, although you can find legal definitions of keywords in a dictionary.
-
-**In Programming**
-
-An keyword is normally made clear through different typography.
+A keyword is normally made clear through different typography.
 
 Some programming languages differentiate keywords from other terms through colour highlighting.
 
@@ -46,19 +38,15 @@ For example:
 Conditional Clauses: IF...THEN
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**In Law**
-
 Conditional clauses modify languages of obligation, discretion, prohibition, and policy. It is not an keyword in Legal English.
 
-When clauses do begin with "If", there is no need to use "then" in the following matrix clause, with some exceptions, one of which is in our running example.
+When clauses do begin with "If", there is no need to use "then" in the clause, with some exceptions, one of which is in our running example.
 
 "*If* a Government Body grants to Acme a compulsory license to sell a Product in a country on terms more favorable than those in this article 8, *then* for as long as that compulsory license is in effect the terms of that compulsory license will control."
 
-**In Programming**
-
 IF...THEN is an important keyword.
 
-Unlike in law, when there is an IF, there must always be a THEN.
+Unlike in law, when there is an IF, there must always be a THEN. Programming languages demand that keywords are used in a strictly prescribed way.
 
 IF a Government Body... article 8
 THEN for as long as... license will control
@@ -67,15 +55,11 @@ THEN for as long as... license will control
 Clauses and Subclauses: Indentations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**In Law**
-
 A clause is a subdivision of a document. We can also have a number of subclauses that modify or expand upon the clause.
 
 For example, our running example comes from clause 3.320, which is clause 3 with subclause 3, subsubclause 2, subsubsubclause 0.
 
 We explicitly number clauses in Law.
-
-**In Programming**
 
 The equivalent of a clause in programming is an expression. We can break expressions down into subexpressions.
 
@@ -84,35 +68,27 @@ In L4, we explicitly leave an indentation, which is a fixed amount of spacing fr
 If a Government Body... article 8
     THEN for as long as... license will control
 
-In this case, the THEN subexpression is indented with 4 spaces.
+In this case, the THEN subexpression is indented with 4 spaces. Indentation is important in L4 and in some other programming languages like Python, just like how clauses and subclausing are important in law.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Types: Categorising Things
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**In Law**
-
-There is no explicit concept of a type, but they are present in law.
-
-"If a Government Body grants to **Acme** a compulsory **license** to sell a Product in a country on terms more favorable than those in this article 8, then for as long as that compulsory license is in effect the terms of that compulsory license will control."
-
-Acme is a company. But there are different types of companies, such as a limited company, a private company, or an unlimited company.
+In our running clause, Acme is a company. But there are different types of companies, such as a limited company, a private company, or an unlimited company. Beyond companies, there are many different entity types: partnerships, sole proprietors, natural persons, and so on.
 
 These are different company *types*.
 
 What we are doing is categorising a thing (a company) into different categories (limited, private, or unlimited).
 
-You can apply the same reasoning to "license", of which there are many types, like a driving license, or a liquor license.
-
-**In Programming**
-
-In the same way, we can categorise things when we program.
+You can apply the same reasoning to "license", of which there are many types, like a driving license, or a liquor license. We see that the notion of types does not just include entities, but can apply to attributes and relations and more. 
 
 In L4, you can explicitly declare or define a type with the DECLARE keyword.
 
-For example, in L4 we'll say something like:
+A type in L4 is declared through the following statement: 
 
 DECLARE Acme IS A Company.
+
+Notice that the words DECLARE and IS A are fully capitalised because they are keywords that will trigger specific functions in L4's compiler.
 
 If this type definition is not clear enough for your purpose, we can go into a deeper level of granularity.
 
@@ -123,8 +99,6 @@ This will allow you to compare whether your categorisations of legal objects in 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Variables: Giving Options
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**In Law**
 
 Let's look at a contract template taken from the `safe financing documents from ycombinator <https://www.ycombinator.com/documents>`_.
 
@@ -142,13 +116,7 @@ Notice the words in square brackets:
 
 You can, and are supposed to, replace the words inside the square brackets with the name, amount of money, date, company name, and state of incorporation for your specific situation.
 
-**In Programming**
-
-The square brackets work the same way as variables in programming. Where this contract template uses square brackets, variables in programming use single letters, words, or single phrases. Some examples are:
-
-- "x", "y", "z"
-- "Investor", "Amount", "Date", "Company", "State"
-- "InvestorName", "AmountMoney", "DateSafe", "CompanyName", "StateIncorporation"
+The square brackets work the same way as variables in programming. You can name your variables in L4 and in programming. While you can name them with arbitrary letters like "x" and "y", it is good practice to use representative, informative names like "InvestorName". It is generally good practice not to leave spaces when using variable names.
 
 Notice that the variables names in programming get longer the further down the list you go, but they also become more descriptive.
 
@@ -162,24 +130,14 @@ In this case, we've wrongly replaced "InvestorName" with a number rather than so
 Annotations in Programming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**In Law**
+When we, as lawyers, are given a contract, we annotate the contract with notes about how the contract works with comments. Importantly, these comments are not part of the contract itself and is ignored when a contract is executed.
 
-When we, as lawyers, are given a contract, we annotate the contract with notes about how the contract works, how it relates to the case we are working on, and so on. One way of doing this is to print out the contract and annotate the contract on the page margins.
-
-Importantly, these annotations are not part of the contract itself and is ignored when a contract is executed.
-
-**In Programming**
-
-The equivalent of an annotation in programming is a comment.
-
-To leave notes about how our program works, why we wrote the program in this or that way, and so on, we leave *comments*.
-
-Like annotations, these comments are not part of the program itself and is ignored when a program is executed.
-
-In L4, we leave comments with two backward slashes.
+In L4, we leave comments with two backward slashes. These comments are not part of the program itself and is ignored when a program is executed.
 
 // This clause affects our case because the Government Body did 
+
 // grant Acme a compulsory license to sell a product in a coutnry on terms more favorable than those.
+
 "If a Government Body grants to Acme a compulsory license to sell a Product in a country on terms more favorable than those in this article 8, then for as long as that compulsory license is in effect the terms of that compulsory license will control."
 
 Notice that you can have multiple lines of comments with two backward slashes. This will help with readability.
@@ -191,17 +149,13 @@ Part B: Keywords
 Ambiguity in AND and OR in Law and Programming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**In Law**
-
-'And', 'Or', and 'And/Or' are important words in law that carry ambiguity.
+In everyday parlance and to some extent in law, 'And', 'Or', and 'And/Or' are important words in law that carry ambiguity.
 
 - 'And' is usually unambiguous, but there are cases where 'And' is ambiguous, such as in 'John and Mary shall notify Acme'. It can mean either 'John and Mary shall individually notify Acme' or 'John and Mary shall, collectively, notifiy Acme'.
 
 - 'Or' in 'John or Mary shall notify Acme' can be inclusive 'Or', meaning both John and Mary shall notify Acme, or exclusive 'Or', meaning either John or Mary, but not both John and Mary, shall notify Acme.
 
 - 'And/Or' means A or B or both A and B. For example, 'John And/Or Mary shall notify Acme' means "John or Mary or both John and Mary shall notify Acme"
-
-**In Programming**
 
 AND and OR are important keywords in programming. 
 

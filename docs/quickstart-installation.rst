@@ -37,13 +37,13 @@ Make a copy of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/
 
 .. image:: ../images/make-a-copy-screenshot.png
     :class: with-border
-    :width: 300px
+    :width: 200px
 
 You should get a pop-up like in the image below. 
 
 .. image:: ../images/options-to-clone-project.png
     :class: with-border
-    :width: 300px
+    :width: 200px
 
 You can change the name of this copy to a more convenient name without affecting the L4 language, otherwise you can leave the default name as it is.
 
@@ -55,91 +55,31 @@ Choose where you want to copy the spreadsheet. In this example, we copy to "My D
 
 .. image:: ../images/choose-where-to-clone-project.png
     :class: with-border
-    :width: 300px
+    :width: 200px
 
 This will be your copy of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_.
 
 .. _Activate_sheets_ide:
 
-=======================================================
-Activating L4 Functions withing the LegalSS spreadsheet
-=======================================================
+----------------------
+3. Refresh the sidebar
+----------------------
 
-A one-time procedure is needed in every separate copy of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ to activate the L4 interface within your copy of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_.
+You should be able to see a "L4 Sidebar" option next to the "Help" option in the toolbar found on the top of the document. Use this button whenever you make changes to the spreadsheet.
 
-
------------------------------------
-3. Click on Extensions/Apps Script. 
------------------------------------
-
-.. image:: ../images/apps-script-screenshot.png
+.. image:: ../images/sidebar-refresh.png
     :class: with-border
     :width: 300px
 
-
 ---------------------------------
-4. Select the LegalSS Apps Script
+4. Ensure you can see the sidebar
 ---------------------------------
 
-A new tab will open on your browser and you will be asked to select a project to open. Choose the first project "LegalSS...". Do not click on "Untitled Project".
-
-.. image:: ../images/select-project-screenshot.png
-    :class: with-border
-    :width: 300px
-
-You should be directed to a page similar to the below screenshot.
-
-.. image:: ../images/apps-script-page-screenshot.png
-    :class: with-border
-    :width: 600px
-
--------------------------------------------------
-5. Return to your copy of the LegalSS Spreadsheet
--------------------------------------------------
-
-When the Apps Script page loads, go back to your copy of `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ in your browser and select the tab "PDPA DBNO", which is the first tab of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_.
-
-.. image:: ../images/advanced-selection-screenshot.png
-    :class: with-border
-    :width: 500px
-
-.. _step_6:
-
--------------------------------------------------
-6. Return to the Apps Script page and click "Run"
--------------------------------------------------
-
-Back in the Apps Script page, click "Run" to execute the function. 
-
-You will have to grant permission to the App Script to make changes to Google Sheets.
-
-.. image:: ../images/select-run-on-sheet-ide-screenshot.png
-    :class: with-border
-    :width: 500px
-
-An Execution Log should appear below the App Script. 
-
-.. _step_7:
-
---------------------------------------------------------
-7. Ensure the Apps Script worked has executed completely
---------------------------------------------------------
-
-Wait until you read "Execution Completed", highlighted in yellow, before you move on to the next step.
-
-.. image:: ../images/execution-completed-screenshot.png
-    :class: with-border
-    :width: 500px
-
-----------------------------------------------------------------------------------------------------
-8. Return to your copy of the LegalSS Spreadsheet and check that the sidebar has activated correctly
-----------------------------------------------------------------------------------------------------
-
-Return to your copy of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_. You should see a sidebar appear on the right side of the page. 
+In your copy of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_, after pressing the 'refresh' button, you should see a sidebar appear on the right side of the page. 
 
 .. image:: ../images/sidebar-appears-screenshot.png
     :class: with-border
-    :width: 300px
+    :width: 200px
 
 ----------------------------------
 Contact the L4 developers for help
@@ -214,3 +154,85 @@ Once you have finished installation, consider exploring:
 - :ref:`Why Use L4? <tour_of_L4>`
 
 - :ref:`See L4 in Practice <Learning L4_Exercises>`.
+
+..
+    =======================================================
+    Activating L4 Functions withing the LegalSS spreadsheet
+    =======================================================
+
+    A one-time procedure is needed in every separate copy of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ to activate the L4 interface within your copy of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_.
+
+
+
+
+    -----------------------------------
+  1. Click on Extensions/Apps Script. 
+  -----------------------------------
+  .. image:: ../images/apps-script-screenshot.png
+      :class: with-border
+      :width: 300px
+
+
+  ---------------------------------
+  4. Select the LegalSS Apps Script
+  ---------------------------------
+  A new tab will open on your browser and you will be asked to select a project to open. Choose the first project "LegalSS...". Do not click on "Untitled Project".
+
+..
+  .. image:: ../images/select-project-screenshot.png
+      :class: with-border
+      :width: 300px
+
+  You should be directed to a page similar to the below screenshot.
+..
+  .. image:: ../images/apps-script-page-screenshot.png
+      :class: with-border
+      :width: 600px
+..
+  -------------------------------------------------
+  5. Return to your copy of the LegalSS Spreadsheet
+  -------------------------------------------------
+..
+  When the Apps Script page loads, go back to your copy of `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ in your browser and select the tab "PDPA DBNO", which is the first tab of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_.
+..
+  .. image:: ../images/advanced-selection-screenshot.png
+      :class: with-border
+      :width: 500px
+
+  .. _step_6:
+..
+  -------------------------------------------------
+  6. Return to the Apps Script page and click "Run"
+  -------------------------------------------------
+..
+  Back in the Apps Script page, click "Run" to execute the function. 
+..
+  You will have to grant permission to the App Script to make changes to Google Sheets.
+..
+  .. image:: ../images/select-run-on-sheet-ide-screenshot.png
+      :class: with-border
+      :width: 500px
+
+  An Execution Log should appear below the App Script. 
+
+  .. _step_7:
+..
+  --------------------------------------------------------
+  7. Ensure the Apps Script worked has executed completely
+  --------------------------------------------------------
+..
+  Wait until you read "Execution Completed", highlighted in yellow, before you move on to the next step.
+..
+  .. image:: ../images/execution-completed-screenshot.png
+      :class: with-border
+      :width: 500px
+
+  ----------------------------------------------------------------------------------------------------
+  8. Return to your copy of the LegalSS Spreadsheet and check that the sidebar has activated correctly
+  ----------------------------------------------------------------------------------------------------
+..
+  Return to your copy of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_. You should see a sidebar appear on the right side of the page. 
+..
+  .. image:: ../images/sidebar-appears-screenshot.png
+      :class: with-border
+      :width: 300px

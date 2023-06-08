@@ -8,7 +8,7 @@ First Steps
 
 .. grid:: 1
 
-    .. grid-item-card:: 1. Getting Started
+    .. grid-item-card:: 1. Setting Up
         :link: quickstart-installation
         :link-type: doc
 
