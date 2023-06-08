@@ -74,6 +74,7 @@ You can navigate this document by:
    docs/links-returning-users.rst
    docs/returning-exercises.rst
    docs/returning-understand-L4.rst
+   docs/returning-L4-keywords.rst
    docs/returning-specification.rst
    Exporting L4 <docs/returning-transpilers.rst>
    docs/links-examples
