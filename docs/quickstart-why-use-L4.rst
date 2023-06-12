@@ -1,8 +1,8 @@
 .. _tour_of_L4:
 
-###########
-Why use L4?
-###########
+##############
+2. Why use L4?
+##############
 
 **The L4 DSL stack improves access to justice and reduces the cost of
 developing legal software by giving non-lawyers a "low-code" way to

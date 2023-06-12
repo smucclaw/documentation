@@ -6,6 +6,12 @@ Advanced Users: Backend Setup Instructions
 
 .. grid:: 3
 
+    .. grid-item-card:: Conceptual Explanation of the Backend
+        :link: developers-explanations
+        :link-type: doc
+
+        In-depth conceptual explanation of how the L4 backend works.
+
     .. grid-item-card:: 1. Webtool Setup Instructions
         :link: developers-installation-webtool
         :link-type: doc
@@ -14,21 +20,15 @@ Advanced Users: Backend Setup Instructions
         :link: developers-installation-googlesheets
         :link-type: doc
 
+.. grid:: 2
+
     .. grid-item-card:: 3. Compiling an Edited L4 Spreadsheet
         :link: developers-installation-L4spreadsheet
         :link-type: doc
 
-.. grid:: 2
-
     .. grid-item-card:: 4. Security Considerations
         :link: developers-security
         :link-type: doc
-
-    .. grid-item-card:: Conceptual Explanation of the Backend
-        :link: developers-explanations
-        :link-type: doc
-
-        In-depth conceptual explanation of how the L4 backend works.
 
 ============================================
 Installing the L4 Backend: Intended Audience

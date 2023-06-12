@@ -109,11 +109,12 @@ You can navigate this document by:
    :hidden:
 
    L4 Developers: Backend Setup Instructions <docs/links-backend.rst>
+   docs/developers-explanations.rst
    docs/developers-installation-webtool.rst
    docs/developers-installation-googlesheets.rst
    docs/developers-installation-L4spreadsheet.rst
    docs/developers-security.rst
-   docs/developers-explanations.rst
+
 
 .. toctree:: 
    :maxdepth: 1
