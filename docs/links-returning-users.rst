@@ -16,17 +16,17 @@ Returning Users: Exploring L4 Further
 
         Export L4 output into other languages.
 
-    .. grid-item-card:: Using Law to Understand L4
-        :link: returning-understand-L4
-        :link-type: doc
-
-        Use your training in Law to learn how L4 works.
-
     .. grid-item-card:: List of Keywords in L4
         :link: returning-L4-keywords
         :link-type: doc
 
         A list of keywords found in L4.
+
+    .. grid-item-card:: L4 Language Specification
+        :link: returning-specification
+        :link-type: doc
+
+        A semantic specification of L4 Syntax.
 
 ..
     .. grid-item-card:: L4 Language Quickstart
@@ -39,18 +39,18 @@ Returning Users: Exploring L4 Further
 
 .. grid:: 2
 
-    .. grid-item-card:: L4 Language Specification
-        :link: returning-specification
+    .. grid-item-card:: Using Law to Understand L4
+        :link: returning-understand-L4
         :link-type: doc
 
-        A semantic specification of L4 Syntax.
+        Use your training in Law to learn how L4 works.
 
     .. grid-item-card:: Publications
         :link: https://cclaw.smu.edu.sg/projects-papers
         :link-type: url
 
         Read academic publications about L4.
-        
+
 ..
     .. grid-item-card:: Exporting L4
         :link: returning-exploring-L4
