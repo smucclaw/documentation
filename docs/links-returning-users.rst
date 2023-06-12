@@ -8,7 +8,7 @@ L4 Language Reference
 |
 |
 
-.. grid:: 3
+.. grid:: 2
 
     .. grid-item-card:: Export L4 Output
         :link: returning-transpilers
@@ -22,11 +22,19 @@ L4 Language Reference
 
         A list of keywords found in L4.
 
+.. grid:: 2
+
     .. grid-item-card:: L4 Language Specification
         :link: returning-specification
         :link-type: doc
 
         A semantic specification of L4 Syntax.
+
+    .. grid-item-card:: Publications
+        :link: https://cclaw.smu.edu.sg/projects-papers
+        :link-type: url
+
+        Read academic publications about L4.
 
 ..
     .. grid-item-card:: L4 Language Quickstart

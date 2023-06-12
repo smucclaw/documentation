@@ -48,19 +48,13 @@ Learning To Use L4
 
         Exercises to quickly learn L4 syntax.
 
-.. grid:: 2
+.. grid:: 1
 
     .. grid-item-card:: Using Law to Understand L4
         :link: returning-understand-L4
         :link-type: doc
 
         Use your training in Law to learn how L4 works.
-
-    .. grid-item-card:: Publications
-        :link: https://cclaw.smu.edu.sg/projects-papers
-        :link-type: url
-
-        Read academic publications about L4.
 
 ==========================
 Read the examples in order

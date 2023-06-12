@@ -1,8 +1,8 @@
 .. _Learning L4_exercises:
 
-#########
-Exercises
-#########
+############
+6. Exercises
+############
 
 You may find the :ref:`L4 Spreadsheet quick reference` helpful.
 
