@@ -42,7 +42,7 @@ You can navigate this document by:
 
 .. toctree::
    :maxdepth: 1
-   :caption: First Steps
+   :caption: Quickstart
    :titlesonly:
    :hidden:
 
@@ -52,7 +52,7 @@ You can navigate this document by:
 
 .. toctree:: 
    :maxdepth: 1
-   :caption: L4 In Practice
+   :caption: Learning To Use L4
    :titlesonly:
    :hidden:
 
@@ -63,10 +63,13 @@ You can navigate this document by:
    docs/returning-examples-motor-insurance.rst
    docs/returning-examples-pdpa-dbno.rst
    docs/returning-exercises.rst
+   docs/returning-understand-L4.rst
+   Publications <https://cclaw.smu.edu.sg/projects-papers>
+
 
 .. toctree::
    :maxdepth: 2
-   :caption: Returning Users
+   :caption: L4 Language Reference
    :titlesonly:
    :hidden:
 
@@ -74,8 +77,6 @@ You can navigate this document by:
    Exporting L4 <docs/returning-transpilers.rst>
    docs/returning-L4-keywords.rst
    docs/returning-specification.rst
-   docs/returning-understand-L4.rst
-   Publications <https://cclaw.smu.edu.sg/projects-papers>
 
 ..   docs/returning-keywords.rst
      (Nemo: This language quickstart is way too bulky. It needs some work)
@@ -107,7 +108,7 @@ You can navigate this document by:
    :titlesonly:
    :hidden:
 
-   L4 Developers: Backend Setup Instructions <docs/links-backend.rst>
+   L4 Backend Setup Instructions <docs/links-backend.rst>
    docs/developers-explanations.rst
    docs/developers-installation-webtool.rst
    docs/developers-installation-googlesheets.rst

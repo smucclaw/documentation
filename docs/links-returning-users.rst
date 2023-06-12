@@ -2,9 +2,9 @@
 
 .. _links_returning:
 
-#####################################
-Returning Users: Exploring L4 Further
-#####################################
+#####################
+L4 Language Reference
+#####################
 |
 |
 
@@ -35,21 +35,6 @@ Returning Users: Exploring L4 Further
 
         Get an overview of how L4 works.
         (Nemo: This page is too confusing and is not a good quickstart)
-
-
-.. grid:: 2
-
-    .. grid-item-card:: Using Law to Understand L4
-        :link: returning-understand-L4
-        :link-type: doc
-
-        Use your training in Law to learn how L4 works.
-
-    .. grid-item-card:: Publications
-        :link: https://cclaw.smu.edu.sg/projects-papers
-        :link-type: url
-
-        Read academic publications about L4.
 
 ..
     .. grid-item-card:: Exporting L4

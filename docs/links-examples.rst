@@ -2,9 +2,9 @@
 
 .. _examples:
 
-##############
-L4 in Practice
-##############
+##################
+Learning To Use L4
+##################
 |
 |
 
@@ -42,11 +42,25 @@ L4 in Practice
 
         Study an L4 encoding of actual legislation.
 
-    .. grid-item-card:: Exercises
+    .. grid-item-card:: 6. Exercises
         :link: returning-exercises
         :link-type: doc
 
         Exercises to quickly learn L4 syntax.
+
+.. grid:: 2
+
+    .. grid-item-card:: Using Law to Understand L4
+        :link: returning-understand-L4
+        :link-type: doc
+
+        Use your training in Law to learn how L4 works.
+
+    .. grid-item-card:: Publications
+        :link: https://cclaw.smu.edu.sg/projects-papers
+        :link-type: url
+
+        Read academic publications about L4.
 
 ==========================
 Read the examples in order

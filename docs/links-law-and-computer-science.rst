@@ -1,5 +1,5 @@
 #############################
-Philosophy behind L4's Design
+Philosophy Behind L4's Design
 #############################
 |
 |
