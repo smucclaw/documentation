@@ -1,8 +1,8 @@
 .. _webtool:
 
-##########################
-Webtool Setup Instructions
-##########################
+#############################
+1. Webtool Setup Instructions
+#############################
 
 Installation instructions for the Web Tool were taken and edited from
 https://github.com/smucclaw/vue-pure-pdpa
@@ -61,10 +61,11 @@ Run the following set of install scripts:
 
 .. code-block::
 
-    nvm use
     nvm install
+    nvm use
     nvm exec
     npm install -g node-gyp@latest
+    npm install
     npm run deps
 
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -77,6 +78,12 @@ Start the application in development mode by running:
 
 The application can be accessed at ``localhost:8080``.
 
+If you've been assigned a different port 8xxx, use
+
+``$ npm run serve -- --port=8xxx``
+
+If you have a working web app at the interface, you should be able to proceed to use this repo as part of the L4 backend.
+
 ~~~~~~~~~~~~~~~~~~~~~~~
 Building for Production
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,6 +95,8 @@ To build the application for production, run:
 This command should produce a ``dist/`` directory. Deploy the contents in the ``dist/`` directory to your application of choice (e.g. Github pages).
 
 An example can be found at https://smucclaw.github.io/vue-pure-pdpa/ or https://smucclaw.github.io/mengwong/pdpa/.
+
+In other words, ``mv`` the relevant files from ``dist/`` into the ``smucclaw/smucclaw.github.io`` repository.
 
 ~~~~~~~~~~~~
 Using Docker
@@ -118,27 +127,34 @@ You only have to do this once:
     mkdir ~/v8kworkdir
     cd ~/v8kworkdir
     export V8K_WORKDIR=~/v8kworkdir
-    rsync -va ~/src/smucclaw/vue-pure-pdpa/ vue-big/
+    git clone git://github.com/smucclaw/vue-pure-pdpa
+    rsync -va vue-pure-pdpa/ vue-big/
+    (cd vue-big; npm i; npm run deps)
     rsync -va --exclude={.spago,.git,node_modules} vue-big/ vue-small/
     cd vue-small
     ln -s ../vue-big/.git .
     ln -s ../vue-big/node_modules .
     ln -s ../vue-big/.spago .
 
-Note that for the 3rd command, ``rsync -va ~/src/smucclaw/vue-pure-pdpa/ vue-big/``, you should replace ``~/src/smucclaw/vue-pure-pdpa/`` with the folder where you cloned the vue-pure-pdpa github page.
+Remember to update your gunicorn conf file to set V8K_WORKDIR to the path as above.
 
-Why do we have separate instances of vue-pure-pdpa, vue-big, and vue-small?
-Because the EC2 instance all of this was developed on (t3.medium) is configured with slow disk
-in this particular filesystem.
-When the user clicks on the link in the sidebar that takes the end-user to the Vue UI
-response time matters. If we rsync the entire vue-pure-pdpa directory structure, it will take upwards of 10 minutes.
-So we do the exclusions and the symlinks instead, which takes less than a minute.
+This sets you up with ``vue-small``, which is a copy of ``vue-big``, which is a copy of the ``vue-pure-pdpa repo``.
+
+``vue-small`` takes up a bit less space, by taking advantage of symlinks to reuse existing files that don't change across copies.
+
+This becomes valuable because ``v8k`` later rsyncs ``vue-small`` to ``vue-01``, ``vue-02``, and so on, at runtime. This rsync happens when we're trying to hurry: the end-user could click on the "vue web app" link at any time, so we want to bring up the vue web app as fast as possible.
+
+If the ``vue-YY`` directory doesn't already exist, then the rsync is liable to be slow, so we want to minimize the size of the ``vue-small``.
+
+We could pre-rsync the ``vue-YY`` directories at this point, too, with something like
+
+``for yy in 01 02 03 04 05 06 07 08 09; do rsync -va vue-small/ vue-$yy/; done``
 
 ^^^^^^^^^^^^^^^^^^^^^
 Spawning a new server
 ^^^^^^^^^^^^^^^^^^^^^
 
-Note that you do not have to run the following commands; this is just an explanation of how the Pythong Flask subsystem spawns a server.
+Note that you do not have to run the following commands; this is just an explanation of how the Python Flask subsystem spawns a server.
 
 Every time the Python Flask subsystem runs natural4-exe to refresh the workdir output, it will want to tell Vue that there is a new .purs file that contains a Rule Library.
 
@@ -167,7 +183,7 @@ If you have the notion of "ending a session" in the Google Sheets "IDE" frontend
 This will deallocate the running instance and make the slot available.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Bringing Down A Server through a forced shutdown
+Bringing Down A Server Through A Forced Shutdown
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 There are 10 slots per v8K run.

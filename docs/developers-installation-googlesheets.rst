@@ -1,8 +1,8 @@
 .. _install_googlesheets:
 
-###############################
-Google Sheets Setup Intructions
-###############################
+##################################
+2. Google Sheets Setup Intructions
+##################################
 
 The most prominent element of the L4 IDE (Interactive Development Environment) is the sidebar that appears in an L4 spreadsheet.
 

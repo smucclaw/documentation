@@ -1,8 +1,8 @@
 .. _security:
 
-#######################
-Security Considerations
-#######################
+##########################
+4. Security Considerations
+##########################
 
 The channel security model of the L4 IDE relies on HTTPS. All API calls are SSL-encrypted. This security model is intended to defeat eavesdropping, replay, message insertion, deletion, modification, and man/woman/nonbinary-person-in-the-middle attacks on the transport layer.
 

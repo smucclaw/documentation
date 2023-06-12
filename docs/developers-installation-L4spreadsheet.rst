@@ -1,8 +1,8 @@
 .. _auto_config:
 
-##################################
-Compiling an Edited L4 Spreadsheet
-##################################
+#####################################
+3. Compiling an Edited L4 Spreadsheet
+#####################################
 
 This section is only required if you want to edit the L4 Spreadsheet and compile a new version of the web app out of this edited L4 Spreadsheet.
 

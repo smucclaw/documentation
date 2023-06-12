@@ -63,7 +63,7 @@ You can navigate this document by:
    docs/returning-examples-contract-automaton.rst
    docs/returning-examples-motor-insurance.rst
    docs/returning-examples-pdpa-dbno.rst
-
+   docs/returning-exercises.rst
 
 .. toctree::
    :maxdepth: 2
@@ -72,12 +72,10 @@ You can navigate this document by:
    :hidden:
 
    docs/links-returning-users.rst
-   docs/returning-exercises.rst
+   Exporting L4 <docs/returning-transpilers.rst>
    docs/returning-understand-L4.rst
    docs/returning-L4-keywords.rst
    docs/returning-specification.rst
-   Exporting L4 <docs/returning-transpilers.rst>
-   docs/links-examples
    Publications <https://cclaw.smu.edu.sg/projects-papers>
 
 ..   docs/returning-keywords.rst
@@ -111,11 +109,11 @@ You can navigate this document by:
    :hidden:
 
    L4 Developers: Backend Setup Instructions <docs/links-backend.rst>
-   docs/developers-explanations.rst
    docs/developers-installation-webtool.rst
    docs/developers-installation-googlesheets.rst
    docs/developers-installation-L4spreadsheet.rst
    docs/developers-security.rst
+   docs/developers-explanations.rst
 
 .. toctree:: 
    :maxdepth: 1
