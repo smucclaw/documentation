@@ -6,7 +6,13 @@ Philosophy behind L4's Design
 
 .. grid:: 3
 
-    .. grid-item-card:: L4 and Computational Law
+    .. grid-item-card:: How L4 Approaches Law
+        :link: returning-L4-and-law
+        :link-type: doc
+
+        Learn how L4 approaches problems in the Law.
+
+    .. grid-item-card:: How L4 Addresses Problems in Computational Law
         :link: returning-computational-law
         :link-type: doc
 
@@ -17,12 +23,6 @@ Philosophy behind L4's Design
         :link-type: doc
 
         Understand why the Law would benefit from enhanced flowcharts. 
-
-    .. grid-item-card:: L4, a DSL for law
-        :link: returning-L4-and-law
-        :link-type: doc
-
-        Learn how L4 approaches problems in the Law.
 
 ..
     .. grid:: 2

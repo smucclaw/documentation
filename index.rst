@@ -94,9 +94,9 @@ You can navigate this document by:
    :hidden:
 
    docs/links-law-and-computer-science.rst
+   docs/returning-L4-and-law.rst
    docs/returning-computational-law.rst
    Functionally Enhanced Flowcharts and Law <docs/returning-flowchart.rst>
-   docs/returning-L4-and-law.rst
 
 ..   docs/returning-common-expressions.rst
      docs/returning-law-logic-programming.rst

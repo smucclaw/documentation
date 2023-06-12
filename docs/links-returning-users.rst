@@ -39,19 +39,18 @@ Returning Users: Exploring L4 Further
 
 .. grid:: 2
 
-    .. grid-item-card:: Publications
-        :link: https://cclaw.smu.edu.sg/projects-papers
-        :link-type: url
-
-        Read academic publications about L4.
-
     .. grid-item-card:: L4 Language Specification
         :link: returning-specification
         :link-type: doc
 
         A semantic specification of L4 Syntax.
 
+    .. grid-item-card:: Publications
+        :link: https://cclaw.smu.edu.sg/projects-papers
+        :link-type: url
 
+        Read academic publications about L4.
+        
 ..
     .. grid-item-card:: Exporting L4
         :link: returning-exploring-L4
