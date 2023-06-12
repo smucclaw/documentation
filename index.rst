@@ -6,27 +6,48 @@
 ################
 L4 Documentation
 ################
-
+|
+|
 
 .. grid:: 3
 
-      .. grid-item-card:: Quickstart
-         :link: docs/links-first-steps
-         :link-type: doc
+   .. grid-item-card:: Quickstart
+      :link: docs/links-first-steps
+      :link-type: doc
 
-         Start interacting with L4
+      Start interacting with L4
 
-      .. grid-item-card:: Returning Users
-         :link: docs/links-returning-users
-         :link-type: doc
+   .. grid-item-card:: Learning To Use L4
+      :link: docs/links-examples
+      :link-type: doc
 
-         Continue your journey with L4.
+      Learn to use L4 through examples
 
-      .. grid-item-card:: Advanced Users
-         :link: docs/links-backend
-         :link-type: doc
+   .. grid-item-card:: L4 Language Reference
+      :link: docs/links-returning-users
+      :link-type: doc
 
-         Set up L4 on your own server.
+      Find out how to export L4, learn its keywords, and its semantic specification
+
+.. grid:: 3
+
+   .. grid-item-card:: Philosophy Behind L4's Design
+      :link: docs/links-law-and-computer-science
+      :link-type: doc
+
+      Learn about the relationship between L4 and Computational Law
+
+   .. grid-item-card:: L4 Backend Setup Instructions
+      :link: docs/links-backend
+      :link-type: doc
+
+      Set up L4 on your own server.
+
+   .. grid-item-card:: About & Contact Us
+      :link: docs/about-and-contact
+      :link-type: doc
+
+      Contact the L4 Developers
 
 =======
 Welcome
@@ -64,8 +85,6 @@ You can navigate this document by:
    docs/returning-examples-pdpa-dbno.rst
    docs/returning-exercises.rst
    docs/returning-understand-L4.rst
-   Publications <https://cclaw.smu.edu.sg/projects-papers>
-
 
 .. toctree::
    :maxdepth: 2
@@ -77,6 +96,7 @@ You can navigate this document by:
    Exporting L4 <docs/returning-transpilers.rst>
    docs/returning-L4-keywords.rst
    docs/returning-specification.rst
+   Publications <https://cclaw.smu.edu.sg/projects-papers>
 
 ..   docs/returning-keywords.rst
      (Nemo: This language quickstart is way too bulky. It needs some work)
