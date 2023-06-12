@@ -18,9 +18,13 @@ L4 Backend Setup Instructions For Developers
         :link: developers-installation-webtool
         :link-type: doc
 
+        Setup the web app on your server.
+
     .. grid-item-card:: 2. Google Sheets Setup Intructions
         :link: developers-installation-googlesheets
         :link-type: doc
+
+        Setup the L4 google sheets for your own use.
 
 .. grid:: 2
 
@@ -28,9 +32,13 @@ L4 Backend Setup Instructions For Developers
         :link: developers-installation-L4spreadsheet
         :link-type: doc
 
+        Compile a new version of the web app after editing the L4 spreadsheet.
+
     .. grid-item-card:: 4. Security Considerations
         :link: developers-security
         :link-type: doc
+
+        Be aware of security issues for L4.
 
 ============================================
 Installing the L4 Backend: Intended Audience

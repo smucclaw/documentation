@@ -12,7 +12,7 @@ Quickstart
         :link: quickstart-installation
         :link-type: doc
 
-        Get started with L4's LegalSS Spreadsheet
+        Get started with L4's LegalSS Spreadsheet.
 
     .. grid-item-card:: 2. Why Use L4?
         :link: quickstart-why-use-L4

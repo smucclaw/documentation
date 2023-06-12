@@ -15,19 +15,19 @@ L4 Documentation
       :link: docs/links-first-steps
       :link-type: doc
 
-      Start interacting with L4
+      Start interacting with L4.
 
    .. grid-item-card:: Learning To Use L4
       :link: docs/links-examples
       :link-type: doc
 
-      Learn to use L4 through examples
+      Learn to use L4 through examples.
 
    .. grid-item-card:: L4 Language Reference
       :link: docs/links-returning-users
       :link-type: doc
 
-      Find out how to export L4, learn its keywords, and its semantic specification
+      Find out how to export L4, learn its keywords, and its semantic specification.
 
 .. grid:: 3
 
@@ -35,7 +35,7 @@ L4 Documentation
       :link: docs/links-law-and-computer-science
       :link-type: doc
 
-      Learn about the relationship between L4 and Computational Law
+      Learn about the relationship between L4 and Computational Law.
 
    .. grid-item-card:: L4 Backend Setup Instructions
       :link: docs/links-backend
@@ -47,7 +47,7 @@ L4 Documentation
       :link: docs/about-and-contact
       :link-type: doc
 
-      Contact the L4 Developers
+      Contact the L4 Developers.
 
 =======
 Welcome
