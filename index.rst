@@ -49,7 +49,6 @@ You can navigate this document by:
    docs/links-first-steps.rst
    docs/quickstart-installation.rst
    docs/quickstart-why-use-L4.rst
-   docs/returning-exercises.rst
 
 .. toctree:: 
    :maxdepth: 1
