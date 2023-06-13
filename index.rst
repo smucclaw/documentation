@@ -113,8 +113,8 @@ You can navigate this document by:
    :titlesonly:
    :hidden:
 
-   docs/returning-conceptual-faq.rst
    docs/links-law-and-computer-science.rst
+   docs/returning-conceptual-faq.rst
    docs/returning-L4-and-law.rst
    docs/returning-computational-law.rst
    Functionally Enhanced Flowcharts and Law <docs/returning-flowchart.rst>
