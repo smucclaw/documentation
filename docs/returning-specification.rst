@@ -82,9 +82,9 @@ Simple Scenario Rule
 				EXPECT  RelationalPredicate													
 					[       ...       ]			
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Regulative Rules: EVERY, WHERE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bnf
 

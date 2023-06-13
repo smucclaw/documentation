@@ -51,7 +51,7 @@ In the first version of L4 we did hard code contracts since we knew the answer w
 Very slowly, then all at once. We would like people to view L4 as the first step into the future of computational law and argue that the future of computational law will be based on the L4 of today.
 
 ====================================================================================================================================================================================================================
-8. Is this a matter of finding a uniform "language" that is accessible by all? if so, the main difficulty seems to be convincing everyone why the computational law "language" should be preferred over any another.
+8. Is this a matter of finding a uniform "language" that is accessible by all? If so, the main difficulty seems to be convincing everyone why the computational law "language" should be preferred over any another.
 ====================================================================================================================================================================================================================
 
 The L4 encoding should be preferred because it's easier to understand for laypeople. If we can explore the contract with animations and colours and diagrams, people may put in effort to understand the contracts they need to wrestle with. In the future, Large Language Models (LLMs) could use an L4 plugin to answer questions in LLMs in a way that gives more explainability.
