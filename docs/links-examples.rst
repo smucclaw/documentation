@@ -50,7 +50,7 @@ Learn To Use L4
 
 .. grid:: 1
 
-    .. grid-item-card:: Using Law to Understand L4
+    .. grid-item-card:: Use Law to Understand L4
         :link: returning-understand-L4
         :link-type: doc
 

@@ -1,8 +1,8 @@
 .. _law_understand_l4:
 
-==========================
-Using Law to Understand L4
-==========================
+========================
+Use Law to Understand L4
+========================
 
 This explanation page is meant to provide an introduction to L4 assuming you are coming from law and with little to no prior knowledge in programming. There is a more formal language specification found here :ref:`cs_specification`.
 
@@ -11,6 +11,19 @@ This language reference is separated into two parts, with the first part, part A
 We will constantly refer to the example in "A Manual of Style for Contract Drafting" by kenneth Adams, clause 3.320
 
 "If a Government Body grants to Acme a compulsory license to sell a Product in a country on terms more favorable than those in this article 8, then for as long as that compulsory license is in effect the terms of that compulsory license will control."
+
+* `Part A: Navigating Programming`_
+
+  * `keywords in Programming`_
+  * `Conditional Clauses: IF...THEN`_
+  * `Clauses and Subclauses: Indentations`_
+  * `Types: Categorising Things`_
+  * `Variables: Giving Options`_
+  * `Annotations in Programming`_
+
+* `Part B: Keywords`_
+
+  * `Ambiguity in AND and OR in Law and Programming`_
 
 ------------------------------
 Part A: Navigating Programming
