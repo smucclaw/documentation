@@ -42,11 +42,11 @@ Learn To Use L4
 
         Study an L4 encoding of actual legislation.
 
-    .. grid-item-card:: 6. Exercises
+    .. grid-item-card:: 6. Exercise
         :link: returning-exercises
         :link-type: doc
 
-        Exercises to quickly learn L4 syntax.
+        An exercise to quickly learn L4 syntax.
 
 .. grid:: 1
 

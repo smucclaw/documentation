@@ -139,7 +139,7 @@ This sidebar can be scrolled down and contains several sections:
 Green box: LegalSS spreadsheet tabs linking to other examples
 -------------------------------------------------------------
 
-The LegalSS spreadsheet comes with built-in :ref:`examples` that you can navigate to with the tabs at the bottom of the page.
+The LegalSS spreadsheet comes with built-in :ref:`examples <examples>` that you can navigate to with the tabs at the bottom of the page.
 
 ------------------------------------------
 Red box: Environment for writing L4
@@ -151,7 +151,7 @@ This is where you write your L4 code.
 Black box: Liquor exercise example
 ----------------------------------
 
-In this particular LegalSS spreadsheet tab is the :ref:`Learning L4_exercises`, given in grey cells. The grey box with words contains comments; these comments will not run as L4 code.
+In this particular LegalSS spreadsheet tab is the :ref:`Liquor exercise <Learning L4_exercises>`, given in grey cells. The grey box with words contains comments; these comments will not run as L4 code.
 
 The light blue box found in the first column shows you what cell is being selected and that will be edited if you type something. In this example screenshot, a cell highlighted in yellow is selected.
 

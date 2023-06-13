@@ -1,8 +1,8 @@
 .. _Learning L4_exercises:
 
-############
-6. Exercises
-############
+###########
+6. Exercise
+###########
 
 You may find the :ref:`L4 Spreadsheet quick reference` helpful.
 
@@ -16,7 +16,7 @@ Liquor laws vary in many countries, but most have some constraints on who can bu
 
 Task: Implement, in L4, the following legal exercises:
 
-You are given the following rule in the tab "Learning L4: Liquor Exercise". You should note that:
+You are given the following rule in the `"Learning L4: Liquor Exercise" tab <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit#gid=249602568>`_. You should note that:
 
 - Words in uppercase are keywords.
 
@@ -90,25 +90,26 @@ If the sidebar is not refreshing at all, re-run the Apps script from step 2 of :
 
 - **Adding comments to the LegalSS Google Sheets**: Comments have a grey background and start with '//'.
 
---------------------------------------------------------
-Parantheses and Operator precedence: Arithmetic Exercise
---------------------------------------------------------
+..
+  --------------------------------------------------------
+  Parantheses and Operator precedence: Arithmetic Exercise
+  --------------------------------------------------------
+..
+  This exercise will introduce parantheses and operator precedence
 
-This exercise will introduce parantheses and operator precedence
+..
+  -----------------------
+  Data Modelling Exercise
+  -----------------------
+..
+  This exercise will teach you how to model sentences like:
+..
+    - Every company has shareholders, 
+    - Every company has directors, 
+    - Every company has a mailing address
 
-
------------------------
-Data Modelling Exercise
------------------------
-
-This exercise will teach you how to model sentences like:
-
-  - Every company has shareholders, 
-  - Every company has directors, 
-  - Every company has a mailing address
-
-------------------------------------------
-Modelling Simple Obligations and Deadlines
-------------------------------------------
-
-This exercise will allow you to model obligations such as an exchange of money for goods.
+  ------------------------------------------
+  Modelling Simple Obligations and Deadlines
+  ------------------------------------------
+..
+  This exercise will allow you to model obligations such as an exchange of money for goods.

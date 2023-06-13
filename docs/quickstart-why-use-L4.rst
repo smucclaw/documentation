@@ -26,7 +26,7 @@ explore and produce legal "programs".**
 L4 helps people **understand** laws and contracts
 =================================================
 
-L4’s **visualizers** graphically depict the rules and logic of legal code to aid comprehension. (See: :ref:`the 'Must Sing' example <eg_mustsing>` for ; or :ref:`the Home Insurance example <eg_rodent>`)
+L4’s **visualizers** graphically depict the rules and logic of legal code to aid comprehension. (See: :ref:`the 'Must Sing' example <eg_mustsing>` for ; or :ref:`the 'Home Insurance' example <eg_rodent>`)
 
 L4’s **scenario explorer** helps engineers and end-users explore a contract by asking “what if?” and “can I?”.
 
