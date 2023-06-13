@@ -17,7 +17,7 @@ L4 Documentation
 
       Start interacting with L4.
 
-   .. grid-item-card:: Learning To Use L4
+   .. grid-item-card:: Learn To Use L4
       :link: docs/links-examples
       :link-type: doc
 
@@ -73,7 +73,7 @@ You can navigate this document by:
 
 .. toctree:: 
    :maxdepth: 1
-   :caption: Learning To Use L4
+   :caption: Learn To Use L4
    :titlesonly:
    :hidden:
 
