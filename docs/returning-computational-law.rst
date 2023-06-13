@@ -2,13 +2,9 @@
 How L4 Addresses Problems in Computational Law
 ==============================================
 
-This page explains:
-
-- What Computational Law is and what it aims to solve
-- The limits to Computational Law
-- How L4 can address problems in Computational Law
-
-This page is meant for lawyers and computer scientists.
+* `Motivating Computational Law`_
+* `Limits to Computational Law`_
+* `How L4 can address problems in Computational Law`_
 
 ----------------------------
 Motivating Computational Law

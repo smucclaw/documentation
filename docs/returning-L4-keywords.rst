@@ -2,6 +2,8 @@
 List of Keywords in L4
 ######################
 
+**This list is in alphabetic order**.
+
 - BY (definite time): Friday/December/1 July 2023...
 
 - DECIDE (definition): DECIDE Loss or Damage IS covered/ DECIDE it is of a significant scale...

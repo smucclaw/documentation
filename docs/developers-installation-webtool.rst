@@ -4,10 +4,35 @@
 1. Webtool Setup Instructions
 #############################
 
-Installation instructions for the Web Tool were taken and edited from
-https://github.com/smucclaw/vue-pure-pdpa
+* `Overview`_
+* `Requirements`_
+* `Setup and Usage`_
 
-The reader will be able to install the Web Tool even if they are unfamiliar with some of Vue, Purescript, or Haskell.
+  * `Configuring environment variables with .env`_
+  * `Installing NVM`_
+  * `Installing packages`_
+  * `Running in development`_
+  * `Building for production`_
+  * `Using Docker`_
+  * `Using v8k`_
+    
+    * `Setting up v8K`_
+    * `Spawning a new server`_
+    * `Bringing down a server`_
+    * `Bringing down a server through a forced shutdown`_
+    * `Checking to see what's running using v8k`_
+    * `Checking to see what's running without using v8k`_
+
+* `Accessing the Web Tool`_
+
+--------
+Overview
+--------
+
+Installation instructions for the Web Tool were taken and edited from
+https://github.com/smucclaw/vue-pure-pdpa.
+
+You will be able to install the Web Tool even if they are unfamiliar with some of Vue, Purescript, or Haskell.
 
 - Vue is a framework similar to React and Angular, providing infrastructure for component-oriented single-page web application development. We chose it for its excellent support for hot-reloading and re-rendering.
   
@@ -30,7 +55,7 @@ Setup and Usage
 Clone the `SMU CCLAW vue-pure-pdpa github page <https://github.com/smucclaw/vue-pure-pdpa>`_.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Configuring Environment Variables with .env
+Configuring environment variables with .env
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before proceeding with the steps below, copy the ``.env.example`` to ``.env`` in your cloned vue-pure-pdpa repository. You can do this with the following command:
@@ -51,10 +76,10 @@ Inside the newly created ``.env`` file, configure the following settings accordi
 Installing NVM
 ~~~~~~~~~~~~~~
 
-NVM is a version manager for node. Follow the instructions on the `nvm github <https://github.com/nvm-sh/nvm>`_.
+NVM is a version manager for node. Follow the instructions on the `nvm github <https://github.com/nvm-sh/nvm>`_ for installation.
 
 ~~~~~~~~~~~~~~~~~~~
-Installing Packages
+Installing packages
 ~~~~~~~~~~~~~~~~~~~
 
 Run the following set of install scripts:
@@ -69,7 +94,7 @@ Run the following set of install scripts:
     npm run deps
 
 ~~~~~~~~~~~~~~~~~~~~~~
-Running in Development
+Running in development
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Start the application in development mode by running:
@@ -85,7 +110,7 @@ If you've been assigned a different port 8xxx, use
 If you have a working web app at the interface, you should be able to proceed to use this repo as part of the L4 backend.
 
 ~~~~~~~~~~~~~~~~~~~~~~~
-Building for Production
+Building for production
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 To build the application for production, run:
@@ -140,7 +165,7 @@ Remember to update your gunicorn conf file to set V8K_WORKDIR to the path as abo
 
 This sets you up with ``vue-small``, which is a copy of ``vue-big``, which is a copy of the ``vue-pure-pdpa repo``.
 
-``vue-small`` takes up a bit less space, by taking advantage of symlinks to reuse existing files that don't change across copies.
+``vue-small`` takes up less space by taking advantage of symlinks to reuse existing files that don't change across copies.
 
 This becomes valuable because ``v8k`` later rsyncs ``vue-small`` to ``vue-01``, ``vue-02``, and so on, at runtime. This rsync happens when we're trying to hurry: the end-user could click on the "vue web app" link at any time, so we want to bring up the vue web app as fast as possible.
 
@@ -171,7 +196,7 @@ And a few seconds later that link should serve an instance of your personal Vue 
 The above ``up`` call is idempotent: the Flask system can just re-run it when the ``workdir`` changes and serve the constructed URL back to the sidebar. Most of the time the URL will not change but sometimes it will, so do read it each time.
 
 ^^^^^^^^^^^^^^^^^^^^^^
-Bringing Down A Server
+Bringing down a server
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Usually you can just leave the servers running. The v8k script has the notion of a pool, whose default size is 10; after 10 slots are allocated, new up commands will overwrite the oldest server.
@@ -183,7 +208,7 @@ If you have the notion of "ending a session" in the Google Sheets "IDE" frontend
 This will deallocate the running instance and make the slot available.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Bringing Down A Server Through A Forced Shutdown
+Bringing down a server through a forced shutdown
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 There are 10 slots per v8K run.
@@ -200,9 +225,9 @@ This command should, in theory, walk the V8K_WORKDIR to see what's going on.
 
 ``~/src/smucclaw/vue-pure-pdpa/bin/v8k list``
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Checking to see what's running
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Checking to see what's running without using v8k
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you do not trust v8K, probe the OS:
 

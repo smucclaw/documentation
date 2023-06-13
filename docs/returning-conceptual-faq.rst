@@ -30,7 +30,9 @@ Frequently Asked Conceptual Questions
 
     - In the first version of L4 we did hard code contracts since we knew the answer we were looking for. In the current and subsequent versions of L4, we will look at scenarios that are abstract and not hard-coded.
 
-6. Will L4 be open-sourced? If so, will L4 be universally appliable in law?
+
+..
+  6. Will L4 be open-sourced? If so, will L4 be universally appliable in law?
 
 
 
@@ -38,32 +40,25 @@ Frequently Asked Conceptual Questions
 
 
 
-7. At what scale/volume does the L4 development team see L4 gaining traction in law?
+6. At what scale/volume does the L4 development team see L4 gaining traction in law?
 
     - Very slowly, then all at once. We would like people to view L4 as the first step into the future of computational law and argue that the future of computational law will be based on the L4 of today.
 
-8. Is this really just a matter of finding a uniform "language" that is accessible by all, getting buy-in from everyone to always prepare a "version"/"translation" of source documents in the uniform "language", such that everyone can interpret/analyse based on the "translated" document instead of the source? if so, the main difficulty seems to be convincing everyone why the computational law "language" should be preferred over any another.
+7. Is this really just a matter of finding a uniform "language" that is accessible by all, getting buy-in from everyone to always prepare a "version"/"translation" of source documents in the uniform "language", such that everyone can interpret/analyse based on the "translated" document instead of the source? if so, the main difficulty seems to be convincing everyone why the computational law "language" should be preferred over any another.
 
     - The L4 encoding should be preferred because it's easier to understand for laypeople. If we can explore the contract with animations and colours and diagrams, people may put in effort to understand the contracts they need to wrestle with. In the future, Large Language Models (LLMs) could use an L4 plugin to answer questions in LLMs in a way that gives more explainability.
 
-9.  Even if everyone in the legal domain agrees that there should be a common language to translate contracts into, why should we translate contracts into a computational "language"? 
+8.  Even if everyone in the legal domain agrees that there should be a common language to translate contracts into, why should we translate contracts into a computational "language"? 
 
     - The biggest advantage after translating contracts into computational language is that we can represent the contract in different ways rather than just using paper. We imagine that people will be able to explore contracts as diagrams with animation.
 
-10.   How important is learning a programming language for a law student?
+9.   How important is learning a programming language for a law student?
 
     - Law students around the world want to learn to program. More and more law schools are adding a programming module as they understand that computational thinking is important. It is important for law students to learn computational thinking, and rigorous and logical thinking. We believe that L4 is a way to improve lawyers' critical thinking and logical reasoning. 
 
-11.  Different jurisdictions share similarities but also express differences in legislation. How should lawyers manage regulations across jurisdictions? Are there any specific possibilities of international co-operation and any treaties that we can adopt to address technological and innovation concerns across the globe?
+10.  Different jurisdictions share similarities but also express differences in legislation. How should lawyers manage regulations across jurisdictions? Are there any specific possibilities of international co-operation and any treaties that we can adopt to address technological and innovation concerns across the globe?
 
     - We are sympathetic to the idea of different jurisdictions behaving differently. In software, we have Windows, Mac, and Linux as Operating Systems (OS) for computers. Programs written for one OS may not work in other OS. However, it's possible to download source code for a program and run it in any of the above OS because programming langauges are a good way of unifying these parts together.
 
     -  Software overcame this problem of incompatible code using libraries, and L4 anticipates this. It will have import statements and imports for regulations and jursidictions. For example, we might import an L4 library for Singapore, or Hong Kong. Both the Singapore and Hong Kong libraries can import the commonwealth library.
-
-.. 
-    ================
-    How-to Questions
-    ================
-
-    1. Do we need to highlight borders and highlight the background with colours in the L4 googlesheet?
 

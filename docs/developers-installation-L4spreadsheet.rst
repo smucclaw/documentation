@@ -4,6 +4,20 @@
 3. Compiling an Edited L4 Spreadsheet
 #####################################
 
+* `Overview`_
+* `Automatic configuration of the Web Tool`_
+
+  * `Installing the L4 Interpreter: natural4-exe`_
+  
+* `Purescript configuration`_
+* `Maintaining vue`_
+* `The L4 spreadsheet can choose a backend port`_
+* `Https is needed; letsencrypt refreshes certificates`_
+
+--------
+Overview
+--------
+
 This section is only required if you want to edit the L4 Spreadsheet and compile a new version of the web app out of this edited L4 Spreadsheet.
 
 ---------------------------------------
@@ -20,7 +34,7 @@ The command-line arguments will need to be adapted to the circumstances of your 
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Installing the L4 interpreter: natural4-exe
+Installing the L4 Interpreter: natural4-exe
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This subsubsection is only required if you need to edit the web tool. You might want to edit the web tool if, for example, the law changes and you need to update content. If you are happy with the web tool as it is, you may skip this section.

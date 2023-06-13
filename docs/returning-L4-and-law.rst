@@ -2,21 +2,16 @@
 How L4 Approaches Law
 =====================
 
-This page explains:
+* `L4 is a specification language`_
+* `The Relationship between L4 and contracts and legislation`_
+* `L4 helps resolves ambiguities in Natural Language`_
+* `Advantages of modelling using a formal system`_
+* `Appendix: Expanding on Technical Terms`_
 
-- What L4 is as a modelling method for Law
-- A discussion of the relationship between L4 and contracts and legislations
-- How L4 helps force legal drafters to be clear with their legal language
-- Advantages of modelling law using a formal system
-
-This document comes with an appendix on
-
-- The notion of contract as state machine
-- Resolving disagreements about the value of terms and choice of logic
-- Rewriting a rule system based on meta-rule systems
-- "Evaluating" a specification
-
-This page is meant for computer scientists.
+  * `The notion of contract as state machine`_
+  * `Resolving disagreements about the value of terms and choice of logic`_
+  * `Rewriting a rule system based on meta-rule systems`_
+  * `"Evaluating" a specification`_
 
 ------------------------------
 L4 is a specification language

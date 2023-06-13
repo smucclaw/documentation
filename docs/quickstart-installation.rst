@@ -1,6 +1,6 @@
-#############
-1. Setting Up
-#############
+##########
+Setting Up
+##########
 |
 
 ****************************************
@@ -10,7 +10,7 @@ Writing in L4 on the LegalSS spreadsheet
 
 Your main interface when writing with L4 is on a google sheets spreadsheet called the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_. This spreadsheet has a special app function that activates the L4 language.
 
-The current version of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ is v0.9.4.3 as of Jan 2023.
+The current version of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ is v0.9.4.3 as of May 2023.
 
 ========================================================
 Getting the LegalSS spreadsheet working on your computer

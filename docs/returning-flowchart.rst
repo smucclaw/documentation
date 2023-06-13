@@ -2,14 +2,10 @@
 Functionally Enhanced Flowcharts and Law
 ========================================
 
-This page explains:
-
-- Why people use flowcharts
-- How flowcharts fit in a workflow
-- Why adding functionalities to flowcharts is desirable
-- How software engineers can add functionalities to flowcharts
-
-This page is meant for computer scientists.
+* `Flowcharts represent both statics and dynamics`_
+* `A flowchart's output feeds into a document intended for printing`_
+* `Why a functionality enhanced flowchart is preferable`_
+* `How software engineers can add functionalities to flowcharts`_
 
 ----------------------------------------------
 Flowcharts represent both statics and dynamics

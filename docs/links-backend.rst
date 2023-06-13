@@ -20,11 +20,11 @@ L4 Backend Setup Instructions For Developers
 
         Setup the web app on your server.
 
-    .. grid-item-card:: 2. Google Sheets Setup Intructions
+    .. grid-item-card:: 2. Google Sheets Setup Instructions
         :link: developers-installation-googlesheets
         :link-type: doc
 
-        Setup the L4 google sheets for your own use.
+        Setup the L4 Google Sheets for your own use.
 
 .. grid:: 2
 

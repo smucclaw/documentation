@@ -138,11 +138,13 @@ You can navigate this document by:
 
 .. toctree:: 
    :maxdepth: 1
-   :caption: Early Beta And Acknowledgements
+   :caption: About & Contact Us
    :titlesonly:
    :hidden:
 
    docs/about-and-contact.rst
-   docs/early-beta.rst
    docs/acknowledgements.rst
 
+..
+   docs/early-beta.rst
+   (Nemo: I feel this is superfluous and I'm removing it from the Early Beta and Acknowledgements section)

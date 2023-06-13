@@ -4,6 +4,27 @@
 Language Quickstart
 ###################
 
+* `Disclaimer`_
+* `How to think about contracts and law with L4`_
+
+  * `The Elementary Patterns: Decisions, Duties, and Definitions`_
+
+    * `Decisions lie at the heart of Constitutive Rules`_
+    * `Deontic Duties lie at the heart of Regulative Rules`_
+    * `Deadlines go hand-in-hand with Deontics`_
+
+  * `Review: Constitutive vs Prescriptive Rules`_
+
+    * `Qualifying Rules`_
+    * `Or else what?`_
+
+  * `The Supporting Patterns: Declarations, Demonstrations, Display Rules, and Details`_
+
+    * `Definitions are concrete`_
+    * `Declarations are abstract`_
+
+* `Keywords: Declarations and Definitions`_
+
 ==========
 Disclaimer
 ==========
@@ -326,7 +347,7 @@ The remainder of this document explores the above rule types.
 
 
 
-
+------------------------
 Definitions are concrete
 ------------------------
 
@@ -352,6 +373,7 @@ template: for instance, a contract might talk about a Buyer and a
 Seller in the abstract, and define those parties in an Annex with
 name, address, and identifying numbers.
 
+-------------------------
 Declarations are abstract
 -------------------------
 

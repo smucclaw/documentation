@@ -1,8 +1,8 @@
 .. _tour_of_L4:
 
-##############
-2. Why use L4?
-##############
+###########
+Why use L4?
+###########
 
 **The L4 DSL stack improves access to justice and reduces the cost of
 developing legal software by giving non-lawyers a "low-code" way to
@@ -12,7 +12,7 @@ explore and produce legal "programs".**
 L4 helps people **understand** laws and contracts
 -------------------------------------------------
 
-L4’s **visualizers** graphically depict the rules and logic of legal code to aid comprehension. (See: :ref:`the 'must sing' example <eg_mustsing>` for ; or :ref:`the Rodent Insurance example <eg_rodent>`)
+L4’s **visualizers** graphically depict the rules and logic of legal code to aid comprehension. (See: :ref:`the 'Must Sing' example <eg_mustsing>` for ; or :ref:`the Home Insurance example <eg_rodent>`)
 
 L4’s **scenario explorer** helps engineers and end-users explore a contract by asking “what if?” and “can I?”.
 
@@ -162,7 +162,7 @@ L4 supports Document Assembly
 -----------------------------
 
 The contract assembly engine helps you generate a document you can
-sign (after running it past a lawyer for code review, of course).
+sign after running it past a lawyer for code review.
 
 For investment agreements, L4 also generates all the prerequisite
 components such as board resolutions and members' resolutions in
@@ -173,127 +173,128 @@ compatibility with contract lifecycle management tools.
 
 The L4 package library will soon contain loan agreements, leasing agreements, and investment agreements.
 
-===================
-The Semantics of L4
-===================
+.. 
+    ===================
+    The Semantics of L4
+    ===================
 
-This section outlines the semantic domains that support L4's expressivity and generality.
+    This section outlines the semantic domains that support L4's expressivity and generality.
 
--------------
-Boolean Logic
--------------
+    -------------
+    Boolean Logic
+    -------------
 
-:keyword:`AND OR NOT UNLESS IF THEN ELSE`
+    :keyword:`AND OR NOT UNLESS IF THEN ELSE`
 
------------------
-First-Order Logic
------------------
+    -----------------
+    First-Order Logic
+    -----------------
 
-:keyword:`IS`
+    :keyword:`IS`
 
-----------
-Arithmetic
-----------
+    ----------
+    Arithmetic
+    ----------
 
-:keyword:`plus minus times divide abs min max <= < > >=`
+    :keyword:`plus minus times divide abs min max <= < > >=`
 
--------------------------------------
-Object-Oriented Classes and Instances
--------------------------------------
+    -------------------------------------
+    Object-Oriented Classes and Instances
+    -------------------------------------
 
-:keyword:`ontology`
+    :keyword:`ontology`
 
----------------------------
-Type Checking and Inference
----------------------------
+    ---------------------------
+    Type Checking and Inference
+    ---------------------------
 
-:keyword:`type annotations are optional`
+    :keyword:`type annotations are optional`
 
-----------------
-Regulative Rules
-----------------
+    ----------------
+    Regulative Rules
+    ----------------
 
-:keyword:`PARTY X … MUST DO … Y`
+    :keyword:`PARTY X … MUST DO … Y`
 
-Obligations and communications between parties are represented as state transition systems
+    Obligations and communications between parties are represented as state transition systems
 
-------------------
-Constitutive Rules
-------------------
+    ------------------
+    Constitutive Rules
+    ------------------
 
-:keyword:`DECIDE X … WHEN Y`
+    :keyword:`DECIDE X … WHEN Y`
 
-----------------
-Qualifying Rules
-----------------
+    ----------------
+    Qualifying Rules
+    ----------------
 
-:keyword:`EVERY X … MUST BE … Y`
+    :keyword:`EVERY X … MUST BE … Y`
 
---------------
-Deontic Modals
---------------
+    --------------
+    Deontic Modals
+    --------------
 
-:keyword:`MUST MAY SHANT DO`
+    :keyword:`MUST MAY SHANT DO`
 
-The language of permission and obligation
+    The language of permission and obligation
 
----------------
-Temporal Modals
----------------
+    ---------------
+    Temporal Modals
+    ---------------
 
-:keyword:`BEFORE AFTER BY WITHIN UNTIL`
+    :keyword:`BEFORE AFTER BY WITHIN UNTIL`
 
-"Time is of the essence"
+    "Time is of the essence"
 
----------------------
-Relational Predicates
----------------------
+    ---------------------
+    Relational Predicates
+    ---------------------
 
-:keyword:`IS NOT`
+    :keyword:`IS NOT`
 
-One thing stands in a certain relation to another
+    One thing stands in a certain relation to another
 
--------------
-Default Logic
--------------
+    -------------
+    Default Logic
+    -------------
 
-:keyword:`WHEN OTHERWISE`
+    :keyword:`WHEN OTHERWISE`
 
-Exceptions and defaults
+    Exceptions and defaults
 
-----------------
-Defeasible Logic
-----------------
+    ----------------
+    Defeasible Logic
+    ----------------
 
-:keyword:`NOTWITHSTANDING, SUBJECT TO`
+    :keyword:`NOTWITHSTANDING, SUBJECT TO`
 
-Meta-rule relations
+    Meta-rule relations
 
----------------
-Lambda Calculus
----------------
+    ---------------
+    Lambda Calculus
+    ---------------
 
-:keyword:`GIVEN LET DEFINE`
+    :keyword:`GIVEN LET DEFINE`
 
-------------
-Unit Testing
-------------
+    ------------
+    Unit Testing
+    ------------
 
-:keyword:`SCENARIO GIVEN EXPECT`
+    :keyword:`SCENARIO GIVEN EXPECT`
 
-Partial Evaluation reduces a ruleset to a residual.
+    Partial Evaluation reduces a ruleset to a residual.
 
 
-Formal Methods
---------------
-:keyword:`ASSERT TRACE`
+    Formal Methods
+    --------------
+    :keyword:`ASSERT TRACE`
 
-Find loopholes and mistakes in the code
+    Find loopholes and mistakes in the code
 
----------------------------
-Natural Language Generation
----------------------------
+    ---------------------------
+    Natural Language Generation
+    ---------------------------
 
-Supports the translation of code into multiple natural languages to support interfaces
+    Supports the translation of code into multiple natural languages to support interfaces
 
 

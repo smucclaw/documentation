@@ -2,8 +2,19 @@
 Conceptual Explanation of the Backend
 #####################################
 
+* `How the Web Tool works`_
+* `Explanation of the Google Sheet App`_
+
+  * `System Diagram`_
+
+* `How the L4 Interpreter works`_
+* `Vue is managed by v8k`_
+* `hello.py is managed by gunicorn`_
+
+  * `Analysis of an example gunicorn/hello.py logfile`_
+
 ----------------------
-How the Web Tool Works
+How the Web Tool works
 ----------------------
 
 The updates are provided by the L4 backend. A copy of the L4 backend was run on an Amazon Web Services (AWS) instance. The Web Tool is also hosted on the AWS instance.
@@ -40,7 +51,7 @@ The abovementioned sidebar is populated by Code.gs from the template file main.h
 System diagram
 ~~~~~~~~~~~~~~
 
-A system diagram depicting the function call graph for the system comprising the gsheet front end, the pyrest middle-tier, and the natural4, v8k, and vue-pure-pdpa backends can be found at https://github.com/smucclaw/gsheet/blob/main/pyrest/architecture.svg 
+A system diagram depicting the function call graph for the system comprising the gsheet front end, the pyrest middle-tier, and the natural4, v8k, and vue-pure-pdpa backends can be found at https://github.com/smucclaw/gsheet/blob/main/natural4-server/architecture.svg
 
 For convenience a snapshot of that diagram is presented here. The sequence of operations is indicated in the diagram by numbered steps.
 
@@ -50,7 +61,7 @@ For convenience a snapshot of that diagram is presented here. The sequence of op
 The blue (natural4-exe) and green (v8k) boxes are the subject of this section. The other system components corel4 and clara operate in parallel but are not the subject of this section.
 
 ----------------------------
-How The L4 interpreter Works
+How the L4 Interpreter works
 ----------------------------
 
 The Web Tool is intended to correspond closely to the encoded legislation and regulations, identified hereinafter as the “Natural L4” encoding in the high-level L4 controlled natural language.
