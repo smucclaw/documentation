@@ -53,16 +53,18 @@ Conditional Clauses: IF...THEN
 
 Conditional clauses modify languages of obligation, discretion, prohibition, and policy. It is not an keyword in Legal English.
 
-When clauses do begin with "If", there is no need to use "then" in the clause, with some exceptions, one of which is in our running example.
+When clauses do begin with "If", there is no need to use "then", with some exceptions, one of which is in our running example.
 
 "*If* a Government Body grants to Acme a compulsory license to sell a Product in a country on terms more favorable than those in this article 8, *then* for as long as that compulsory license is in effect the terms of that compulsory license will control."
 
-IF...THEN is an important keyword.
+IF...THEN is an important keyword in programming.
 
 Unlike in law, when there is an IF, there must always be a THEN. Programming languages demand that keywords are used in a strictly prescribed way.
 
-IF a Government Body... article 8
-THEN for as long as... license will control
+.. code-block::
+
+    IF a Government Body... article 8
+    THEN for as long as... license will control
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Clauses and Subclauses: Indentations
@@ -78,8 +80,10 @@ The equivalent of a clause in programming is an expression. We can break express
 
 In L4, we explicitly leave an indentation, which is a fixed amount of spacing from the left aligned text, like this:
 
-If a Government Body... article 8
-    THEN for as long as... license will control
+.. code-block::
+
+    If a Government Body... article 8
+        THEN for as long as... license will control
 
 In this case, the THEN subexpression is indented with 4 spaces. Indentation is important in L4 and in some other programming languages like Python, just like how clauses and subclausing are important in law.
 
@@ -99,13 +103,13 @@ In L4, you can explicitly declare or define a type with the DECLARE keyword.
 
 A type in L4 is declared through the following statement: 
 
-DECLARE Acme IS A Company.
+``DECLARE Acme IS A Company.``
 
 Notice that the words DECLARE and IS A are fully capitalised because they are keywords that will trigger specific functions in L4's compiler.
 
 If this type definition is not clear enough for your purpose, we can go into a deeper level of granularity.
 
-DECLARE Acme IS A Limited Company.
+``DECLARE Acme IS A Limited Company.``
 
 This will allow you to compare whether your categorisations of legal objects in your head is the same as your colleague's categorisation of legal objects.
 
@@ -129,15 +133,15 @@ Notice the words in square brackets:
 
 You can, and are supposed to, replace the words inside the square brackets with the name, amount of money, date, company name, and state of incorporation for your specific situation.
 
-The square brackets work the same way as variables in programming. You can name your variables in L4 and in programming. While you can name them with arbitrary letters like "x" and "y", it is good practice to use representative, informative names like "InvestorName". It is generally good practice not to leave spaces when using variable names.
+The square brackets work the same way as variables in programming. You can name your variables in L4 and in programming. While you can name them with arbitrary letters like ``"x"`` and ``"y"``, it is good practice to use representative, informative names like ``"InvestorName"``. It is generally good practice not to leave spaces when using variable names.
 
 Notice that the variables names in programming get longer the further down the list you go, but they also become more descriptive.
 
 We can combine the idea of variables with the idea of types that we learned in the previous section.
 
-Let's say we have a variable "InvestorName". We intuitively expect that "InvestorName" should be replaced by a name, which is some number of words. If we replaced "InvestorName" with the number 5, like this: "...for the payment by 5 (the "Investor")", we just know that we've replaced "InvestorName" with the wrong type of thing. 
+Let's say we have a variable ``"InvestorName"``. We intuitively expect that ``"InvestorName"`` should be replaced by a name, which is some number of words. If we replaced ``"InvestorName"`` with the number 5, like this: ``"...for the payment by 5 (the "Investor")"``, we just know that we've replaced ``"InvestorName"`` with the wrong type of thing. 
 
-In this case, we've wrongly replaced "InvestorName" with a number rather than some number of words.
+In this case, we've wrongly replaced "``InvestorName"`` with a number rather than some number of words.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Annotations in Programming
@@ -147,11 +151,12 @@ When we, as lawyers, are given a contract, we annotate the contract with notes a
 
 In L4, we leave comments with two backward slashes. These comments are not part of the program itself and is ignored when a program is executed.
 
-// This clause affects our case because the Government Body did 
+.. code-block::
 
-// grant Acme a compulsory license to sell a product in a coutnry on terms more favorable than those.
+    // This clause affects our case because the Government Body did 
+    // grant Acme a compulsory license to sell a product in a coutnry on terms more favorable than those.
 
-"If a Government Body grants to Acme a compulsory license to sell a Product in a country on terms more favorable than those in this article 8, then for as long as that compulsory license is in effect the terms of that compulsory license will control."
+    "If a Government Body grants to Acme a compulsory license to sell a Product in a country on terms more favorable than those in this article 8, then for as long as that compulsory license is in effect the terms of that compulsory license will control."
 
 Notice that you can have multiple lines of comments with two backward slashes. This will help with readability.
 
