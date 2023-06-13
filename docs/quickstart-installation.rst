@@ -1,7 +1,19 @@
 ##########
 Setting Up
 ##########
-|
+
+* `Writing in L4 on the LegalSS spreadsheet`_
+* `Getting the LegalSS spreadsheet working on your computer`_
+
+  * `0. Prerequisites before you can set up the LegalSS Spreadsheet`_
+  * `1. Make a copy of the spreadsheet`_
+  * `2. Choose where you want to copy the LegalSS spreadsheet`_
+  * `3. Refresh the sidebar`_
+  * `4. Ensure you can see the sidebar`_
+  * `Contact the L4 developers for help`_
+
+* `Familiarise yourself with the LegalSS Spreadsheet`_
+* `Next Steps`_
 
 ****************************************
 Writing in L4 on the LegalSS spreadsheet
@@ -87,16 +99,16 @@ Contact the L4 developers for help
 
 If you do not see a sidebar, `contact the L4 developers for help <cclaw@smu.edu.sg>`_.
 
-============================================================================================
-Familiarise yourself with the LegalSS spreadsheet using the Learning L4: Liquor Exercise tab
-============================================================================================
+=================================================
+Familiarise yourself with the LegalSS spreadsheet 
+=================================================
 
 .. image:: ../images/familiarise-yourself-screenshot.png
     :class: with-border
     :width: 600px
 
 --------------------------------------------------------
-Orange box: Name of your copy of the LegalSS spreadsheet
+Orange box: Name of your copy of the LegalSS Spreadsheet
 --------------------------------------------------------
 
 In this screenshot, the name refers to the original name of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_. 
@@ -107,7 +119,7 @@ You should either see the default name "Copy of LegalSSv0.9.4.3" or whatever nam
 Blue box: Sidebar showing activated L4 functions
 ------------------------------------------------
 
-This is the sidebar with L4 functions that you should see after running :ref:`step 6 <step_6>` and step :ref:`step 7 <step_7>` in the instructions above.
+This is the sidebar with L4 functions that you should see after refreshing the sidebar.
 
 This sidebar can be scrolled down and contains several sections:
 
@@ -153,7 +165,7 @@ Once you have finished installation, consider exploring:
 
 - :ref:`Why Use L4? <tour_of_L4>`
 
-- :ref:`See L4 in Practice <Learning L4_Exercises>`.
+- :ref:`Learn To Use L4 <examples>`.
 
 ..
     =======================================================
