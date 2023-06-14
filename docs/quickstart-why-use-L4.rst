@@ -4,10 +4,7 @@
 Why use L4?
 ###########
 
-**The L4 DSL stack improves access to justice and reduces the cost of
-developing legal software by giving non-lawyers a "low-code" way to
-explore and produce legal "programs".**
-
+* `L4 helps improve access to justice`_
 * `L4 helps people understand laws and contracts`_
 * `L4 helps legal engineers draft with confidence`_
 * `L4 helps enterprises manage their contracts`_
@@ -21,6 +18,13 @@ explore and produce legal "programs".**
 * `L4 supports Document Assembly`_
 * `L4's answers are explainable`_
 
+======================================
+L4 helps **improve access** to justice
+======================================
+
+The L4 DSL stack improves access to justice and reduces the cost of
+developing legal software by giving non-lawyers a "low-code" way to
+explore and produce legal "programs".
 
 =================================================
 L4 helps people **understand** laws and contracts
