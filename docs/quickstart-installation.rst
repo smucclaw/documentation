@@ -20,9 +20,13 @@ Writing in L4 on the LegalSS spreadsheet
 ****************************************
 |
 
-Your main interface when writing with L4 is on a google sheets spreadsheet called the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_. This spreadsheet has a special app function that activates the L4 language.
+Your main interface when writing with L4 is on a google sheets spreadsheet called the |LegalSS_spreadsheet|. This spreadsheet has a special app function that activates the L4 language.
 
-The current version of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ is v0.9.4.3 as of May 2023.
+The current version of the |LegalSS_spreadsheet| is v0.9.4.3 as of May 2023.
+
+.. |LegalSS_spreadsheet| raw:: html
+  
+  <a href="https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311" target="_blank" rel="noopener noreferrer">LegalSS spreadsheet</a>
 
 ========================================================
 Getting the LegalSS spreadsheet working on your computer
@@ -34,7 +38,7 @@ Getting the LegalSS spreadsheet working on your computer
 
 - You will need a google account, which doubles as a gmail account. You can follow the instructions in `www.google.com <https://www.google.com>`_, under "sign up for free".
 
-- You will need access to the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ linked in this section. Clicking on the link will open the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ in a new window. The `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ works with the 2 most recent versions of:
+- You will need to go to |LegalSS_spreadsheet| (clicking on the link will open the spreadsheet in a new window). The spreadsheet works with the 2 most recent versions of:
 
     1. `Chrome <https://www.google.com/chrome/>`_
     2. `Firefox <https://www.mozilla.org/en-US/firefox/new/>`_
@@ -45,17 +49,17 @@ Getting the LegalSS spreadsheet working on your computer
 1. Make a copy of the spreadsheet
 ---------------------------------
 
-Make a copy of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ by clicking on 'File' at the toolbar found on the top of the page, then choose the 4th option 'Make A Copy'. 
+Make a copy of the |LegalSS_spreadsheet| by clicking on 'File' at the toolbar found on the top of the page, then choose the fourth option 'Make A Copy'. 
 
 .. image:: ../images/make-a-copy-screenshot.png
     :class: with-border
-    :width: 200px
+    :width: 300px
 
 You should get a pop-up like in the image below. 
 
 .. image:: ../images/options-to-clone-project.png
     :class: with-border
-    :width: 200px
+    :width: 300px
 
 You can change the name of this copy to a more convenient name without affecting the L4 language, otherwise you can leave the default name as it is.
 
@@ -67,7 +71,7 @@ Choose where you want to copy the spreadsheet. In this example, we copy to "My D
 
 .. image:: ../images/choose-where-to-clone-project.png
     :class: with-border
-    :width: 200px
+    :width: 300px
 
 This will be your copy of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_.
 
@@ -81,13 +85,13 @@ You should be able to see a "L4 Sidebar" option next to the "Help" option in the
 
 .. image:: ../images/sidebar-refresh.png
     :class: with-border
-    :width: 300px
+    :width: 400px
 
 ---------------------------------
 4. Ensure you can see the sidebar
 ---------------------------------
 
-In your copy of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_, after pressing the 'refresh' button, you should see a sidebar appear on the right side of the page. 
+In your copy of |LegalSS_spreadsheet|, after pressing the 'refresh' button, you should see a sidebar appear on the right side of the page. 
 
 .. image:: ../images/sidebar-appears-screenshot.png
     :class: with-border
@@ -111,7 +115,7 @@ Familiarise yourself with the LegalSS spreadsheet
 Orange box: Name of your copy of the LegalSS Spreadsheet
 --------------------------------------------------------
 
-In this screenshot, the name refers to the original name of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_. 
+In this screenshot, the name refers to the original name of |LegalSS_spreadsheet|. 
 
 You should either see the default name "Copy of LegalSSv0.9.4.3" or whatever name you have replaced the default name with.
 
