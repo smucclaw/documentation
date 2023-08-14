@@ -281,6 +281,16 @@ In fact we can turn to the explanation engine to give us this justification: cli
 
 This shows we have Explainable A.I.
 
+** Transpilers
+
+*** the web app
+
+**** the interactive svg ladder circuit diagram in the web app
+
+**** explanation
+
+*** a word document!
+
 * Choice of Exercise
 
 What do people prefer: do you want to try a computable contract, or do you want to try a Rules as Code exercise?
