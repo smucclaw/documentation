@@ -205,6 +205,16 @@ structures is essential to any programming exercise, and familiarity
 with jurisprudential notions of tort and liability is essential to any
 contract drafting practice.
 
+L4's semantics fall into three major domains:
+
+- regulative rules are modeled as state transition systems
+
+- constitutive rules are modeled using Boolean logic and simple arithmetic
+
+- data modelling "ontology" borrows ideas from object-oriented programming.
+
+We introduce each of these in turn.
+
 ----------------------------------------
 Core Semantics: State Transition Systems
 ----------------------------------------
@@ -541,34 +551,41 @@ The next simplest form is a sequence of cells with extra information on subseque
 
    TypeName             ::= String
 
+The optional `TypeSig` is used to annotate the action, and its parameters, with type signatures. We will not go into detail about those here.
+	  
 .. topic:: Semantics:
 
 	   ParamText stands for "parameterized text", and is usually used to
 	   represent qualified actions, in the object of a deontic modal.
 
 .. list-table:: Example of RelationalPredicate as a ParamText
-   :widths: 33 33 33
    :stub-columns: 1
 
    * - input:
      - PARTY
      - alice
-   * - MUST
+   * -
+     - MUST
      - cook
      - food
-   * - 
+   * -
+     - 
      - with
      - soy sauce
-   * - 
+   * -
+     - 
      - without
      - peanuts
-   * - 
+   * -
+     - 
      - using
      - a wok
-   * - AND
+   * -
+     - AND
      - drink
      - beverage
-   * - 
+   * -
+     - 
      - without
      - alcohol
 
@@ -576,7 +593,7 @@ This matches the expressiveness of a Python function with named arguments:
 
 .. code-block:: python
 
-   cook(food, with="soy sauce", without="peanuts", using="a wok")
+   cook(food, avec="soy sauce", sans="peanuts", using="a wok")
    drink(beverage, without="alcohol")
 
 (As of 0.9.4.3, L4 is limited to a single ParamText in the action phrase. The parser is being extended to support a boolstruct of paramtexts.)
@@ -588,8 +605,6 @@ When a ParamText is used inside a BoolStruct RelationalPredicate, the parameters
    ... :- cook(food, [with(soy_sauce), without(peanuts), using(a_wok)]),
           drink(beverage, [without(alcohol)]).
 
-The optional `TypeSig` is used to annotate the action, and its parameters, with type signatures.
-	  
 
 ^^^^^^^^^^
 Constraints
@@ -886,11 +901,11 @@ Here's how we express the speeding penalties in L4:
 .. code-block::
 
     DECIDE penalty IS none     IF excess speed <=   0    km/hr
-    "     "        "  warning     "  "         <=  20    km/hr
-    "     "        "  small fine  "  "         <=  40    km/hr
-    "     "        "    big fine  "  "         <=  60    km/hr
-    "     "        "  time travel "  "         IS 141.62 km/hr
-    "     "        "  jail        "  "         >   60    km/hr
+          "        "  warning     "  "         <=  20    km/hr
+          "        "  small fine  "  "         <=  40    km/hr
+          "        "    big fine  "  "         <=  60    km/hr
+          "        "  time travel "  "         IS 141.62 km/hr
+          "        "  jail        "  "         >   60    km/hr
 
 To illustrate the `IS` keyword, we've added a special case for cars
 moving at exactly 88 miles per hour.
@@ -1021,7 +1036,9 @@ terminates a query after the first answer, order matters.
 Modal Expressions
 -----------------
 
-L4 uses special keywords to identify the following classes of modal expressions:
+L4 uses special keywords for the following classes of modal expressions.
+
+Currently supported in the language:
 
 deontic
   - MUST
@@ -1034,6 +1051,12 @@ temporal
   - WITHIN
   - BY
 
+Slated for consideration in the future:
+    
+power
+  - PROCURE
+  - PROVIDE
+
 epistemic
   - BELIEVES
   - KNOWS
@@ -1043,11 +1066,8 @@ causal
   - CAUSES
   - DUETO
 
-power
-  - PROCURE
-  - PROVIDE
-
-These modals reduce to the core forms of L4 expressions: Boolean Logic, and State Transition Systems.
+These modals reduce to the core forms of L4 expressions: Boolean
+Logic, and State Transition Systems.
 
 For example, a contract might say: if Party P1 comes to believe that
 some event E1 has occurred, which was caused by an event E2, then
@@ -1066,11 +1086,19 @@ The condition is that Event E1 was caused by Event E2.
 .. code-block::
 
      UPON E1
-       IF E2 CAUSED E1
+       IF P1 BELIEVES E2 CAUSED E1
     PARTY P1
      MUST PROCURE    PARTY P1A
 		      MUST NOTIFY P2
 
+Why is it useful to dedicate specific keywords to some of these
+relations? Wouldn't it be enough to simply say something like, `IF
+PartyA knows PartyB blah blah`? Well, if PartyB had previously sent
+PartyA a formal notice, then the contract could make use of that
+information concluding that PartyA knows whatever PartyB told it; and
+to make that bit of reasoning happen in the system, it helps to make
+`KNOWS` a full keyword.
+		      
 Here we see that the `PROCURE` keyword is a unary operator of type
 `Regulative Rule -> Action` so it can return as the argument to the
 `MUST` keyword.
@@ -1103,8 +1131,143 @@ How is `CAUSED` as a keyword different from `caused` as a lower-case
 term? In the latter case, where user input is required, there is no
 difference -- if the encoding had used `caused`, lower case, L4 would
 transpile exactly the same relation. The only difference is that L4
-would not example the contract trace to automatically determine
+would not examine the contract trace to automatically determine
 causation.
+
+------------------------------------------------
+Core Semantics: Data Modelling is similar to OOP
+------------------------------------------------
+
+.. code-block:: BNF
+
+   ClassDeclaration      ::= "DECLARE" ClassName "IS A" SuperClassName
+                             "HAS" AttributeDeclaration+
+
+   ClassName             ::= String
+
+   SuperClassname        ::= ClassName
+
+   AttributeDeclaration  ::= AttributeName [ "IS" TypeDetail TypeSpec ]
+                            ["HAS" AttributeDeclaration+]
+
+   TypeDetail            ::= "A" | "LIST OF" | "ONE OF"
+
+   AttributeName         ::= string
+
+   TypeSpec              ::= "number" | "string" | ClassName
+
+This provides a syntax for modeling classes as records with attributes, which can themselves be records with attributes.
+
+In this example, we define a class to represent a person-like entity
+with a name, id number, and details containing address and
+preferences.
+
+.. code-block:: L4
+
+   DECLARE SubClass IS A SuperClass
+       HAS name     IS A string
+           idNum    IS A number
+	   details
+	       HAS preferences
+	                   HAS sizePref  IS ONE OF small  medium  large
+	                       colorPref IS ONE OF red    green   blue
+	           address IS AN Address
+	               HAS deliveryDetails IS LIST OF string
+
+    DECLARE SuperClass
+
+    DECLARE Address
+        HAS line1   IS A           string
+	    line2   IS AN OPTIONAL string
+	    state   IS A           string
+	    city    IS A           string
+	    country IS A           string
+
+In a language like Typescript, this becomes:
+
+.. code-block:: typescript
+
+   class SuperClass { }
+
+   enum sizePrefEnum  { small, medium, large }
+   enum colorPrefEnum { red,   green,  blue  }
+
+   class SubClass extends SuperClass {
+     name  : string;
+     idNum : number;
+     details : {
+       preferences: {
+         sizePref  : sizePrefEnum;
+	 colorPref : colorPrefEnum;
+       };
+       address : Address & {
+         deliveryDetails: string[];
+       }
+     };
+   }
+
+   class Address {
+       line1   : string;
+       line2  ?:  string;
+       city    : string;
+       state   : string;
+       country : string;
+   }
+
+Defining an instance of that class can be done like this:
+
+.. code-block :: BNF
+
+   DEFINE MyEntity IS A SubClass
+      HAS Alice Apple   IS THE Name
+          1234567       IS THE idNum
+	  medium        IS THE details's preferences's sizePref
+	  red           IS THE "         "             colorPref
+	  1 west way    IS THE details's address's line1
+          octopus city  IS THE details's address's city
+	  AA            IS THE state
+	  Barbieland    IS THE country
+	  deliveryDetails IS don't ring bell
+                             don't wake the dog
+This expands to:
+
+const myInstance : SubClass = {
+    name : "my name",
+    idNum : 1234,
+g    details : {
+	preferences: {
+	    sizePref : sizePrefEnum.medium,
+	    colorPref : colorPrefEnum.red
+	},
+	address : {
+	    line1 : "1 west way",
+	    city  : "octopus city",
+	    state : "AA",
+	    country : "Barbieland",
+	    deliveryDetails : ["don't ring bell", "don't wake the dog"]
+	}
+    }
+}
+
+Yes, L4 does reverse the convention of "name: value"; if you look at
+the `IS THE` lines you will see the value comes first. This was done
+deliberately for usability reasons.
+
+However, the traditional syntax is still supported -- note the
+`deliveryDetails` line.
+
+
+.. note::
+   Regarding the address, this is a trivial example. If you were doing this in the real world, you would `know better <https://www.mjt.me.uk/posts/falsehoods-programmers-believe-about-addresses/>`_.
+
+---------------------------------
+Syntax Note: the Ditto Convention
+---------------------------------
+
+In the spreadsheet syntax, a `"` double-quote is replaced by the first
+nonempty cell above. This affords "ditto syntax" which turns out to be
+a pretty user-friendly way to write structured things with less "ink
+on the page".
 
 .. todo
     -------------
