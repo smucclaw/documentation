@@ -1159,12 +1159,12 @@ Core Semantics: Data Modelling is similar to OOP
 This provides a syntax for modeling classes as records with attributes, which can themselves be records with attributes.
 
 In this example, we define a class to represent a person-like entity
-with a name, id number, and details containing address and
-preferences.
+with a name, id number, personal details containing address and
+preferences, and a list of shows in their to-watch list.
 
 .. code-block:: L4
 
-   DECLARE SubClass IS A SuperClass
+   DECLARE Person IS A SuperClass
        HAS name     IS A string
            idNum    IS A number
 	   details
@@ -1173,15 +1173,20 @@ preferences.
 	                       colorPref IS ONE OF red    green   blue
 	           address IS AN Address
 	               HAS deliveryDetails IS LIST OF string
+	   watchList  IS LIST OF  Show
 
     DECLARE SuperClass
 
     DECLARE Address
-        HAS line1   IS A           string
-	    line2   IS AN OPTIONAL string
+        HAS line    IS LIST OF     string
 	    state   IS A           string
 	    city    IS A           string
 	    country IS A           string
+
+    DECLARE Show
+        HAS title    IS A        string
+            seasons  IS LIST OF  number
+            stars    IS LIST OF  Person
 
 In a language like Typescript, this becomes:
 
@@ -1192,7 +1197,7 @@ In a language like Typescript, this becomes:
    enum sizePrefEnum  { small, medium, large }
    enum colorPrefEnum { red,   green,  blue  }
 
-   class SubClass extends SuperClass {
+   class Person extends SuperClass {
      name  : string;
      idNum : number;
      details : {
@@ -1207,54 +1212,74 @@ In a language like Typescript, this becomes:
    }
 
    class Address {
-       line1   : string;
-       line2  ?:  string;
+       line    : string[];
        city    : string;
        state   : string;
        country : string;
    }
 
+   class Show {
+       title    : string;
+       seasons  : number[];
+   }
+
+
 Defining an instance of that class can be done like this:
 
 .. code-block :: BNF
 
-   DEFINE MyEntity IS A SubClass
+   DEFINE MyEntity IS A Person
       HAS Alice Apple   IS THE Name
           1234567       IS THE idNum
-	  medium        IS THE details's preferences's sizePref
-	  red           IS THE "         "             colorPref
-	  1 west way    IS THE details's address's line1
-          octopus city  IS THE details's address's city
-	  AA            IS THE state
-	  Barbieland    IS THE country
-	  deliveryDetails IS don't ring bell
-                             don't wake the dog
+          medium        IS THE details's  preferences's  sizePref
+          red           IS THE "          "              colorPref
+          details's  address's  line   IS  Attention Fruit Department
+                                           1 West Way
+                                           My Co-Working Company
+                                           Suite 200
+          "          "          city   IS  Octopus City
+          details's  address's  country  IS  Barbieland
+          details's  address's  deliveryDetails  IS  don't ring bell
+                                                     don't wake the dog
+          watchList
+	  HAS title    IS  The Sandman
+	      seasons  IS  1
+          HAS title    IS  Good Omens
+	      seasons  IS  1  2
+          HAS title    IS  American Gods
+	      seasons  IS  1  2  3
+
 This expands to:
 
-const myInstance : SubClass = {
-    name : "my name",
-    idNum : 1234,
-g    details : {
-	preferences: {
-	    sizePref : sizePrefEnum.medium,
-	    colorPref : colorPrefEnum.red
-	},
-	address : {
-	    line1 : "1 west way",
-	    city  : "octopus city",
-	    state : "AA",
-	    country : "Barbieland",
-	    deliveryDetails : ["don't ring bell", "don't wake the dog"]
-	}
-    }
-}
+.. code-block :: typescript
 
-Yes, L4 does reverse the convention of "name: value"; if you look at
-the `IS THE` lines you will see the value comes first. This was done
-deliberately for usability reasons.
+   const myInstance : Person = {
+       name : "my name",
+       idNum : 1234,
+       details : {
+	   preferences: {
+	       sizePref : sizePrefEnum.medium,
+	       colorPref : colorPrefEnum.red
+	   },
+	   address : {
+	       line  : ["Attention Fruit Department", "1 West Way", "My Co-Working Company", "Suite 200"],
+	       city  : "Octopus City",
+	       state : "AA",
+	       country : "Barbieland",
+	       deliveryDetails : ["don't ring bell", "don't wake the dog"]
+	   },
+	   
+       }
+   }
+
+L4 allows you to reverse the convention of "name: value"; if you look
+at the `IS THE` lines you will see the value comes first. This was
+done deliberately for usability reasons.
 
 However, the traditional syntax is still supported -- note the
 `deliveryDetails` line.
+
+Nesting lists of lists
 
 
 .. note::
@@ -1265,9 +1290,9 @@ Syntax Note: the Ditto Convention
 ---------------------------------
 
 In the spreadsheet syntax, a `"` double-quote is replaced by the first
-nonempty cell above. This affords "ditto syntax" which turns out to be
-a pretty user-friendly way to write structured things with less "ink
-on the page".
+nonempty cell from a noncommented line above. This affords "ditto
+syntax" which turns out to be a pretty user-friendly way to write
+structured things with less "ink on the page".
 
 .. todo
     -------------
