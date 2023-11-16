@@ -8,40 +8,63 @@ This L4 language specification is for L4 developers.
 
 There is a page on understanding L4 through the law here: :ref:`law_understand_l4`.
 
+Before outlining the overall generic syntax of L4, let's start with an important clarification. 
+L4, recall, is a high level specification language, designed to be transpiled to various formats 
+for different purposes. These formats include document formats like Markdown, Word, and .pdf, 
+as well as (our specialized dialect of) Logical English <https://github.com/smucclaw/LogicalEnglish>
+programs, a logic programming based language, for execution.
+
+For that reason, although there is one generic L4 syntax, 
+L4 really admits of different fragments, each with their own specialized semantics, 
+corresponding to the various transpilers. These transpilers 
+care about and operate on different fragments of L4, since some transpilers
+like those responsible for document outputs caring about formatting specific
+options, which are ignored by the Logical English one.
+We will discuss the syntax and semantics specific to these fragments and their various outputs later; 
+but before doing that, we will first outline the *generic* syntax of L4 that is common to the various fragments.
+
 .. image:: ../images/l4-cheatsheet.png
     :class: with-border
 
-* `Top Level`_
-* `Rules`_
+* Generic L4 constructs
+    * `Top Level`_
+    * `Rules`_
 
-  * `Full Scenario Rule`_
-  * `Simple Scenario Rule`_
-  * `Regulative Rules: EVERY, WHERE`_
-  * `Regulative Rules: MUST, MAY, and SHANT`_
-  * `Constitutive Rule and Hornlike Rule`_
-  * `Compact Constitutives`_
+    * `Full Scenario Rule`_
+    * `Simple Scenario Rule`_
+    * `Regulative Rules: EVERY, WHERE`_
+    * `Regulative Rules: MUST, MAY, and SHANT`_
+    * `Constitutive Rule and Hornlike Rule`_
+    * `Compact Constitutives`_
 
-* `Labels and Names`_
-* `Constraints and 'Upon Trigger'`_
-* `Deontics`_
-* `Dictionaries and Key/Value expressions`_
-* `Single Term and MultiTerm`_
-* `Type Declaration and Variable Definition`_
-* `Booleans and BoolStructs`_
-* `Relational Predicate`_
-* `Value Term and Set Group`_
-* `Syntax Reference by Keyword`_
+    * `Labels and Names`_
+    * `Constraints and 'Upon Trigger'`_
+    * `Deontics`_
+    * `Dictionaries and Key/Value expressions`_
+    * `Single Term and MultiTerm`_
+    * `Type Declaration and Variable Definition`_
+    * `Booleans and BoolStructs`_
+    * `Relational Predicate`_
+    * `Value Term and Set Group`_
+    * `Syntax Reference by Keyword`_
 
-  * `WHOSE`_
-  * `WHO`_
-  * `DEFINE`_
-  * `AS IN`_
+    * `WHOSE`_
+    * `WHO`_
+    * `DEFINE`_
+    * `AS IN`_
+
+* Specialized fragments and their syntax and semantics
+    * L4 constitutive rules to Logical English
+        * [Joe todo] In this section, write about:
+            * Date predicates and facilities
+            * (Briefly) Constructs that were added to LE for our encoding, e.g. the max x such that...
+            * Graph database / RDF / triple store stuff for accessing fields of classes, and nested versions. 
+    * L4 classes to JSON Schema
 
 --------------------------
 Types of Expressions in L4
 --------------------------
-
-This `Backus-Naur Form (BNF) <https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form>`_ specification describes the syntax of the L4 language.
+This `Backus-Naur Form (BNF) <https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form>`_ specification describes the generic syntax of the L4 language.
 
 ---------
 Top Level
