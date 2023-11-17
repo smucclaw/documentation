@@ -8,8 +8,8 @@ L4 to Logical English transpiler
     - Graph database / RDF / triple store stuff for accessing fields of classes, and nested versions. 
 
 
-How to write L4 that translates to Logical English (LE)
-=======================================================
+How to write L4 that translates to Logical English (LE); or, how L4 gets translated to LE
+=========================================================================================
 
 The following explains how the ``L4->LE`` transpiler translates L4 to LE with examples. 
 If you are in a rush, ignore the explanations and just skim the examples.
@@ -20,7 +20,7 @@ get started with writing L4 that can transpile smoothly to Logical English;
 for a more comprehensive and rigorous specification and discussion, 
 see `Denotational Semantics of Relational Predicates (for LE) <https://www.overleaf.com/9757591584pqqqyhhrxbpq#6a4a4a>`_.
 This discussion is also meant to be about the *syntax* and *semantics* of this fragment,
-rather than about the *technical implementation* of the ``L4->LE`` transpiler; 
+rather than about the *implementation* of the ``L4->LE`` transpiler; 
 for the latter, see `TODO <>` instead.
 
 
@@ -88,16 +88,27 @@ So, e.g., if you want to write the equivalent of this Prolog
 you should write in L4
 
 .. csv-table::
-   :header: "GIVEN", "x", "", "", ""
+   :header: "GIVEN", "x", "", "", 
    :widths: 15, 10, 10, 30, 30
 
-   "", "y", "", "", ""
-   "", "z", "", "", ""
-   "DECIDE", "x", "IS", "grandparent of", "z"
-   "IF", "x", "IS", "parent of", "y"
-   "AND", "y", "IS", "parent of", "z"
-   
-            
+   "", "y", "", "", 
+   "", "z", "", "", 
+   "DECIDE", "x", "is grandparent of", "z"
+   "IF", "x", "is parent of", "y"
+   "AND", "y", "is parent of", "z"
+
+
+This will get transpiled to this LE rule
+
+.. code-block:: le
+
+    a x is grandparent of a z
+    if x is parent of a y
+    and y is parent of z.
+
+(Exercise for the reader: what would the corresponding LE template(s) look like?)
+
+
 The other things you need to get Boolean Prolog compound terms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -158,7 +169,7 @@ gets transpiled into this LE rule
     and it is not the case that 
         person is citizen of any other country.
 
-(An exercise for the reader: what would the corresponding LE template look like?)
+(Exercise for the reader: what would the corresponding LE template(s) look like?)
 
 
 Doing arithmetic in L4, with LE as the target  
