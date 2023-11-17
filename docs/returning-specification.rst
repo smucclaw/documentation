@@ -38,14 +38,6 @@ There is a page on understanding L4 through the law here: :ref:`law_understand_l
     * `DEFINE`_
     * `AS IN`_
 
-* Specialized fragments and their syntax and semantics
-    * L4 constitutive rules to Logical English
-        * [Joe todo] In this section, write about:
-            * Date predicates and facilities
-            * (Briefly) Constructs that were added to LE for our encoding, e.g. the max x such that...
-            * Graph database / RDF / triple store stuff for accessing fields of classes, and nested versions. 
-    * L4 classes to JSON Schema
-
 --------------------------
 Types of Expressions in L4
 --------------------------

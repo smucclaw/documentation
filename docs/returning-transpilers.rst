@@ -22,6 +22,8 @@ Available Languages
 
     - JSON
 
+    - JSON Schema
+
     - Epilog
 
     - Purescript
