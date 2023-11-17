@@ -8,21 +8,6 @@ This L4 language specification is for L4 developers.
 
 There is a page on understanding L4 through the law here: :ref:`law_understand_l4`.
 
-Before outlining the overall generic syntax of L4, let's start with an important clarification. 
-L4, recall, is a high level specification language, designed to be transpiled to various formats 
-for different purposes. These formats include document formats like Markdown, Word, and .pdf, 
-as well as (our specialized dialect of) Logical English <https://github.com/smucclaw/LogicalEnglish>
-programs, a logic programming based language, for execution.
-
-For that reason, although there is one generic L4 syntax, 
-L4 really admits of different fragments, each with their own specialized semantics, 
-corresponding to the various transpilers. These transpilers 
-care about and operate on different fragments of L4, since some transpilers
-like those responsible for document outputs caring about formatting specific
-options, which are ignored by the Logical English one.
-We will discuss the syntax and semantics specific to these fragments and their various outputs later; 
-but before doing that, we will first outline the *generic* syntax of L4 that is common to the various fragments.
-
 .. image:: ../images/l4-cheatsheet.png
     :class: with-border
 
