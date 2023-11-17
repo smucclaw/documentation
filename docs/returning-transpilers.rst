@@ -42,13 +42,17 @@ Available Languages
       - Visualisation of state space
       - Visualisation of race condition trace (if any)
 
+    - Logical English
+
+    - Word Doc (Word Document)
+
+    - PDF
+
 ---------------------------
 Languages Not Yet Available
 ---------------------------
 
     - Prolog
-
-    - Logical English
 
     - Catala
 
@@ -61,10 +65,6 @@ Languages Not Yet Available
     - Blawx
 
     - Morphir
-
-    - Word Doc (Word Document)
-
-    - PDF
 
     - Akoma Ntoso
 
