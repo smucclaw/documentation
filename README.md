@@ -1,3 +1,13 @@
+# How to make
+
+To build docs locally:
+* `make html` to build HTML docs in the build directory specified in the `Makefile`
+
+Execute `make` without an argument to see which targets are available.
+
+See https://www.sphinx-doc.org/en/master/usage/quickstart.html for more 
+
+
 # Relese process
 
 By default https://l4-documentation.readthedocs.io/ will point to stable tag in RTD

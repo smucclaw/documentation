@@ -5,3 +5,5 @@ theme-src/
 .venv
 
 sphinxawesome_theme/__pycache__
+
+.DS_Store
