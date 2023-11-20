@@ -1,7 +1,8 @@
 ##########
-Setting Up
+Quickstart: Getting orientated in the L4 spreadsheet user interface
 ##########
 
+**TODO: REVAMP THIS LATER**
 * `Writing in L4 on the LegalSS spreadsheet`_
 * `Getting the LegalSS spreadsheet working on your computer`_
 
@@ -13,15 +14,13 @@ Setting Up
 
 * `Familiarise yourself with the LegalSS Spreadsheet`_
 * `Next Steps`_
+<----------------------------------------->
 
-****************************************
-Writing in L4 on the LegalSS spreadsheet
-****************************************
-|
 
-Your main interface when writing with L4 is on a google sheets spreadsheet called the |LegalSS_spreadsheet|. This spreadsheet has a special app function that activates the L4 language.
+The main interface for writing L4 is a Google Sheets spreadsheet, the |LegalSS_spreadsheet|.[ssnote]_ This tutorial walks you through setting that up, so that you can write L4.
 
-The current version of the |LegalSS_spreadsheet| is v0.9.4.6 as of November 2023.
+
+.. [ssnote] The current version of the |LegalSS_spreadsheet| is v0.9.4.6 as of November 2023.
 
 .. |LegalSS_spreadsheet| raw:: html
 
@@ -33,23 +32,39 @@ Getting the LegalSS spreadsheet working on your computer
 ========================================================
 
 --------------------------------------------------------------
-0. Prerequisites before you can set up the LegalSS spreadsheet
+1. Set up a Google account, if you don't already have one
 --------------------------------------------------------------
 
-- If you do not already have a Google account, you can follow the instructions at `Create a Google Account <https://support.google.com/accounts/answer/27441?hl=en/>`_ to create one.
+You need a Google account to write L4.
 
-- Open |LegalSS_spreadsheet| (clicking on the link will open the spreadsheet in a new window). The spreadsheet works with the 2 most recent versions of:
+If you do not already have one, you can create one by following the instructions at `Create a Google Account <https://support.google.com/accounts/answer/27441?hl=en/>`_.
+
+
+------------------------------------------------------
+2. Open the |LegalSS_spreadsheet| in a new browser tab
+-------------------------------------------------------
+
+- Open |LegalSS_spreadsheet| (clicking on the link will open the spreadsheet in a new window)
+- and then follow the instructions in that spreadsheet.
+
+The spreadsheet works with the 2 most recent versions of:
 
     1. `Chrome <https://www.google.com/chrome/>`_
     2. `Firefox <https://www.mozilla.org/en-US/firefox/new/>`_
     3. `Microsoft Edge <https://www.microsoft.com/en-us/edge>`_
     4. `Safari <https://www.apple.com/safari/>`_
 
----------------------------------
-1. Make a copy of the spreadsheet
----------------------------------
+We will also summarize the instructions below, but it will probably be easier to focus on the spreadsheet and follow the instructions in it, instead of having to look back and forth.
 
-Make a copy of the |LegalSS_spreadsheet| by clicking **File** > **Make a copy**. 
+----------------------------------------------------------------------------
+3. What to do, once you have |LegalSS_spreadsheet| open in a new browser tab
+----------------------------------------------------------------------------
+
+Again, it will probably be easier to focus just on the spreadsheet and follow the instructions in it. But we will also summarize the instructions below, just in case (the spreadsheet will go into more detail).
+
+----------------------------------------------------------------------------
+a. Make a copy of the |LegalSS_spreadsheet| by clicking **File** > **Make a copy**. 
+----------------------------------------------------------------------------
 
 .. image:: ../images/make-a-copy-screenshot.png
     :class: with-border
@@ -64,14 +79,14 @@ You should get a pop-up like in the image below.
 You can rename this copy to a name of your choosing, or leave the default name as it is.
 
 --------------------------------------------------------
-2. Choose where you want to copy the LegalSS spreadsheet 
+b. Choose where you want to copy the LegalSS spreadsheet 
 --------------------------------------------------------
 
 Choose where you want to copy the spreadsheet. By default, it is copied to "My Drive"
 
 .. image:: ../images/choose-where-to-clone-project.png
     :class: with-border
-    :width: 300px
+    :width:` 300px
 
 
 This will be your copy of the |LegalSS_spreadsheet|.
@@ -80,7 +95,7 @@ This will be your copy of the |LegalSS_spreadsheet|.
 .. _Activate_sheets_ide:
 
 -----------------------
-3. Generate the sidebar
+c. Generate the sidebar
 -----------------------
 
 When your copy of the |LegalSS_spreadsheet| loads, an "L4" menu item should appear next to the "Help" menu item. This will take some time. Click **L4** > **Refresh** to load the sidebar for the first time. Repeat this whenever you make changes to the spreadsheet.
