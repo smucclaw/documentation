@@ -65,20 +65,24 @@ suppose we have L4 classes defined as follows.
     ,,,,
     "DECLARE", "Person",,,
     "HAS", "name", "IS A",, "String"
-    , "age", "IS A",, "Integer"
+    , "dob", "IS A",, "Date"
     , "hobbies", "IS", "LIST OF", "String"
     , "address", "IS A",, "Address"
 
 One can visualise the corresponding JSON schema as an edge-labelled directed
 graph via its corresponding
 `UML class diagram <https://en.wikipedia.org/wiki/Class_diagram>`_.
+This idea originates from the world of Datalog and graph databases.
+In the graph below, classes and objects (ie instances of the classes)
+are represented as nodes, with labelled, directed edges between them
+representing fields / properties.
 
 .. @startuml
     Address --> "1" String : city
     Address --> "1" String : zipcode
     Address --> "1" String : country
     Person --> "1" String : name
-    Person --> "1" Integer : age
+    Person --> "1" Date : date of birth
     Person --> "1" "List<String>" : hobbies
     Person --> "1" Address : address
   @enduml
@@ -86,22 +90,44 @@ graph via its corresponding
 .. raw:: html
     :file: ../images/expert-systems-webapp-uml-class-diagram.svg
 
-We can view this class diagram as specifying an interface to an edge-labelled.
-In Java syntax, this interface would look something like:
+Following the terminology used in Datalog and RDF databases, we call:
+
+- the "source node" the "entity"
+- the "edge label" the "attribute"
+- the "destination node" the "value"
+
+so that for instance, a ``Person`` is an entity which has a ``dob`` attribute
+(representing his/her date of birth), which has as a value, a ``Date`` object.
+
+an instance of these can be viewed as a collection of triples of the form
+``(entity, attribute, value)``.
+
+We can view this class diagram as specifying an edge-labelled directed graph
+as in the following Java syntax:
 
 .. code-block:: java
 
-  public interface ClassGraph {
-    public enum Attribute {
-      address, name, age, hobbies,
-      city, zipcode, country
+  public class ClassGraph {
+    public enum Entity {
+      Person, Address
     }
 
-    public boolean edge(Person entity, Attribute attribute, Address value);
-    public boolean edge(Person entity, Attribute attribute, String value);
-    public boolean edge(Person entity, Attribute attribute, int value);
-    public boolean edge(Person entity, Attribute attribute, String[] value);
-    public boolean edge(Address entity, Attribute attribute, String value);
+    public enum Attribute {
+      address, name, dob, hobbies,
+      city, zipcode, country
+    }
+    
+    public static class Edge {
+      Entity entity;
+      Attribute attribute;
+      Object value;
+    }
+
+    Edge[] edges;
+
+    public ClassGraph(Edge[] edges) {
+      this.edges = edges;
+    }
   }
 
 .. Such an edge-labelled directed graph can be represented by a collection of
@@ -113,7 +139,7 @@ Then given the following json instance conforming to the above JSON schema:
 
   {
     "name": "Alice",
-    "age": 25,
+    "dob": "1990-01-01",
     "hobbies": [
       "reading",
       "painting"
