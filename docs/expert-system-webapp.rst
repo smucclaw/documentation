@@ -3,6 +3,7 @@ Expert system webapp
 ====================
 
 One can turn an L4 specification into an expert system webapp using:
+
 - The L4 to Logical English transpiler.
 - The L4 to JSON Schema transpiler.
 - The jsonforms-vue-seed project.
@@ -58,7 +59,7 @@ suppose we have L4 classes defined as follows.
     :widths: 15, 15, 10, 15, 15
 
     "DECLARE", "Address",,,
-    "HAS", "city", "IS A",, "String" 
+    "HAS", "city", "IS A",, "String"
     , "zipcode", "IS A",, "String"
     , "country", "IS A",, "String"
     ,,,,
@@ -71,7 +72,6 @@ suppose we have L4 classes defined as follows.
 One can visualise the corresponding JSON schema as an edge-labelled directed
 graph via its corresponding
 `UML class diagram <https://en.wikipedia.org/wiki/Class_diagram>`_.
-
 
 .. @startuml
     Address --> "1" String : city
