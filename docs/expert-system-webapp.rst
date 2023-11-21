@@ -31,8 +31,8 @@ databases.
 Datalog is a declarative fragment of Prolog well suited for database applications,
 and representing data in such a manner facilitates reasoning about them via
 constitutive rules, which are interpreted as Prolog rules.
-Here we assume familiarity with such topics and refer the reader to the
-following resources for more details about Datalog and graph databases otherwise:
+We refer the interested reader to the following resources for more details on
+Datalog and graph database:
 
 - https://blogit.michelin.io/an-introduction-to-datalog/
 - https://aws.amazon.com/blogs/database/use-semantic-reasoning-to-infer-new-facts-from-your-rdf-graph-by-integrating-rdfox-with-amazon-neptune/
@@ -104,8 +104,10 @@ which as L4 facts, looks like:
 
 The ``entity's attribute IS value`` predicate in L4
 
-[TODO] Talk about
-- EAV, labelled graph edge
+[TODO] Talk about:
+
+- Objects (ie instances of classes) as nodes of graph
+- EAV as labelled edges
 - Nested accessors
 - Lists being transformed into the ``_ IS IN _`` predicates.
 
