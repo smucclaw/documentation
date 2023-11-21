@@ -125,13 +125,13 @@ This corresponds to a graph described by the following triples:
 
 .. code-block:: text
 
-  (node-0, name, Alice)
+  (node-0, name, "Alice")
   (node-0, dob, "1990-01-01")
-  (node-0, hobbies, [reading, painting])
+  (node-0, hobbies, ["reading", "painting"])
   (node-0, address, node-2)
-  (node-2, city, London)
-  (node-2, zipcode, SW1A 1AA)
-  (node-2, country, United Kingdom)
+  (node-2, city, "London")
+  (node-2, zipcode, "SW1A 1AA")
+  (node-2, country, "United Kingdom")
 
 L4 provides the following predicate to talk about such triples arising from
 objects:
