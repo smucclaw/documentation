@@ -68,10 +68,9 @@ suppose we have L4 classes defined as follows.
     , "hobbies", "IS", "LIST OF", "String"
     , "address", "IS A",, "Address"
 
-One can visualise the corresponding JSON schema as the following graph.
-Note that the graph is directed and has labelled edges.
-(For more technical readers, this graph is essentially the corresponding
-`UML class diagram <https://developer.ibm.com/articles/the-class-diagram/>`_).
+One can visualise the corresponding JSON schema as an edge-labelled directed
+graph via its corresponding
+`UML class diagram <https://en.wikipedia.org/wiki/Class_diagram>`_.
 
 
 .. @startuml
@@ -87,11 +86,28 @@ Note that the graph is directed and has labelled edges.
 .. raw:: html
     :file: ../images/expert-systems-webapp-uml-class-diagram.svg
 
-Such an edge-labelled directed graph can be represented by a collection of
-triples of the form
+We can view this class diagram as specifying an interface to an edge-labelled.
+In Java syntax, this interface would look something like:
 
-The following json instance conforming to the JSON schema obtained from the
-above class declarations
+.. code-block:: java
+
+  public interface ClassGraph {
+    public enum Attribute {
+      address, name, age, hobbies,
+      city, zipcode, country
+    }
+
+    public boolean edge(Person entity, Attribute attribute, Address value);
+    public boolean edge(Person entity, Attribute attribute, String value);
+    public boolean edge(Person entity, Attribute attribute, int value);
+    public boolean edge(Person entity, Attribute attribute, String[] value);
+    public boolean edge(Address entity, Attribute attribute, String value);
+  }
+
+.. Such an edge-labelled directed graph can be represented by a collection of
+  triples of the form
+
+Then given the following json instance conforming to the above JSON schema:
 
 .. code-block:: json
 
@@ -108,6 +124,9 @@ above class declarations
       "country": "United Kingdom"
     }
   }
+
+we can visualize this as a graph via its corresponding
+`UML object diagram <https://en.wikipedia.org/wiki/Object_diagram>`_. 
 
 gets transformed into the following Logical English program:
 
