@@ -19,8 +19,8 @@ Recall that:
 - L4 classes/data types can be transpiled to JSON schemas, and we can generate
   nested JSON instances conforming to these schemas.
 
-Theoretical background
-----------------------
+Theoretical Overview
+--------------------
 
 In this sub-section, we describe the theoretical ideas behind the ideas in the
 remaining sub-sections.
@@ -72,7 +72,6 @@ suppose we have L4 classes defined as follows.
 One can visualise the corresponding JSON schema as an edge-labelled directed
 graph via its corresponding
 `UML class diagram <https://en.wikipedia.org/wiki/Class_diagram>`_.
-This idea originates from the world of Datalog and graph databases.
 In the graph below, classes and objects (ie instances of the classes)
 are represented as nodes, with labelled, directed edges between them
 representing fields / properties.
@@ -96,44 +95,15 @@ Following the terminology used in Datalog and RDF databases, we call:
 - the "edge label" the "attribute"
 - the "destination node" the "value"
 
-so that for instance, a ``Person`` is an entity which has a ``dob`` attribute
-(representing his/her date of birth), which has as a value, a ``Date`` object.
+For instance, a ``Person`` is an entity which has a ``dob`` attribute
+(representing his/her date of birth), with a ``Date`` object as a value.
 
-an instance of these can be viewed as a collection of triples of the form
-``(entity, attribute, value)``.
-
-We can view this class diagram as specifying an edge-labelled directed graph
-as in the following Java syntax:
-
-.. code-block:: java
-
-  public class ClassGraph {
-    public enum Entity {
-      Person, Address
-    }
-
-    public enum Attribute {
-      address, name, dob, hobbies,
-      city, zipcode, country
-    }
-    
-    public static class Edge {
-      Entity entity;
-      Attribute attribute;
-      Object value;
-    }
-
-    Edge[] edges;
-
-    public ClassGraph(Edge[] edges) {
-      this.edges = edges;
-    }
-  }
-
-.. Such an edge-labelled directed graph can be represented by a collection of
-  triples of the form
-
-Then given the following json instance conforming to the above JSON schema:
+With this, a corresponding instance of these classes can be viewed as a
+collection of labelled, directed edges, each represented as
+a triple of the form ``(entity, attribute, value)``.
+(More technically, these triples are called EAV / RDF-triples.)
+For instance, consider the following json instance conforming to the above
+JSON schema:
 
 .. code-block:: json
 
@@ -151,46 +121,87 @@ Then given the following json instance conforming to the above JSON schema:
     }
   }
 
-we can visualize this as a graph via its corresponding
-`UML object diagram <https://en.wikipedia.org/wiki/Object_diagram>`_. 
-
-gets transformed into the following Logical English program:
+This corresponds to a graph described by the following triples:
 
 .. code-block:: text
 
-  node-1's name is Alice.
-  node-1's age is 25.
-  node-1's hobbies is node-2.
-  node-1's address is node-3.
-  reading is in node-2.
-  painting is in node-2.
-  node-3's city is London.
-  node-3's zipcode is SW1A 1AA.
-  node-3's country is United Kingdom.
+  (node-0, name, Alice)
+  (node-0, dob, "1990-01-01")
+  (node-0, hobbies, [reading, painting])
+  (node-0, address, node-2)
+  (node-2, city, London)
+  (node-2, zipcode, SW1A 1AA)
+  (node-2, country, United Kingdom)
 
-which as L4 facts, looks like:
+L4 provides the following predicate to talk about such triples arising from
+objects:
 
 .. csv-table::
-    :widths: 15, 15, 15, 5, 15
+    :widths: 15, 15, 5, 15
 
-    "DECIDE", "node-1's", "name", "IS", "Alice"
-    "DECIDE", "node-1's", "age", "IS", "25"
-    "DECIDE", "node-1's", "hobbies", "IS", "node-2"
-    "DECIDE", "node-1's", "address", "IS", "node-3"
-    "DECIDE", "reading", "IS", "IN", "node-2"
-    "DECIDE", "painting", "IS", "IN", "node-2"
-    "DECIDE", "node-3's", "city", "IS", "London"
-    "DECIDE", "node-3's", "zipcode", "IS", "SW1A 1AA"
-    "DECIDE", "node-3's", "country", "IS", "United Kingdom"
+    "entity's", "attribute", "IS", "value"
 
-The ``entity's attribute IS value`` predicate in L4
+Such a triple can be viewed as accessing the ``attribute`` value of
+``entity`` and then binding it to ``value``. 
 
-[TODO] Talk about:
+We can use this to define the following rule for instance:
 
-- Objects (ie instances of classes) as nodes of graph
-- EAV as labelled edges
-- Nested accessors
-- Lists being transformed into the ``_ IS IN _`` predicates.
+.. csv-table::
+    :widths: 15, 15, 15, 15, 15
+
+    "GIVEN", "Name", "IS A", "String",
+    , "Hobbies", "IS", "LIST OF", "String"
+    , "Hobby", "IS A", "String",
+    , "Person", "IS A", "Person",
+    "DECIDE", "Name", "likes", "Hobby",
+    "IF", "Person's", "name", "IS", "Name"
+    "AND", "Person's", "hobbies", "IS", "Hobbies"
+    "AND", "Hobby", "IS", "IN", "Hobbies"
+
+The above rule says that a ``Person`` named ``Name`` likes ``Hobby``
+if it is found in the list of ``hobbies`` of the person named ``Name``.
+
+Another example is the following, which says that ``Person`` lives in
+``Country`` if his/her ``address`` has a ``Address`` whose ``country`` is
+``Country``.
+
+.. csv-table::
+    :widths: 15, 15, 15, 15, 15
+
+    "GIVEN", "Name", "IS A", "String",
+    , "Country", "IS A", "Country",
+    , "Address", "IS A", "Address",
+    , "Person", "IS A", "Person",
+    "DECIDE", "Name", "lives in", "Country",
+    "IF", "Person's", "name", "IS", "Name"
+    "AND", "Person's", "address", "IS", "Address"
+    "AND", "Address's", "country", "IS", "Country"
+
+Notice how we are essentially trying to access the value of the field
+``country`` which is nested under the ``address`` field of ``Person``.
+For those familiar with SQL, the ``Address`` variable is essentially used to
+perform an implicit inner join on the value of the ``address`` attribute.
+
+L4 also provides some syntactic sugar for these nested accessor predicates.
+These have the form:
+
+.. csv-table::
+    :widths: 15, 15, 5, 15, 15, 15
+
+    "entity's", "attribute_0's", "...", "attribute_n's", "IS", "value"
+
+One can use this as such:
+
+.. csv-table::
+    :widths: 15, 15, 15, 15, 15, 15
+
+    "GIVEN", "Name", "IS A", "String",,
+    , "Country", "IS A", "Country",,
+    , "Address", "IS A", "Address",,
+    , "Person", "IS A", "Person",,
+    "DECIDE", "Name", "lives in", "Country",,
+    "IF", "Person's", "name", "IS", "Name",
+    "AND", "Person's", "address's", "country", "IS", "Address"
 
 .. [Joe todo]
 
