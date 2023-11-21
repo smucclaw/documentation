@@ -7,14 +7,25 @@ One can turn an L4 specification into an expert system webapp using:
 - The L4 to JSON Schema transpiler.
 - The jsonforms-vue-seed project.
 
+----------------------------------------------------------
 Reasoning about classes/data types with constitutive rules
 ----------------------------------------------------------
+
 Recall that:
 
 - L4 constitutive rules can be transpiled to Logical English, which
   are in turn transpiled into Prolog and executed as such.
 - L4 classes/data types can be transpiled to JSON schemas, and we can generate
   nested JSON instances conforming to these schemas.
+
+Theoretical background
+----------------------
+
+In this sub-section, we describe the theoretical ideas behind the ideas in the
+remaining sub-sections.
+This part is *optional* and is primarily for more theoreticall inclined
+readers who are interested to understand more about the underlying
+motivation and ideas.
 
 To facilitate reasoning about data defined via classes and objects using
 constitutive rules,
@@ -37,6 +48,9 @@ Datalog and graph database:
 - https://blogit.michelin.io/an-introduction-to-datalog/
 - https://aws.amazon.com/blogs/database/use-semantic-reasoning-to-infer-new-facts-from-your-rdf-graph-by-integrating-rdfox-with-amazon-neptune/
 
+A more practical introduction
+-----------------------------
+
 To illustrate how this works in practice,
 suppose we have L4 classes defined as follows.
 
@@ -53,6 +67,28 @@ suppose we have L4 classes defined as follows.
     , "age", "IS A",, "Integer"
     , "hobbies", "IS", "LIST OF", "String"
     , "address", "IS A",, "Address"
+
+One can visualise the corresponding JSON schema as the following graph.
+Note that the graph is directed and has labelled edges.
+(For more technical readers, this graph is essentially the corresponding
+`UML class diagram <https://developer.ibm.com/articles/the-class-diagram/>`_).
+
+
+.. @startuml
+    Address --> "1" String : city
+    Address --> "1" String : zipcode
+    Address --> "1" String : country
+    Person --> "1" String : name
+    Person --> "1" Integer : age
+    Person --> "1" "List<String>" : hobbies
+    Person --> "1" Address : address
+  @enduml
+
+.. raw:: html
+    :file: ../images/expert-systems-webapp-uml-class-diagram.svg
+
+Such an edge-labelled directed graph can be represented by a collection of
+triples of the form
 
 The following json instance conforming to the JSON schema obtained from the
 above class declarations
