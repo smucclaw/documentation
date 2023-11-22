@@ -2,12 +2,6 @@
 L4 to Logical English transpiler
 ================================
 
-- [Joe todo] In this section, write about:
-    - Date predicates and facilities
-    - (Briefly) Constructs that were added to LE for our encoding, e.g. the max x such that...
-    - Graph database / RDF / triple store stuff for accessing fields of classes, and nested versions. 
-
-
 How to write L4 that translates to Logical English (LE); or, how L4 gets translated to LE
 =========================================================================================
 
