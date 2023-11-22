@@ -141,13 +141,15 @@ This corresponds to a graph described by the following triples:
 L4 predicates to access attributes (ie. object fields)
 ------------------------------------------------------
 
-L4 provides the following predicate to talk about such triples arising from
-objects:
+L4 provides the following family of predicates to talk about such triples
+arising from objects:
 
 .. csv-table::
     :widths: 15, 15, 5, 15, 15, 15
 
     "entity's", "attribute_0's", "...", "attribute_n's", "IS", "value"
+
+where 0 <= n <= 5.
 
 In the simplest case, this has the following form:
 
@@ -162,7 +164,7 @@ More formally, this predicate plays the same role as ``rdf/3`` in the
 `SWI-Prolog RDF library <https://www.swi-prolog.org/pldoc/man?section=semweb-rdf11>`_,
 so that a collection of triples
 (obtained from a corresponding json instance)
-forms a Datalog database, over which our Prolog based execution engines
+forms a Datalog database, over which our Prolog based execution engine
 reasons.
 
 We can use this to define the following rule for instance:
@@ -201,12 +203,12 @@ rule, which says that ``Person`` lives in
 
 Notice how we are essentially trying to access the value of the field
 ``country`` which is nested under the ``address`` field of ``Person``.
-For those familiar with SQL, the ``Address`` variable is essentially used to
-perform an implicit join on the value of the ``address`` attribute.
+For those familiar with SQL, the ``Address`` variable functions as an
+implicit join on the value of the ``address`` attribute.
 
 As chaining nested accessor predicates manually in this manner can be
-cumbersome, one can collapse multiple layers of nesting into a single predicate
-as follows:
+cumbersome, L4 allows one to can collapse multiple layers of nesting into a
+single predicate as follows:
 
 .. csv-table::
     :widths: 15, 15, 15, 15, 15, 15
