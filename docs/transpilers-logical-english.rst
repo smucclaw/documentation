@@ -8,7 +8,7 @@ How to write L4 that translates to Logical English (LE); or, how L4 gets transla
 The following explains how the ``L4->LE`` transpiler translates L4 to LE with examples. 
 If you are in a rush, ignore the explanations and just skim the examples.
 
-This is meant to be a more intuitive discussion that's aimed at 
+This is meant to be a more intuitive, high-level discussion that's aimed at 
 helping someone new to the Logical-English-y fragment of L4 
 get started with writing L4 that can transpile smoothly to Logical English;
 for a more comprehensive and rigorous specification and discussion, 
@@ -54,8 +54,7 @@ Note that
         that will be used in the LE program are.
 - the indented stuff below "the knowledge base encoding includes:"
     - consists of the Logical English *rules* and *facts*.
-- the "the target language is: prolog." declaration tells the Logical English compiler 
-that this should subsequently be transformed in turn into Prolog.
+- the "the target language is: prolog." declaration tells the Logical English compiler that this should subsequently be transformed in turn into Prolog.
 
 Logical English is, in this way, used merely as a wrapper around Prolog.
 
@@ -165,9 +164,38 @@ gets transpiled into this LE rule
 
 (Exercise for the reader: what would the corresponding LE template(s) look like?)
 
+Working with dates when transpiling to LE (in broad brush strokes)
+------------------------------------------------------------------
+
+You'll want to be able to work with dates in a 'first-class' way,
+when modelling contracts and legislation. Fortunately, you can write L4 constitutive rules 
+that involve dates, e.g.:
+
++---------------------+----------------------------------+---------------------+--------------+
+| GIVEN               | date of application              |                     |              |
++=====================+==================================+=====================+==============+
+| DECIDE              | you qualify for our fabulous     |                     |              |
+|                     | grant                            |                     |              |
++---------------------+----------------------------------+---------------------+--------------+
+| IF                  | date of application              | is before           | 2023-10-30   |
++---------------------+----------------------------------+---------------------+--------------+
+
+This gets transformed to this Logical English rule
+
+.. code-block:: le
+
+  you qualify for our fabulous grant
+  if a date of application is before 2023-10-30.
+  
+before being handled in turn by Joe Watt's date-related Logical English predicates (see our fork of Logical English on github) 
+and `Prolog date library <https://github.com/smucclaw/LogicalEnglish/blob/main/declarative_date_time/declarative_date_time.pl>`_.
+
+We just discussed *before*, but there's also *within* and *after*. You can also ask whether a date is a certain number of days or weeks or months before/after/within some other date; for more information on those predicates, or on how the date-related functionality works, see `Denotational Semantics of Relational Predicates (for LE) <https://www.overleaf.com/9757591584pqqqyhhrxbpq#6a4a4a>`_.
 
 Doing arithmetic in L4, with LE as the target  
 ---------------------------------------------
+
+
 
 
 Exercises
