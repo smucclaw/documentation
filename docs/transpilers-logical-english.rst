@@ -187,7 +187,7 @@ This gets transformed to this Logical English rule
   you qualify for our fabulous grant
   if a date of application is before 2023-10-30.
   
-before being handled in turn by Joe Watt's date-related Logical English predicates (see our fork of Logical English on github) 
+before being handled in turn by Joe Watt's date-related Logical English predicates `(see our fork of Logical English) <https://github.com/smucclaw/LogicalEnglish/pull/8>`_ 
 and `Prolog date library <https://github.com/smucclaw/LogicalEnglish/blob/main/declarative_date_time/declarative_date_time.pl>`_.
 
 We just discussed *before*, but there's also *within* and *after*. You can also ask whether a date is a certain number of days or weeks or months before/after/within some other date; for more information on those predicates, or on how the date-related functionality works, see `Denotational Semantics of Relational Predicates (for LE) <https://www.overleaf.com/9757591584pqqqyhhrxbpq#6a4a4a>`_.
