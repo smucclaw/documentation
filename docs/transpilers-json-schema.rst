@@ -21,7 +21,7 @@ Suppose we have L4 classes defined as follows.
     ,,,
     "DECLARE", "Person",,
     "HAS", "name", "IS A", "String"
-    , "age", "IS A", "Integer"
+    , "dob", "IS A", "Date"
     , "address", "IS A", "Address"
 
 Note that only type declarations are transpiled. This is because JSON Schema is only describing the structure of the data; other transpilers take care of transforming the actual rules.
@@ -45,7 +45,7 @@ These L4 declarations translate into the following JSON Schema.
                     "type": "object",
                     "properties": {
                         "name": {"type": "string"},
-                        "age": {"type": "integer"},
+                        "dob": {"type": "string", "format": "date},
                         "address": {"$ref": "#/$defs/Address"}}}}}
 
 The original L4 contains two custom types, ``Address`` and ``Person``, which each contain fields of basic and custom types.
@@ -99,7 +99,11 @@ Below, we explain the types.
 Primitive types
 ^^^^^^^^^^^^^^^
 
-The types Boolean, Integer, String and Number are primitives in both L4 and JSON Schema.
+The types Boolean, Integer and String are primitives in both L4 and JSON Schema.
+
+L4 has integers and floating point numbers, whereas in JSON Schema, Number is a superclass for all numerical values, i.e. integers (1, -42) and floats (3.14). So all integers are also numbers. The transpiler transforms all L4 integers into JSON integers, and L4 floats into JSON numbers.
+
+Note that in JSON Schema, numbers with a zero fractional parts are also considered integers, so 1.0 is actually an integer as well as a number.
 
 List
 ^^^^
@@ -126,13 +130,13 @@ results in the following line in the JSON Schema.
 Date
 ^^^^
 
-Date translates into a string with formatting information. Again adding a new field in L4
+Date translates into a string with formatting information. The field ``dob`` for date of birth
 
 .. csv-table::
     :widths: 8, 12, 8, 15, 15
 
     "DECLARE", "Person",,,
-    "HAS", "birthday", "IS A", "Date"
+    "HAS", "dob", "IS A", "Date"
 
 becomes as follows in the JSON Schema
 
@@ -198,27 +202,41 @@ These are the basic correspondences between the types in L4 and JSON Schema. Nex
 From Schema to Web Form
 =======================
 
-To generate a JSON Schema that works for a web form, we have a few assumptions:
+To use the generated schema in a simple JSON Forms React app, see the instructions at https://github.com/smucclaw/example-l4-form-app.
 
-- Top level has to be an object called ``Web_Form``.
-- The transpiler picks the top level object in order, but there is a later step that inserts ``Web_Form`` as the top level object. (TODO: what later step? Where does it happen?)
-- In order to be present in the generated form, a reference has to be a property of the ``Web_Form`` object or its children.
+The important thing for the web form to work is that the schema has the correct ``toplevel`` property.
+The transpiler only chooses the top level in the order of the declarations in the spreadsheet, so in most cases, the top level has to be revised afterwards.
+To make it easy to change, we have internally opted to use an object called ``Web_Form`` as the top level, and so the JSON Schema can be trivially post-processed after generation.
 
-So in the following L4 declarations, the type ``UnusedType`` is declared, but not used anywhere.
+So here's a revised L4 class structure with the convention. Nothing in L4 or JSON Schema itself requires particular naming, this is just to document our conventions.
+
+.. csv-table::
+    :widths: 8, 12, 8, 15
+
+    "DECLARE", "Web_Form",,
+    "HAS", "person", "IS A", "Person"
+    ,,,
+    "DECLARE", "Address",,
+    "HAS", "city", "IS A", "String"
+    , "zipcode", "IS A", "String"
+    , "country", "IS A", "String"
+    ,,,
+    "DECLARE", "Person",,
+    "HAS", "name", "IS A", "String"
+    , "age", "IS A", "Integer"
+    , "address", "IS A", "Address"
+
+Now, in order to be present in the generated web form, a reference has to be a property of the ``Web_Form`` object or its children.
+
+So suppose we add the L4 declaration ``UnusedType`` to the above.
 
 .. csv-table::
     :widths: 8, 12, 8, 12
 
-    DECLARE, Web_Form,,
-    HAS, claim_type, IS A, Claim
-    ,,,
-    DECLARE, Claim,,
-    HAS, …, ,
-    ,,,
     DECLARE, UnusedType,,
     HAS, unusedField, IS A, Boolean
 
-It is, however, present in the initial schema. But since ``UnusedType`` is not a property of ``Web_Form`` nor any of its children, it won't be shown in the generated form.
+As we can see below, the unused type is present in the initial schema. But since ``UnusedType`` is not a property of ``Web_Form`` nor any of its children, it won't be shown in the actual web form.
 
 .. code-block:: json-object
 
@@ -228,9 +246,9 @@ It is, however, present in the initial schema. But since ``UnusedType`` is not a
         "$defs": {
             "Web_Form": {
                 "type": "object",
-                "properties": {"claim_type": {"$ref": "#/$defs/Claim"}}
+                "properties": {"person": {"$ref": "#/$defs/Person"}}
             }
-            "Claim": {
+            "Person": {
                 "type": "object",
                 "properties": { … }
             }
@@ -242,30 +260,7 @@ It is, however, present in the initial schema. But since ``UnusedType`` is not a
         }
     }
 
-Note that if the type was using a nonexistent reference, then the web form would crash. So the following does not work, even though ``UnusedType`` is equally unused as the previous.
-
-.. csv-table::
-    :widths: 8, 12, 8, 12
-
-    DECLARE, UnusedType,,
-    HAS, unusedField, IS A, UndefinedReference
-
-.. code-block:: json-object
-
-    {"$schema":"http://json-schema.org/draft-07/schema#",
-        "type": "object",
-        "properties":{"toplevel":{"$ref": "#/$defs/Web_Form"}},
-        "$defs": {
-            …
-            "UnusedType": {
-                "type": "object",
-                "properties": {"unusedField": {"$ref": "#/$defs/UndefinedReference"}}
-            }
-        }
-    }
-
-
-Form Generation
+Form generation
 ---------------
 
-TODO: should the text from this (private repo) https://github.com/smucclaw/usecases/blob/main/jsonforms-vue-seed/README.md#form-generation be copied over to this documentation? Or is it out of scope for the transpiler?
+This document has described the transpiler and the types. To see how to put it in action, head over to https://github.com/smucclaw/example-l4-form-app.
