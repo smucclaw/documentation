@@ -174,23 +174,25 @@ that involve dates, e.g.:
 +---------------------+----------------------------------+---------------------+--------------+
 | GIVEN               | date of application              |                     |              |
 +=====================+==================================+=====================+==============+
-| DECIDE              | you qualify for our fabulous     |                     |              |
+| DECIDE              | you do not qualify for our fabulous     |                     |              |
 |                     | grant                            |                     |              |
 +---------------------+----------------------------------+---------------------+--------------+
-| IF                  | date of application              | is before           | 2023-10-30   |
+| IF                  | date of application              | is after           | 2023-10-30   |
 +---------------------+----------------------------------+---------------------+--------------+
+
+(Suppose 2023-10-30 is the deadline. Note that dates must be in YY-MM-DD format.)
 
 This gets transformed to this Logical English rule
 
 .. code-block:: le
 
-  you qualify for our fabulous grant
-  if a date of application is before 2023-10-30.
+  you do not qualify for our fabulous grant
+  if a date of application is after 2023-10-30.
   
 before being handled in turn by Joe Watt's date-related Logical English predicates `(see our fork of Logical English) <https://github.com/smucclaw/LogicalEnglish/pull/8>`_ 
 and `Prolog date library <https://github.com/smucclaw/LogicalEnglish/blob/main/declarative_date_time/declarative_date_time.pl>`_.
 
-We just discussed *before*, but there's also *within* and *after*. You can also ask whether a date is a certain number of days or weeks or months before/after/within some other date; for more information on those predicates, or on how the date-related functionality works, see `Denotational Semantics of Relational Predicates (for LE) <https://www.overleaf.com/9757591584pqqqyhhrxbpq#6a4a4a>`_.
+We just discussed *after*, but there's also *within* and *before*. You can also ask whether a date is a certain number of days or weeks or months before/after/within some other date; for more information on those predicates, or on how the date-related functionality works, see `Denotational Semantics of Relational Predicates (for LE) <https://www.overleaf.com/9757591584pqqqyhhrxbpq#6a4a4a>`_.
 
 Doing arithmetic in L4, with LE as the target  
 ---------------------------------------------
