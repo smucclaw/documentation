@@ -38,19 +38,24 @@ into
 also known as `entity-attribute-value <https://en.wikipedia.org/wiki/Entity%E2%80%93attribute%E2%80%93value_model>`_
 triples, which is a data model commonly used in commercial
 `Datalog <https://en.wikipedia.org/wiki/Datalog>`_
-(eg. `Datomic <https://www.datomic.com/>`_) and graph (eg. `Stardog <https://www.stardog.com/>`_)
-databases.
+and graph databases.
+(eg:
+`TerminusDB <https://terminusdb.com/>`_,
+`Datomic <https://www.datomic.com/>`_,
+`Stardog <https://www.stardog.com/>`_).
 Datalog is a declarative fragment of Prolog well suited for database applications,
 and representing data in such a manner facilitates reasoning about them via
 constitutive rules, which are interpreted as Prolog rules.
+
 We refer the interested reader to the following resources for more details on
 Datalog and graph database:
 
+- https://terminusdb.com/docs/datalog-explanation/ 
 - https://blogit.michelin.io/an-introduction-to-datalog/
 - https://aws.amazon.com/blogs/database/use-semantic-reasoning-to-infer-new-facts-from-your-rdf-graph-by-integrating-rdfox-with-amazon-neptune/
 
-A more practical introduction
------------------------------
+An example
+----------
 
 To illustrate how this works in practice,
 suppose we have L4 classes defined as follows.
@@ -133,8 +138,18 @@ This corresponds to a graph described by the following triples:
   (node_1, zipcode, "SW1A 1AA")
   (node_1, country, "United Kingdom")
 
+L4 predicates to access attributes (ie. object fields)
+------------------------------------------------------
+
 L4 provides the following predicate to talk about such triples arising from
 objects:
+
+.. csv-table::
+    :widths: 15, 15, 5, 15, 15, 15
+
+    "entity's", "attribute_0's", "...", "attribute_n's", "IS", "value"
+
+In the simplest case, this has the following form:
 
 .. csv-table::
     :widths: 15, 15, 5, 15
@@ -167,7 +182,8 @@ We can use this to define the following rule for instance:
 The above rule says that a ``Person`` named ``Name`` likes ``Hobby``
 if it is found in the list of ``hobbies`` of the person named ``Name``.
 
-Another example is the following, which says that ``Person`` lives in
+To illustrate a more complex usage of the predicate, consider the following
+rule, which says that ``Person`` lives in
 ``Country`` if his/her ``address`` has a ``Address`` whose ``country`` is
 ``Country``.
 
@@ -188,15 +204,9 @@ Notice how we are essentially trying to access the value of the field
 For those familiar with SQL, the ``Address`` variable is essentially used to
 perform an implicit join on the value of the ``address`` attribute.
 
-L4 also provides some syntactic sugar for these nested accessor predicates.
-These have the form:
-
-.. csv-table::
-    :widths: 15, 15, 5, 15, 15, 15
-
-    "entity's", "attribute_0's", "...", "attribute_n's", "IS", "value"
-
-One can use this as such:
+As chaining nested accessor predicates manually in this manner can be
+cumbersome, one can collapse multiple layers of nesting into a single predicate
+as follows:
 
 .. csv-table::
     :widths: 15, 15, 15, 15, 15, 15
@@ -208,19 +218,3 @@ One can use this as such:
     "DECIDE", "Name", "lives in", "Country",,
     "IF", "Person's", "name", "IS", "Name",
     "AND", "Person's", "address's", "country", "IS", "Address"
-
-.. [Joe todo]
-
-.. Talk about the interaction betweeen the various components here,
-.. namely the webapp json and the transpiled LE.
-
-.. MAYBE: Give some context: Explain that in an insurance usecase, we had the L4 -> LE, json schema transpiler, json -> asami db, etc
-
-.. Explain how the web form data types are coupled with the encoding 'field accessors' in an important way
-
-.. Form json -> Asami db [1 - 2 paras]
-.. 1. high level idea / intuition [no more than 1 para, probably]
-..    1. what is the transformation from our json to the graph db
-..    2. how we use this in our context
-.. 2. how to run the thing / call the thing
-..    1. at the least: a link to readme for how to run the thing
