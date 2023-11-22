@@ -149,8 +149,6 @@ arising from objects:
 
     "entity's", "attribute_0's", "...", "attribute_n's", "IS", "value"
 
-where 0 <= n <= 5.
-
 In the simplest case, this has the following form:
 
 .. csv-table::
