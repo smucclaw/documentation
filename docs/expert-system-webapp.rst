@@ -101,7 +101,7 @@ For instance, a ``Person`` is an entity which has a ``dob`` attribute
 With this, a corresponding instance of these classes can be viewed as a
 collection of labelled, directed edges, each represented as
 a triple of the form ``(entity, attribute, value)``.
-(More technically, these triples are called EAV / RDF-triples.)
+More formally, these triples are called EAV / RDF-triples.
 For instance, consider the following json instance conforming to the above
 JSON schema:
 
@@ -125,13 +125,13 @@ This corresponds to a graph described by the following triples:
 
 .. code-block:: text
 
-  (node-0, name, "Alice")
-  (node-0, dob, "1990-01-01")
-  (node-0, hobbies, ["reading", "painting"])
-  (node-0, address, node-2)
-  (node-2, city, "London")
-  (node-2, zipcode, "SW1A 1AA")
-  (node-2, country, "United Kingdom")
+  (node_0, name, "Alice")
+  (node_0, dob, "1990-01-01")
+  (node_0, hobbies, ["reading", "painting"])
+  (node_0, address, node_1)
+  (node_1, city, "London")
+  (node_1, zipcode, "SW1A 1AA")
+  (node_1, country, "United Kingdom")
 
 L4 provides the following predicate to talk about such triples arising from
 objects:
@@ -141,8 +141,14 @@ objects:
 
     "entity's", "attribute", "IS", "value"
 
-Such a triple can be viewed as accessing the ``attribute`` value of
+Intuitively, such a triple can be viewed as accessing the ``attribute`` value of
 ``entity`` and then binding it to ``value``. 
+More formally, this predicate plays the same role as ``rdf/3`` in the
+`SWI-Prolog RDF library <https://www.swi-prolog.org/pldoc/man?section=semweb-rdf11>`_,
+so that a collection of triples
+(obtained from a corresponding json instance)
+forms a Datalog database, over which our Prolog based execution engines
+reasons.
 
 We can use this to define the following rule for instance:
 
@@ -180,7 +186,7 @@ Another example is the following, which says that ``Person`` lives in
 Notice how we are essentially trying to access the value of the field
 ``country`` which is nested under the ``address`` field of ``Person``.
 For those familiar with SQL, the ``Address`` variable is essentially used to
-perform an implicit inner join on the value of the ``address`` attribute.
+perform an implicit join on the value of the ``address`` attribute.
 
 L4 also provides some syntactic sugar for these nested accessor predicates.
 These have the form:
