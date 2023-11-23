@@ -156,31 +156,52 @@ For example, if what is in the cell is ``x is`` rather than just ``x``, as in
 
 then that will *not* get transpiled to the intended LE.
 
-The LE translation of the L4 rules
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How the L4 rules get translated to LE *rules*
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that we've seen how LE templates get generated from the L4, let's look at the LE rules.
+Now that we've seen what LE templates do and how they get generated from the L4, let's look at the LE rules.
+
+Recall that the L4 aquatic animal example
+
+.. csv-table::
+    :header: "GIVEN", "x", "IS A", "Animal"
+    :widths: 15, 5, 15, 15
+
+    "DECIDE", "x", "is an aquatic animal",
+    "IF", "x", "lives in water"
 
 
-The L4 aquatic animal example, recall, was translated to the following LE rule:
+was translated to the following LE rule:
 
 .. code-block:: le
 
     the knowledge base encoding includes:
         a x is an aquatic animal
-        if x lives in water
+        if x lives in water.
 
 
-**TO ADD**
+How does the ``L4->LE`` transpiler translate simple L4 constitutive rules to LE rules? As the aforegoing examples demonstrate, it, among other things,
+
+- drops L4-specific keywords like ``DECIDE`` 
+
+- for every term ``t`` that (i) is declared in the L4 as a ``GIVEN`` variable and (ii) that is put in a cell of its own in the L4 rule (c.f. ``x`` in the aquatic animal example), it adds an ``a`` prefix to ``t`` the first time that ``t`` appears in the rule.
+
+The latter might seem mysterious: why do we have to prefix such terms with ``a`` in the LE? That's because the LE compiler needs to know, when an argument place or variable indicator in a template has been substituted with a term, whether the substituting term is a variable or something else (e.g. a constant, or a non-constant expression, or a compound term). And the way that a variable gets marked as such to the LE compiler in an LE rule, is via being prefixed with ``a`` the first time it occurs in the rule. 
+
+And yes, this is yet another reason why you want to be careful that, e.g.,
+the thing that's declared as a ``GIVEN`` 
+is exactly the same as the thing that's used in the rule itself. 
+That is, this sort of thing affects not only the generation of the LE templates by the ``L4->LE`` transpiler, but also the generation of the LE rules.
+
 
 The other things you need to get Boolean Prolog compound terms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now that we've seen a basic example with ``AND``, let's talk about ``OR`` and indentation.
+We've seen a few basic examples of constitutive rules, including one with ``AND`` (the grandparent example). Let's talk now about the other key things you need to know to model law with basic propositional clausal logic; namely, ``OR`` and indentation.
 
 What if you wanted to encode the following, more complicated rule? 
 
-In English::
+::
 
   a data breach with a organization harms an individual 
   if (i) it exposed data from the individual 
@@ -233,13 +254,15 @@ gets transpiled into this LE rule
     and it is not the case that 
         person is citizen of any other country.
 
-(Exercise for the reader: what would the corresponding LE template(s) look like?)
+--------------
+
+    Exercise for the reader: what would the corresponding LE template(s) look like?
 
 Working with dates when transpiling to LE (in broad brush strokes)
 ------------------------------------------------------------------
 
 You'll want to be able to work with dates in a 'first-class' way,
-when modelling contracts and legislation. Fortunately, you can write L4 constitutive rules 
+when modelling contracts and legislation. Fortunately, the ``L4->LE`` transpiler allows you to write L4 constitutive rules 
 that involve dates. For example, suppose that you're administering a grant with an application deadline of 2023-10-30:
 
 +---------------------+----------------------------------+-------------------+--------------+
