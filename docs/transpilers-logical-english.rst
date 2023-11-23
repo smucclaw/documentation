@@ -169,18 +169,18 @@ Working with dates when transpiling to LE (in broad brush strokes)
 
 You'll want to be able to work with dates in a 'first-class' way,
 when modelling contracts and legislation. Fortunately, you can write L4 constitutive rules 
-that involve dates, e.g.:
+that involve dates. For example, suppose that you're administering a grant with an application deadline of 2023-10-30:
 
-+---------------------+----------------------------------+---------------------+--------------+
-| GIVEN               | date of application              |                     |              |
-+=====================+==================================+=====================+==============+
-| DECIDE              | you do not qualify for our fabulous     |                     |              |
-|                     | grant                            |                     |              |
-+---------------------+----------------------------------+---------------------+--------------+
-| IF                  | date of application              | is after           | 2023-10-30   |
-+---------------------+----------------------------------+---------------------+--------------+
++---------------------+----------------------------------+-------------------+--------------+
+| GIVEN               | date of application              |                   |              |
++=====================+==================================+===================+==============+
+| DECIDE              | you do not qualify for our       |                   |              |
+|                     | fabulous grant                   |                   |              |
++---------------------+----------------------------------+-------------------+--------------+
+| IF                  | date of application              | is after          | 2023-10-30   |
++---------------------+----------------------------------+-------------------+--------------+
 
-(Suppose 2023-10-30 is the deadline. Note that dates must be in YY-MM-DD format.)
+(Note that dates must be in YY-MM-DD format.)
 
 This gets transformed to this Logical English rule
 
