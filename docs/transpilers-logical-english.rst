@@ -197,9 +197,9 @@ That is, this sort of thing affects not only the generation of the LE templates 
 The other things you need to get Boolean Prolog compound terms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We've seen a few basic examples of constitutive rules, including one with ``AND`` (the grandparent example). Let's talk now about the other key things you need to know to model law with basic propositional clausal logic; namely, ``OR`` and indentation.
+We've seen a few basic examples of constitutive rules, including one with ``AND`` (the grandparent example). Let's talk now about the other key things you need to know to model law with basic clausal logic; namely, ``OR`` and indentation.
 
-What if you wanted to encode the following, more complicated rule? 
+What if you wanted to model the following, more complicated rule using just propositional clausal logic? 
 
 ::
 
