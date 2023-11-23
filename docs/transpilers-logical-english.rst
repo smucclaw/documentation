@@ -12,7 +12,7 @@ This is meant to be a more intuitive, high-level discussion that's aimed at
 helping someone new to the Logical-English-y fragment of L4 
 get started with writing L4 that can transpile smoothly to Logical English;
 for a more comprehensive and rigorous specification and discussion, 
-see `Denotational Semantics of Relational Predicates (for LE) <https://www.overleaf.com/9757591584pqqqyhhrxbpq#6a4a4a>`_.
+see `Syntax and Denotational Semantics of L4 Relational Predicates <https://www.overleaf.com/9757591584pqqqyhhrxbpq#6a4a4a>`_.
 This discussion is also meant to be about the *syntax* and *semantics* of this fragment,
 rather than about the *implementation* of the ``L4->LE`` transpiler; 
 for the latter, see `TODO <>` instead.
