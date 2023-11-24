@@ -27,10 +27,6 @@ L4 is:
 |
 |
 
-..
-  We will discuss the syntax and semantics specific to these fragments and their various outputs later; 
-  but before doing that, we will first outline the *generic* syntax of L4 that is common to the various fragments.
-
 .. grid:: 2
 
     .. grid-item-card:: Export L4 Output

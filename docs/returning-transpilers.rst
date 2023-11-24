@@ -16,9 +16,9 @@ Refer to the image below for reference as to what you should see in the sidebar.
     :class: with-border
     :width: 225px
 
--------------------
-Available Languages
--------------------
+-----------------
+Available Outputs
+-----------------
 
     - JSON
 
@@ -45,6 +45,10 @@ Available Languages
       - Visualisation of race condition trace (if any)
 
     - Logical English
+
+    - :doc:`Interactive webform <interactive-webform>`
+
+      This utilises the ``JSON Schema`` and ``Logical English`` outputs.
 
     - Word Doc (Word Document)
 

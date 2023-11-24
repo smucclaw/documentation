@@ -1,8 +1,8 @@
-====================
-Expert system webapp
-====================
+===================
+Interactive webform
+===================
 
-One can turn an L4 specification into an expert system webapp using:
+One can turn an L4 specification into an interactive webform using:
 
 - The L4 to Logical English transpiler.
 - The L4 to JSON Schema transpiler.
