@@ -8,19 +8,11 @@ How to write L4 that translates to Logical English (LE); or, how L4 gets transla
 The following explains how the ``L4->LE`` transpiler translates L4 to LE with examples. 
 If you are in a rush, ignore the explanations and just skim the examples.
 
-This is meant to be a more intuitive, high-level discussion that's aimed at 
-helping someone new to the Logical-English-y fragment of L4 
-get started with writing L4 that can transpile smoothly to Logical English;
-for a more comprehensive and rigorous specification and discussion, 
-see `Syntax and Denotational Semantics of L4 Relational Predicates <https://www.overleaf.com/9757591584pqqqyhhrxbpq#6a4a4a>`_.
-This discussion is also meant to be about the *syntax* and *semantics* of this fragment,
-rather than about the *implementation* of the ``L4->LE`` transpiler; 
-for the latter, see `TODO <>` instead.
+This is a more intuitive, high-level discussion that's aimed at someone who wants to understand how L4 gets translated to LE, *so that they can more effectively formally model law using the Logical-English-y fragment of L4*. It is *not* meant to be a rigorous specification of that fragment; for that, see `Syntax and Denotational Semantics of L4 Relational Predicates <https://www.overleaf.com/9757591584pqqqyhhrxbpq#6a4a4a>`_. Finally, this discussion does not discuss the *implementation* of the ``L4->LE`` transpiler in detail; for the latter, see `TODO <>` instead.
 
-
-The following discussion does however assume some understanding 
-of the :ref:`generic L4 syntax and concepts <law_understand_l4>` 
-and basic logic programming concepts.
+Although the following discussion does not assume prior knowledge of Logical English, it does assume some understanding 
+of the :ref:`generic L4 syntax and concepts <law_understand_l4>`, as well as 
+of basic logic programming concepts. (You'll probably get something out of this even if you are new to logic programming, but you shouldn't expect to understand everything.)
 
 Simple Horn clauses
 -------------------
@@ -199,19 +191,19 @@ The other things you need to get Boolean Prolog compound terms
 
 We've seen a few basic examples of constitutive rules, including one with ``AND`` (the grandparent example). Let's talk now about the other key things you need to know to model law with basic clausal logic; namely, ``OR`` and indentation.
 
-What if you wanted to model the following, more complicated rule using just propositional clausal logic? 
+What if you wanted to model the following, more complicated rule?
 
 ::
 
-  a data breach with a organization harms an individual 
+  A data breach with a organization harms an individual 
   if (i) it exposed data from the individual 
   and (ii) it either relates to the name of the individual 
             or to an account the individual had with the organization
 
-There are various ways to model this, but let's suppose 
+There are various ways to formally model this, but let's suppose 
 you wanted to treat ``data breach``, ``organization``, and ``individual`` as variables.
 
-You can encode this in L4, for LE (and thence to Prolog), with
+You can encode this in L4, for LE (and by extension Prolog), with
 
 +--------+--------------+-------------+--------------+------------------------+-----------------------+------------+----------+--------------+
 | GIVEN  | data breach  |             | IS A         | Data Breach            |                       |            |          |              |
@@ -229,7 +221,7 @@ You can encode this in L4, for LE (and thence to Prolog), with
 |        | OR           | data breach | with         | organization           | relates to an account | individual | had with | organization |
 +--------+--------------+-------------+--------------+------------------------+-----------------------+------------+----------+--------------+
 
-It's worth noting (yet again) that indentation in L4 matters: 
+This example also demonstrates how indentation in L4 matters: 
 that's how we make it clear that this has the form ``(p if q and (r or s))`` 
 as opposed to the form ``(p if (q and r) or s)``.
 
