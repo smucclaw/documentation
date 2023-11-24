@@ -189,7 +189,7 @@ That is, this sort of thing affects not only the generation of the LE templates 
 The other things you need to get Boolean Prolog compound terms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We've seen a few basic examples of constitutive rules, including one with ``AND`` (the grandparent example). Let's talk now about the other key things you need to know to model law with basic clausal logic; namely, ``OR`` and indentation.
+We've seen a few basic examples of constitutive rules, including one with ``AND`` (the grandparent example). Let's talk now about the other key things you need to know to model law with basic clausal logic; namely, ``OR``, indentation, and negation as failure / weak negation.
 
 What if you wanted to model the following, more complicated rule?
 
@@ -287,7 +287,7 @@ We just discussed *after*, but there's also *within* and *before*. You can also 
 Doing arithmetic in L4, with LE as the target  
 ---------------------------------------------
 
-
+Again, let's approach this with examples. Suppose you are trying to model an insurance contract where the life assured can qualify for payouts across different categories if certain conditions are met. And suppose you want to compute the total payout for the life assured across all categories by summing up the payouts across the categories.
 
 
 Exercises
