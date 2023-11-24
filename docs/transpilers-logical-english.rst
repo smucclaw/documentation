@@ -334,6 +334,19 @@ You can test that this does what we expect, with the VSCode Logical English exte
       which customer qualifies for higher interest rate promotion.
 
 
+There are a couple of things to note about this example:
+[TODO]
+    - the data acessor stuff
+    - SUM
+
+
+Note also that ``SUM`` and their ilk, as might be clearer in the .le version, can take more than just two arguments:
+[TODO]
+
+Other arithmetic-related predicates include:
+
+
+
 Exercises
 ---------
 
