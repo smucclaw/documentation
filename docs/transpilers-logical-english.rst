@@ -287,7 +287,51 @@ We just discussed *after*, but there's also *within* and *before*. You can also 
 Doing arithmetic in L4, with LE as the target  
 ---------------------------------------------
 
-Again, let's approach this with examples. Suppose you are trying to model an insurance contract where the life assured can qualify for payouts across different categories if certain conditions are met. And suppose you want to compute the total payout for the life assured across all categories by summing up the payouts across the categories.
+Again, let's approach this with examples. Suppose you're trying to operationalize the following bank regulations regarding an upcoming higher-than-usual interest rates promotion:
+
+    If a customer has stashed at least $3,000 with us across their current and savings accounts --- i.e., if what we might call the *total balances*, or the sum of what they have in savings and in their current account, is at least $3,000 --- then they qualify for this interest-rates promotion. 
+
+How would you express this in the LE fragment of L4?
+
+Here's one approach:
+
+.. csv-table::
+   :header: "GIVEN", "customer", "", "", ""
+   :widths: 10, 20, 20, 20, 20
+
+   "", "funds in current account", "", "", ""
+   "", "savings", "", "", ""
+   "", "total balances", "", "", ""
+   "DECIDE", "customer", "qualifies for higher interest rate promotion", "", ""
+   "IF", "customer's", "curr acc funds", "is", "funds in current account"
+   "AND", "customer's", "savings acc funds", "is", "savings"
+   "AND", "total balances", "IS", "SUM", "funds in current account"
+   "", "", "", "", "savings"
+   "AND", "total balances", ">=", "3000", ""
+
+This gets transpiled to this LE rule
+
+.. code-block:: le
+
+    a customer qualifies for higher interest rate promotion
+    if customer's curr acc funds is a funds in current account
+    and customer's savings acc funds is a savings
+    and a total balances is the sum of [funds in current account, savings]
+    and total balances >= 3000.
+
+
+You can test that this does what we expect, with the VSCode Logical English extension, by adding the following to the outputted ``.le`` file and querying with the query ``q`` and scenario ``test``.
+
+.. code-block:: le
+
+    scenario test is:
+      alice's curr acc funds is 5000.
+      alice's savings acc funds is 10.
+      bob's curr acc funds is 40.
+      bob's savings acc funds is 100.
+
+    query q is:
+      which customer qualifies for higher interest rate promotion.
 
 
 Exercises
