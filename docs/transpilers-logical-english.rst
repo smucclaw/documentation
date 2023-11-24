@@ -225,6 +225,10 @@ This example also demonstrates how indentation in L4 matters:
 that's how we make it clear that this has the form ``(p if q and (r or s))`` 
 as opposed to the form ``(p if (q and r) or s)``.
 
+--------------
+
+    Exercise for the reader: to what extent are the indentation rules in L4 and LE the same? Try experimenting with examples!
+
 
 Negation as failure also works the way you might expect:
 
