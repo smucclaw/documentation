@@ -2,22 +2,53 @@
 Web form
 ========
 
-One can turn an L4 specification into a web form using:
-
-- The L4 to Logical English transpiler.
-- The L4 to JSON Schema transpiler.
-- The jsonforms-vue-seed project.
-
-----------------------------------------------------------
-Reasoning about classes/data types with constitutive rules
-----------------------------------------------------------
-
 Recall that:
 
 - L4 constitutive rules can be transpiled to Logical English, which
   are in turn transpiled into Prolog and executed as such.
-- L4 classes/data types can be transpiled to JSON schemas, and we can generate
-  nested JSON instances conforming to these schemas.
+
+- L4 classes / data types can be transpiled to JSON schema.
+
+One can turn an L4 specification into a web form using:
+
+- The `Example form app <https://github.com/smucclaw/example-l3-form-app>`_.
+
+  - This utilises `JSON Forms <https://jsonforms.io/>`_
+    to render the output of the L4 to JSON Schema transpiler
+    as an interactive web form.
+
+  - The idea is that the web form allows the user to define JSON instances
+    conforming to JSON Schemas which in turn correspond to L4 classes / data types.
+
+- The `Logical English client library <https://github.com/smucclaw/logical-english-client>`_.
+
+  Given the following:
+
+  - A Logical English server, ie. a server running the
+    `Logical English Prolog codebase <https://github.com/smucclaw/LogicalEnglish>`_
+
+    - A publicly available instance maintained by CCLAW can be found at
+      `this url <https://le.dev.cclaw.legalese.com/>`_
+  
+  - A JSON instance,
+    like one obtained from the web form
+
+  - A Logical English program,
+    like one obtained from the output of the L4 to Logical English transpiler
+
+  - A Logical English query string
+
+  this library allows one to query the Logical English server
+  which executes the Logical English as Prolog and returns an explanation
+  tree in the form of JSON.
+  The library also some built-in facilities for visualising this JSON tree.
+
+More details about these individual projects and how to put them together
+can be found in their respective project documentation.
+
+----------------------------------------------------------
+Reasoning about classes/data types with constitutive rules
+----------------------------------------------------------
 
 Theoretical Overview
 --------------------

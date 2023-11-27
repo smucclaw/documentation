@@ -49,7 +49,7 @@ L4 is:
         :link: returning-specification
         :link-type: doc
 
-        A specification of L4 Syntax.
+        A specification of L4's syntax.
 
     .. grid-item-card:: Publications
         :link: https://cclaw.smu.edu.sg/projects-papers
