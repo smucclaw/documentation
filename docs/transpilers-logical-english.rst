@@ -390,7 +390,7 @@ There are also
 - ``t IS MAX x where φ(x)``
 - ``t IS SUM x where φ(x)``
 
-These get translated somewhat differently; e.g., 
+These get translated somewhat differently. For example, consider a scenario where you want to sum across all the taxable income that a person has earned from various income sources; suppose for simplicity that an income source is taxable if it's profits or investment dividends.  
 
 
 .. csv-table:: sum_where_phi
