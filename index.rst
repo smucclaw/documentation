@@ -27,7 +27,7 @@ L4 Documentation
       :link: docs/links-returning-users
       :link-type: doc
 
-      Find out how to export L4, learn its keywords, and its semantic specification.
+      Find out how to export L4, learn its keywords, and its semantics.
 
 .. grid:: 3
 
