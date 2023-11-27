@@ -46,9 +46,16 @@ One can turn an L4 specification into a web form using:
 More details about these individual projects and how to put them together
 can be found in their respective project documentation.
 
-----------------------------------------------------------
-Reasoning about classes/data types with constitutive rules
-----------------------------------------------------------
+------------------------------------------------------------
+Reasoning about instances of classes with constitutive rules
+------------------------------------------------------------
+
+In order to utilise the `Logical English client library <https://github.com/smucclaw/logical-english-client>`_
+to reason about data in the form of JSON instances,
+one has to write special rules in the L4 encoding
+(which gets transpiled to a Logical English program).
+This section discusses how one can write such rules, as well as some of
+the theoretical ideas behind them.
 
 Theoretical Overview
 --------------------
