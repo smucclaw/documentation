@@ -284,6 +284,43 @@ and `Prolog date library <https://github.com/smucclaw/LogicalEnglish/blob/main/d
 
 We just discussed *after*, but there's also *within* and *before*. You can also ask whether a date is a certain number of days or weeks or months before/after/within some other date; for more information on those predicates, or on how the date-related functionality works, see `Syntax and Denotational Semantics of L4 Relational Predicates (for LE) <https://www.overleaf.com/9757591584pqqqyhhrxbpq#6a4a4a>`_.
 
+
+An interlude on ``IS`` and "is"
+-------------------------------
+
+IS as in term equality
+~~~~~~~~~~~~~~~~~~~~~~~
+
+We often want to be able to check if some term is really some other term. For example, how would you encode in the LE fragment of L4 that an income source is taxable if the income source is profits or is investment dividends? 
+
+For this, you would use the uppercase ``IS`` L4 keyword:
+
+.. csv-table::
+   :header: "GIVEN", "income source", "", ""
+   :widths: 10, 25, 20, 20
+
+   "DECIDE", "income source", "is taxable", ""
+   "IF", "income source", "IS", "profits"
+   "OR", "income source", "IS", "investment dividends"
+
+This example, though short, is subtle. 
+
+The most important thing to note is that you have to use ``IS`` and not the lowercase ``is`` when checking if income source is the same term as profits or investment dividends, and you have to put the ``IS`` in its own cell.
+
+By contrast, in "DECIDE income source is taxable," we want to stick with the lowercase "is", since what we are really saying there is the Prolog ``is_taxable(X)`` --- the "is" there is part of the predicate, and not a term equality operator. (And to make things clearer, though this is not required by the transpiler, when the "is" is really part of the predicate, we should group the "is" in the same cell as the rest of the predicate rather than by itself, as in the example above.)
+
+``t_1 IS NOT t_2``
+~~~~~~~~~~~~~~~~~~~
+
+Relatedly, you might want to check that some term is *not* some other term. You can do this with ``IS NOT``, where the ``IS`` and ``NOT`` must be broken up into separate cells (that are next to each other).
+
+TODO: Ideally add example
+
+``t_1 IS IN t_2``
+~~~~~~~~~~~~~~~~~~
+
+TODO: Example + discussion
+
 Doing arithmetic in L4, with LE as the target  
 ---------------------------------------------
 
@@ -334,17 +371,62 @@ You can test that this does what we expect, with the VSCode Logical English exte
       which customer qualifies for higher interest rate promotion.
 
 
-There are a couple of things to note about this example:
-[TODO]
-    - the data acessor stuff
-    - SUM
+There are a couple of things to note about this example.
 
+First, the ``X's F is value`` pattern corresponds conceptually to entity-attribute-value triples. This pattern is a convenient way to to work with classes or data types in the Logical-English and JSON-Schema fragments of L4; see :doc:`Web form <webform>` for more details.
 
-Note also that ``SUM`` and their ilk, as might be clearer in the .le version, can take more than just two arguments:
-[TODO]
+Second, the key bit of syntax you need for summing up things is, well, ``SUM`` (these keywords will tend to be capitalized in L4). As the example shows, ``SUM`` takes arguments vertically in L4. Note, as the transpiled output suggests, that it can take an arbitrary number of arguments --- it's not limited to two arguments.
 
 Other arithmetic-related predicates include:
 
+- ``t IS MAX t_1 t_2 ... t_n``
+- ``t IS MIN t_1 t_2 ... t_n``
+- ``t IS PRODUCT t_1 t_2 ... t_n``
+
+The syntactic transformations from L4 to LE for these predicates are similar to what we saw with ``t IS SUM t_1 t_2 ... t_n``.
+
+There are also 
+- ``t IS MAX x where φ(x)``
+- ``t IS MAX x where φ(x)``
+- ``t IS SUM x where φ(x)``
+
+These get translated somewhat differently; e.g., 
+
+
+.. csv-table:: sum_where_phi
+   :file: ../csv_examples/sum_phi_x.csv
+   :header-rows: 1
+
+
+gets transpiled to these LE rules:
+
+.. code-block:: le
+
+    the knowledge base rules includes:
+    a person earned taxable a amount from a income source
+    if person earned amount from income source
+    and income source is taxable.
+
+    a income source is taxable
+    if income source is profits
+    or income source is investment dividends.
+
+    a person's a total taxable income is a amount
+    if amount is the sum of each x such that
+        person earned taxable x from a income source.
+
+
+You can check that this does what you might expect, with the following LE query and scenario:
+
+.. code-block:: le
+
+    scenario test is:
+        alice earned 500 from profits.
+        alice earned 700 from investment dividends.
+        alice earned 212 from non-taxable source.
+
+    query q is:
+        alice's total taxable income is which amount.
 
 
 Exercises
