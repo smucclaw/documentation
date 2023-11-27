@@ -377,6 +377,9 @@ First, the ``X's F is value`` pattern corresponds conceptually to entity-attribu
 
 Second, the key bit of syntax you need for summing up things is, well, ``SUM`` (these keywords will tend to be capitalized in L4). As the example shows, ``SUM`` takes arguments vertically in L4. Note, as the transpiled output suggests, that it can take an arbitrary number of arguments --- it's not limited to two arguments.
 
+Other arithmetic-related predicates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Other arithmetic-related predicates include:
 
 - ``t IS MAX t_1 t_2 ... t_n``
@@ -428,10 +431,22 @@ You can check that this does what you might expect, with the following LE query 
     query q is:
         alice's total taxable income is which amount.
 
+Arithmetic relations for comparing two arithmetic values
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Finally, the ``L4->LE`` transpiler supports the following arithmetic relations for comparing arithmetic values:
+
+- ``<``
+- ``>``
+- ``<=``
+- ``>=``
+
 
 Exercises
 ---------
+1. How would you write or model in L4: "The minimum monthly payment for the credit card is 3% of current balance or $50, whichever is higher, plus any overdue amounts" (adapted from https://www.uob.com.sg/assets/pdfs/gen_info_cards.pdf)
 
+2. The transpiled LE code does not seem to be giving you the results you expect. When looking at the templates, you see that the generated templates include ones of the form ``**a t_1** is ... t_2``. What might the issue(s) be?
 
 
 
