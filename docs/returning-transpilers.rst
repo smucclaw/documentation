@@ -46,7 +46,7 @@ Available Outputs
 
     - Logical English
 
-    - :doc:`Interactive webform <interactive-webform>`
+    - :doc:`Web form <webform>`
 
       This utilises the ``JSON Schema`` and ``Logical English`` outputs.
 

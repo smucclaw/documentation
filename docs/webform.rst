@@ -1,8 +1,8 @@
-===================
-Interactive webform
-===================
+========
+Web form
+========
 
-One can turn an L4 specification into an interactive webform using:
+One can turn an L4 specification into a web form using:
 
 - The L4 to Logical English transpiler.
 - The L4 to JSON Schema transpiler.
