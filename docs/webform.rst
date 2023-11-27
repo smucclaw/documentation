@@ -5,7 +5,7 @@ Web form
 Recall that:
 
 - L4 constitutive rules can be transpiled to Logical English, which
-  are in turn transpiled into Prolog and executed as such.
+  are in turn transpiled to Prolog and executed as such.
 
 - L4 classes / data types can be transpiled to JSON schema.
 
