@@ -289,7 +289,7 @@ An interlude on ``IS`` and "is"
 -------------------------------
 
 IS as in term equality
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 We often want to be able to check if some term is really some other term. For example, how would you encode in the LE fragment of L4 that an income source is taxable if the income source is profits or is investment dividends? 
 
@@ -310,14 +310,14 @@ The most important thing to note is that you have to use ``IS`` and not the lowe
 By contrast, in "DECIDE income source is taxable," we want to stick with the lowercase "is", since what we are really saying there is the Prolog ``is_taxable(X)`` --- the "is" there is part of the predicate, and not a term equality operator. (And to make things clearer, though this is not required by the transpiler, when the "is" is really part of the predicate, we should group the "is" in the same cell as the rest of the predicate rather than by itself, as in the example above.)
 
 ``t_1 IS NOT t_2``
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 Relatedly, you might want to check that some term is *not* some other term. You can do this with ``IS NOT``, where the ``IS`` and ``NOT`` must be broken up into separate cells (that are next to each other).
 
 TODO: Ideally add example
 
 ``t_1 IS IN t_2``
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 TODO: Example + discussion
 
@@ -378,7 +378,7 @@ First, the ``X's F is value`` pattern corresponds conceptually to entity-attribu
 Second, the key bit of syntax you need for summing up things is, well, ``SUM`` (these keywords will tend to be capitalized in L4). As the example shows, ``SUM`` takes arguments vertically in L4. Note, as the transpiled output suggests, that it can take an arbitrary number of arguments --- it's not limited to two arguments.
 
 Other arithmetic-related predicates
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Other arithmetic-related predicates include:
 
@@ -432,7 +432,7 @@ You can check that this does what you might expect, with the following LE query 
         alice's total taxable income is which amount.
 
 Arithmetic relations for comparing two arithmetic values
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Finally, the ``L4->LE`` transpiler supports the following arithmetic relations for comparing arithmetic values:
 
