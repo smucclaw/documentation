@@ -48,8 +48,8 @@ Available Outputs
 
     - :doc:`Web form <webform>`
 
-      This utilises the `JSON Schema <transpilers-json-schema>` and
-      `Logical English <transpilers-logical-english>` outputs, and hence
+      This utilises the :doc:`JSON Schema <transpilers-json-schema>` and
+      :doc:`Logical English <transpilers-logical-english>` outputs, and hence
       assumes familiarity with their respective transpiler semantics.
 
     - Word Doc (Word Document)
