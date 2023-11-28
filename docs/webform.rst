@@ -14,7 +14,7 @@ familiarity with their respective transpiler semantics:
 
 One can turn an L4 specification into a web form using:
 
-- The `Example form app <https://github.com/smucclaw/example-l3-form-app>`_.
+- The `Example form app <https://github.com/smucclaw/example-l4-form-app>`_.
 
   - This utilises `JSON Forms <https://jsonforms.io/>`_
     to render the output of the
