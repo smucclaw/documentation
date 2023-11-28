@@ -6,9 +6,9 @@
 L4 Language Reference
 #####################
 
-L4 is:
+**L4 is**:
 
-- A high level specification language
+- A high level specification language.
     - Its generic high level syntax is described in the section titled
       ``L4 Language Specification``.
 
