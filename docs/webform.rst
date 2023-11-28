@@ -2,30 +2,34 @@
 Turning an L4 specification into a web form
 ===========================================
 
-Recall that:
+As mentioned in
+:doc:`the overview of L4 transpiler outputs <returning-transpilers>`,
+this section utilises the following transpiler outputs and assumes
+familiarity with their respective transpiler semantics:
 
-- L4 constitutive rules can be transpiled to Logical English, which
+- :doc:`L4 constitutive rules can be transpiled to Logical English <transpilers-logical-english>`, which
   are in turn transpiled to Prolog and executed as such.
 
-- L4 classes / data types can be transpiled to JSON schema.
+- :doc:`L4 classes can be transpiled to JSON schema <transpilers-json-schema>`.
 
 One can turn an L4 specification into a web form using:
 
 - The `Example form app <https://github.com/smucclaw/example-l3-form-app>`_.
 
   - This utilises `JSON Forms <https://jsonforms.io/>`_
-    to render the output of the L4 to JSON Schema transpiler
+    to render the output of the
+    :doc:`L4 to JSON Schema transpiler <transpilers-json-schema>`
     as an interactive web form.
 
   - The idea is that the web form allows the user to define JSON instances
-    conforming to JSON Schemas which in turn correspond to L4 classes / data types.
+    conforming to JSON Schemas which in turn correspond to L4 classes.
 
 - The `Logical English client library <https://github.com/smucclaw/logical-english-client>`_.
 
   Given the following:
 
   - A Logical English server, ie. a server running the
-    `Logical English Prolog codebase <https://github.com/smucclaw/LogicalEnglish>`_
+    `Logical English Prolog code base <https://github.com/smucclaw/LogicalEnglish>`_
 
     - A publicly available instance maintained by CCLAW can be found at
       `this url <https://le.dev.cclaw.legalese.com/>`_
@@ -34,14 +38,15 @@ One can turn an L4 specification into a web form using:
     like one obtained from the web form
 
   - A Logical English program,
-    like one obtained from the output of the L4 to Logical English transpiler
+    like one obtained from the output of the
+    :doc:`L4 to Logical English transpiler <transpilers-logical-english>`
 
   - A Logical English query string
 
   this library allows one to query the Logical English server
   which executes the Logical English as Prolog and returns an explanation
   tree in the form of JSON.
-  The library also some built-in facilities for visualising this JSON tree.
+  The library also has some built-in facilities for visualising this JSON tree.
 
 More details about these individual projects and how to put them together
 can be found in their respective project documentation.
@@ -53,7 +58,7 @@ Reasoning about instances of classes with constitutive rules
 In order to utilise the `Logical English client library <https://github.com/smucclaw/logical-english-client>`_
 to reason about data in the form of JSON instances,
 one has to write special rules in the L4 encoding
-(which gets transpiled to a Logical English program).
+(which gets transpiled to Logical English).
 This section discusses how one can write such rules, as well as some of
 the theoretical ideas behind them.
 
@@ -86,7 +91,7 @@ and representing data in such a manner facilitates reasoning about them via
 constitutive rules, which are interpreted as Prolog rules.
 
 We refer the interested reader to the following resources for more details on
-Datalog and graph database:
+Datalog, RDF and graph database:
 
 - https://terminusdb.com/docs/datalog-explanation/ 
 - https://blogit.michelin.io/an-introduction-to-datalog/
