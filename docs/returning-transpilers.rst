@@ -22,7 +22,7 @@ Available Outputs
 
     - JSON
 
-    - JSON Schema
+    - :doc:`JSON Schema <transpilers-json-schema>`
 
     - Epilog
 
@@ -44,7 +44,7 @@ Available Outputs
       - Visualisation of state space
       - Visualisation of race condition trace (if any)
 
-    - Logical English
+    - :doc:`Logical English <transpilers-logical-english>`
 
     - :doc:`Web form <webform>`
 
