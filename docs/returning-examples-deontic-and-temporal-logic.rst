@@ -4,6 +4,8 @@
 2. Deontic and Temporal Logic Examples
 ######################################
 
+.. _eg_contract_as_automaton:
+
 *****************************
 Contract As Automaton Example
 *****************************
@@ -12,9 +14,9 @@ Contract As Automaton Example
 Events & Consequences, Obligations vs Permissions
 =================================================
 
-`See the L4 Code for this 'Contract As Automaton' example <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=2000125343>`_
+`See the L4 Code for this 'Contract As Automaton' example <https://docs.google.com/spreadsheets/d/1WyzDqaVTcicDa2K_mzS_SGtLZL4SnzzfYHUDdtBDxUA/edit#gid=1582189446>`_
 
-In the :ref:`eg_rodent`, we learned that we can use L4 to formalise a rule.
+In the :ref:`eg_must_sing`, we learned that we can use L4 to formalise a rule.
 
 The rule was just about short enough to formalise without causing too much mental strain. But what happens when you need to formalise even longer rules, or rules with multiple sections that repeatedly use the same terms and rules?
 
@@ -145,7 +147,7 @@ The differences between DECIDE, DECLARE, and DEFINE
 
 - DECIDE is where you state explicitly what format you've chosen to formalise.
 
-    In the :ref:`eg_rodent`, we decided to formalise a positive version of the contract, telling others that "the loss or damage is covered if..." instead of "the loss or damage is not covered if...".
+    In the :ref:`eg_rodents_vermin`, we decided to formalise a positive version of the contract, telling others that "the loss or damage is covered if..." instead of "the loss or damage is not covered if...".
 
 - DECLARE is where you state explicitly what abstract concepts that are needed in formalising the contract. In this example, we need a concept of a 'loan', which is abstract because the idea of a 'loan' is a mental idea. But what exactly is a 'loan'?
 

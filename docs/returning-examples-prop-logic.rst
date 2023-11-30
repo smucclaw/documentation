@@ -5,11 +5,13 @@
 1. Propositional Logic Examples
 ###############################
 
+.. _eg_must_sing:
+
 **************
 Must Sing Rule
 **************
 
-`See the L4 code for this 'Must Sing' example <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1505307398>`_
+`See the L4 code for this 'Must Sing' example <https://docs.google.com/spreadsheets/d/1WyzDqaVTcicDa2K_mzS_SGtLZL4SnzzfYHUDdtBDxUA/edit#gid=1373864401>`_
 
 This example gives an overview of how to write a simple rule in L4 using the simple rule: "Every person who walks and eats or drinks must sing".
 
@@ -59,11 +61,13 @@ We transformed the rule into L4 with the following method:
 We use indentation to disambiguate the sentence. An indentation is when the cells next to and below a keyword are blank.
 
 
+.. _eg_rodents_vermin:
+
 *********************
 Home Insurance Clause
 *********************
 
-`See the L4 code for this 'Home Insurance' example, labelled as 'Rodents and Vermin' <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1206725099>`_
+`See the L4 code for this 'Home Insurance' example, labelled as 'Rodents and Vermin' <https://docs.google.com/spreadsheets/d/1WyzDqaVTcicDa2K_mzS_SGtLZL4SnzzfYHUDdtBDxUA/edit#gid=1663223809>`_
 
 This example focus on a single decision rule drawn from a home insurance policy and its transformations to more easily understood forms.
 
