@@ -1,5 +1,5 @@
 ###################################
-5. Data Breach Notification Example
+3. Data Breach Notification Example
 ###################################
 
 ============================
