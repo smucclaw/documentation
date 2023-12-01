@@ -62,14 +62,13 @@ one has to write special rules in the L4 encoding
 This section discusses how one can write such rules, as well as some of
 the theoretical ideas behind them.
 
-Theoretical Overview
---------------------
+Overview
+--------
 
-In this sub-section, we describe the theoretical ideas behind the ideas in the
-remaining sub-sections.
-This part is *optional* and is primarily for more theoreticall inclined
-readers who are interested to understand more about the underlying
-motivation and ideas.
+In this sub-section, we provide a brief overview of some of the theoretical
+ideas for readers who are more theoretically inclined.
+One can safely skim through this and head to the next sub-section,
+where we provide concrete examples of how these apply in the context of L4.
 
 To facilitate reasoning about data defined via classes and objects using
 constitutive rules,
@@ -77,7 +76,8 @@ we leverage well established techniques from the database and knowledge represen
 worlds.
 More precisely, we transform nested data representing instaces of L4 classes
 into
-`RDF subject-predicate-object <https://www.oxfordsemantic.tech/faqs/what-is-rdf>`_,
+`RDF subject-predicate-object <https://www.oxfordsemantic.tech/faqs/what-is-rdf>`_
+triples,
 also known as `entity-attribute-value <https://en.wikipedia.org/wiki/Entity%E2%80%93attribute%E2%80%93value_model>`_
 triples, which is a data model commonly used in commercial
 `Datalog <https://en.wikipedia.org/wiki/Datalog>`_
@@ -87,8 +87,10 @@ and graph databases.
 `Datomic <https://www.datomic.com/>`_,
 `Stardog <https://www.stardog.com/>`_).
 Datalog is a declarative fragment of Prolog well suited for database applications,
-and representing data in such a manner facilitates reasoning about them via
-constitutive rules, which are interpreted as Prolog rules.
+and the idea is that one can represent such triples as a ternary predicates,
+like `rdf/3 <https://www.swi-prolog.org/pldoc/man?predicate=rdf/3>`_
+in the SWI-Prolog RDF library.
+Such a representation enables one to reason about them with logical rules.
 
 We refer the interested reader to the following resources for more details on
 Datalog, RDF and graph database:
@@ -100,7 +102,7 @@ Datalog, RDF and graph database:
 An example
 ----------
 
-To illustrate how this works in practice,
+To illustrate how the ideas in the previous sub-section work in practice,
 suppose we have L4 classes defined as follows.
 
 .. csv-table::
@@ -261,3 +263,10 @@ single predicate as follows:
     "DECIDE", "Name", "lives in", "Country",,
     "IF", "Person's", "name", "IS", "Name",
     "AND", "Person's", "address's", "country", "IS", "Address"
+
+Note that such predicates are syntactic sugar around simple, ternary version
+of the predicate.
+That is, all JSON data and instances of L4 classes are represented as
+triples under the hood, and L4 provides Logical English / Prolog rules that
+effectively "macroexpand" higher-arity versions of these predicates into
+chains of ternary ones, using implicit joins in the process.
