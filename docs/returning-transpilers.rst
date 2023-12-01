@@ -16,11 +16,13 @@ Refer to the image below for reference as to what you should see in the sidebar.
     :class: with-border
     :width: 225px
 
--------------------
-Available Languages
--------------------
+-----------------
+Available Outputs
+-----------------
 
     - JSON
+
+    - :doc:`JSON Schema <transpilers-json-schema>`
 
     - Epilog
 
@@ -42,13 +44,23 @@ Available Languages
       - Visualisation of state space
       - Visualisation of race condition trace (if any)
 
+    - :doc:`Logical English <transpilers-logical-english>`
+
+    - :doc:`Web form <webform>`
+
+      This utilises the :doc:`JSON Schema <transpilers-json-schema>` and
+      :doc:`Logical English <transpilers-logical-english>` outputs, and hence
+      assumes familiarity with their respective transpiler semantics.
+
+    - Word Doc (Word Document)
+
+    - PDF
+
 ---------------------------
 Languages Not Yet Available
 ---------------------------
 
     - Prolog
-
-    - Logical English
 
     - Catala
 
@@ -61,10 +73,6 @@ Languages Not Yet Available
     - Blawx
 
     - Morphir
-
-    - Word Doc (Word Document)
-
-    - PDF
 
     - Akoma Ntoso
 

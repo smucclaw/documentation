@@ -1,16 +1,16 @@
 ###################################
-5. Data Breach Notification Example
+3. Data Breach Notification Example
 ###################################
 
 ============================
 Encoding of Real Legislation
 ============================
 
-`See the L4 code for this 'PDPA DBNO' example <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1779650637>`_
+`See the L4 code for this 'PDPA DBNO' example <https://docs.google.com/spreadsheets/d/1WyzDqaVTcicDa2K_mzS_SGtLZL4SnzzfYHUDdtBDxUA/edit#gid=399685297>`_
 
 This example is a formalisation of actual legislation, `Singapore's Personal Data Protection Act <https://sso.agc.gov.sg/Act/PDPA2012>`_ (known in this example as PDPA DBNO).
 
-Like the :ref:`eg_motor_insurance`, this example is too long to be reproduced here. Instead, notes will be provided below to help you understand the L4 encoding.
+Like the :ref:`eg_contract_as_automaton`, this example is too long to be reproduced here. Instead, notes will be provided below to help you understand the L4 encoding.
 
 Remember that you can expand and collapse sections of the L4 encoding through the "+" and "-" signs found to the far left of the spreadsheet.
 

@@ -11,37 +11,37 @@ There is a page on understanding L4 through the law here: :ref:`law_understand_l
 .. image:: ../images/l4-cheatsheet.png
     :class: with-border
 
-* `Top Level`_
-* `Rules`_
+* Generic L4 constructs
+    * `Top Level`_
+    * `Rules`_
 
-  * `Full Scenario Rule`_
-  * `Simple Scenario Rule`_
-  * `Regulative Rules: EVERY, WHERE`_
-  * `Regulative Rules: MUST, MAY, and SHANT`_
-  * `Constitutive Rule and Hornlike Rule`_
-  * `Compact Constitutives`_
+    * `Full Scenario Rule`_
+    * `Simple Scenario Rule`_
+    * `Regulative Rules: EVERY, WHERE`_
+    * `Regulative Rules: MUST, MAY, and SHANT`_
+    * `Constitutive Rule and Hornlike Rule`_
+    * `Compact Constitutives`_
 
-* `Labels and Names`_
-* `Constraints and 'Upon Trigger'`_
-* `Deontics`_
-* `Dictionaries and Key/Value expressions`_
-* `Single Term and MultiTerm`_
-* `Type Declaration and Variable Definition`_
-* `Booleans and BoolStructs`_
-* `Relational Predicate`_
-* `Value Term and Set Group`_
-* `Syntax Reference by Keyword`_
+    * `Labels and Names`_
+    * `Constraints and 'Upon Trigger'`_
+    * `Deontics`_
+    * `Dictionaries and Key/Value expressions`_
+    * `Single Term and MultiTerm`_
+    * `Type Declaration and Variable Definition`_
+    * `Booleans and BoolStructs`_
+    * `Relational Predicate`_
+    * `Value Term and Set Group`_
+    * `Syntax Reference by Keyword`_
 
-  * `WHOSE`_
-  * `WHO`_
-  * `DEFINE`_
-  * `AS IN`_
+    * `WHOSE`_
+    * `WHO`_
+    * `DEFINE`_
+    * `AS IN`_
 
 --------------------------
 Types of Expressions in L4
 --------------------------
-
-This `Backus-Naur Form (BNF) <https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form>`_ specification describes the syntax of the L4 language.
+This `Backus-Naur Form (BNF) <https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form>`_ specification describes the generic syntax of the L4 language.
 
 ---------
 Top Level

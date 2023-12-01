@@ -27,7 +27,7 @@ L4 Documentation
       :link: docs/links-returning-users
       :link-type: doc
 
-      Find out how to export L4, learn its keywords, and its semantic specification.
+      Find out how to export L4, learn its keywords, and its semantics.
 
 .. grid:: 3
 
@@ -78,13 +78,11 @@ You can navigate this document by:
    :hidden:
 
    docs/links-examples
-   docs/returning-examples-must-sing.rst
-   docs/returning-examples-home-insurance-clause.rst
-   docs/returning-examples-contract-automaton.rst
-   docs/returning-examples-motor-insurance.rst
+   docs/returning-examples-prop-logic.rst
+   docs/returning-examples-deontic-and-temporal-logic.rst
    docs/returning-examples-pdpa-dbno.rst
-   docs/returning-exercises.rst
    docs/returning-understand-L4.rst
+
 
 .. toctree::
    :maxdepth: 2

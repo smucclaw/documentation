@@ -5,6 +5,27 @@
 #####################
 L4 Language Reference
 #####################
+
+**L4 is**:
+
+- A high level specification language.
+    - Its generic high level syntax is described in the section titled
+      ``L4 Language Specification``.
+
+- Designed to be transpiled to various formats for different purposes.
+    - These transpilation formats include document formats like Markdown, Word, and .pdf, 
+      as well as (our specialised dialect of)
+      `Logical English <https://github.com/smucclaw/LogicalEnglish>`_
+      programs, a logic programming based language, for execution.
+    - For that reason, while there is one generic L4 syntax, 
+      L4 really admits of different fragments, each with their own specialized semantics, 
+      corresponding to the various transpilers. These transpilers 
+      care about and operate on different fragments of L4, since some transpilers
+      like those responsible for document outputs caring about formatting specific
+      options, which are ignored by the Logical English one.
+    - These transpilers and their corresponding semantic fragments of L4 are
+      documented in the section titled ``Export L4 Output``.
+
 |
 |
 
@@ -28,7 +49,7 @@ L4 Language Reference
         :link: returning-specification
         :link-type: doc
 
-        A semantic specification of L4 Syntax.
+        A specification of L4's syntax.
 
     .. grid-item-card:: Publications
         :link: https://cclaw.smu.edu.sg/projects-papers

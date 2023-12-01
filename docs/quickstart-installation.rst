@@ -1,55 +1,62 @@
-##########
-Setting Up
-##########
+###################################################################
+Quickstart: Getting orientated in the L4 spreadsheet user interface
+###################################################################
 
-* `Writing in L4 on the LegalSS spreadsheet`_
+
+The main interface for writing L4 is a Google Sheets spreadsheet, the |LegalSS_spreadsheet|. (The current version of the |LegalSS_spreadsheet| is v0.9.4.6 as of November 2023.)
+
+This tutorial walks you through setting that up, so that you can write L4.
+
+
 * `Getting the LegalSS spreadsheet working on your computer`_
-
-  * `0. Prerequisites before you can set up the LegalSS Spreadsheet`_
-  * `1. Make a copy of the spreadsheet`_
-  * `2. Choose where you want to copy the LegalSS spreadsheet`_
-  * `3. Refresh the sidebar`_
-  * `4. Ensure you can see the sidebar`_
-  * `Contact the L4 developers for help`_
-
 * `Familiarise yourself with the LegalSS Spreadsheet`_
 * `Next Steps`_
 
-****************************************
-Writing in L4 on the LegalSS spreadsheet
-****************************************
-|
 
-Your main interface when writing with L4 is on a google sheets spreadsheet called the |LegalSS_spreadsheet|. This spreadsheet has a special app function that activates the L4 language.
-
-The current version of the |LegalSS_spreadsheet| is v0.9.4.3 as of May 2023.
 
 .. |LegalSS_spreadsheet| raw:: html
-  
-  <a href="https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311" target="_blank" rel="noopener noreferrer">LegalSS spreadsheet</a>
+
+  <a href="https://docs.google.com/spreadsheets/d/1WyzDqaVTcicDa2K_mzS_SGtLZL4SnzzfYHUDdtBDxUA/edit#gid=1330895971=" target="_blank" rel="noopener noreferrer">LegalSS spreadsheet</a>
+
 
 ========================================================
 Getting the LegalSS spreadsheet working on your computer
 ========================================================
 
 --------------------------------------------------------------
-0. Prerequisites before you can set up the LegalSS spreadsheet
+1. Set up a Google account, if you don't already have one
 --------------------------------------------------------------
 
-- You will need a google account, which doubles as a gmail account. You can follow the instructions in `www.google.com <https://www.google.com>`_, under "sign up for free".
+You need a Google account to write L4.
 
-- You will need to go to |LegalSS_spreadsheet| (clicking on the link will open the spreadsheet in a new window). The spreadsheet works with the 2 most recent versions of:
+If you do not already have one, you can create one by following the instructions at `Create a Google Account <https://support.google.com/accounts/answer/27441?hl=en/>`_.
+
+
+------------------------------------------------------
+2. Open the |LegalSS_spreadsheet| in a new browser tab
+------------------------------------------------------
+
+- Open |LegalSS_spreadsheet| (clicking on the link will open the spreadsheet in a new window)
+- and then follow the instructions in that spreadsheet.
+
+The spreadsheet works with the 2 most recent versions of:
 
     1. `Chrome <https://www.google.com/chrome/>`_
     2. `Firefox <https://www.mozilla.org/en-US/firefox/new/>`_
     3. `Microsoft Edge <https://www.microsoft.com/en-us/edge>`_
     4. `Safari <https://www.apple.com/safari/>`_
 
----------------------------------
-1. Make a copy of the spreadsheet
----------------------------------
+We will also summarize the instructions below, but it will probably be easier to focus on the spreadsheet and follow the instructions in it, instead of having to look back and forth.
 
-Make a copy of the |LegalSS_spreadsheet| by clicking on 'File' at the toolbar found on the top of the page, then choose the fourth option 'Make A Copy'. 
+----------------------------------------------------------------------------
+3. What to do, once you have |LegalSS_spreadsheet| open in a new browser tab
+----------------------------------------------------------------------------
+
+Again, it will probably be easier to focus just on the spreadsheet and follow the instructions in it. But we will also summarize the most important instructions below, just in case (the spreadsheet will go into more detail).
+
+------------------------------------------------------------------------------------
+a. Make a copy of the |LegalSS_spreadsheet| by clicking **File** > **Make a copy**. 
+------------------------------------------------------------------------------------
 
 .. image:: ../images/make-a-copy-screenshot.png
     :class: with-border
@@ -61,37 +68,35 @@ You should get a pop-up like in the image below.
     :class: with-border
     :width: 300px
 
-You can change the name of this copy to a more convenient name without affecting the L4 language, otherwise you can leave the default name as it is.
+You can rename this copy to a name of your choosing, or leave the default name as it is.
 
 --------------------------------------------------------
-2. Choose where you want to copy the LegalSS spreadsheet
+b. Choose where you want to copy the LegalSS spreadsheet 
 --------------------------------------------------------
 
-Choose where you want to copy the spreadsheet. In this example, we copy to "My Drive"
+Choose where you want to copy the spreadsheet. By default, it is copied to "My Drive".
 
 .. image:: ../images/choose-where-to-clone-project.png
     :class: with-border
     :width: 300px
 
-This will be your copy of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_.
+
+This will be your copy of the |LegalSS_spreadsheet|.
+
 
 .. _Activate_sheets_ide:
 
-----------------------
-3. Refresh the sidebar
-----------------------
+-----------------------
+c. Generate the sidebar
+-----------------------
 
-You should be able to see a "L4 Sidebar" option next to the "Help" option in the toolbar found on the top of the document. Use this button whenever you make changes to the spreadsheet.
+When your copy of the |LegalSS_spreadsheet| loads, an "L4" menu item should appear next to the "Help" menu item. This will take some time. Click **L4** > **Refresh** to load the sidebar for the first time. Repeat this whenever you make changes to the spreadsheet.
 
 .. image:: ../images/sidebar-refresh.png
     :class: with-border
     :width: 400px
-
----------------------------------
-4. Ensure you can see the sidebar
----------------------------------
-
-In your copy of |LegalSS_spreadsheet|, after pressing the 'refresh' button, you should see a sidebar appear on the right side of the page. 
+  
+The sidebar should appear on the right of the page:
 
 .. image:: ../images/sidebar-appears-screenshot.png
     :class: with-border
@@ -103,13 +108,15 @@ Contact the L4 developers for help
 
 If you do not see a sidebar, `contact the L4 developers for help <cclaw@smu.edu.sg>`_.
 
+But, again, note that the spreadsheet contains more detailed set-up instructions.
+
 =================================================
 Familiarise yourself with the LegalSS spreadsheet 
 =================================================
 
 .. image:: ../images/familiarise-yourself-screenshot.png
-    :class: with-border
-    :width: 600px
+     :class: with-border
+     :width: 600px
 
 --------------------------------------------------------
 Orange box: Name of your copy of the LegalSS Spreadsheet
@@ -117,27 +124,27 @@ Orange box: Name of your copy of the LegalSS Spreadsheet
 
 In this screenshot, the name refers to the original name of |LegalSS_spreadsheet|. 
 
-You should either see the default name "Copy of LegalSSv0.9.4.3" or whatever name you have replaced the default name with.
+You should either see the default name "Copy of LegalSSv0.9.4.6" or the name you have replaced the default name with.
 
-------------------------------------------------
-Blue box: Sidebar showing activated L4 functions
-------------------------------------------------
+.. ------------------------------------------------
+.. Blue box: Sidebar showing activated L4 functions
+.. ------------------------------------------------
 
-This is the sidebar with L4 functions that you should see after refreshing the sidebar.
+.. This is the sidebar with L4 functions that you should see after refreshing the sidebar.
 
-This sidebar can be scrolled down and contains several sections:
+.. This sidebar can be scrolled down and contains several sections:
 
 - Numbered steps that show how you can use L4's output.
 
-    - Step 1 links to an external web app that can be used to explore whether a legal rule is fulfilled or breached, depending on what is written in the red box.
+  - Step 1 links to an external web app that can be used to explore whether a legal rule is fulfilled or breached, depending on what is written in the red box.
 
-    - Step 2 shows a diagram of the generated legal rule, allowing you to easily refer to whether a legal rule is fulfilled or breached.
+  - Step 2 shows a diagram of the generated legal rule, allowing you to easily refer to whether a legal rule is fulfilled or breached.
 
-    - Step 3 shows a diagram that is clickable and can be expanded to show the logic of why a legal rule is fulfilled or breached.
+  - Step 3 shows a diagram that is clickable and can be expanded to show the logic of why a legal rule is fulfilled or breached.
 
-    - Steps 4 to 24 are options for you to export the L4 diagram and results into different formats. See `Exporting L4` for more information
+  - Steps 4 to 24 are options for you to export the L4 diagram and results into different formats. See `Exporting L4` for more information
 
-- The area below the numbered steps shows a 'debugging' area where you can check the L4 code that you can use to help fix any error you may be facing when writing L4. We are working on creating information about this 'debugging' area.
+  - The area below the numbered steps shows a 'debugging' area where you can check the L4 code that you can use to help fix any error you may be facing when writing L4. We are working on creating information about this 'debugging' area.
 
 -------------------------------------------------------------
 Green box: LegalSS spreadsheet tabs linking to other examples
@@ -171,84 +178,3 @@ Once you have finished installation, consider exploring:
 
 - :ref:`Learn To Use L4 <examples>`.
 
-..
-    =======================================================
-    Activating L4 Functions withing the LegalSS spreadsheet
-    =======================================================
-
-    A one-time procedure is needed in every separate copy of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ to activate the L4 interface within your copy of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_.
-
-
-
-
-    -----------------------------------
-  1. Click on Extensions/Apps Script. 
-  -----------------------------------
-  .. image:: ../images/apps-script-screenshot.png
-      :class: with-border
-      :width: 300px
-
-
-  ---------------------------------
-  4. Select the LegalSS Apps Script
-  ---------------------------------
-  A new tab will open on your browser and you will be asked to select a project to open. Choose the first project "LegalSS...". Do not click on "Untitled Project".
-
-..
-  .. image:: ../images/select-project-screenshot.png
-      :class: with-border
-      :width: 300px
-
-  You should be directed to a page similar to the below screenshot.
-..
-  .. image:: ../images/apps-script-page-screenshot.png
-      :class: with-border
-      :width: 600px
-..
-  -------------------------------------------------
-  5. Return to your copy of the LegalSS Spreadsheet
-  -------------------------------------------------
-..
-  When the Apps Script page loads, go back to your copy of `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_ in your browser and select the tab "PDPA DBNO", which is the first tab of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_.
-..
-  .. image:: ../images/advanced-selection-screenshot.png
-      :class: with-border
-      :width: 500px
-
-  .. _step_6:
-..
-  -------------------------------------------------
-  6. Return to the Apps Script page and click "Run"
-  -------------------------------------------------
-..
-  Back in the Apps Script page, click "Run" to execute the function. 
-..
-  You will have to grant permission to the App Script to make changes to Google Sheets.
-..
-  .. image:: ../images/select-run-on-sheet-ide-screenshot.png
-      :class: with-border
-      :width: 500px
-
-  An Execution Log should appear below the App Script. 
-
-  .. _step_7:
-..
-  --------------------------------------------------------
-  7. Ensure the Apps Script worked has executed completely
-  --------------------------------------------------------
-..
-  Wait until you read "Execution Completed", highlighted in yellow, before you move on to the next step.
-..
-  .. image:: ../images/execution-completed-screenshot.png
-      :class: with-border
-      :width: 500px
-
-  ----------------------------------------------------------------------------------------------------
-  8. Return to your copy of the LegalSS Spreadsheet and check that the sidebar has activated correctly
-  ----------------------------------------------------------------------------------------------------
-..
-  Return to your copy of the `LegalSS spreadsheet <https://docs.google.com/spreadsheets/d/1leBCZhgDsn-Abg2H_OINGGv-8Gpf9mzuX1RR56v0Sss/edit?pli=1#gid=1453008311>`_. You should see a sidebar appear on the right side of the page. 
-..
-  .. image:: ../images/sidebar-appears-screenshot.png
-      :class: with-border
-      :width: 300px
