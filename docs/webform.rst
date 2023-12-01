@@ -66,7 +66,7 @@ Overview
 --------
 
 In this sub-section, we provide a brief overview of some of the theoretical
-ideas for readers who are more theoretically inclined.
+ideas for readers who are interested.
 One can safely skim through this and head to the next sub-section,
 where we provide concrete examples of how these apply in the context of L4.
 
@@ -86,11 +86,13 @@ and graph databases.
 `TerminusDB <https://terminusdb.com/>`_,
 `Datomic <https://www.datomic.com/>`_,
 `Stardog <https://www.stardog.com/>`_).
-Datalog is a declarative fragment of Prolog well suited for database applications,
-and the idea is that one can represent such triples as a ternary predicates,
+
+Datalog is a declarative fragment of Prolog, and such Datalog database store
+data in the form of RDF triples.
+By interpreting RDF triples as ternary predicates,
 like `rdf/3 <https://www.swi-prolog.org/pldoc/man?predicate=rdf/3>`_
-in the SWI-Prolog RDF library.
-Such a representation enables one to reason about them with logical rules.
+in the SWI-Prolog RDF library, these databases allow one to reason about
+RDF triples in the database with logical rules.
 
 We refer the interested reader to the following resources for more details on
 Datalog, RDF and graph database:
