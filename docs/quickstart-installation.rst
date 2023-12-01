@@ -102,6 +102,9 @@ The sidebar should appear on the right of the page:
     :class: with-border
     :width: 200px
 
+.. note::
+   Web App (link from "web app for citizens and customers") takes some time to start up.
+   If you see errors 502 Bad Gateway after following the link it means app is not set up yet. Try again in a minute or so.
 ----------------------------------
 Contact the L4 developers for help
 ----------------------------------
