@@ -8,7 +8,10 @@ How to write L4 that translates to Logical English (LE); or, how L4 gets transla
 The following explains how the ``L4->LE`` transpiler translates L4 to LE with examples. 
 If you are in a rush, ignore the explanations and just skim the examples.
 
-This is a more intuitive, high-level discussion that's aimed at someone who wants to understand how L4 gets translated to LE, *so that they can more effectively formally model law using the Logical-English-y fragment of L4*. It is *not* meant to be a rigorous specification of that fragment; for that, see `Syntax and Denotational Semantics of L4 Relational Predicates <https://www.overleaf.com/9757591584pqqqyhhrxbpq#6a4a4a>`_. Finally, this discussion does not discuss the *implementation* of the ``L4->LE`` transpiler in detail; for the latter, see `TODO <>` instead.
+This is a more intuitive, high-level discussion that's aimed at someone who wants to understand how L4 gets translated to LE, *so that they can more effectively formally model law using the Logical-English-y fragment of L4*.
+It is *not* meant to be a rigorous specification of that fragment; for that, see
+`Denotational semantics of L4 constitutive rules and predicates <https://www.overleaf.com/9757591584pqqqyhhrxbpq#6a4a4a>`_.
+Finally, this discussion does not discuss the *implementation* of the ``L4->LE`` transpiler in detail; for the latter, see `TODO <>` instead.
 
 Although the following discussion does not assume prior knowledge of Logical English, it does assume some understanding 
 of the :ref:`generic L4 syntax and concepts <law_understand_l4>`, as well as 
@@ -282,7 +285,10 @@ This gets transformed to this Logical English rule
 before being handled in turn by Joe Watt's date-related Logical English predicates `(see our fork of Logical English) <https://github.com/smucclaw/LogicalEnglish/pull/8>`_ 
 and `Prolog date library <https://github.com/smucclaw/LogicalEnglish/blob/main/declarative_date_time/declarative_date_time.pl>`_.
 
-We just discussed *after*, but there's also *within* and *before*. You can also ask whether a date is a certain number of days or weeks or months before/after/within some other date; for more information on those predicates, or on how the date-related functionality works, see `Syntax and Denotational Semantics of L4 Relational Predicates (for LE) <https://www.overleaf.com/9757591584pqqqyhhrxbpq#6a4a4a>`_.
+We just discussed *after*, but there's also *within* and *before*.
+You can also ask whether a date is a certain number of days or weeks or months before/after/within some other date;
+for more information on those predicates, or on how the date-related functionality works, see
+`Denotational semantics of L4 constitutive rules and predicates <https://www.overleaf.com/9757591584pqqqyhhrxbpq#6a4a4a>`_.
 
 
 An interlude on ``IS`` and "is"
