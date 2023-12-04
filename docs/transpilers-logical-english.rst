@@ -11,11 +11,14 @@ If you are in a rush, ignore the explanations and just skim the examples.
 This is a more intuitive, high-level discussion that's aimed at someone who wants to understand how L4 gets translated to LE, *so that they can more effectively formally model law using the Logical-English-y fragment of L4*.
 It is *not* meant to be a rigorous specification of that fragment; for that, see
 `Denotational semantics of L4 constitutive rules and predicates <https://www.overleaf.com/9757591584pqqqyhhrxbpq#6a4a4a>`_.
-Finally, this discussion does not discuss the *implementation* of the ``L4->LE`` transpiler in detail; for the latter, see `TODO <>` instead.
+Finally, this discussion does not discuss the *implementation* of the ``L4->LE`` transpiler in the Natural L4 Haskell codebase (though it does explain how the most important constructs get translated).
+
+.. only:: comment
+    TODO: Add link to docs for implementation when that gets done
 
 Although the following discussion does not assume prior knowledge of Logical English, it does assume some understanding 
 of the :ref:`generic L4 syntax and concepts <law_understand_l4>`, as well as 
-of basic logic programming concepts. (You'll probably get something out of this even if you are new to logic programming, but you shouldn't expect to understand everything.)
+of basic logic programming / Prolog concepts. (You'll probably get something out of this even if you are new to logic programming, but you shouldn't expect to understand everything.)
 
 Simple Horn clauses
 -------------------
@@ -320,12 +323,16 @@ By contrast, in "DECIDE income source is taxable," we want to stick with the low
 
 Relatedly, you might want to check that some term is *not* some other term. You can do this with ``IS NOT``, where the ``IS`` and ``NOT`` must be broken up into separate cells (that are next to each other).
 
-TODO: Ideally add example
+.. only:: comment
+    TODO: Ideally add example
 
 ``t_1 IS IN t_2``
 ^^^^^^^^^^^^^^^^^
 
-TODO: Example + discussion
+This gets transpiled to Logical English's ``t_1 is in t_2``, and thence to the Prolog ``member(t_1, t_2)``.
+
+.. only:: comment
+    TODO: Example + discussion
 
 Doing arithmetic in L4, with LE as the target  
 ---------------------------------------------
