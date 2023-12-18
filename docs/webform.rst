@@ -14,7 +14,7 @@ familiarity with their respective transpiler semantics:
 
 One can turn an L4 specification into a web form using:
 
-- The `Example form app <https://github.com/smucclaw/example-l4-form-app>`_.
+- a web app like `Example form app <https://github.com/smucclaw/example-l4-form-app>`_.
 
   - This utilises `JSON Forms <https://jsonforms.io/>`_
     to render the output of the
@@ -47,6 +47,12 @@ One can turn an L4 specification into a web form using:
   which executes the Logical English as Prolog and returns an explanation
   tree in the form of JSON.
   The library also has some built-in facilities for visualising this JSON tree.
+
+The most important things you need to understand to build a web form from a L4 specification are the aforementioned (i) JSON schema transpiler and (ii) the LE client library. But it's also worth noting that we also have an experimental utility for working with the Logical English output and JSON schema: `Form Weaver <https://github.com/smucclaw/form-weaver>`_. 
+
+- This utility allows you to check whether the fields declared in the JSON schema are being used in the LE encoding; this is useful because it's easy to forget to use some field or to mis-spell it in the L4/LE encoding. 
+
+- It's also useful for understanding the invariants in the relationship between the JSON schema and L4/LE encoding.
 
 More details about these individual projects and how to put them together
 can be found in their respective project documentation.
