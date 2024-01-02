@@ -22,7 +22,7 @@ You are given the following rule in the `"Learning L4: Liquor Exercise" tab <htt
 
 - Yellow cells are where you should type your answer.
 
-- Comments in L4 begin with two backslashes, ``\\ like this``.
+- Comments in L4 begin with two backslashes, ``// like this``.
 
 - Gray cells are for comments.
 
