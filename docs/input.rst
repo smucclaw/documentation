@@ -2,27 +2,16 @@
 Input
 ==================
 
-representing propositional logic in L4 (Booleans, AND/OR)
+-----------------------------------------
+Representing Ontology in L4 (classes, instances, methods)
+-----------------------------------------
+We use DECLARE to set up our classes, our records, our types, our schemas, our ontology, our templates.
+
+We use DEFINE to instantiate those templates with concrete values: the specific variables of a particular agreement.
 
 ------------------------
-Booleans and BoolStructs (returning-specifications.rst)
+Representing Propositional Logic in L4: Booleans, AND/OR
 ------------------------
-
-
-.. topic: Usage Sites
-
-Boolean Structures are used in the following positions in larger expressions:
-
-- In constitutive (Hornlike) rules:
-
-  - in the left and right positions of a `DECIDE ... IF ...` pattern, which constructs *Horn Clauses*.
-
-- In regulative rules:
-
-  - following an `IF` keyword.
-
-  - following a `WHO` keyword
-
 -----------------------------
 Core Semantics: Boolean Logic (quickstart-why-use-L4)
 -----------------------------
@@ -44,9 +33,24 @@ L4's list-oriented Boolean operators, borrowed from `predicate logic <https://en
 - `ANY`
 - `ALL`
 
+-----------------------------
+When are Boolean Structures used
+-----------------------------
+
+Boolean Structures are used in the following positions in larger expressions:
+
+- In constitutive (Hornlike) rules:
+
+  - in the left and right positions of a `DECIDE ... IF ...` pattern, which constructs *Horn Clauses*.
+
+- In regulative rules:
+
+  - following an `IF` keyword.
+
+  - following a `WHO` keyword
+
 -----------------------------------------
 Detailed Definition of Boolean Structures
-(quickstart-why-use-L4)
 -----------------------------------------
     
 .. topic: BNF
@@ -109,45 +113,34 @@ representing arithmetic and predicate logic in L4 (Numbers and Booleans, + - * /
 representing modal logic in L4 (state transitions, deontics (must/may/shant), temporal (deadlines), transitions (if satisfied, if not satisfied), a theory of causation)
 
 -----------------------------------------
-Boolean connectors from BasicTypes.hs
+L4 Boolean Keywords Reference
 -----------------------------------------
 
 -- start a boolstruct
-toToken "ALWAYS" = pure Always
-toToken "NEVER"  = pure Never
+ "ALWAYS"
+ "NEVER"
 
 -- boolean connectors
-toToken "OR" =     pure Or
-toToken "AND" =    pure And
-toToken "..." =    pure And   -- CNL sugar to allow phrases to follow
-toToken "…"   =    pure And   -- CNL sugar to allow phrases to follow -- this is unicode for ellipsis
-toToken "UNLESS" = pure Unless
-toToken "EXCEPT" = pure Unless
-toToken "IF NOT" = pure Unless
-toToken "NOT"    = pure MPNot
+ "OR"
+ "AND"
+ "..."
+ "…" 
+ "UNLESS"
+ "EXCEPT"
+ "IF NOT"
+ "NOT"   
 
 -----------------------------------------
-example: in returning-examples-must-sing.rst
+Example :doc:`Must Sing <returning-examples-must-sing>`
 -----------------------------------------
-
------------------------------------------
-representing ontology in L4 (classes, instances, methods)
------------------------------------------
-    We use DECLARE to set up our classes, our records, our types, our schemas, our ontology, our templates.
-
-    We use DEFINE to instantiate those templates with concrete values: the specific variables of a particular agreement.
 
 
 -----------------------------------------
-representing a bit of legislation / regulation (PDPA)
+Representing Legislation / Regulation
 -----------------------------------------
 
-examples: returning-examples-contract-automaton.rst.txt
-docs\returning-examples-pdpa-dbno.rst
-
------------------------------------------
-returning-specification.rst.txt
------------------------------------------
+Example :doc:`Contract as Automaton (Deontic and Temporal Logic): <returning-examples-contract-automaton>`
+Example :doc:`PDPA <returning-examples-pdpa-dbno>`
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Regulative Rules: EVERY, WHERE
@@ -218,125 +211,89 @@ Compact Constitutives
 										[ ... ]								
 					|   Relational Predicate    OTHERWISE | GENERALLY
 
-----------------------------------------
-Core Semantics: State Transition Systems (docs\quickstart-why-use-L4.rst)
-----------------------------------------
+----------------
+Labels and Names
+----------------
 
-Legislation, regulations, and contracts prescribe processes for
-parties to obey: under certain conditions, a person must act in some
-way within some deadline; if they succeed, matters proceed one way; if
-they fail to act, matters proceed another way.
+.. code-block:: bnf
 
-L4 models these legal and business processes as state transition
-systems. Related formalisms include BPMN, DFAs, Petri Nets, and
-hierarchical state machines (Harel statecharts).
+    Entity Label    ::= Aliasable Name		
 
-In L4, regulative, aka prescriptive, rules have the syntax given
-below.
+    Aliasable Name  ::= MultiTerm [AKA MultiTerm]	 
+    // in future – extend to BoolStruct of SetGroup							
 
-.. code-block::
+------------------------------
+Constraints and 'Upon Trigger'
+------------------------------
 
-   RegulativeRule      ::= ["UPON"        EventIdentifier]
-                            "PARTY"       PartyIdentifier
-                           ["IF"          ConditionExpression]
-		            DeonticModal     ActionExpression
-		           [TemporalModal  DeadlineExpression]
-		           [SuccessTransition]
-		           [FailureTransition]
-		           ["WHERE"       LetBinding]
-		      
-   EventIdentifier     ::= ParamText
-		      
-   PartyIdentifier     ::= BoolStruct of ParamText
-		      
-   ConditionExpression ::= BoolStruct of Relational Predicates
-   		      
-   DeonticModal        ::= "MUST" | "MAY" | "SHANT"
-		      
-   ActionExpression    ::= BoolStruct of ParamText
-		      
-   TemporalModal       ::= "BEFORE" | "AFTER" | "BY" | "ON"
-   
-   DeadlineExpression  ::= Number ("days" | "weeks" | "months" | "years")
-                         | AbsoluteDate
+.. code-block:: bnf
 
-   SuccessTransition   ::= ("THUS" | "HENCE" | "IF FULFILLED") (RuleName | RegulativeRule)
+    Subject Constraint      ::= WHO             RelationalPredicate BoolStruct	        
+    //evaluated against the subject of the rule
 
-   LetBinding          ::= DecisionRule+
+    Attribute Constraint    ::= WHOSE           RelationalPredicate BoolStruct
 
-   RuleName            ::= String
+    Conditional Constraint  ::= (WHEN | IF)	RelationalPredicate BoolStruct
+                                [UNLESS         RelationalPredicate BoolStruct]
 
-The syntax for a `DecisionRule` is given below.
+.. code-block:: bnf
 
-AbsoluteDate syntax is not given here, this is a can of worms to be
-explored elsewhere.
-   
-This syntax is intended to maintain isomorphism with legal source text
-which frequently has the form "upon receiving a demand for repayment,
-if the borrower is in default, the borrower must repay the outstanding
-principal plus any applicable accrued interest to the lender within
-five business days."
+    Upon Trigger ::= UPON		Aliasable Name			
 
-Under the hood, that English text is trying to express a state
-transition. The L4 reorganizes the parts of the sentence according to
-a standard format.
+--------
+Deontics
+--------
 
-.. code-block:: L4
+.. code-block:: bnf
 
-     UPON  demand for repayment
-       IF  borrower  IS  in default
-    PARTY  borrower
-     MUST  repay  the loan amount
-              to  the lender
-   WITHIN  5  business days
-    WHERE  DECIDE  the loan amount  IS  SUM  outstanding principal
-                                             any applicable accrued interest
+    Deontic Temporal Action	::=	Deontic Keyword             Temporal Constraint			
+                                        -> | DO		            Action Expression			
 
-Double-spaces indicate column separations.
+    Deontic Keyword	        ::=	(MUST | MAY | SHANT)
 
-.. sidebar:: CS Sidebar
+A semantically equivalent syntactic alternative allows the temporal keyword to line up with the other keywords:
 
-   In a state transition system, events occur in time, changing the
-   *current state* to some *next state*. States lead one to another,
-   in a directed acyclic graph. They terminate in one of (usually) two
-   states: fulfilled, vs breach. In renewable contracts there may be a
-   third "final" state which is shorthand for "restart the contract at
-   some earlier state, but with certain variables updated, such as
-   expiration date."
+.. code-block:: bnf
 
-Concurrency presents a conceptual challenge. Many contracts and
-business processes describe multiple "moving parts". If you're
-juggling balls with your right hand while spinning plates with your
-left, each hand can be naturally modeled as its own state machine; but
-showing the system as a whole requires a product composition of every
-state on the left with every state on the right. L4's treatment of
-this issue is given elsewhere in this documentation.
+    Deontic Action Temporal ::= Deontic Keyword            Action Expression		
+                                Temporal Constraint						
+
+.. code-block:: bnf
+
+    Temporal Constraint     ::=	(BEFORE | AFTER | BY | UNTIL)   Temporal Spec
+
+
 
 ----------------------------------------
-BasicTypes.hs
+L4 Regulative Keywords Reference
 ----------------------------------------
 
 -- start a regulative rule
-toToken "EVERY" =  pure Every
-toToken "PARTY" =  pure Party
-toToken "ALL"   =  pure TokAll -- when parties are treated as a collective, e.g. ALL diners. TokAll means "Token All"
+"EVERY"
+"PARTY"
+"ALL"
 
 -- deontics
-toToken "MUST" =   pure Must
-toToken "MAY" =    pure May
-toToken "SHANT" =  pure Shant
+"MUST" 
+"MAY"  
+"SHANT"
 
 -- regulative chains
-toToken "HENCE" = pure Hence
-toToken "THUS"  = pure Hence
+"HENCE"
+"THUS" 
+
+-----------------------------------------
+Further reading on the :doc:`Full L4 Language Specification <returning-specification>`.
+-----------------------------------------
+
+-----------------------------------------
+Other Examples
+-----------------------------------------
 
 
------------------------
-representing an insurance agreement (PAU)
------------------------
-docs\returning-examples-home-insurance-clause.rst
+Example: :doc:`representing an insurance agreement <returning-examples-home-insurance-clause>`
 
--------------------------
-representing a financial agreement (Flood & Goodenough)
------------------------
-docs\returning-examples-deontic-and-temporal-logic.rst
+
+
+Example: :doc:`representing a financial agreement (Flood & Goodenough)<returning-examples-deontic-and-temporal-logic>`
+

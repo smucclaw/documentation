@@ -1,11 +1,19 @@
+==================
+Output
+==================
+
+This page goes through the different transpilation targets (web-app, visualisations, model checking etc). These targets appear in the Sidebar as links.
+
+If you don't see the sidebar, please :doc:`see how to get the sidebar show up here <quickstart-installation>`
+
 -----------------------------------------
 auto-generation of a web app
 -----------------------------------------
 
-Web App (link from "web app for citizens and customers") takes some time to start up.
-   If you see errors 502 Bad Gateway after following the link it means app is not set up yet. Try again in a minute or so.
+This shows up in the sidebar as **View as web app for citizens and customers**.
 
------------------------------------------
+Web App (link from "web app for citizens and customers") takes some time to start up.
+If you see errors 502 Bad Gateway after following the link it means app is not set up yet. Try again in a minute or so.
 
 -----------------------------------------
 
@@ -59,9 +67,6 @@ This document gives detailed developer guidance for the JSON schemas
 mentioned above and the API to the logic engine back-end.
 
 ---
-
----
-
 # Form Generation
 
 The web form is configured by a JSON schema, designed to be consumed by JSONForms.
@@ -80,8 +85,6 @@ Together, the UI Schema and the JSON Schema control the web application.
 
 
 # Logic Engine backend API client
-
-_Status: cclaw.legalese.com:9999 is present and can be queried as documented, 2023-10-11_
 
 The API for querying the logic engine backend ("LE backend") is implemented in Clojurescript
 [in this other directory](../joe/insurance/logic-programming/le-webform-glue/).
@@ -117,8 +120,6 @@ Content for the above arguments is available in the [`public/le/`](./public/le/)
 The `form_data` argument is the JSON instance that contains the data from the web form UI. As you had saved the data to store as the user fills in the form, the form_data is your loaded object from your store. This is the only data that is provided by the user.
 
 ## Return Value
-
-_Status: return of computed resp object is operational on 2023-10-19_
 
 The `query_le_js` function returns a JS object, `resp`. The object can now be viewed and manipulated to display the details from the results we want to display on the website.
 
@@ -181,8 +182,6 @@ to fill the Outcome template.
 
 # Backend Endpoint Configuration (Docker)
 
-_Status: cclaw.legalese.com:9999 is present and can be queried as documented, 2023-10-11_
-
 We have an instance of the LE docker that you can connect to running on our server. The server url is **http://cclaw.legalese.com:9999**
 
 A stable production endpoint will be hosted at `https://prod.cclaw.legalese.com/port/9999/`.
@@ -192,8 +191,6 @@ A more detailed explanation of building a local docker image for the LE backend 
 ---
 
 # Results (Outcome tab)
-
-_Status: estimated operational on 2023-10-17_
 
 Your query to the LE backend will look something like this, where `form_data` is the form data you're passing.
 
@@ -208,11 +205,13 @@ _query_le_js_ returns a js object, _resp_.
 
 _resp_ is the raw output that you will receive. These are nested strings. We suggest that you use regex (or string searches) to get the information to display in the **Outcomes** page.
 
-also: docs\webform.rst
+Please :doc:`see here for an example<webform>`.
 
 -----------------------------------------
 auto-generation of boolean circuit diagrams
 -----------------------------------------
+
+This shows up in the sidebar as **View flowchart of regulative rules ("dynamics")**.
 
 ==================================
 L4 helps you visualise legal logic (docs\early-beta.rst)
@@ -252,11 +251,15 @@ auto-generation of software libraries representing the legal logic as operationa
 -----------------------------------------
 auto-generation of natural language
 -----------------------------------------
-technically logical english also outputs natural language
+Logical english outputs natural language
+
+This shows up in the sidebar as **Export as Logical English**.
 
 ---
 
 Natural language from L4 is generated from L4 rules being transpiled into Grammatical Framework, which can be transliterated to different languages. The transliteration requires concrete grammars to be written for different languages.
+
+This currently shows up in the sidebar as **Export the decision trees as Purescript**.
 
 TODO: further explanation on how to write GF grammars for rules
 
@@ -264,11 +267,10 @@ TODO: further explanation on how to write GF grammars for rules
 model checking for property violations
 -----------------------------------------
 TODO: explanation of model checker
-(explanation of how L4 is transpiled to Maude?)
-**Maude plaintext natural4** button in the sidebar
 
-**UPPAAL** output exists.
-(paper: https://github.com/smucclaw/complaw/blob/a8805ff94d43336db95d11baf46e63959dd8f128/Publications/Papers/Waicom2022/pdpa.tex)
+This currently shows up in the sidebar as **Maude plaintext natural4**. You can view it as plaintext, visualise state space or visualise the race conditions.
+
+**UPPAAL** is deprecated but the output exists. If you would like to read about it, please see `this paper <https://github.com/smucclaw/complaw/blob/a8805ff94d43336db95d11baf46e63959dd8f128/Publications/Papers/Waicom2022/pdpa.tex>`_.
 
 -----------------------------------------
 tests: property based testing, specific scenario tests, unit tests
@@ -278,4 +280,4 @@ TODO: testing framework for L4
 -----------------------------------------
 useful compiler warnings and error messages
 -----------------------------------------
-TODO: collate compiler warnings and error messages as we see them
+TODO: collate compiler warnings and error messages as they occur
