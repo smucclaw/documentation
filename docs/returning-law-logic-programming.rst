@@ -101,8 +101,8 @@ One could imagine a more complex set of overrides, with two main branches rooted
 
 .. code-block:: bnf
 
-    A < E < I < O < U < X	\\the "vowel branch"
-    B < C < D < F < G < X	\\the "consonant branch"
+    A < E < I < O < U < X	//the "vowel branch"
+    B < C < D < F < G < X	//the "consonant branch"
 
 Such a graph admits multiple topological sorts.
 

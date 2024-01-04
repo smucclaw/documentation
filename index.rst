@@ -18,10 +18,10 @@ L4 Documentation
       Start interacting with L4.
 
    .. grid-item-card:: Learn To Use L4
-      :link: docs/links-examples
+      :link: docs/input-output
       :link-type: doc
-
-      Learn to use L4 through examples.
+ 
+      Learn to use L4.
 
    .. grid-item-card:: L4 Language Reference
       :link: docs/links-returning-users
@@ -77,12 +77,9 @@ You can navigate this document by:
    :titlesonly:
    :hidden:
 
-   docs/links-examples
-   docs/returning-examples-prop-logic.rst
-   docs/returning-examples-deontic-and-temporal-logic.rst
-   docs/returning-examples-pdpa-dbno.rst
-   docs/returning-understand-L4.rst
-
+   docs/input-output.rst
+   docs/input.rst
+   docs/output.rst
 
 .. toctree::
    :maxdepth: 2

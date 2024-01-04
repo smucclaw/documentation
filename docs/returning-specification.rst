@@ -67,8 +67,8 @@ Full Scenario Rule
 
 .. code-block:: bnf
 
-    Full Scenario Rule::=	[Toplevel...] \\(except Scenario Rules)				
-				\\this allows us to reduce the ruleset as more and more data is available	
+    Full Scenario Rule::=	[Toplevel...] //(except Scenario Rules)				
+				//this allows us to reduce the ruleset as more and more data is available	
 
 ~~~~~~~~~~~~~~~~~~~~
 Simple Scenario Rule
@@ -76,7 +76,7 @@ Simple Scenario Rule
 
 .. code-block:: bnf
 
-    Simple Scenario Rule::=	SCENARIO    RuleName    \\(except Scenario Rules)				
+    Simple Scenario Rule::=	SCENARIO    RuleName    //(except Scenario Rules)				
 			        GIVEN	RelationalPredicate													
 					[       ...       ]														
 				EXPECT  RelationalPredicate													
@@ -169,7 +169,7 @@ Constraints and 'Upon Trigger'
 .. code-block:: bnf
 
     Subject Constraint      ::= WHO             RelationalPredicate BoolStruct	        
-    \\evaluated against the subject of the rule
+    //evaluated against the subject of the rule
 
     Attribute Constraint    ::= WHOSE           RelationalPredicate BoolStruct
 
@@ -267,11 +267,11 @@ Booleans and BoolStructs
 --------------------
 Relational Predicate
 --------------------
-
+TODO
 ------------------------
 Value Term and Set Group
 ------------------------
-
+TODO
 ---------------------------
 Syntax Reference by Keyword
 ---------------------------
