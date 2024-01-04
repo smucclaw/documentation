@@ -12,25 +12,12 @@ auto-generation of a web app
 
 This shows up in the sidebar as **View as web app for citizens and customers**.
 
-Web App (link from "web app for citizens and customers") takes some time to start up.
+The Web App might take some time to start up.
 If you see errors 502 Bad Gateway after following the link it means app is not set up yet. Try again in a minute or so.
 
 -----------------------------------------
 
 # L4 Rule Engine API Documentation, illustrated using Vue and JSONForms
-
-The seed under this directory demonstrates how to use [JSON Forms](https://jsonforms.io) with Vue in order to render a simple form for gathering user input and calling the business rules logic engine backend.
-
-`src/App.vue` contains the JSON Forms specific code.
-
-- Execute `npm ci` to install the prerequisites.
-- Execute `npm start` to start the application.
-
-Browse to http://localhost:8081 to see the application in action.
-
-Please see also the JSON Forms Vue [documentation](https://jsonforms.io/docs/integrations/vue).
-
----
 
 # System Architecture Overview
 
@@ -39,33 +26,20 @@ The general pattern for this app is that an end-user persona
 - answers questions about a rule
 - eventually proceeds to an Outcome tab which displays thee result
 
-The technical contribution of this codebase is to show how the
-business logic and user interface content can be abstracted away from
+The technical contribution of this codebase is to show how the business logic and user interface content can be abstracted away from
 UI development.
 
-The upstream encoding of the policy contract in the L4 language is the
-single source of truth for the user interface form elements and the
-business logic.
+The upstream encoding of the policy contract in the L4 language is the single source of truth for the user interface form elements and the business logic.
 
-Accordingly, this code base relies heavily on a JSON Schema extracted
-from upstream L4 to configure a JSON Forms UI flow.
+Accordingly, this code base relies heavily on a JSON Schema extracted from upstream L4 to configure a JSON Forms UI flow.
 
-Together with a custom UI Schema, that JSON Forms UI flow controls a
-user interface session, and produces a JSON object containing the
-results of the user filling the form -- `form_data`.
+Together with a custom UI Schema, that JSON Forms UI flow controls a user interface session, and produces a JSON object containing the results of the user filling in the form -- `form_data`.
 
-That `form_data` JSON object is fed to a logic engine back-end which
-returns calculations about claims coverage.
+That `form_data` JSON object is fed to a logic engine back-end which returns calculations about claims coverage.
 
-Those calculations are displayed in the UI as the "final answer". This
-display is organized in a table structurally similar to a shopping
-cart with items and modifiers adding up to a total sum.
+Those calculations are displayed in the UI as the "final answer". This display is organized in a table structurally similar to a shopping cart with items and modifiers adding up to a total sum.
 
 The data flow information architecture of the concrete policy contract implemented in this web app is available at [TODO: link to data flow generated in sidebar]
-
-This document gives detailed developer guidance for the JSON schemas
-mentioned above and the API to the logic engine back-end.
-
 ---
 # Form Generation
 
@@ -82,7 +56,6 @@ This will produce one unbroken form with default styling with the default UI sch
 Together, the UI Schema and the JSON Schema control the web application.
 
 ---
-
 
 # Logic Engine backend API client
 
@@ -134,52 +107,6 @@ import { query_le_js } from "./le_api_client";
 
 ---
 
-**Further explanation**:
-
-The main function that is of interest is
-`query_le_js`
-which has the following signature in Typescript terms.
-
-It sends `le_program`, `form_data` and `query` over to a LE backend running
-on `server_url` and returns a js object representing the response.
-
-```ts
-let query_le_js = (
-  // URL of the LE backen server.
-  server_url: string,
-  // LE program, possibly obtained from transpilation from L4.
-  program: string,
-  // json form data, obtained via jsonforms.
-  form_data: any,
-  // LE query, possibly obtained from transpilation from L4.
-  query: string
-) => Promise<Explanation>;
-
-type Explanation = {
-  text: string;
-  "true?": boolean;
-  because?: Explanation[];
-};
-```
----
-## Extracting data from the LE backend:
-The `le_api_client.js` module also exports the `extract_from_le_tree_for_insurance`
-function that helps to extract relevant bits of info needed for the Outcomes
-tab, from the nested tree structure obtained from querying the LE backend.
-
-This function is used as follows:
-```js
-  extract_from_le_tree_for_insurance(response)
-```
-where `response` is the JS object obtained from the `query_le_js` function call.
-
-The form questions answered by the user can be obtained from inspecting the `form_data` instance obtained from jsonforms.
-
-The above data structures are further augmented by the
-`intermediate_calculations` function to provide the data fields needed
-to fill the Outcome template.
----
-
 # Backend Endpoint Configuration (Docker)
 
 We have an instance of the LE docker that you can connect to running on our server. The server url is **http://cclaw.legalese.com:9999**
@@ -205,7 +132,7 @@ _query_le_js_ returns a js object, _resp_.
 
 _resp_ is the raw output that you will receive. These are nested strings. We suggest that you use regex (or string searches) to get the information to display in the **Outcomes** page.
 
-Please :doc:`see here for an example<webform>`.
+Please :doc:`see here for an example<webform>`, including explanations on how to write L4 for JSON schema and Logical English.
 
 -----------------------------------------
 auto-generation of boolean circuit diagrams
