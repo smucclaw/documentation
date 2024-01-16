@@ -53,9 +53,9 @@ The JSON schema is extracted from the upstream L4 encoding of the original contr
 
 The L4 encoding produces a **JSON schema**.
 
-This JSON schema will control JSONforms to produce the web app form. In this repository we use JSONforms with Vue. A [React](https://jsonforms.io/api/react/) implementation is also available for JSONforms.
+This JSON schema will control JSONforms to produce the web app form. In this repository we use JSONforms with Vue. A `React <https://jsonforms.io/api/react/>`_ implementation is also available for JSONforms.
 
-This will produce one unbroken form with default styling with the default UI schema. It is likely necessary to write a [custom uischema](https://jsonforms.io/docs/uischema/). For the Vue build, we found it necessary to write a custom Renderer as well for single object properties, however we believe this already exists for the React implementation of JSONForms. Before deciding how best to do this, however, please read through "UI Display Text for the form" section below.
+This will produce one unbroken form with default styling with the default UI schema. It is likely necessary to write a `custom uischema <https://jsonforms.io/docs/uischema/>`_. For the Vue build, we found it necessary to write a custom Renderer as well for single object properties, however we believe this already exists for the React implementation of JSONForms. Before deciding how best to do this, however, please read through "UI Display Text for the form" section below.
 
 Together, the UI Schema and the JSON Schema control the web application.
 
@@ -76,7 +76,7 @@ The LE backend is queried like this:
       program,
       form_data,
       query
-    );
+      );
 
 
 The query to the logic engine is labeled "Schema 2" in the accompanying web app architecture diagram.
@@ -121,7 +121,7 @@ We have an instance of the LE docker that you can connect to running on our serv
 
 A stable production endpoint will be hosted at `https://prod.cclaw.legalese.com/port/9999/`.
 
-A more detailed explanation of building a local docker image for the LE backend [is detailed here](https://github.com/smucclaw/LogicalEnglish#using-pre-packaged-docker).
+A more detailed explanation of building a local docker image for the LE backend `is detailed here <https://github.com/smucclaw/LogicalEnglish#using-pre-packaged-docker>`_.
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
