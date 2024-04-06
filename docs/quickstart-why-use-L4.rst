@@ -1360,4 +1360,130 @@ structured things with less "ink on the page".
 
     Supports the translation of code into multiple natural languages to support interfaces
 
+============
+Other Concepts
+============
+
+(to be rearranged into existing documentation)
+
+-----------
+Canonicalization and Textual Equivalence
+-----------
+
+When do two texts mean the same thing?
+
+Strong: CS offers the notion of bisimulation equivalence: two state
+transition systems are considered equivalent if they cannot be
+distinguished by an outside observer.
+
+Weaker: Textual equivalence (after canonicalization).
+
+One can encode the same thing multiple ways.
+
+L4 offers a canonicalization feature. L4 programs are automatically rewritten into a standard form.
+
+If the standard forms of two programs are the same, then they are textually equivalent.
+
+============
+Classes of Errors
+============
+
+L4's verification module detects the following classes of errors.
+
+------------
+Unwinnable Games
+------------
+
+It is possible for a contract drafter to cleverly conceal the fact
+that a player cannot possibly win, because of the way the
+game has been set up.
+
+For instance:
+- to receive a certificate, an applicant must submit papers A, B, and C.
+- to receive paper A, an applicant must apply within the month of January.
+- to receive paper B, an applicant must apply within the month of February.
+- to receive paper C, an applicant must apply within the month of March.
+- applications for paper B must be accompanied by paper  A.
+- applications for paper C must be accompanied by papers A and B; and the application date for paper A must be no more than 2 weeks prior to the application for paper C.
+
+The L4 system will prove that there is no way to satisfy the above rules.
+  
+------------
+Race Conditions
+------------
+
+------------
+Partial Functions
+------------
+
+Suppose we walk into an ice cream parlour, where the following rule is posted on the wall:
+
+Dark chocolate is available on Saturdays and Sundays.
+
+But it's Friday today. Is dark chocolate available?
+
+Without Negation As Failure, it might be; it might not be; we don't
+know. The ruleset is silent. So it behooves you to just ask the staff.
+
+With NAF: it is not available. "If"s are upgraded to "If and only if".
+There is no point asking. The ruleset is understood to return "no".
+
+An L4 pragma, switchable at the per-rule level, enables/disables NAF.
+
+Canonicalization performs Clark completion rewrites when NAF is enabled.
+
+------------
+Mutation Ambiguity
+------------
+
+An L4 ruleset that includes a non-fully-qualified reference to a
+variable whose value is mutated, or could be mutated within the
+ruleset, is said to contain an ambiguity with respect to that
+variable.
+
+Example:
+
+1. The price is increased by $10 on Saturdays and Sundays.
+
+2. The price is discounted by 20% on public holidays.
+
+Here, we see that "the price" is a mutable variable.
+
+What happens if the initial price is $100, and a public holiday
+happens to fall on a Sunday?
+   
+In the absence of a lex-specialis or lex-posterior interpretation
+rule, the following computations are both valid:
+
+Discount-first:
+- (rule 2) $100 discounted by 20% = $80
+- (rule 1) $80 plus $10 = $90
+
+Increase-first:
+- (rule 1) $100 plus $10 = $110
+- (rule 2) $110 discounted by 20% = $88
+
+The difference of $2 is sometimes called "leakage".
+
+The L4 compiler detects this mutability bug and warns that the evaluation order is not fixed.
+
+To solve this, L4 recommends full qualification of variables:
+
+1. The day price is the initial price, plus $10 on Saturdays and Sundays only.
+
+2. The holiday price is the day price, discounted by 20% on public holidays only.
+
+This way, the notion of "day price" is well defined for both weekends and weekdays.
+
+And the "holiday price" is well defined for both holiday and non-holiday scenarios.
+
+.. code-block::
+
+   DECIDE  day price  IS  initial price + $10  IF  day  IN  Saturday  Sunday
+   DECIDE  day price  IS  initial price        OTHERWISE
+
+   DECIDE  holiday price  IS  day price  *  80%  IF  day  IS  holiday
+   DECIDE  holiday price  IS  day price  OTHERWISE
+
+This way, the initial price clearly comes through the OTHERWISE branches.
 
