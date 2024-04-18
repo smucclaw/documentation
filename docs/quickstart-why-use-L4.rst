@@ -639,6 +639,28 @@ The relations and their semantics are given below:
    * - >=
      - greater than or equal to
      - RPgte
+
+   * - PRODUCT
+     - product of numbers: PRODUCT 10 5 2 = 100
+     - RPproduct
+
+   * - SUM
+     - sum of numbers: SUM 10 5 2 = 17
+     - RPsum
+
+   * - MINUS
+     - the first number minus the second number. If more than two arguments are given, the first number minus the sum of all subsequent numbers: MINUS 10 5 3 2 = 0
+     - RPminus
+
+   * - DIVIDE
+     - the first number divided by the second number. If more than two arguments are given, the first number divided by the second number, further divided by the third number, further divided by the fourth number, and so on
+     - RPdivide
+
+   * - LESS (currently unimplemented)
+     - Same as MINUS, but at each step, if the result is negative, ceil to 0.
+     - RPless: LESS 10 5 8 = 0. LESS 5 10 = 0. LESS 10 5 = 5. LESS 5 10 2 = 0.
+       
+
    * - IN
      - element is a member of a list
      - RPelem
